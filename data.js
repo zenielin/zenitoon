@@ -11,6 +11,26 @@ window.TOON = {
   },
   issues: [
     {
+      no: 4,
+      type: 'special',
+      date: '2026-10-27',
+      title: 'AI를 만드는 사람들이 본 2030년 — 신입이 사라지는 일터',
+      saying: { text: '유비무환(有備無患)', note: '미리 준비하면 걱정이 없다' },
+      next: '판례 4컷 「도급과 파견의 경계」 · 현장 안전툰 「물류센터 지게차」',
+      episodes: [
+        {
+          id: '004',
+          corner: 'stats',
+          title: 'AI를 만드는 사람들이 본 2030년',
+          summary: 'AI 개발사 직원 1,334명과 미국 성인 약 1만 1천 명의 2030년 전망 비교, AI 에이전트 근무시간 6배·기술직 신입 채용 비중 27%→9% 등 사내 고용 변화. AI 시대 인력 운영 점검표 수록.',
+          page: 'ep/004.html',
+          pdf: 'ep/004.pdf',
+          thumb: 'thumbs/004.png',
+          source: 'Anthropic 보고서 2편(2026.10.16) · 유튜브 미주일기 영상 참고 재구성'
+        }
+      ]
+    },
+    {
       no: 3,
       type: 'special',
       date: '2026-10-26',

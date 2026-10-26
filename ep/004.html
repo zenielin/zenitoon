@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI를 만드는 사람들이 본 2030년 | 제니툰</title>
+<meta property="og:title" content="제니툰 · AI를 만드는 사람들이 본 2030년">
+<meta property="og:image" content="../thumbs/004.png">
+<link rel="icon" href="../favicon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#ffd23f">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="제니툰">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fbf6ea; --paper2:#fffdf7; --ink:#161616; --sub:#4a4a4a;
+  --red:#e2403a; --blue:#2f6fd6; --yellow:#ffd23f; --green:#2e9e6a; --soft:#f1e7cf;
+  --shadow:#161616;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#1d1b17; --paper2:#262420; --ink:#f2ede1; --sub:#c9c2b2;
+    --soft:#34302a; --shadow:#000;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#1d1b17; --paper2:#262420; --ink:#f2ede1; --sub:#c9c2b2;
+  --soft:#34302a; --shadow:#000;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Gowun Dodum',sans-serif;line-height:1.6;font-size:15px}
+.wrap{max-width:760px;margin:0 auto;padding:18px 16px 40px}
+h1,h2,h3{font-family:'Black Han Sans',sans-serif;font-weight:400;margin:0;letter-spacing:.5px;line-height:1.25}
+.ep{background:var(--paper2);border:3px solid var(--ink);box-shadow:6px 6px 0 var(--shadow);margin:0 6px 30px 0;padding:20px 18px 22px;border-radius:6px}
+.eptag{display:inline-block;background:var(--ink);color:var(--paper2);font-family:'Black Han Sans';padding:3px 12px;border-radius:3px;font-size:14px;letter-spacing:1px}
+.ep h2{font-size:26px;margin:8px 0 2px}
+.ep .subt{color:var(--sub);margin:0 0 14px;font-size:14px}
+/* cover */
+.cover{background:var(--yellow);color:#161616;text-align:center;position:relative;overflow:hidden}
+.cover .burst{position:absolute;inset:-40%;background:repeating-conic-gradient(from 0deg,rgba(255,255,255,.35) 0 8deg,transparent 8deg 16deg);z-index:0}
+.cover>*{position:relative;z-index:1}
+.cover h1{font-size:38px;margin:10px 0 6px;text-shadow:3px 3px 0 #fff}
+.cover .kick{font-family:'Jua';font-size:17px}
+.cover .by{font-size:13px;margin-top:10px}
+.cover .cast{display:flex;justify-content:center;gap:6px;margin:14px 0 6px;flex-wrap:wrap}
+.cover .cast svg{width:78px;height:78px;background:#fff;border:3px solid #161616;border-radius:50%}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.num{background:#fff;border:2.5px solid #161616;border-radius:6px;padding:8px 4px}
+.num b{display:block;font-family:'Black Han Sans';font-size:26px;color:var(--red);line-height:1.1}
+.num span{font-size:12px}
+/* panels */
+.g4{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.panel{border:2.5px solid var(--ink);background:var(--paper);border-radius:4px;padding:10px;position:relative;min-width:0}
+.panel.wide{grid-column:1/-1}
+.panel .cap{font-family:'Black Han Sans';font-size:13px;background:var(--yellow);color:#161616;display:inline-block;padding:1px 8px;border:2px solid var(--ink);margin-bottom:6px}
+.panel .fx{position:absolute;right:8px;top:4px;font-family:'Black Han Sans';color:var(--red);font-size:20px;transform:rotate(8deg)}
+/* scene */
+.scene{display:flex;align-items:flex-start;gap:8px;margin:8px 0}
+.scene.rev{flex-direction:row-reverse}
+.who{flex:0 0 64px;text-align:center;font-size:11px;color:var(--sub)}
+.who svg{width:62px;height:62px;border:2.5px solid var(--ink);border-radius:50%;background:#fff;display:block;margin:0 auto 2px}
+.bub{position:relative;background:#fff;color:#161616;border:2.5px solid var(--ink);border-radius:16px;padding:8px 12px;font-family:'Jua';font-size:15px;line-height:1.45;flex:1;min-width:0}
+.bub:before{content:"";position:absolute;left:-11px;top:16px;border:9px solid transparent;border-right-color:var(--ink);border-left:0}
+.bub:after{content:"";position:absolute;left:-7px;top:18px;border:7px solid transparent;border-right-color:#fff;border-left:0}
+.rev .bub:before{left:auto;right:-11px;border-right-color:transparent;border-left:9px solid var(--ink);border-right:0}
+.rev .bub:after{left:auto;right:-7px;border-right-color:transparent;border-left:7px solid #fff;border-right:0}
+.bub.shout{border-radius:4px;background:var(--yellow);font-size:16px}
+.bub.shout:after{border-right-color:var(--yellow)}
+.rev .bub.shout:after{border-left-color:var(--yellow)}
+.bub small{display:block;color:#666;font-family:'Gowun Dodum';font-size:11px;margin-top:2px}
+/* boxes */
+.box{border:2.5px dashed var(--ink);border-radius:6px;padding:10px 14px;margin:12px 0;background:var(--paper)}
+.box h3{font-size:17px;margin-bottom:6px}
+.box ul,.box ol{margin:0;padding-left:20px}
+.box li{margin:3px 0}
+.box.red{border-style:solid;border-color:var(--red)}
+.box.blue{border-style:solid;border-color:var(--blue)}
+.law{background:var(--soft);border-left:6px solid var(--blue);padding:10px 14px;font-size:14px;margin:12px 0;border-radius:0 6px 6px 0}
+.law b{color:var(--blue)}
+mark{background:var(--yellow);color:#161616;padding:0 3px}
+/* bars */
+.bars{margin:6px 0 4px}
+.bar{display:grid;grid-template-columns:110px 1fr 54px;align-items:center;gap:8px;margin:7px 0;font-size:14px}
+.bar .tr{height:20px;border:2px solid var(--ink);border-radius:3px;background:var(--paper)}
+.bar .fl{height:100%;background:var(--blue)}
+.bar .fl.r{background:var(--red)}.bar .fl.y{background:var(--yellow)}.bar .fl.g{background:var(--green)}
+.bar b{font-family:'Black Han Sans';font-weight:400;text-align:right}
+/* timeline */
+.tl{list-style:none;margin:6px 0;padding:0 0 0 22px;border-left:4px solid var(--ink)}
+.tl li{position:relative;margin:0 0 12px;padding-left:6px}
+.tl li:before{content:"";position:absolute;left:-33px;top:4px;width:16px;height:16px;background:var(--yellow);border:3px solid var(--ink);border-radius:50%}
+.tl li.now:before{background:var(--red)}
+.tl .d{font-family:'Black Han Sans';font-size:14px;color:var(--red)}
+/* flow */
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;align-items:stretch;margin:8px 0}
+.flow div{border:2.5px solid var(--ink);border-radius:5px;padding:8px 4px;text-align:center;font-size:13px;background:var(--paper);font-family:'Jua';display:flex;align-items:center;justify-content:center;min-width:0}
+.flow div.k{background:var(--yellow);color:#161616}
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.chip{border:2px solid var(--ink);border-radius:20px;padding:2px 10px;font-size:13px;background:var(--paper)}
+.chip.hl{background:var(--red);color:#fff;border-color:var(--red)}
+/* number cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.card{border:2.5px solid var(--ink);border-radius:6px;padding:10px;text-align:center;background:var(--paper)}
+.card b{font-family:'Black Han Sans';font-size:30px;font-weight:400;display:block;color:var(--blue);line-height:1.1}
+.card span{font-size:13px}
+/* checklist */
+.chk{list-style:none;padding:0;margin:6px 0}
+.chk li{border:2px solid var(--ink);border-radius:5px;padding:8px 10px 8px 40px;margin:7px 0;position:relative;background:var(--paper);font-size:14px}
+.chk li:before{content:"";position:absolute;left:10px;top:9px;width:18px;height:18px;border:2.5px solid var(--ink);border-radius:3px;background:#fff}
+.chk li b{color:var(--red)}
+.tagline{font-size:12px;color:var(--sub)}
+.quote{text-align:center;font-family:'Jua';font-size:19px;margin:14px 0 4px}
+.src{font-size:12px;color:var(--sub);border-top:2px dashed var(--ink);margin-top:14px;padding-top:8px}
+.theme-btn{position:fixed;right:12px;bottom:12px;z-index:9;border:2.5px solid var(--ink);background:var(--paper2);color:var(--ink);font-family:'Jua';border-radius:20px;padding:4px 12px;cursor:pointer}
+@media (max-width:540px){
+  .g4{grid-template-columns:1fr}
+  .cover h1{font-size:30px}
+  .ep h2{font-size:22px}
+  .nums,.cards{grid-template-columns:repeat(2,1fr)}
+  .flow{grid-template-columns:1fr}
+  .flow div{padding:6px}
+  .bar{grid-template-columns:86px 1fr 46px;font-size:13px}
+  .cover .cast svg{width:60px;height:60px}
+}
+@media print{.theme-btn{display:none}}
+</style>
+<style>
+.zt-nav{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:10px;justify-content:space-between;background:var(--paper2);border-bottom:3px solid var(--ink);padding:8px 14px;font-family:'Jua',sans-serif;font-size:14px}
+.zt-nav a{color:var(--ink);text-decoration:none;border:2px solid var(--ink);border-radius:16px;padding:1px 10px;background:var(--paper)}
+.zt-nav span{flex:1;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.zt-end{padding-top:0}
+.zt-cta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;background:#ffd23f;color:#161616;border:3px solid var(--ink);border-radius:6px;padding:14px 16px;box-shadow:5px 5px 0 var(--shadow);margin-right:6px}
+.zt-cta b{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:19px}
+.zt-cta span{font-size:13.5px}
+.zt-btn{background:#161616;color:#fff;text-decoration:none;font-family:'Jua',sans-serif;border-radius:5px;padding:7px 14px}
+.zt-links{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 50px}
+.zt-links a{color:var(--ink);text-decoration:none;border:2px solid var(--ink);border-radius:5px;padding:4px 12px;font-family:'Jua',sans-serif;background:var(--paper2)}
+.zt-like{display:flex;align-items:center;gap:12px;margin:18px 0 0;flex-wrap:wrap}
+.zt-like button{border:2.5px solid var(--ink);background:var(--paper2);color:var(--ink);border-radius:22px;padding:6px 16px;font-family:'Jua',sans-serif;font-size:16px;cursor:pointer}
+.zt-like button.on{background:#ffd23f;color:#161616}
+.zt-like span{font-size:13px;color:var(--sub)}
+@media print{.zt-nav,.zt-end{display:none}}
+</style>
+</head>
+<body>
+<div style="background:#161616;color:#fffdf7;font-size:12.5px;text-align:center;padding:6px 10px;font-family:'Gowun Dodum',sans-serif">제공 <a href="https://www.zenielinnovation.co.kr" target="_blank" rel="noopener" style="color:#ffd23f;font-weight:700;text-decoration:none">㈜제니엘이노베이션</a></div>
+<nav class="zt-nav"><a href="../index.html">← 제니툰</a><span>📊 특별편 · 004화</span><a href="004.pdf" class="zt-pdf">PDF</a></nav>
+<button class="theme-btn" onclick="toggleTheme()">☀︎ / ☾</button>
+<div class="wrap" id="app"></div>
+<div class="wrap zt-end"><div class="zt-cta"><div><b>AI 시대, 인력 운영 전략을 함께 설계합니다</b><br><span>AI+인력 결합 아웃소싱 · 채용대행 · 인재파견 · 고용지원사업 상담</span></div>
+<a class="zt-btn" href="../index.html?consult=1&from=004%ED%99%94">💬 상담 문의하기</a></div>
+<div class="zt-like" id="ztLike" hidden><button type="button" onclick="ztLike()">👍 도움됐어요 <b id="ztLikeN"></b></button><span id="ztViews"></span></div>
+<div class="zt-links"><a href="../index.html">🏠 제니툰 목록</a><a href="004.pdf">📄 PDF 저장</a><a href="../index.html#stats">📊 숫자로 보는 노동시장 더보기</a></div></div>
+
+
+<script>
+/* ---------- 오리지널 캐릭터 SVG (가상 인물) ---------- */
+const CH={
+  nomusa:{name:'도 노무사',skin:'#efc8a4',hair:'#9a9a9a',style:'side',acc:'glasses',shirt:'#4b5563'},
+  hr:{name:'한결 대리',skin:'#f6d3b3',hair:'#40261a',style:'long',acc:'none',shirt:'#8b5cf6'},
+  banjang:{name:'현장 반장',skin:'#e9bf98',hair:'#2a2a2a',style:'short',acc:'badge',shirt:'#f08c00'},
+  bot:{name:'안내로봇 체키',bot:true}
+};
+function face(k,mood='calm'){
+  const c=CH[k];
+  if(c.bot){
+    const eye= mood==='shock'?'<circle cx="30" cy="40" r="6" fill="#161616"/><circle cx="50" cy="40" r="6" fill="#161616"/>'
+      :'<rect x="24" y="36" width="12" height="8" rx="3" fill="#161616"/><rect x="44" y="36" width="12" height="8" rx="3" fill="#161616"/>';
+    const m= mood==='shock'?'<ellipse cx="40" cy="56" rx="5" ry="6" fill="#161616"/>':'<path d="M30 54 Q40 62 50 54" stroke="#161616" stroke-width="3" fill="none"/>';
+    return `<svg viewBox="0 0 80 80"><line x1="40" y1="8" x2="40" y2="18" stroke="#161616" stroke-width="3"/><circle cx="40" cy="7" r="4" fill="#e2403a" stroke="#161616" stroke-width="2"/><rect x="14" y="18" width="52" height="48" rx="12" fill="#ffd23f" stroke="#161616" stroke-width="3"/><rect x="20" y="28" width="40" height="34" rx="8" fill="#fff" stroke="#161616" stroke-width="2"/>${eye}${m}<rect x="8" y="34" width="6" height="14" rx="2" fill="#2f6fd6" stroke="#161616" stroke-width="2"/><rect x="66" y="34" width="6" height="14" rx="2" fill="#2f6fd6" stroke="#161616" stroke-width="2"/></svg>`;
+  }
+  const S='#161616';
+  let hair='';
+  switch(c.style){
+    case 'short': hair=`<path d="M18 38 Q18 14 40 14 Q62 14 62 38 Q58 24 40 24 Q26 24 18 38Z" fill="${c.hair}"/>`;break;
+    case 'side': hair=`<path d="M18 38 Q16 16 40 15 Q64 16 62 36 Q52 22 30 26 Q22 28 18 38Z" fill="${c.hair}"/>`;break;
+    case 'bob': hair=`<path d="M15 50 Q12 14 40 13 Q68 14 65 50 L58 50 Q60 26 40 24 Q20 26 22 50Z" fill="${c.hair}"/>`;break;
+    case 'bald': hair=`<path d="M19 36 Q20 30 24 30 L24 40 Z M61 36 Q60 30 56 30 L56 40Z" fill="${c.hair}"/>`;break;
+    case 'long': hair=`<path d="M14 66 Q10 14 40 13 Q70 14 66 66 L58 66 Q62 28 40 24 Q18 28 22 66Z" fill="${c.hair}"/>`;break;
+    case 'neat': hair=`<path d="M18 36 Q18 14 40 14 Q62 14 62 36 Q60 22 46 21 L44 26 Q30 22 18 36Z" fill="${c.hair}"/>`;break;
+  }
+  let brows='',eyes='',mouth='',extra='';
+  const ey=40;
+  if(mood==='angry'){brows=`<path d="M26 31 L36 35 M54 31 L44 35" stroke="${S}" stroke-width="3"/>`;}
+  else if(mood==='sad'){brows=`<path d="M26 34 L35 31 M54 34 L45 31" stroke="${S}" stroke-width="2.5"/>`;}
+  else if(mood==='shock'){brows=`<path d="M26 29 Q31 26 36 29 M44 29 Q49 26 54 29" stroke="${S}" stroke-width="2.5" fill="none"/>`;}
+  else {brows=`<path d="M27 32 Q31 30 35 32 M45 32 Q49 30 53 32" stroke="${S}" stroke-width="2.5" fill="none"/>`;}
+  if(mood==='shock'){eyes=`<circle cx="31" cy="${ey}" r="4.5" fill="#fff" stroke="${S}" stroke-width="2"/><circle cx="31" cy="${ey}" r="2" fill="${S}"/><circle cx="49" cy="${ey}" r="4.5" fill="#fff" stroke="${S}" stroke-width="2"/><circle cx="49" cy="${ey}" r="2" fill="${S}"/>`;mouth=`<ellipse cx="40" cy="56" rx="5" ry="6" fill="${S}"/>`;}
+  else if(mood==='happy'){eyes=`<path d="M27 41 Q31 36 35 41 M45 41 Q49 36 53 41" stroke="${S}" stroke-width="3" fill="none"/>`;mouth=`<path d="M30 52 Q40 63 50 52 Z" fill="${S}"/>`;}
+  else {eyes=`<circle cx="31" cy="${ey}" r="3" fill="${S}"/><circle cx="49" cy="${ey}" r="3" fill="${S}"/>`;
+    mouth= mood==='sad'?`<path d="M32 57 Q40 51 48 57" stroke="${S}" stroke-width="3" fill="none"/>`: mood==='angry'?`<path d="M32 56 L48 56" stroke="${S}" stroke-width="3"/>`:`<path d="M32 53 Q40 60 48 53" stroke="${S}" stroke-width="3" fill="none"/>`;}
+  if(c.acc==='glasses') extra+=`<circle cx="31" cy="${ey}" r="7" fill="none" stroke="${S}" stroke-width="2.2"/><circle cx="49" cy="${ey}" r="7" fill="none" stroke="${S}" stroke-width="2.2"/><path d="M38 ${ey} L42 ${ey}" stroke="${S}" stroke-width="2"/><path d="M33 49 Q40 46 47 49" stroke="#9a9a9a" stroke-width="3" fill="none"/>`;
+  let body=`<path d="M10 80 Q12 64 40 64 Q68 64 70 80Z" fill="${c.shirt}" stroke="${S}" stroke-width="2.5"/>`;
+  if(c.acc==='badge') body+=`<path d="M52 69 l5 0 l2 4 l-4.5 3 l-4.5 -3Z" fill="#ffd23f" stroke="${S}" stroke-width="1.5"/>`;
+  if(c.acc==='lanyard') body+=`<path d="M30 64 L40 76 L50 64" stroke="#ffd23f" stroke-width="3" fill="none"/><rect x="36" y="74" width="8" height="6" fill="#fff" stroke="${S}" stroke-width="1.5"/>`;
+  if(c.acc==='apron') body+=`<rect x="28" y="68" width="24" height="12" fill="#fff" stroke="${S}" stroke-width="2"/>`;
+  if(c.acc==='tie') body+=`<path d="M37 64 L43 64 L41.5 69 L44 78 L40 80 L36 78 L38.5 69Z" fill="#e2403a" stroke="${S}" stroke-width="1.5"/>`;
+  return `<svg viewBox="0 0 80 80">${body}<ellipse cx="40" cy="42" rx="22" ry="24" fill="${c.skin}" stroke="${S}" stroke-width="2.5"/>${hair}<circle cx="24" cy="50" r="3.5" fill="#f59e9e" opacity=".6"/><circle cx="56" cy="50" r="3.5" fill="#f59e9e" opacity=".6"/>${brows}${eyes}${mouth}${extra}</svg>`;
+}
+/* ---------- 컴포넌트 ---------- */
+function S(k,mood,name,text,o={}){
+  return `<div class="scene ${o.rev?'rev':''}"><div class="who">${face(k,mood)}${name||CH[k].name}</div><div class="bub ${o.shout?'shout':''}">${text}${o.note?`<small>${o.note}</small>`:''}</div></div>`;
+}
+function P(cap,body,o={}){return `<div class="panel ${o.wide?'wide':''}">${cap?`<div class="cap">${cap}</div>`:''}${o.fx?`<div class="fx">${o.fx}</div>`:''}${body}</div>`;}
+function WHO(list){return `<div class="chips">${list.map(([n,h])=>`<span class="chip ${h?'hl':''}">${n}</span>`).join('')}</div>`;}
+function bars(rows,max){return `<div class="bars">${rows.map(([l,v,u,c])=>`<div class="bar"><span>${l}</span><div class="tr"><div class="fl ${c||''}" style="width:${Math.max(4,v/max*100)}%"></div></div><b>${v}${u}</b></div>`).join('')}</div>`;}
+function EP(tag,title,sub,body,cls=''){return `<section class="ep ${cls}"><span class="eptag">${tag}</span><h2>${title}</h2>${sub?`<p class="subt">${sub}</p>`:''}${body}</section>`;}
+
+
+/* ---------- 본문 ---------- */
+let H='';
+const SRC_URL='https://youtu.be/RfzOmJKdm5g';
+
+/* 표지 */
+H+=`<section class="ep cover"><div class="burst"></div>
+<div class="kick">제니툰 특별편 · 숫자로 보는 노동시장</div>
+<h1>AI를 만드는 사람들이<br>본 2030년</h1>
+<div class="kick">“지금”은 비슷하게 보는데, “4년 뒤”는 완전히 다르게 본다</div>
+<div class="cast">${face('bot','calm')}${face('hr','shock')}${face('nomusa','calm')}${face('banjang','calm')}</div>
+<div class="nums">
+ <div class="num"><b>91%</b><span>AI 회사 직원 “2030년 노벨상급 발견”</span></div>
+ <div class="num"><b>39%</b><span>미국 성인의 같은 응답</span></div>
+ <div class="num"><b>75%</b><span>직원이 본 “내 업무 대체율”</span></div>
+ <div class="num"><b>28%</b><span>미국 근로자의 같은 응답</span></div>
+ <div class="num"><b>27→9%</b><span>기술직 채용 중 신입 비중</span></div>
+ <div class="num"><b>×6</b><span>AI 에이전트 근무시간 / 직원</span></div>
+</div>
+<div class="by">작성 · ㈜제니엘이노베이션 &nbsp;|&nbsp; 2026.10.27</div>
+</section>`;
+
+/* 원작 안내 */
+H+=`<div class="box blue" style="margin:0 6px 30px 0"><h3>🎬 원작 영상 안내</h3>
+<p style="margin:0">이 웹툰은 유튜브 <b>‘미주일기’</b> 채널 영상 「앤스로픽이 예측한 2030년, AI가 불러올 충격적인 미래」(2026.10.21, 13분 55초)의 내용을 장면별로 요약·재구성했습니다. 원작의 표현과 분석은 영상에서 직접 확인해 주세요.</p>
+<p style="margin:8px 0 0"><a href="${SRC_URL}" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">▶ 원작 영상 보러 가기</a> &nbsp;·&nbsp; <a href="https://www.anthropic.com/research/employment-at-anthropic" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">📄 앤스로픽 보고서</a></p></div>`;
+
+/* EP.0 */
+H+=EP('EP.0','극단으로 갈린 AI 전망','2026년, “거품”과 “특이점” 사이',
+`${S('bot','calm','','안녕하세요, 안내로봇 <b>체키</b>예요! 요즘 AI를 두고 전망이 <mark>정반대로</mark> 갈리고 있어요.')}
+<div class="g4">
+${P('① 과열 경고',S('nomusa','calm','','국제통화기금(IMF)은 10월, AI 수익이 기대에 못 미치면 <b>시장 조정</b>이 올 수 있다고 경고했어요.',{note:'(요지) 영상 전언'}))}
+${P('② 특이점 선언',S('hr','shock','','반대편에선 한 전기차 기업 CEO가 “인류는 이미 <b>특이점에 들어섰고 올해가 원년</b>”이라고 했다면서요?',{rev:true,note:'(요지) 영상 전언'}))}
+${P('③ 이륙 중',S('bot','calm','','한 대형 AI 기업 CEO도 작년 6월, 인류가 되돌릴 수 없는 선을 넘어 <b>이륙을 시작했다</b>는 취지로 말했대요.',{note:'(요지) 영상 전언'}))}
+${P('④ 누구 말을 믿지?',S('hr','sad','','한 치 앞도 모르겠네요. 그럼 어디를 봐야 하죠?',{rev:true}),{fx:'?!'})}
+</div>
+${S('nomusa','calm','','영상은 그 실마리로 AI 개발사 <b>앤스로픽</b>을 꼽습니다. 그동안 파격적인 전망을 내놓고 하나씩 현실로 만들어 온 곳이라서요.')}
+<div class="box"><h3>🗂️ 이번 화의 재료</h3>
+<ul class="tl">
+ <li><span class="d">보고서 ①</span><br><b>AI 기대 격차</b> — 자사 직원 1,334명(8월 9~12일)과 미국 성인 약 1만 1천 명(8월)에게 똑같이 “2030년은 어떨까?”를 묻고 비교</li>
+ <li><span class="d">보고서 ②</span><br><b>앤스로픽의 고용 변화</b> — 인원·채용 기록, AI 사용량, 성과 지표, 직원 17명 인터뷰로 본 사내 변화</li>
+ <li class="now"><span class="d">2026. 10. 16</span><br>두 보고서 동시 공개</li>
+</ul></div>
+<p class="tagline">※ 직원 설문은 가중치 없는 사내 조사, 일반인 설문은 인구 대표 가중치를 적용한 온라인 패널 조사로 표본·방식이 다릅니다.</p>`);
+
+/* EP.1 */
+H+=EP('EP.1','“내년”을 말했던 회사','남들이 10년 뒤를 말할 때',
+`${S('hr','calm','','왜 하필 그 회사 직원들 대답을 눈여겨봐야 해요?')}
+${S('bot','calm','','모두가 의심할 때 가장 이른 시점을 찍었고, 그게 <b>실제로 맞아 들어가고</b> 있기 때문이래요.',{rev:true})}
+<div class="box"><h3>🗓️ 예측과 현실 (영상 전언)</h3>
+<ul class="tl">
+ <li><span class="d">2025 초</span><br>다른 대형 AI 연구소 수장: 강력한 AI까지 <b>5~10년</b> 더 걸린다는 전망</li>
+ <li><span class="d">2025. 3</span><br>앤스로픽, 미국 백악관 과학기술정책실에 낸 의견서에 강력한 AI 등장 시점을 <mark>2026년 말~2027년 초</mark>로 명시 — 주요 개발사 중 유일</li>
+ <li><span class="d">2025. 3</span><br>회사 CEO: 1년 남짓이면 AI가 사실상 <b>거의 모든 코드</b>를 쓰게 될 것이라는 취지의 발언</li>
+ <li><span class="d">2025. 2 이전</span><br>사내 AI 작성 코드 비중은 <b>한 자릿수</b></li>
+ <li class="now"><span class="d">2026. 5</span><br>사내 병합 코드의 <b>80% 이상</b>을 AI가 작성</li>
+</ul></div>
+<div class="g4">
+${P('① 보안',S('nomusa','calm','','4월 공개된 새 모델은 협력 기관과 함께 치명적 <b>보안 취약점 1만 개 이상</b>을 찾아냈대요.'))}
+${P('② 스스로 진화',S('bot','shock','','AI가 다음 세대 AI 개발을 돕는 <b>자기 개선 흐름</b>도 업계 전반에서 시작됐대요.',{rev:true}),{fx:'!!'})}
+${P('③ 데이터센터 속 천재들',S('hr','shock','','사내에선 AI 에이전트 <b>약 3만 개</b>가 동시에 연구·개발을 하고 있다고요?'))}
+${P('④ 경쟁사도',S('nomusa','calm','','다른 AI 기업도 수학 난제에 AI <b>1만 개를 88시간</b> 동시에 돌렸답니다. 여럿이 일을 나눠 맡는 체계가 이미 돌아가는 거죠.',{rev:true}))}
+</div>
+<p class="tagline">※ EP.1 수치·발언은 영상이 소개한 내용(요지)으로, 원자료로 개별 확인하지 못했습니다.</p>`);
+
+/* EP.2 */
+H+=EP('EP.2','지금은 냉정, 2030년은 딴판','만드는 사람이 오히려 현재를 박하게 본다',
+`${S('hr','calm','','그럼 그 회사 직원들은 무조건 AI를 믿는 낙관주의자인가요?')}
+${S('nomusa','calm','','설문을 뜯어보면 정반대예요. <b>지금의 AI</b>에 대해서는 일반인보다 더 냉정했어요.',{rev:true})}
+<div class="box"><h3>📊 “지금 당장” 가능하냐는 질문</h3>
+${bars([['연구 설계·논문·직원',25,'%',''],['연구 설계·논문·일반',24,'%',''],['노벨상급 발견·직원',4,'%','r'],['노벨상급 발견·일반',12,'%','y']],100)}
+<p class="tagline">※ 세부 수치는 영상 전언.</p></div>
+<div class="box"><h3>📊 “2030년까지” 가능하냐는 질문</h3>
+${bars([['연구 설계·논문·직원',90,'%','r'],['연구 설계·논문·일반',38,'%',''],['노벨상급 발견·직원',91,'%','r'],['노벨상급 발견·일반',39,'%','']],100)}</div>
+<div class="g4">
+${P('① “영원히 못 한다”',S('hr','shock','','일반인은 과제에 따라 최대 <b>40%</b>가 “AI는 절대 못 한다”고 했는데…'))}
+${P('② 개발자들의 대답',S('nomusa','calm','','직원 중 그렇게 답한 비율은 어떤 과제든 <b>2% 안팎</b>. 사람만의 몫으로 영원히 남을 일이 사실상 없다고 보는 거죠.',{rev:true,note:'(전언)'}),{fx:'2%'})}
+</div>
+<div class="box red"><h3>📌 AI를 만드는 일은 어떻게 될까</h3><ul>
+<li>직원 응답 중간값: 2030년 말 <b>새 AI 모델 개발 업무의 95%</b>를 AI가 수행</li>
+<li>반대로 직원 <b>10명 중 2명</b>은 평범한 미국 성인과 비슷한 전망 — 회사 안에서도 생각은 제각각</li>
+</ul></div>`);
+
+/* EP.3 */
+H+=EP('EP.3','써 본 만큼 보인다','격차를 만든 핵심 변수는 “실제 사용 경험”',
+`${S('nomusa','calm','','두 집단 모두 AI가 노동시장에 영향을 주는 <b>방식</b>은 비슷하게 이해해요. 다만 <mark>직접 겪은 경험</mark>이 달라 결론이 갈린다는 게 보고서의 해석입니다.')}
+<div class="box"><h3>🪜 사용 경험의 계단 (주요 과제 대부분을 AI가 해낼 것이라는 응답)</h3>
+${bars([['AI 미사용',28,'%',''],['일반인 전체',41,'%',''],['업무에 사용',56,'%','y'],['AI 회사 직원',96,'%','r']],100)}
+<p class="tagline">※ 28·41·56%는 영상 전언, 96%는 보고서 확인.</p></div>
+<div class="g4">
+${P('① 시간 절약 체감',S('bot','calm','','AI에 맞는 일을 맡겼을 때 “<b>4분의 1 이하 시간</b>이면 끝난다” — 직원 59%, 업무에 AI 쓰는 미국 성인 26%.'))}
+${P('② 18개월 앞선 회사',S('nomusa','calm','','회사 스스로 사내 AI 활용이 <b>경제 전체보다 1년 반쯤 앞서 있다</b>고 봐요. 직원 전망을 일종의 “선행지표”로 보는 이유죠.',{rev:true}))}
+</div>
+${S('hr','happy','','많이, 깊이 써 본 사람일수록 <b>AI 회사 직원과 비슷한 미래</b>를 본다는 거네요!')}`);
+
+/* EP.4 */
+H+=EP('EP.4','해고 대신 사라진 신입','2030년 내 업무의 몇 %를 AI가 대신할까',
+`<div class="box"><h3>📊 2030년 내 업무 중 AI가 할 수 있는 몫</h3>
+${bars([['직원 평균',75,'%','r'],['미국 근로자 평균',28,'%','']],100)}
+<p class="tagline">※ “80% 이상을 AI가 할 것” — 직원 55%(과반), 미국 근로자 약 5%.</p></div>
+<div class="g4">
+${P('① 늘어난 동료',S('bot','shock','','올해 3월, 사내 AI 에이전트 근무시간이 직원을 넘었고 8월엔 <b>6배</b>가 됐어요.'),{fx:'×6'})}
+${P('② 이미 절반',S('nomusa','calm','','직원들은 모델 개발 핵심 업무의 <b>51%</b>를 이미 AI가 하고, 2030년 말엔 <b>95%</b>까지 갈 거라 봐요.',{rev:true,note:'(51%는 영상 전언)'}))}
+${P('③ 해고는 없었다',S('hr','calm','','그런데 사람을 줄이진 않았대요. 회사 규모는 1년 새 <b>약 3배</b>로 커졌고요.'))}
+${P('④ 문제는 입구',S('hr','sad','','새로 뽑은 기술직 중 신입 비중이 <b>27% → 9%</b>, 1/3 토막이 났어요.',{rev:true}),{fx:'뚝'})}
+</div>
+<div class="box"><h3>📉 기술 조직의 신입 비중 (2025년 초 → 2026년)</h3>
+${bars([['신규채용 중',27,'%',''],['→ 지금',9,'%','r'],['기술직 인원 중',21,'%',''],['→ 지금',14,'%','r']],30)}
+<p class="tagline">※ 열려 있는 기술직 자리 중 신입 몫은 6%. 엔지니어 1인당 코드 반영 건수는 약 6개월 만에 5배가량 증가. 관리자들은 자율성·판단력·AI 활용 능력을 더 중시.</p></div>
+<div class="box red"><h3>📌 왜 신입이 줄었나</h3><ul>
+<li>AI 에이전트가 <b>기초 실무</b>를 대신하면서, 손이 많이 가는 신입을 뽑아 가르칠 유인이 약해짐</li>
+<li>해고가 없어도 청년이 들어올 <mark>문턱 자체가 높아짐</mark></li>
+<li>신입이 없으면 <b>10년 뒤 숙련자</b>도 사라진다는 우려</li>
+</ul></div>
+${S('nomusa','calm','','보고서도 짚어요. 기존 직원 보호 장치는 <b>애초에 채용되지 못한 사람</b>에게는 아무 도움이 안 된다고요.')}`);
+
+/* EP.5 */
+H+=EP('EP.5','실업률은 금융위기 이상?','2030년 고용시장 전망',
+`<div class="g4">
+${P('① 실업률 전망',S('nomusa','calm','','지금 미국 실업률은 4%대. 업무 80% 이상이 대체될 거라 본 그룹은 2030년 실업률을 평균 <b>12.2%</b>로 봤어요.'))}
+${P('② 금융위기보다 높다',S('hr','shock','','2008년 글로벌 금융위기 때보다 높은 수치잖아요!',{rev:true}),{fx:'12.2%'})}
+${P('③ 같은 눈높이면 같은 답',S('bot','calm','','“내 일이 얼마나 대체될까”를 비슷하게 본 사람끼리 묶으면 <b>직원과 일반 근로자의 실업률 전망이 거의 같았대요</b>.'))}
+${P('④ 뒤바뀐 걱정',S('nomusa','calm','','2년 전 조사에선 전문가가 일반인보다 일자리 걱정을 덜 했는데, 이제는 <b>만드는 사람이 더 걱정</b>합니다.',{rev:true,note:'(요지) 영상이 인용한 미국 여론조사기관 조사'}))}
+</div>
+${S('hr','calm','','생각이 달랐던 게 아니라, 각자 일터에서 겪는 <b>변화의 속도</b>가 달랐던 거군요.')}`);
+
+/* EP.6 */
+H+=EP('EP.6','실업률↑, 그런데 경제는 4년 반마다 2배?','상식을 뒤집는 성장률 계산',
+`${S('hr','shock','','일자리가 줄면 경제도 나빠지는 게 상식 아닌가요?')}
+${S('nomusa','calm','','회사가 설문 응답을 자체 거시경제 모형에 넣어 2030년 성장률을 계산해 봤더니, <b>정반대</b> 숫자가 나왔어요.',{rev:true})}
+<div class="box"><h3>📈 2030년 미국 성장률 — 모형 계산값 (예측치 아님)</h3>
+${bars([['평상시 수준',2,'%',''],['일반인 응답 기준',5.4,'%','y'],['직원 응답 기준',17.1,'%','r']],18)}
+<p class="tagline">※ 회사의 공식 예측이 아니라 설문 응답을 경제 시나리오 모형에 넣어 얻은 값입니다.</p></div>
+<div class="g4">
+${P('① 얼마나 빠른가',S('bot','shock','','연 2% 성장이면 경제가 두 배 되는 데 약 <b>35년</b>. 직원 기준이면 약 <b>4년 반</b>마다 두 배! 대통령 임기 한 번마다 경제가 하나씩 더 생기는 셈이래요.'))}
+${P('② 역사상 단 두 번',S('nomusa','calm','','미국이 17%를 넘긴 건 2차 세계대전 중인 <b>1941·1942년</b>뿐. 고도성장기 한국·중국 최고 기록보다도 높아요.',{rev:true,note:'(요지) 영상 전언'}))}
+${P('③ 정부의 기대',S('hr','calm','','미국 재무장관은 <b>성장만이 부채 해법</b>이라며 AI를 동력으로 꼽았고, 의회예산처 책임자도 실질 성장률 5~6%는 필요하다고 봤대요.',{note:'(요지) 영상 전언'}))}
+${P('④ 반론도 있다',S('nomusa','calm','','물리적 병목·물가를 생각하면 17%는 비현실적이라는 경제학자들도 있어요. 다만 <b>연 4~5%만 돼도 전례 없는 고속 성장</b>이라는 데는 의견이 모입니다.',{rev:true}))}
+</div>
+${S('bot','calm','','공교롭게 일반인 응답 기준 5.4%가 딱 그 “필요한 수준”이고, 직원 응답은 그 <b>세 배</b>예요. 경제는 전시처럼 팽창하는데 일자리는 금융위기보다 줄어드는 — <mark>한 번도 겪어 본 적 없는 조합</mark>이죠.')}`);
+
+/* EP.7 */
+H+=EP('EP.7','성장의 열매는 누구에게?','분배라는 가장 무거운 숙제',
+`<div class="g4">
+${P('① 줄어드는 노동 몫',S('nomusa','calm','','회사 경제 시나리오 논문에선 이 전망에 가장 가까운 세계에서 국민소득 중 <b>노동자 몫이 60% → 45%</b> 수준으로 줄어요.',{note:'(요지) 영상 전언'}))}
+${P('② 사무직 임금',S('hr','sad','','사무직 임금은 AI가 없을 때보다 <b>오히려 낮아질 수</b> 있다고요?',{rev:true,note:'(요지) 영상 전언'}))}
+${P('③ 길어지는 재취업',S('banjang','sad','','보통 3개월이면 새 일을 찾는데, AI 때문에 일을 잃으면 <b>12개월</b>은 걸릴 거라고 직원들이 봤답니다.',{note:'(전언)'}),{fx:'12개월'})}
+${P('④ 저절로 풀리지 않는다',S('nomusa','calm','','논문의 결론은 이래요. 성장의 이익을 피해자에게 어떻게 나눌지는 <b>성장이 알아서 해결해 주지 않는다</b>.',{rev:true,note:'(요지)'}))}
+</div>
+<div class="box blue"><h3>🔎 제시된 분배 장치 (영상 전언)</h3><ul>
+<li><b>직업 재교육</b>과 <b>소득 지원</b></li>
+<li><b>보편적 기본자본·기본소득</b> 같은 제도 설계가 경제정책의 중심이 돼야 한다는 제안</li>
+<li>회사는 보고서 발표 이틀 뒤, 주주 승인을 조건으로 <mark>회사 지분 5%를 공익 기금</mark>으로 내놓겠다고 발표</li>
+</ul></div>`);
+
+/* EP.8 */
+H+=EP('EP.8','그럼 우리 현장은?','물류·제조·컨택센터·시설관리의 2030년',
+`${S('banjang','calm','','반장으로서 묻겠습니다. 물류센터 상하차나 제조 라인도 AI가 다 하게 됩니까?')}
+${S('nomusa','calm','','보고서에서 <b>현장·생산·운송</b> 직군은 2030년 AI가 맡을 업무 비중을 <mark>가장 낮게</mark> 봤어요. 몸으로 하는 일은 상대적으로 천천히 바뀐다는 인식이죠.',{rev:true})}
+<div class="g4">
+${P('① 먼저 바뀌는 곳',S('hr','calm','','사무·상담·문서 작업처럼 <b>컴퓨터 앞에서 하는 일</b>이 먼저 영향을 받겠네요. 컨택센터도 포함이고요.'))}
+${P('② 현장의 변화',S('banjang','happy','','현장은 사람이 하되, 일정·배치·안전점검 같은 <b>관리 업무</b>에 AI가 붙겠군요.',{rev:true}))}
+${P('③ 신입의 문턱',S('hr','sad','','청년 첫 일자리 문이 좁아지면 <b>경력 쌓을 기회</b> 자체가 줄어요.'))}
+${P('④ 고용서비스의 역할',S('nomusa','calm','','그래서 <b>직업훈련·전직 지원·취업 지원</b>이 더 중요해져요. 재취업이 길어질수록 더더욱요.',{rev:true}),{fx:'중요!'})}
+</div>
+<div class="box"><h3>🧭 직무별 영향 속도 (작성자 정리)</h3>
+<ul>
+<li><b>빠름</b> — 문서·데이터 입력, 단순 상담, 초급 사무·개발</li>
+<li><b>중간</b> — 컨택센터 상담(복합 민원), 영업지원, 채용 실무</li>
+<li><b>느림</b> — 물류 상하차·피킹, 제조 라인, 청소·시설관리, 의료지원 현장</li>
+</ul>
+<p class="tagline">※ 보고서의 직군별 응답 경향을 바탕으로 ㈜제니엘이노베이션이 정리한 실무 관점입니다.</p></div>`);
+
+/* 숫자 카드 */
+H+=EP('NUMBERS','한눈에 보는 숫자','이야기 속 핵심 수치 6',
+`<div class="cards">
+<div class="card"><b>91 vs 39</b><span>2030년 노벨상급 발견 기대(%)<br>직원 vs 미국 성인</span></div>
+<div class="card"><b>75 vs 28</b><span>2030년 내 업무 대체 기대(%)<br>직원 vs 미국 근로자</span></div>
+<div class="card"><b>27→9%</b><span>기술직 신규채용 중<br>신입 비중</span></div>
+<div class="card"><b>12.2%</b><span>업무 80%↑ 대체 예상 그룹의<br>2030년 실업률 전망</span></div>
+<div class="card"><b>17.1%</b><span>직원 응답 기준<br>2030년 성장률(모형값)</span></div>
+<div class="card"><b>3→12개월</b><span>AI 실직 시 재취업 기간<br>(직원 예상, 전언)</span></div>
+</div>
+<p class="tagline">※ 기대·전망 수치는 설문 응답이며 실제 측정된 자동화 수준이 아닙니다.</p>`);
+
+/* 체크리스트 */
+H+=EP('CHECK','AI 시대 인력 운영 점검표','경영진·인사담당자용 (작성자 제안)',
+`${S('hr','calm','','당장 우리 회사는 뭘 점검하면 될까요?')}
+${S('nomusa','calm','','“사람을 줄일까”보다 <b>“어떤 일을 누구에게 맡길까”</b>를 먼저 묻는 게 순서입니다.',{rev:true})}
+<ul class="chk">
+<li>직무별로 <b>AI가 맡을 일·사람이 맡을 일</b>을 나눠 본 적이 있는가</li>
+<li>신입 채용을 줄인다면 <b>5~10년 뒤 숙련 인력</b>은 어디서 확보할지 계획이 있는가</li>
+<li>채용 평가에 <b>AI 활용 능력·판단력·자율성</b> 항목이 반영되어 있는가</li>
+<li>재직자에게 <b>AI 업무 교육</b>과 직무 전환 경로를 제공하는가</li>
+<li>AI 결과물을 <b>누가·어떻게 검토하고 책임지는지</b> 기준이 있는가</li>
+<li>직무가 바뀔 때 <b>근로조건 변경·배치전환 절차</b>(협의·동의)를 지키는가</li>
+<li>컨택센터·사무 업무 위탁 시 <b>AI+인력 결합 운영</b> 방식을 검토했는가</li>
+<li>정부 <b>직업훈련·고용지원사업</b>을 재직자·구직자 지원에 활용하고 있는가</li>
+</ul>
+<p class="tagline">※ 위 점검표는 ㈜제니엘이노베이션이 정리한 실무 제안이며 법률 자문이 아닙니다. 근로조건 변경은 사안별로 노무 전문가 검토를 받으세요.</p>`);
+
+/* 흐름 정리 */
+H+=EP('SUMMARY','흐름 정리','현재 → 변화 → 전망 → 대비',
+`<div class="g4">
+${P('🔍 현재',`<ul style="margin:0;padding-left:18px"><li>지금의 AI는 <b>모두 비슷하게</b> 평가</li><li>격차는 <b>사용 경험</b>에서 발생</li></ul>`)}
+${P('🔄 변화',`<ul style="margin:0;padding-left:18px"><li>AI 에이전트 근무시간 <b>직원의 6배</b></li><li>해고 대신 <b>신입 채용 축소</b></li></ul>`)}
+${P('🔭 전망',`<ul style="margin:0;padding-left:18px"><li>성장은 빨라지고 <b>실업률도 상승</b> 가능성</li><li>노동 몫 감소·<b>재취업 장기화</b></li></ul>`)}
+${P('🛡️ 대비',`<ul style="margin:0;padding-left:18px"><li>직무 재설계·<b>AI 활용 교육</b></li><li>재교육·<b>고용서비스</b>·분배 장치</li></ul>`)}
+</div>`);
+
+/* 에필로그 */
+H+=EP('EPILOGUE','다음 숙제','',
+`${S('bot','happy','','AI가 일을 대신하고, 과학적 발견을 하고, 경제는 커지는데 실업률은 높아지는 그림 — 먼 미래가 아니라 <b>3~4년 뒤</b>의 현실적 전망이래요.')}
+${S('nomusa','calm','','영상은 이렇게 맺어요. 개인은 AI를 <b>능동적으로 다루며</b> 변화의 파도에 올라타고, 사회는 <b>밀려나는 사람을 지탱할 합의</b>를 서둘러야 한다고요.',{rev:true,note:'(요지)'})}
+${S('banjang','calm','','현장이든 사무실이든, 결국 <b>배우는 사람이 살아남는다</b>는 얘기군요.')}
+${S('hr','happy','','저부터 내일 업무에 AI를 하나씩 붙여 볼게요!',{rev:true})}
+<div class="box"><h3>📝 앞으로 1~2년, 지켜볼 것</h3><ul>
+<li>국내 기업의 <b>신입·청년 채용 비중</b> 변화 — 고용동향 통계와 함께 확인</li>
+<li>사무·상담 직무의 <b>AI 결합형 운영모델</b> 확산 속도</li>
+<li>정부의 <b>직업훈련·전직 지원·소득 지원</b> 정책 보강 여부</li>
+</ul></div>
+<p class="quote">“유비무환(有備無患) — 미리 준비하면 걱정이 없다”</p>
+<p style="text-align:center;margin:0">끝까지 읽어 주셔서 감사합니다 🙏</p>
+<div class="src">작성 · ㈜제니엘이노베이션<br>
+<b>원작</b> · 유튜브 ‘미주일기’ 「앤스로픽이 예측한 2030년, AI가 불러올 충격적인 미래」(2026.10.21) — <a href="${SRC_URL}" target="_blank" rel="noopener">${SRC_URL}</a> 의 내용을 장면별로 요약·재구성했습니다. 영상의 문장을 그대로 옮기지 않았으며, 원작의 저작권은 해당 채널에 있습니다.<br>
+<b>원자료</b> · Anthropic 「The AI expectations gap」·「How employment is changing at Anthropic」(2026.10.16, <a href="https://www.anthropic.com/research/employment-at-anthropic" target="_blank" rel="noopener">anthropic.com/research</a>), 영상이 인용한 경제 시나리오 논문·공익 기금 발표·해외 보도<br>
+※ 등장인물은 가상의 캐릭터이며, 실존 인물의 발언은 직책만 표기해 ‘(요지)’로 요약했습니다. ‘(전언)’은 원자료로 개별 확인하지 못한 영상 소개 내용입니다. 미국 조사 결과로 국내와 다를 수 있으며, 특정 기업에 대한 평가나 투자 권유가 아닙니다.</div>`);
+
+document.getElementById('app').innerHTML=H;
+
+function toggleTheme(){
+  const r=document.documentElement;
+  const dark = r.dataset.theme ? r.dataset.theme==='dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  r.dataset.theme = dark?'light':'dark';
+}
+</script>
+<script src="../firebase-config.js"></script>
+<script type="module" src="../zt-fire.js"></script>
+<script>
+const ZT_ID='004';
+async function ztPaint(){const F=window.ZT_FIRE;if(!F||!F.enabled)return;document.getElementById('ztLike').hidden=false;
+ const d=(await F.getStats([ZT_ID]))[ZT_ID]||{};document.getElementById('ztLikeN').textContent=d.likes||0;
+ document.getElementById('ztViews').textContent='👁 조회 '+(d.views||0);
+ if(F.liked(ZT_ID))document.querySelector('#ztLike button').classList.add('on');}
+async function ztLike(){const F=window.ZT_FIRE;if(await F.addLike(ZT_ID)){document.querySelector('#ztLike button').classList.add('on');ztPaint()}}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{})}
+window.addEventListener('zt-fire-ready',async()=>{if(window.ZT_FIRE.enabled){await window.ZT_FIRE.addView(ZT_ID);ztPaint()}});
+</script>
+</body>
+</html>
