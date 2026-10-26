@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>제니툰 — 보고 이해하는 일터 이야기</title>
+<meta name="description" content="노동뉴스·판례·아웃소싱 실무를 웹툰으로 쉽게. 매주 월요일 발행, 제공 ㈜제니엘이노베이션">
+<meta property="og:title" content="제니툰 — 보고 이해하는 일터 이야기">
+<meta property="og:description" content="노동뉴스·판례·아웃소싱 실무를 웹툰으로 쉽게. 제공 ㈜제니엘이노베이션">
+<meta property="og:image" content="thumbs/001.png">
+<meta name="theme-color" content="#ffd23f">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#fbf6ea;--paper2:#fffdf7;--ink:#161616;--sub:#555;--yellow:#ffd23f;--red:#e2403a;--blue:#2f6fd6;--soft:#f1e7cf;--shadow:#161616}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#1d1b17;--paper2:#262420;--ink:#f2ede1;--sub:#c9c2b2;--soft:#34302a;--shadow:#000}}
+:root[data-theme="dark"]{--paper:#1d1b17;--paper2:#262420;--ink:#f2ede1;--sub:#c9c2b2;--soft:#34302a;--shadow:#000}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Gowun Dodum',sans-serif;line-height:1.6;font-size:15px;padding-bottom:84px}
+a{color:inherit}
+h1,h2,h3{font-family:'Black Han Sans',sans-serif;font-weight:400;margin:0;line-height:1.25}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px}
+.provider{background:var(--ink);color:var(--paper2);font-size:12.5px;text-align:center;padding:6px 10px}
+.provider a{color:var(--yellow);text-decoration:none;font-weight:700}
+/* hero */
+.hero{background:var(--yellow);color:#161616;border-bottom:3px solid #161616;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:-60%;background:repeating-conic-gradient(rgba(255,255,255,.35) 0 7deg,transparent 7deg 14deg)}
+.hero .wrap{position:relative;display:flex;align-items:center;gap:18px;padding-top:22px;padding-bottom:22px}
+.logo{font-family:'Black Han Sans';font-size:54px;line-height:1;text-shadow:4px 4px 0 #fff;letter-spacing:1px}
+.logo small{display:block;font-family:'Jua';font-size:16px;text-shadow:none;margin-top:6px;letter-spacing:0}
+.mascot{width:96px;height:96px;flex:0 0 96px;background:#fff;border:3px solid #161616;border-radius:50%}
+.hero .meta{margin-left:auto;text-align:right;font-family:'Jua';font-size:14px}
+.hero .meta b{display:block;font-family:'Black Han Sans';font-size:22px;font-weight:400}
+/* tabs */
+.tabs{position:sticky;top:0;z-index:20;background:var(--paper2);border-bottom:3px solid var(--ink)}
+.tabs .wrap{display:flex;gap:6px;overflow-x:auto;padding-top:8px;padding-bottom:8px;scrollbar-width:none}
+.tabs .wrap::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;border:2px solid var(--ink);border-radius:20px;padding:4px 12px;background:var(--paper);color:var(--ink);font-family:'Jua';font-size:14px;cursor:pointer;white-space:nowrap}
+.tab.on{background:var(--ink);color:var(--paper2)}
+/* sections */
+section{margin:26px 0}
+.sec-h{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+.sec-h h2{font-size:24px}
+.sec-h .tag{font-family:'Black Han Sans';background:var(--red);color:#fff;padding:2px 10px;border-radius:3px;font-size:13px}
+.sec-h .tag.sp{background:var(--blue)}
+.sec-h .d{color:var(--sub);font-size:14px}
+.saying{display:inline-block;border:2px dashed var(--ink);border-radius:6px;padding:4px 12px;font-family:'Jua';background:var(--paper2);margin-bottom:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px}
+.card{background:var(--paper2);border:3px solid var(--ink);border-radius:6px;box-shadow:5px 5px 0 var(--shadow);overflow:hidden;display:flex;flex-direction:column;text-decoration:none;transition:transform .12s;margin-right:5px}
+.card:hover{transform:translate(-2px,-2px)}
+.card .th{aspect-ratio:16/10;background:var(--soft) center top/cover no-repeat;border-bottom:3px solid var(--ink);position:relative}
+.card .badge{position:absolute;left:10px;top:10px;color:#fff;font-family:'Jua';font-size:13px;padding:2px 10px;border-radius:14px;border:2px solid #161616}
+.card .no{position:absolute;right:10px;top:10px;background:#fff;color:#161616;font-family:'Black Han Sans';font-size:13px;padding:1px 8px;border:2px solid #161616;border-radius:3px}
+.card .bd{padding:12px 14px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h3{font-size:19px}
+.card p{margin:0;font-size:14px;color:var(--sub)}
+.card .act{margin-top:auto;display:flex;gap:6px;padding-top:6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:4px;border:2px solid var(--ink);border-radius:5px;padding:5px 12px;font-family:'Jua';font-size:14px;background:var(--yellow);color:#161616;text-decoration:none;cursor:pointer}
+.btn.ghost{background:var(--paper)}
+.btn.ghost{color:var(--ink)}
+.empty{border:2.5px dashed var(--ink);border-radius:6px;padding:18px;text-align:center;color:var(--sub);background:var(--paper2)}
+.next{margin-top:14px;font-size:14px;border-left:5px solid var(--yellow);padding:6px 12px;background:var(--paper2)}
+/* corners */
+.corners{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.corner{border:2.5px solid var(--ink);border-radius:6px;padding:10px 12px;background:var(--paper2);cursor:pointer;text-align:left;color:var(--ink);font:inherit}
+.corner b{font-family:'Jua';font-size:16px;font-weight:400}
+.corner span{display:block;font-size:12.5px;color:var(--sub)}
+/* past */
+.past{list-style:none;padding:0;margin:0;border-top:2px solid var(--ink)}
+.past li{display:flex;align-items:center;gap:10px;padding:10px 4px;border-bottom:1.5px dashed var(--ink);flex-wrap:wrap}
+.past .pd{font-family:'Black Han Sans';min-width:110px}
+.past .pt{flex:1;min-width:160px}
+/* family + footer */
+.family{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+.family a{border:2.5px solid var(--ink);border-radius:6px;padding:10px 14px;text-decoration:none;background:var(--paper2)}
+.family a b{font-family:'Jua';font-weight:400;font-size:16px}
+.family a span{display:block;font-size:13px;color:var(--sub)}
+footer{border-top:3px solid var(--ink);margin-top:34px;padding:22px 0 10px;background:var(--paper2)}
+footer .cta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;border:3px solid var(--ink);border-radius:6px;padding:14px 16px;background:var(--yellow);color:#161616;box-shadow:5px 5px 0 var(--shadow);margin-right:5px}
+footer .cta h3{font-size:20px}
+footer .info{font-size:13px;color:var(--sub);margin-top:16px;line-height:1.8}
+/* modal */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:flex-end;justify-content:center;z-index:50}
+.modal.on{display:flex}
+.sheet{background:var(--paper2);color:var(--ink);width:100%;max-width:520px;border:3px solid var(--ink);border-radius:14px 14px 0 0;padding:18px 18px 22px;max-height:92vh;overflow:auto}
+@media (min-width:700px){.modal{align-items:center}.sheet{border-radius:10px}}
+.sheet h3{font-size:22px;margin-bottom:4px}
+.sheet label{display:block;font-size:13px;margin:10px 0 3px;font-weight:700}
+.sheet input,.sheet select,.sheet textarea{width:100%;border:2px solid var(--ink);border-radius:5px;padding:8px 10px;font:inherit;background:var(--paper);color:var(--ink)}
+.sheet .agree{display:flex;gap:8px;align-items:flex-start;font-size:12.5px;margin-top:12px}
+.sheet .agree input{width:auto;margin-top:4px}
+.sheet .row{display:flex;gap:8px;margin-top:14px}
+.sheet .row .btn{flex:1;padding:9px}
+/* bottom bar (mobile) */
+.bbar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--paper2);border-top:3px solid var(--ink);display:none;padding-bottom:env(safe-area-inset-bottom)}
+.bbar .in{display:flex;overflow-x:auto;scrollbar-width:none}
+.bbar .in::-webkit-scrollbar{display:none}
+.bbar button{flex:0 0 auto;min-width:68px;border:0;background:none;color:var(--ink);font-family:'Jua';font-size:12px;padding:6px 8px 7px;cursor:pointer;line-height:1.2}
+.bbar button i{display:block;font-style:normal;font-size:19px}
+.bbar button.on{background:var(--yellow);color:#161616}
+.theme{border:2px solid #161616;background:#fff;color:#161616;border-radius:16px;padding:2px 10px;font-family:'Jua';cursor:pointer;font-size:13px;margin-top:6px}
+@media (max-width:640px){
+  .tabs{display:none}
+  .bbar{display:block}
+  .logo{font-size:40px}
+  .logo small{font-size:13.5px}
+  .mascot{width:70px;height:70px;flex-basis:70px}
+  .hero .meta{display:none}
+  .grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="provider">제공 <a href="https://www.zenielinnovation.co.kr" target="_blank" rel="noopener">㈜제니엘이노베이션</a> · 파견 · 도급 · 채용대행 · 고용서비스</div>
+
+<header class="hero"><div class="wrap">
+  <svg class="mascot" viewBox="0 0 80 80" aria-hidden="true"><line x1="40" y1="8" x2="40" y2="18" stroke="#161616" stroke-width="3"/><circle cx="40" cy="7" r="4" fill="#e2403a" stroke="#161616" stroke-width="2"/><rect x="14" y="18" width="52" height="48" rx="12" fill="#ffd23f" stroke="#161616" stroke-width="3"/><rect x="20" y="28" width="40" height="34" rx="8" fill="#fff" stroke="#161616" stroke-width="2"/><path d="M26 41 Q30 36 34 41 M46 41 Q50 36 54 41" stroke="#161616" stroke-width="3" fill="none"/><path d="M30 52 Q40 61 50 52 Z" fill="#161616"/><rect x="8" y="34" width="6" height="14" rx="2" fill="#2f6fd6" stroke="#161616" stroke-width="2"/><rect x="66" y="34" width="6" height="14" rx="2" fill="#2f6fd6" stroke="#161616" stroke-width="2"/></svg>
+  <div class="logo">제니툰<small>보고 이해하는 일터 이야기 · 매주 월요일 발행</small></div>
+  <div class="meta"><b id="heroNo"></b><span id="heroDate"></span><br><button class="theme" onclick="toggleTheme()">☀︎ / ☾</button></div>
+</div></header>
+
+<nav class="tabs" aria-label="코너"><div class="wrap" id="tabs"></div></nav>
+
+<main class="wrap" id="main"></main>
+
+<footer><div class="wrap">
+  <div class="cta">
+    <div><h3>우리 회사 현장도 점검이 필요하신가요?</h3><div style="font-size:14px">채용대행 · 인재파견 · 도급(아웃소싱) · 무료 노무진단 상담</div></div>
+    <button class="btn" style="background:#161616;color:#fff" onclick="openModal()">💬 상담 문의하기</button>
+  </div>
+  <div class="info">
+    ㈜제니엘이노베이션 · 대표전화 02-785-7200 · <a href="mailto:care114@zeniel.co.kr">care114@zeniel.co.kr</a> · <a href="https://www.zenielinnovation.co.kr" target="_blank" rel="noopener">www.zenielinnovation.co.kr</a><br>
+    제니툰의 등장인물은 이해를 돕기 위한 가상의 캐릭터이며, 법률 내용은 발행일 기준 정보입니다. 구체적인 사안은 전문가 상담을 받으시기 바랍니다.<br>
+    © ㈜제니엘이노베이션 · 기사 원문 저작권은 각 언론사에 있습니다.
+  </div>
+</div></footer>
+
+<nav class="bbar" aria-label="코너"><div class="in" id="bbar"></div></nav>
+
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()">
+  <form class="sheet" name="consult" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return sendForm(event)">
+    <input type="hidden" name="form-name" value="consult">
+    <p hidden><label>bot <input name="bot-field"></label></p>
+    <h3>💬 상담 문의하기</h3>
+    <div style="font-size:13px;color:var(--sub)">남겨주시면 담당자가 빠르게 연락드리겠습니다.</div>
+    <label>회사명</label><input name="company" required>
+    <label>성함</label><input name="name" required>
+    <label>연락처</label><input name="phone" type="tel" required placeholder="010-0000-0000">
+    <label>문의 유형</label>
+    <select name="type"><option>채용대행</option><option>인재파견</option><option>도급(아웃소싱)</option><option>무료 노무진단</option><option>기타</option></select>
+    <label>문의 내용</label><textarea name="message" rows="4"></textarea>
+    <input type="hidden" name="from_page" id="fromPage" value="제니툰 목록">
+    <div class="agree"><input type="checkbox" id="agree" required><label for="agree" style="margin:0;font-weight:400">상담 목적의 개인정보(회사명·성함·연락처) 수집·이용에 동의합니다. 보유기간: 상담 완료 후 1년</label></div>
+    <div class="row"><button type="button" class="btn ghost" onclick="closeModal()">닫기</button><button class="btn" type="submit">보내기</button></div>
+  </form>
+</div>
+
+<script src="data.js"></script>
+<script>
+const T=window.TOON, C=T.corners;
+const fmt=d=>{const [y,m,dd]=d.split('-');return `${y}.${m}.${dd}`};
+const label=i=> i.type==='special'?`특별편`:`제${i.no}호`;
+const allEps=T.issues.flatMap(i=>i.episodes.map(e=>({...e,issue:i})));
+
+function card(e){
+  const c=C[e.corner];
+  return `<a class="card" href="${e.page}">
+   <div class="th" style="background-image:url('${e.thumb}')"><span class="badge" style="background:${c.color}">${c.icon} ${c.name}</span><span class="no">${label(e.issue)} · ${e.id}화</span></div>
+   <div class="bd"><h3>${e.title}</h3><p>${e.summary}</p>
+   <div class="act"><span class="btn">웹툰 보기 →</span>${e.pdf?`<span class="btn ghost" onclick="event.preventDefault();location.href='${e.pdf}'">PDF</span>`:''}</div></div></a>`;
+}
+function renderHome(){
+  const cur=T.issues[0];
+  let h=`<section><div class="sec-h"><span class="tag ${cur.type==='special'?'sp':''}">${cur.type==='special'?'수시 특별편':'이번 주 제니툰'}</span><h2>${label(cur)} · ${cur.title}</h2><span class="d">${fmt(cur.date)}</span></div>
+  ${cur.saying?`<div class="saying">💡 이번 주 한마디 — <b>${cur.saying.text}</b> · ${cur.saying.note}</div>`:''}
+  <div class="grid">${cur.episodes.map(e=>card({...e,issue:cur})).join('')}</div>
+  ${cur.next?`<div class="next">📅 <b>다음 호 예고</b> — ${cur.next}</div>`:''}</section>`;
+  h+=`<section><div class="sec-h"><h2>코너 소개</h2><span class="d">7개 코너가 번갈아 연재됩니다</span></div><div class="corners">
+   ${Object.entries(C).map(([k,c])=>{const n=allEps.filter(e=>e.corner===k).length;return `<button class="corner" onclick="go('${k}')" style="border-left:8px solid ${c.color}"><b>${c.icon} ${c.name}</b><span>${desc[k]} · ${n}편</span></button>`}).join('')}</div></section>`;
+  h+=`<section id="past"><div class="sec-h"><h2>지난 호 보기</h2></div><ul class="past">
+   ${T.issues.map(i=>`<li><span class="pd">${label(i)}</span><span class="pt">${i.title}<br><small style="color:var(--sub)">${fmt(i.date)} · ${i.episodes.length}편</small></span><a class="btn ghost" href="${i.episodes[0].page}">보기</a></li>`).join('')}
+  </ul></section>`;
+  h+=`<section><div class="sec-h"><h2>함께 보면 좋은 제니엘 소식</h2></div><div class="family">
+   <a href="https://zeniel-briefing.netlify.app" target="_blank" rel="noopener"><b>📰 오늘의 뉴스브리핑</b><span>매일 아침 주요신문 헤드라인과 경영 시사점</span></a>
+   <a href="https://zeniel-laborletter.netlify.app" target="_blank" rel="noopener"><b>⚖️ 노동법 레터</b><span>주제별 판례 · 행정해석 · 예규 정리</span></a></div></section>`;
+  return h;
+}
+const desc={news:'정책·보도자료를 쉽게',case:'판례 한 건을 4컷으로',qa:'고객사가 자주 묻는 질문',safety:'부문별 현장 안전수칙',support:'정부 고용지원사업 안내',stats:'통계를 그림으로',check:'이번 주 실무 대비 점검표'};
+function renderCorner(k){
+  const c=C[k],list=allEps.filter(e=>e.corner===k);
+  return `<section><div class="sec-h"><span class="tag" style="background:${c.color}">${c.icon} 코너</span><h2>${c.name}</h2><span class="d">${desc[k]}</span></div>
+  ${list.length?`<div class="grid">${list.map(card).join('')}</div>`:`<div class="empty">🛠️ 곧 연재가 시작됩니다. 다음 호를 기대해 주세요!</div>`}</section>`;
+}
+let cur='home';
+function go(k){cur=k;document.getElementById('main').innerHTML= k==='home'?renderHome():renderCorner(k);paintTabs();window.scrollTo({top:0});try{history.replaceState(null,'',k==='home'?'#':'#'+k)}catch(e){}}
+function paintTabs(){
+  const items=[['home','🏠','홈'],...Object.entries(C).map(([k,c])=>[k,c.icon,c.name])];
+  document.getElementById('tabs').innerHTML=items.map(([k,i,n])=>`<button class="tab ${cur===k?'on':''}" onclick="go('${k}')">${i} ${n}</button>`).join('');
+  document.getElementById('bbar').innerHTML=items.map(([k,i,n])=>`<button class="${cur===k?'on':''}" onclick="go('${k}')"><i>${i}</i>${n.replace('숫자로 보는 노동시장','노동시장 숫자').replace('인사담당자 체크리스트','체크리스트')}</button>`).join('');
+}
+document.getElementById('heroNo').textContent=label(T.issues[0]);
+document.getElementById('heroDate').textContent=fmt(T.issues[0].date)+' 발행';
+go((location.hash||'#home').slice(1) in C ? location.hash.slice(1):'home');
+
+function openModal(){document.getElementById('modal').classList.add('on')}
+function closeModal(){document.getElementById('modal').classList.remove('on')}
+function sendForm(ev){
+  ev.preventDefault();const f=ev.target;
+  fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()})
+   .then(()=>{alert('문의가 접수되었습니다. 곧 연락드리겠습니다.');f.reset();closeModal()})
+   .catch(()=>{location.href='mailto:care114@zeniel.co.kr?subject='+encodeURIComponent('[제니툰] 상담 문의')});
+  return false;
+}
+function toggleTheme(){const r=document.documentElement;const d=r.dataset.theme?r.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;r.dataset.theme=d?'light':'dark';try{localStorage.setItem('zt-theme',r.dataset.theme)}catch(e){}}
+try{const t=localStorage.getItem('zt-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}
+if(/consult=1/.test(location.search)){const p=new URLSearchParams(location.search).get('from');if(p)document.getElementById('fromPage').value=p;openModal()}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(()=>{})}
+</script>
+</body>
+</html>

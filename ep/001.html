@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>새내기 감독관, 감독학교 가다 | 제니툰</title>
+<meta property="og:title" content="제니툰 · 새내기 감독관, 감독학교 가다">
+<meta property="og:image" content="../thumbs/001.png">
+<link rel="icon" href="../icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fbf6ea; --paper2:#fffdf7; --ink:#161616; --sub:#4a4a4a;
+  --red:#e2403a; --blue:#2f6fd6; --yellow:#ffd23f; --green:#2e9e6a; --soft:#f1e7cf;
+  --shadow:#161616;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#1d1b17; --paper2:#262420; --ink:#f2ede1; --sub:#c9c2b2;
+    --soft:#34302a; --shadow:#000;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#1d1b17; --paper2:#262420; --ink:#f2ede1; --sub:#c9c2b2;
+  --soft:#34302a; --shadow:#000;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Gowun Dodum',sans-serif;line-height:1.6;font-size:15px}
+.wrap{max-width:760px;margin:0 auto;padding:18px 16px 40px}
+h1,h2,h3{font-family:'Black Han Sans',sans-serif;font-weight:400;margin:0;letter-spacing:.5px;line-height:1.25}
+.ep{background:var(--paper2);border:3px solid var(--ink);box-shadow:6px 6px 0 var(--shadow);margin:0 6px 30px 0;padding:20px 18px 22px;border-radius:6px}
+.eptag{display:inline-block;background:var(--ink);color:var(--paper2);font-family:'Black Han Sans';padding:3px 12px;border-radius:3px;font-size:14px;letter-spacing:1px}
+.ep h2{font-size:26px;margin:8px 0 2px}
+.ep .subt{color:var(--sub);margin:0 0 14px;font-size:14px}
+/* cover */
+.cover{background:var(--yellow);color:#161616;text-align:center;position:relative;overflow:hidden}
+.cover .burst{position:absolute;inset:-40%;background:repeating-conic-gradient(from 0deg,rgba(255,255,255,.35) 0 8deg,transparent 8deg 16deg);z-index:0}
+.cover>*{position:relative;z-index:1}
+.cover h1{font-size:38px;margin:10px 0 6px;text-shadow:3px 3px 0 #fff}
+.cover .kick{font-family:'Jua';font-size:17px}
+.cover .by{font-size:13px;margin-top:10px}
+.cover .cast{display:flex;justify-content:center;gap:6px;margin:14px 0 6px;flex-wrap:wrap}
+.cover .cast svg{width:78px;height:78px;background:#fff;border:3px solid #161616;border-radius:50%}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.num{background:#fff;border:2.5px solid #161616;border-radius:6px;padding:8px 4px}
+.num b{display:block;font-family:'Black Han Sans';font-size:26px;color:var(--red);line-height:1.1}
+.num span{font-size:12px}
+/* panels */
+.g4{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.panel{border:2.5px solid var(--ink);background:var(--paper);border-radius:4px;padding:10px;position:relative;min-width:0}
+.panel.wide{grid-column:1/-1}
+.panel .cap{font-family:'Black Han Sans';font-size:13px;background:var(--yellow);color:#161616;display:inline-block;padding:1px 8px;border:2px solid var(--ink);margin-bottom:6px}
+.panel .fx{position:absolute;right:8px;top:4px;font-family:'Black Han Sans';color:var(--red);font-size:20px;transform:rotate(8deg)}
+/* scene */
+.scene{display:flex;align-items:flex-start;gap:8px;margin:8px 0}
+.scene.rev{flex-direction:row-reverse}
+.who{flex:0 0 64px;text-align:center;font-size:11px;color:var(--sub)}
+.who svg{width:62px;height:62px;border:2.5px solid var(--ink);border-radius:50%;background:#fff;display:block;margin:0 auto 2px}
+.bub{position:relative;background:#fff;color:#161616;border:2.5px solid var(--ink);border-radius:16px;padding:8px 12px;font-family:'Jua';font-size:15px;line-height:1.45;flex:1;min-width:0}
+.bub:before{content:"";position:absolute;left:-11px;top:16px;border:9px solid transparent;border-right-color:var(--ink);border-left:0}
+.bub:after{content:"";position:absolute;left:-7px;top:18px;border:7px solid transparent;border-right-color:#fff;border-left:0}
+.rev .bub:before{left:auto;right:-11px;border-right-color:transparent;border-left:9px solid var(--ink);border-right:0}
+.rev .bub:after{left:auto;right:-7px;border-right-color:transparent;border-left:7px solid #fff;border-right:0}
+.bub.shout{border-radius:4px;background:var(--yellow);font-size:16px}
+.bub.shout:after{border-right-color:var(--yellow)}
+.rev .bub.shout:after{border-left-color:var(--yellow)}
+.bub small{display:block;color:#666;font-family:'Gowun Dodum';font-size:11px;margin-top:2px}
+/* boxes */
+.box{border:2.5px dashed var(--ink);border-radius:6px;padding:10px 14px;margin:12px 0;background:var(--paper)}
+.box h3{font-size:17px;margin-bottom:6px}
+.box ul,.box ol{margin:0;padding-left:20px}
+.box li{margin:3px 0}
+.box.red{border-style:solid;border-color:var(--red)}
+.box.blue{border-style:solid;border-color:var(--blue)}
+.law{background:var(--soft);border-left:6px solid var(--blue);padding:10px 14px;font-size:14px;margin:12px 0;border-radius:0 6px 6px 0}
+.law b{color:var(--blue)}
+mark{background:var(--yellow);color:#161616;padding:0 3px}
+/* bars */
+.bars{margin:6px 0 4px}
+.bar{display:grid;grid-template-columns:110px 1fr 54px;align-items:center;gap:8px;margin:7px 0;font-size:14px}
+.bar .tr{height:20px;border:2px solid var(--ink);border-radius:3px;background:var(--paper)}
+.bar .fl{height:100%;background:var(--blue)}
+.bar .fl.r{background:var(--red)}.bar .fl.y{background:var(--yellow)}.bar .fl.g{background:var(--green)}
+.bar b{font-family:'Black Han Sans';font-weight:400;text-align:right}
+/* timeline */
+.tl{list-style:none;margin:6px 0;padding:0 0 0 22px;border-left:4px solid var(--ink)}
+.tl li{position:relative;margin:0 0 12px;padding-left:6px}
+.tl li:before{content:"";position:absolute;left:-33px;top:4px;width:16px;height:16px;background:var(--yellow);border:3px solid var(--ink);border-radius:50%}
+.tl li.now:before{background:var(--red)}
+.tl .d{font-family:'Black Han Sans';font-size:14px;color:var(--red)}
+/* flow */
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;align-items:stretch;margin:8px 0}
+.flow div{border:2.5px solid var(--ink);border-radius:5px;padding:8px 4px;text-align:center;font-size:13px;background:var(--paper);font-family:'Jua';display:flex;align-items:center;justify-content:center;min-width:0}
+.flow div.k{background:var(--yellow);color:#161616}
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.chip{border:2px solid var(--ink);border-radius:20px;padding:2px 10px;font-size:13px;background:var(--paper)}
+.chip.hl{background:var(--red);color:#fff;border-color:var(--red)}
+/* number cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.card{border:2.5px solid var(--ink);border-radius:6px;padding:10px;text-align:center;background:var(--paper)}
+.card b{font-family:'Black Han Sans';font-size:30px;font-weight:400;display:block;color:var(--blue);line-height:1.1}
+.card span{font-size:13px}
+/* checklist */
+.chk{list-style:none;padding:0;margin:6px 0}
+.chk li{border:2px solid var(--ink);border-radius:5px;padding:8px 10px 8px 40px;margin:7px 0;position:relative;background:var(--paper);font-size:14px}
+.chk li:before{content:"";position:absolute;left:10px;top:9px;width:18px;height:18px;border:2.5px solid var(--ink);border-radius:3px;background:#fff}
+.chk li b{color:var(--red)}
+.tagline{font-size:12px;color:var(--sub)}
+.quote{text-align:center;font-family:'Jua';font-size:19px;margin:14px 0 4px}
+.src{font-size:12px;color:var(--sub);border-top:2px dashed var(--ink);margin-top:14px;padding-top:8px}
+.theme-btn{position:fixed;right:12px;bottom:12px;z-index:9;border:2.5px solid var(--ink);background:var(--paper2);color:var(--ink);font-family:'Jua';border-radius:20px;padding:4px 12px;cursor:pointer}
+@media (max-width:540px){
+  .g4{grid-template-columns:1fr}
+  .cover h1{font-size:30px}
+  .ep h2{font-size:22px}
+  .nums,.cards{grid-template-columns:repeat(2,1fr)}
+  .flow{grid-template-columns:1fr}
+  .flow div{padding:6px}
+  .bar{grid-template-columns:86px 1fr 46px;font-size:13px}
+  .cover .cast svg{width:60px;height:60px}
+}
+@media print{.theme-btn{display:none}}
+</style>
+<style>
+.zt-nav{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:10px;justify-content:space-between;background:var(--paper2);border-bottom:3px solid var(--ink);padding:8px 14px;font-family:'Jua',sans-serif;font-size:14px}
+.zt-nav a{color:var(--ink);text-decoration:none;border:2px solid var(--ink);border-radius:16px;padding:1px 10px;background:var(--paper)}
+.zt-nav span{flex:1;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.zt-end{padding-top:0}
+.zt-cta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;background:#ffd23f;color:#161616;border:3px solid var(--ink);border-radius:6px;padding:14px 16px;box-shadow:5px 5px 0 var(--shadow);margin-right:6px}
+.zt-cta b{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:19px}
+.zt-cta span{font-size:13.5px}
+.zt-btn{background:#161616;color:#fff;text-decoration:none;font-family:'Jua',sans-serif;border-radius:5px;padding:7px 14px}
+.zt-links{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 50px}
+.zt-links a{color:var(--ink);text-decoration:none;border:2px solid var(--ink);border-radius:5px;padding:4px 12px;font-family:'Jua',sans-serif;background:var(--paper2)}
+@media print{.zt-nav,.zt-end{display:none}}
+</style>
+</head>
+<body>
+<div style="background:#161616;color:#fffdf7;font-size:12.5px;text-align:center;padding:6px 10px;font-family:'Gowun Dodum',sans-serif">제공 <a href="https://www.zenielinnovation.co.kr" target="_blank" rel="noopener" style="color:#ffd23f;font-weight:700;text-decoration:none">㈜제니엘이노베이션</a></div>
+<nav class="zt-nav"><a href="../index.html">← 제니툰</a><span>📰 노동뉴스 툰 · 제1호 001화</span><a href="001.pdf" class="zt-pdf">PDF</a></nav>
+<button class="theme-btn" onclick="toggleTheme()">☀︎ / ☾</button>
+<div class="wrap" id="app"></div>
+<div class="wrap zt-end"><div class="zt-cta"><div><b>우리 회사 현장도 점검이 필요하신가요?</b><br><span>30명 미만 사업장 감독 대비 · 무료 노무진단 · 파견·도급·채용대행 상담</span></div>
+<a class="zt-btn" href="../index.html?consult=1&from=001%ED%99%94">💬 상담 문의하기</a></div>
+<div class="zt-links"><a href="../index.html">🏠 제니툰 목록</a><a href="001.pdf">📄 PDF 저장</a><a href="../index.html#news">📰 노동뉴스 툰 더보기</a></div></div>
+
+<script>
+/* ---------- 오리지널 캐릭터 SVG ---------- */
+const CH={
+  rookie:{name:'새내기 감독관',skin:'#f7d2b0',hair:'#2a2a2a',style:'short',acc:'badge',shirt:'#2f6fd6'},
+  vet:{name:'숙련 감독관',skin:'#efc8a4',hair:'#9a9a9a',style:'side',acc:'glasses',shirt:'#4b5563'},
+  local:{name:'지방정부 담당관',skin:'#f3cfab',hair:'#6b3f1f',style:'bob',acc:'lanyard',shirt:'#2e9e6a'},
+  boss:{name:'소규모 사업장 사장님',skin:'#e9bf98',hair:'#3b3b3b',style:'bald',acc:'apron',shirt:'#e2403a'},
+  hr:{name:'인사담당자',skin:'#f6d3b3',hair:'#40261a',style:'long',acc:'none',shirt:'#8b5cf6'},
+  chief:{name:'노동정책실장',skin:'#f1cba7',hair:'#222',style:'neat',acc:'tie',shirt:'#1f2937'},
+  bot:{name:'안내로봇 체키',bot:true}
+};
+function face(k,mood='calm'){
+  const c=CH[k];
+  if(c.bot){
+    const eye= mood==='shock'?'<circle cx="30" cy="40" r="6" fill="#161616"/><circle cx="50" cy="40" r="6" fill="#161616"/>'
+      :'<rect x="24" y="36" width="12" height="8" rx="3" fill="#161616"/><rect x="44" y="36" width="12" height="8" rx="3" fill="#161616"/>';
+    const m= mood==='shock'?'<ellipse cx="40" cy="56" rx="5" ry="6" fill="#161616"/>':'<path d="M30 54 Q40 62 50 54" stroke="#161616" stroke-width="3" fill="none"/>';
+    return `<svg viewBox="0 0 80 80"><line x1="40" y1="8" x2="40" y2="18" stroke="#161616" stroke-width="3"/><circle cx="40" cy="7" r="4" fill="#e2403a" stroke="#161616" stroke-width="2"/><rect x="14" y="18" width="52" height="48" rx="12" fill="#ffd23f" stroke="#161616" stroke-width="3"/><rect x="20" y="28" width="40" height="34" rx="8" fill="#fff" stroke="#161616" stroke-width="2"/>${eye}${m}<rect x="8" y="34" width="6" height="14" rx="2" fill="#2f6fd6" stroke="#161616" stroke-width="2"/><rect x="66" y="34" width="6" height="14" rx="2" fill="#2f6fd6" stroke="#161616" stroke-width="2"/></svg>`;
+  }
+  const S='#161616';
+  let hair='';
+  switch(c.style){
+    case 'short': hair=`<path d="M18 38 Q18 14 40 14 Q62 14 62 38 Q58 24 40 24 Q26 24 18 38Z" fill="${c.hair}"/>`;break;
+    case 'side': hair=`<path d="M18 38 Q16 16 40 15 Q64 16 62 36 Q52 22 30 26 Q22 28 18 38Z" fill="${c.hair}"/>`;break;
+    case 'bob': hair=`<path d="M15 50 Q12 14 40 13 Q68 14 65 50 L58 50 Q60 26 40 24 Q20 26 22 50Z" fill="${c.hair}"/>`;break;
+    case 'bald': hair=`<path d="M19 36 Q20 30 24 30 L24 40 Z M61 36 Q60 30 56 30 L56 40Z" fill="${c.hair}"/>`;break;
+    case 'long': hair=`<path d="M14 66 Q10 14 40 13 Q70 14 66 66 L58 66 Q62 28 40 24 Q18 28 22 66Z" fill="${c.hair}"/>`;break;
+    case 'neat': hair=`<path d="M18 36 Q18 14 40 14 Q62 14 62 36 Q60 22 46 21 L44 26 Q30 22 18 36Z" fill="${c.hair}"/>`;break;
+  }
+  let brows='',eyes='',mouth='',extra='';
+  const ey=40;
+  if(mood==='angry'){brows=`<path d="M26 31 L36 35 M54 31 L44 35" stroke="${S}" stroke-width="3"/>`;}
+  else if(mood==='sad'){brows=`<path d="M26 34 L35 31 M54 34 L45 31" stroke="${S}" stroke-width="2.5"/>`;}
+  else if(mood==='shock'){brows=`<path d="M26 29 Q31 26 36 29 M44 29 Q49 26 54 29" stroke="${S}" stroke-width="2.5" fill="none"/>`;}
+  else {brows=`<path d="M27 32 Q31 30 35 32 M45 32 Q49 30 53 32" stroke="${S}" stroke-width="2.5" fill="none"/>`;}
+  if(mood==='shock'){eyes=`<circle cx="31" cy="${ey}" r="4.5" fill="#fff" stroke="${S}" stroke-width="2"/><circle cx="31" cy="${ey}" r="2" fill="${S}"/><circle cx="49" cy="${ey}" r="4.5" fill="#fff" stroke="${S}" stroke-width="2"/><circle cx="49" cy="${ey}" r="2" fill="${S}"/>`;mouth=`<ellipse cx="40" cy="56" rx="5" ry="6" fill="${S}"/>`;}
+  else if(mood==='happy'){eyes=`<path d="M27 41 Q31 36 35 41 M45 41 Q49 36 53 41" stroke="${S}" stroke-width="3" fill="none"/>`;mouth=`<path d="M30 52 Q40 63 50 52 Z" fill="${S}"/>`;}
+  else {eyes=`<circle cx="31" cy="${ey}" r="3" fill="${S}"/><circle cx="49" cy="${ey}" r="3" fill="${S}"/>`;
+    mouth= mood==='sad'?`<path d="M32 57 Q40 51 48 57" stroke="${S}" stroke-width="3" fill="none"/>`: mood==='angry'?`<path d="M32 56 L48 56" stroke="${S}" stroke-width="3"/>`:`<path d="M32 53 Q40 60 48 53" stroke="${S}" stroke-width="3" fill="none"/>`;}
+  if(c.acc==='glasses') extra+=`<circle cx="31" cy="${ey}" r="7" fill="none" stroke="${S}" stroke-width="2.2"/><circle cx="49" cy="${ey}" r="7" fill="none" stroke="${S}" stroke-width="2.2"/><path d="M38 ${ey} L42 ${ey}" stroke="${S}" stroke-width="2"/><path d="M33 49 Q40 46 47 49" stroke="#9a9a9a" stroke-width="3" fill="none"/>`;
+  let body=`<path d="M10 80 Q12 64 40 64 Q68 64 70 80Z" fill="${c.shirt}" stroke="${S}" stroke-width="2.5"/>`;
+  if(c.acc==='badge') body+=`<path d="M52 69 l5 0 l2 4 l-4.5 3 l-4.5 -3Z" fill="#ffd23f" stroke="${S}" stroke-width="1.5"/>`;
+  if(c.acc==='lanyard') body+=`<path d="M30 64 L40 76 L50 64" stroke="#ffd23f" stroke-width="3" fill="none"/><rect x="36" y="74" width="8" height="6" fill="#fff" stroke="${S}" stroke-width="1.5"/>`;
+  if(c.acc==='apron') body+=`<rect x="28" y="68" width="24" height="12" fill="#fff" stroke="${S}" stroke-width="2"/>`;
+  if(c.acc==='tie') body+=`<path d="M37 64 L43 64 L41.5 69 L44 78 L40 80 L36 78 L38.5 69Z" fill="#e2403a" stroke="${S}" stroke-width="1.5"/>`;
+  return `<svg viewBox="0 0 80 80">${body}<ellipse cx="40" cy="42" rx="22" ry="24" fill="${c.skin}" stroke="${S}" stroke-width="2.5"/>${hair}<circle cx="24" cy="50" r="3.5" fill="#f59e9e" opacity=".6"/><circle cx="56" cy="50" r="3.5" fill="#f59e9e" opacity=".6"/>${brows}${eyes}${mouth}${extra}</svg>`;
+}
+/* ---------- 컴포넌트 ---------- */
+function S(k,mood,name,text,o={}){
+  return `<div class="scene ${o.rev?'rev':''}"><div class="who">${face(k,mood)}${name||CH[k].name}</div><div class="bub ${o.shout?'shout':''}">${text}${o.note?`<small>${o.note}</small>`:''}</div></div>`;
+}
+function P(cap,body,o={}){return `<div class="panel ${o.wide?'wide':''}">${cap?`<div class="cap">${cap}</div>`:''}${o.fx?`<div class="fx">${o.fx}</div>`:''}${body}</div>`;}
+function WHO(list){return `<div class="chips">${list.map(([n,h])=>`<span class="chip ${h?'hl':''}">${n}</span>`).join('')}</div>`;}
+function bars(rows,max){return `<div class="bars">${rows.map(([l,v,u,c])=>`<div class="bar"><span>${l}</span><div class="tr"><div class="fl ${c||''}" style="width:${Math.max(4,v/max*100)}%"></div></div><b>${v}${u}</b></div>`).join('')}</div>`;}
+function EP(tag,title,sub,body,cls=''){return `<section class="ep ${cls}"><span class="eptag">${tag}</span><h2>${title}</h2>${sub?`<p class="subt">${sub}</p>`:''}${body}</section>`;}
+
+/* ---------- 본문 ---------- */
+let H='';
+
+/* 표지 */
+H+=`<section class="ep cover"><div class="burst"></div>
+<div class="kick">고용노동부 보도 내용을 만화로 쉽게!</div>
+<h1>새내기 감독관,<br>감독학교 가다</h1>
+<div class="kick">숙련 감독관 노하우 → 36개 점검항목 표준화 · 9개 업종 모의 감독 실습</div>
+<div class="cast">${face('rookie','happy')}${face('vet','calm')}${face('local','calm')}${face('bot','calm')}</div>
+<div class="nums">
+ <div class="num"><b>36</b><span>표준 점검항목</span></div>
+ <div class="num"><b>9</b><span>실습 업종</span></div>
+ <div class="num"><b>8주</b><span>이론 2주+실습 6주</span></div>
+ <div class="num"><b>27명</b><span>8개 지방정부 참여</span></div>
+ <div class="num"><b>5곳</b><span>시행 초기 감독 착수</span></div>
+ <div class="num"><b>12.8</b><span>지방감독 시행</span></div>
+</div>
+<div class="by">작성 · ㈜제니엘이노베이션 &nbsp;|&nbsp; 2026.10.26</div>
+</section>`;
+
+/* EP.0 */
+H+=EP('EP.0','한눈에 보는 감독학교','무엇이, 언제, 얼마나 바뀌나',
+`${S('bot','calm','','안녕하세요, 안내로봇 <b>체키</b>예요! 12월 8일부터 <mark>시·도에도 노동감독관</mark>이 생겨요. 그런데 이분들, <b>전원 신규</b>래요!')}
+${S('rookie','shock','','저… 감독은 처음인데요? 임금대장이랑 출퇴근기록부터 막막해요!',{rev:true})}
+<div class="box"><h3>📊 교육 구성과 참여 규모</h3>
+${bars([['이론 교육',2,'주',''],['모의 감독 실습',6,'주','r']],6)}
+${bars([['8월 사전 수료',10,'명','y'],['이번 감독학교',27,'명','g']],27)}
+<p class="tagline">※ 8월 노동감독관 교육 때 지방정부 예비 감독관 10명이 이미 수료</p></div>
+<div class="box"><h3>🗓️ 주요 일정</h3>
+<ul class="tl">
+ <li><span class="d">2026. 8월</span><br>지방정부 예비 감독관 10명, 노동감독관 교육 수료</li>
+ <li class="now"><span class="d">10. 26(월)</span><br>‘감독학교’ 개강 — 8개 지방정부 27명</li>
+ <li><span class="d">10~11월</span><br>5개 지방정부 위임사무 수행능력 사전점검(진단표 → 현장실사 → 보완)</li>
+ <li><span class="d">11월 중</span><br>전국·지역 노동감독협의회 협의 → 위임 사업장 선정</li>
+ <li><span class="d">12. 8</span><br>「노동감독관 직무집행법」 시행, 지방감독 시작</li>
+ <li><span class="d">’26.12 ~ ’27.1</span><br>경기·제주 등 5개 지방정부 감독 착수</li>
+</ul></div>`);
+
+/* EP.1 */
+H+=EP('EP.1','베테랑의 감(感)을 매뉴얼로!','「지방노동감독관 사업장 감독 표준 매뉴얼」 신규 개발',
+`<div class="g4">
+${P('① 고민',S('vet','calm','','신규 감독관들이 우리처럼 <b>여러 자료를 대조</b>하고 판단하려면 몇 년은 걸릴 텐데…'),{})}
+${P('② 해법',S('chief','calm','','숙련 감독관의 판단 과정을 <b>절차와 기준으로 정리</b>해 매뉴얼로 만들었습니다.',{note:'(요지)'}),{fx:'번뜩!'})}
+${P('③ 매뉴얼 구성',`${S('bot','happy','','<mark>36개 점검항목</mark>마다<br>✔ 확인할 자료<br>✔ 판단 절차·기준<br>✔ 후속조치<br>가 정리돼 있어요!')}`)}
+${P('④ 심층검토',S('rookie','shock','','임금 계산, <b>상시근로자 수 산정</b>처럼 복잡한 건 ‘심층검토’로 따로 묶고 판단 사례까지 있네요!',{rev:true}),{fx:'오호!'})}
+</div>
+<div class="box blue"><h3>🔎 핵심 쟁점</h3>
+<ul>
+<li>지방노동감독관은 <b>전원 신규자</b> → 경험 부족을 <b>표준화된 판단 절차</b>로 보완</li>
+<li>‘심층검토’ 대상: <b>임금</b>, <b>상시근로자 수 산정</b> 등 복합 판단 사항</li>
+<li>상시근로자 수는 <mark>지방 감독 위임 대상(30명 미만)</mark>을 가르는 기준이기도 함</li>
+</ul></div>`);
+
+/* EP.2 */
+H+=EP('EP.2','8주 감독학교, 실전처럼!','이론 2주 → 9개 업종 모의 사업장 실습 6주 → 수료 평가',
+`<div class="g4">
+${P('1~2주차 · 이론',S('rookie','calm','','법령과 감독 절차를 먼저 익히고…'))}
+${P('3~8주차 · 모의 사업장',S('bot','calm','','음식점·제조업·숙박업 등 <b>9개 업종</b> 모의 사업장에서 실습해요!'),{fx:'출동!'})}
+${P('대조 실습',S('vet','angry','','임금대장과 출퇴근 기록, <b>숫자가 서로 맞나?</b> 하나하나 대조해 봐요!'))}
+${P('산업안전 체험',S('rookie','shock','','기계·설비, 전기, <b>밀폐공간</b>… 위험 요인을 직접 체험해 보니 실감 나요!',{rev:true}))}
+</div>
+<div class="box"><h3>🔁 반복 실습하는 감독 全 과정</h3>
+<div class="flow"><div>자료 대조<br>(임금대장·<br>출퇴근 기록)</div><div>위반 여부<br>판단</div><div>점검표<br>작성</div><div>시정지시</div><div class="k">수사·송치</div></div></div>
+${S('chief','calm','','교육 후 <mark>수료 평가를 통과한 사람에게만</mark> 감독관 자격을 부여합니다.',{note:'(요지) 충분한 실무 역량을 갖춘 감독관만 현장 배치'})}
+<div class="box red"><h3>📌 포인트</h3><ul>
+<li>‘배우고 끝’이 아니라 <b>수료 평가 통과 = 자격 부여</b></li>
+<li>근로조건 감독 + 산업안전보건 점검을 <b>함께</b> 할 수 있도록 훈련</li>
+</ul></div>`);
+
+/* EP.3 */
+H+=EP('EP.3','지방정부도 ‘시험’ 본다','위임 전 수행능력 사전점검',
+`${S('local','calm','','우리 시·도도 감독 권한을 받으려면 <b>조직·인력·교육</b>이 갖춰졌는지 먼저 점검받아야 해요.')}
+${S('vet','calm','','법에 위임 전 점검이 <b>의무</b>로 정해져 있거든요.',{rev:true})}
+<div class="law"><b>「노동감독관 직무집행법」 제28조제1항</b> (2026.4.7 공포 · 2026.12.8 시행)<br>
+고용노동부장관의 권한 중 협의체에서 사전 협의된 사항으로서 <mark>상시근로자 30명 미만</mark> 사업 또는 사업장의 감독은 대통령령에 따라 그 일부를 시·도지사에게 위임할 수 있다. 이 경우 장관은 <b>위임 전에 수임기관의 위임사무 수행능력을 점검하여야 한다.</b>
+<div class="tagline">※ 원문을 요약·발췌한 것으로, 전체 조문은 국가법령정보센터 참조</div></div>
+<div class="box"><h3>🧭 사전점검 → 감독 착수 흐름</h3>
+<div class="flow"><div>지방정부<br>진단표 제출</div><div>현장실사</div><div>미비점<br>보완</div><div>11월 노동감독<br>협의회 협의</div><div class="k">위임 사업장<br>선정·착수</div></div></div>
+${WHO([['시행 초기 착수 5곳',true],['경기',false],['제주',false],['외 3개 지방정부',false],['감독학교 참여 8곳 · 27명',false]])}`);
+
+/* 하이라이트 C : 숫자 카드 */
+H+=EP('NUMBERS','한눈에 보는 숫자','기사 속 핵심 수치 6',
+`<div class="cards">
+<div class="card"><b>36</b><span>표준 매뉴얼 점검항목</span></div>
+<div class="card"><b>9</b><span>모의 사업장 업종</span></div>
+<div class="card"><b>2+6</b><span>이론·실습(주)</span></div>
+<div class="card"><b>8·27</b><span>참여 지방정부·인원</span></div>
+<div class="card"><b>5</b><span>’26.12~’27.1 착수 지방정부</span></div>
+<div class="card"><b>30↓</b><span>위임 대상 상시근로자 수(명 미만)</span></div>
+</div>`);
+
+/* 현장 체크리스트 */
+H+=EP('CHECK','우리 현장, 지금 점검할 것','소규모 사업장·고객사 현장 대비 체크리스트 (작성자 제안)',
+`${S('boss','shock','','우리 가게는 직원 20명인데… 이제 <b>시·도 감독관</b>이 올 수도 있다는 거죠?')}
+${S('hr','calm','','맞아요. 감독관이 실제로 대조하는 자료부터 미리 맞춰 두면 돼요!',{rev:true})}
+<ul class="chk">
+<li><b>임금대장 ↔ 출퇴근 기록</b> 일치 여부 (연장·야간·휴일근로 수당 반영)</li>
+<li><b>상시근로자 수</b> 산정 근거 정리 (단시간·일용 포함 여부 확인)</li>
+<li>근로계약서 서면 교부·임금명세서 교부 기록 보관</li>
+<li>최저임금·주휴수당 등 <b>임금 항목별 계산</b> 재점검</li>
+<li>기계·설비, 전기, <b>밀폐공간</b> 작업 등 유해·위험 요인 점검</li>
+<li>시정지시를 받으면 <b>기한 내 이행·증빙</b> (미이행 시 수사·송치 단계로 이어질 수 있음)</li>
+</ul>
+<p class="tagline">※ 위 체크리스트는 기사에 소개된 감독 절차를 바탕으로 ㈜제니엘이노베이션이 정리한 실무 제안입니다.</p>`);
+
+/* 흐름 정리 */
+H+=EP('SUMMARY','흐름 정리','문제 → 실행 → 다음 단계',
+`<div class="g4">
+${P('😟 문제',`<ul style="margin:0;padding-left:18px"><li>지방노동감독관 <b>전원 신규</b></li><li>지방정부 감독 <b>첫 시행</b></li></ul>`)}
+${P('🛠️ 실행',`<ul style="margin:0;padding-left:18px"><li>36개 항목 <b>표준 매뉴얼</b></li><li>8주 <b>감독학교</b> + 수료 평가</li><li>지방정부 <b>사전점검</b></li></ul>`)}
+${P('➡️ 다음 단계',`<ul style="margin:0;padding-left:18px"><li>11월 위임 사업장 선정</li><li><b>12.8</b> 지방감독 시행</li><li>5개 지방정부 착수</li></ul>`,{wide:true})}
+</div>
+${S('chief','happy','','지방감독이 <b>안정적으로 안착</b>하도록 개인 역량과 지방정부 준비 상황을 모두 점검하겠습니다.',{note:'(요지)'})}`);
+
+/* 에필로그 */
+H+=EP('EPILOGUE','다음 숙제','',
+`${S('bot','happy','','소규모 사업장도 이제 <b>더 가까운 곳에서</b> 감독을 받게 돼요. 미리 준비하면 걱정 없어요!')}
+${S('rookie','happy','','저도 수료 평가 꼭 통과해서, 현장에서 정확하게 판단하는 감독관이 될게요!',{rev:true})}
+<div class="box"><h3>📝 앞으로 지켜볼 것</h3><ul>
+<li>11월 노동감독협의회의 <b>위임 사업장 선정 기준</b></li>
+<li>시행령으로 정해질 <b>위임 범위의 세부 내용</b></li>
+<li>5개 착수 지방정부 외 지역의 <b>추가 착수 일정</b></li>
+</ul></div>
+<p class="quote">“백 번 듣는 것이 한 번 보는 것만 못하다” — 백문이 불여일견</p>
+<p style="text-align:center;margin:0">끝까지 읽어 주셔서 감사합니다 🙏</p>
+<div class="src">작성 · ㈜제니엘이노베이션<br>
+자료 출처 · 시사일보 「고용노동부, 신규 지방노동감독관 ‘감독학교’에서 베테랑의 노하우 배운다」(2026.10.25) 공개 기사를 바탕으로 정리 · 「노동감독관 직무집행법」 제28조(법제처 국가법령정보센터, 시행예정 조문)<br>
+※ 등장인물은 이해를 돕기 위한 가상의 캐릭터이며, 말풍선 중 ‘(요지)’ 표시는 기사 내용을 요약한 것입니다.</div>`);
+
+document.getElementById('app').innerHTML=H;
+
+function toggleTheme(){
+  const r=document.documentElement;
+  const dark = r.dataset.theme ? r.dataset.theme==='dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  r.dataset.theme = dark?'light':'dark';
+}
+</script>
+</body>
+</html>
