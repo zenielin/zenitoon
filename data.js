@@ -11,6 +11,26 @@ window.TOON = {
   },
   issues: [
     {
+      no: 2,
+      type: 'special',
+      date: '2026-10-26',
+      title: '새우가 고래를 삼킨 뒤 — 크라운·해태 20년',
+      saying: { text: '과유불급(過猶不及)', note: '지나침은 미치지 못함과 같다' },
+      next: '판례 4컷 「도급과 파견의 경계」 · 현장 안전툰 「물류센터 지게차」',
+      episodes: [
+        {
+          id: '002',
+          corner: 'news',
+          title: '새우가 고래를 삼킨 뒤',
+          summary: '업계 4위가 차입매수(LBO)로 2위를 인수한 뒤 이자 부담·조직 통합 진통·과잉 증설로 20년간 매출 1조 원 안팎에 머문 사례. 인수·증설 전 점검 체크리스트 수록.',
+          page: 'ep/002.html',
+          pdf: 'ep/002.pdf',
+          thumb: 'thumbs/002.png',
+          source: '유튜브 경제꽈배기 영상 재구성 · MTN 2026.9.16 · 머니투데이 2007.9.17'
+        }
+      ]
+    },
+    {
       no: 1,
       type: 'weekly',            /* weekly = 주간호, special = 수시 특별편 */
       date: '2026-10-26',
