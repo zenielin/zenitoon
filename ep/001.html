@@ -6,7 +6,12 @@
 <title>새내기 감독관, 감독학교 가다 | 제니툰</title>
 <meta property="og:title" content="제니툰 · 새내기 감독관, 감독학교 가다">
 <meta property="og:image" content="../thumbs/001.png">
-<link rel="icon" href="../icon-192.png">
+<link rel="icon" href="../favicon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#ffd23f">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="제니툰">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
 <style>
@@ -354,6 +359,7 @@ async function ztPaint(){const F=window.ZT_FIRE;if(!F||!F.enabled)return;documen
  document.getElementById('ztViews').textContent='👁 조회 '+(d.views||0);
  if(F.liked(ZT_ID))document.querySelector('#ztLike button').classList.add('on');}
 async function ztLike(){const F=window.ZT_FIRE;if(await F.addLike(ZT_ID)){document.querySelector('#ztLike button').classList.add('on');ztPaint()}}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{})}
 window.addEventListener('zt-fire-ready',async()=>{if(window.ZT_FIRE.enabled){await window.ZT_FIRE.addView(ZT_ID);ztPaint()}});
 </script>
 </body>

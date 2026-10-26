@@ -1,1 +1,29 @@
-{"name":"제니툰 — 보고 이해하는 일터 이야기","short_name":"제니툰","start_url":"./index.html","display":"standalone","background_color":"#fbf6ea","theme_color":"#ffd23f","icons":[{"src":"icon-192.png","sizes":"192x192","type":"image/png"},{"src":"icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}]}
+{
+  "id": "/",
+  "name": "제니툰 — 보고 이해하는 일터 이야기",
+  "short_name": "제니툰",
+  "description": "노동뉴스·판례·아웃소싱 실무를 웹툰으로 쉽게. 매주 월요일 발행, 제공 ㈜제니엘이노베이션",
+  "lang": "ko",
+  "dir": "ltr",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "portrait",
+  "background_color": "#fbf6ea",
+  "theme_color": "#ffd23f",
+  "categories": ["business", "education", "news"],
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "screenshots": [
+    { "src": "/screens/narrow.png", "sizes": "390x844", "type": "image/png", "form_factor": "narrow", "label": "이번 주 제니툰" },
+    { "src": "/screens/wide.png", "sizes": "1280x720", "type": "image/png", "form_factor": "wide", "label": "제니툰 웹툰 목록" }
+  ],
+  "shortcuts": [
+    { "name": "이번 주 제니툰", "url": "/?source=shortcut", "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }] },
+    { "name": "상담 문의하기", "url": "/?consult=1&from=%EC%95%B1%20%EB%B0%94%EB%A1%9C%EA%B0%80%EA%B8%B0", "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }] }
+  ]
+}

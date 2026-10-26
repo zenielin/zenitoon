@@ -10,8 +10,12 @@
 <meta property="og:image" content="thumbs/001.png">
 <meta name="theme-color" content="#ffd23f">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" href="icon-192.png">
-<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="제니툰">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
 <style>
@@ -104,6 +108,16 @@ footer .info{font-size:13px;color:var(--sub);margin-top:16px;line-height:1.8}
 .bbar button i{display:block;font-style:normal;font-size:19px}
 .bbar button.on{background:var(--yellow);color:#161616}
 .theme{border:2px solid #161616;background:#fff;color:#161616;border-radius:16px;padding:2px 10px;font-family:'Jua';cursor:pointer;font-size:13px;margin-top:6px}
+.ibar{position:fixed;left:10px;right:10px;bottom:76px;z-index:40;display:none;align-items:center;gap:10px;background:#161616;color:#fff;border:2.5px solid #161616;border-radius:10px;padding:10px 12px;box-shadow:4px 4px 0 rgba(0,0,0,.25);font-size:14px}
+.ibar.on{display:flex}
+.ibar img{width:40px;height:40px;border-radius:8px;flex:0 0 40px}
+.ibar b{display:block;font-family:'Jua';font-weight:400;font-size:15px}
+.ibar .go{margin-left:auto;background:#ffd23f;color:#161616;border:0;border-radius:6px;padding:7px 12px;font-family:'Jua';font-size:14px;cursor:pointer;white-space:nowrap}
+.ibar .x{background:none;border:0;color:#bbb;font-size:18px;cursor:pointer;padding:0 2px}
+@media (min-width:641px){.ibar{left:auto;right:20px;bottom:20px;max-width:380px}}
+.ios-steps{margin:10px 0 0;padding-left:20px;font-size:14.5px;line-height:1.9}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:90px;z-index:60;background:#161616;color:#fff;border-radius:20px;padding:8px 16px;font-size:14px;display:none;gap:10px;align-items:center}
+.toast.on{display:flex}.toast button{background:#ffd23f;border:0;border-radius:12px;padding:3px 10px;font-family:'Jua';cursor:pointer}
 @media (max-width:640px){
   .tabs{display:none}
   .bbar{display:block}
@@ -121,7 +135,7 @@ footer .info{font-size:13px;color:var(--sub);margin-top:16px;line-height:1.8}
 <header class="hero"><div class="wrap">
   <svg class="mascot" viewBox="0 0 80 80" aria-hidden="true"><line x1="40" y1="8" x2="40" y2="18" stroke="#161616" stroke-width="3"/><circle cx="40" cy="7" r="4" fill="#e2403a" stroke="#161616" stroke-width="2"/><rect x="14" y="18" width="52" height="48" rx="12" fill="#ffd23f" stroke="#161616" stroke-width="3"/><rect x="20" y="28" width="40" height="34" rx="8" fill="#fff" stroke="#161616" stroke-width="2"/><path d="M26 41 Q30 36 34 41 M46 41 Q50 36 54 41" stroke="#161616" stroke-width="3" fill="none"/><path d="M30 52 Q40 61 50 52 Z" fill="#161616"/><rect x="8" y="34" width="6" height="14" rx="2" fill="#2f6fd6" stroke="#161616" stroke-width="2"/><rect x="66" y="34" width="6" height="14" rx="2" fill="#2f6fd6" stroke="#161616" stroke-width="2"/></svg>
   <div class="logo">제니툰<small>보고 이해하는 일터 이야기 · 매주 월요일 발행</small></div>
-  <div class="meta"><b id="heroNo"></b><span id="heroDate"></span><br><button class="theme" onclick="toggleTheme()">☀︎ / ☾</button></div>
+  <div class="meta"><b id="heroNo"></b><span id="heroDate"></span><br><button class="theme" onclick="toggleTheme()">☀︎ / ☾</button> <button class="theme inst" hidden onclick="installApp()">📲 앱 설치</button></div>
 </div></header>
 
 <nav class="tabs" aria-label="코너"><div class="wrap" id="tabs"></div></nav>
@@ -140,6 +154,25 @@ footer .info{font-size:13px;color:var(--sub);margin-top:16px;line-height:1.8}
   </div>
 </div></footer>
 
+<div class="ibar" id="ibar" role="dialog" aria-label="앱 설치 안내">
+  <img src="icon-192.png" alt="">
+  <div><b>제니툰 앱으로 보기</b><span style="font-size:12.5px;color:#ccc">홈 화면에서 바로 · 새 회차 빠르게</span></div>
+  <button class="go" onclick="installApp()">설치</button>
+  <button class="x" onclick="dismissInstall()" aria-label="닫기">✕</button>
+</div>
+<div class="modal" id="iosModal" onclick="if(event.target===this)this.classList.remove('on')">
+  <div class="sheet">
+    <h3>📲 아이폰에 제니툰 설치하기</h3>
+    <ol class="ios-steps">
+      <li>Safari 아래쪽 <b>공유 버튼(□↑)</b>을 누르세요.</li>
+      <li>목록에서 <b>‘홈 화면에 추가’</b>를 고르세요.</li>
+      <li>오른쪽 위 <b>‘추가’</b>를 누르면 완료!</li>
+    </ol>
+    <div style="font-size:12.5px;color:var(--sub);margin-top:8px">※ 카카오톡 등 앱 안에서 열었다면, 먼저 Safari로 열어 주세요.</div>
+    <div class="row"><button type="button" class="btn" onclick="document.getElementById('iosModal').classList.remove('on')">확인</button></div>
+  </div>
+</div>
+<div class="toast" id="toast"><span>새 회차가 준비됐어요</span><button onclick="location.reload()">새로고침</button></div>
 <nav class="bbar" aria-label="코너"><div class="in" id="bbar"></div></nav>
 
 <div class="modal" id="modal" onclick="if(event.target===this)closeModal()">
@@ -229,7 +262,33 @@ function sendForm(ev){
 function toggleTheme(){const r=document.documentElement;const d=r.dataset.theme?r.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;r.dataset.theme=d?'light':'dark';try{localStorage.setItem('zt-theme',r.dataset.theme)}catch(e){}}
 try{const t=localStorage.getItem('zt-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}
 if(/consult=1/.test(location.search)){const p=new URLSearchParams(location.search).get('from');if(p)document.getElementById('fromPage').value=p;openModal()}
-if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(()=>{})}
+/* ---------- PWA ---------- */
+let deferredPrompt=null;
+const isStandalone=()=>matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
+const isIOS=/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+const lsGet=k=>{try{return localStorage.getItem(k)}catch(e){return null}};
+const lsSet=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}};
+function showInstall(){
+  if(isStandalone())return;
+  document.querySelectorAll('.inst').forEach(b=>b.hidden=false);
+  const until=+lsGet('zt-install-dismiss')||0;
+  if(Date.now()>until) setTimeout(()=>document.getElementById('ibar').classList.add('on'),2500);
+}
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;showInstall()});
+if(isIOS&&!isStandalone())showInstall();
+async function installApp(){
+  if(deferredPrompt){deferredPrompt.prompt();const r=await deferredPrompt.userChoice;deferredPrompt=null;if(r.outcome==='accepted')hideInstall();return}
+  if(isIOS){document.getElementById('iosModal').classList.add('on');return}
+  alert('브라우저 메뉴(⋮)에서 「앱 설치」 또는 「홈 화면에 추가」를 눌러 주세요.');
+}
+function hideInstall(){document.getElementById('ibar').classList.remove('on');document.querySelectorAll('.inst').forEach(b=>b.hidden=true)}
+function dismissInstall(){document.getElementById('ibar').classList.remove('on');lsSet('zt-install-dismiss',Date.now()+7*864e5)}
+window.addEventListener('appinstalled',hideInstall);
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('/sw.js').then(reg=>{
+    reg.addEventListener('updatefound',()=>{const w=reg.installing;w&&w.addEventListener('statechange',()=>{if(w.state==='installed'&&navigator.serviceWorker.controller)document.getElementById('toast').classList.add('on')})});
+  }).catch(()=>{});
+}
 </script>
 </body>
 </html>
