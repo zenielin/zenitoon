@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>천만 원 회사의 2,000일 | 제니툰</title>
+<meta property="og:title" content="제니툰 · 천만 원 회사의 2,000일">
+<meta property="og:image" content="../thumbs/003.png">
+<link rel="icon" href="../favicon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#ffd23f">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="제니툰">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fbf6ea; --paper2:#fffdf7; --ink:#161616; --sub:#4a4a4a;
+  --red:#e2403a; --blue:#2f6fd6; --yellow:#ffd23f; --green:#2e9e6a; --soft:#f1e7cf;
+  --shadow:#161616;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#1d1b17; --paper2:#262420; --ink:#f2ede1; --sub:#c9c2b2;
+    --soft:#34302a; --shadow:#000;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#1d1b17; --paper2:#262420; --ink:#f2ede1; --sub:#c9c2b2;
+  --soft:#34302a; --shadow:#000;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Gowun Dodum',sans-serif;line-height:1.6;font-size:15px}
+.wrap{max-width:760px;margin:0 auto;padding:18px 16px 40px}
+h1,h2,h3{font-family:'Black Han Sans',sans-serif;font-weight:400;margin:0;letter-spacing:.5px;line-height:1.25}
+.ep{background:var(--paper2);border:3px solid var(--ink);box-shadow:6px 6px 0 var(--shadow);margin:0 6px 30px 0;padding:20px 18px 22px;border-radius:6px}
+.eptag{display:inline-block;background:var(--ink);color:var(--paper2);font-family:'Black Han Sans';padding:3px 12px;border-radius:3px;font-size:14px;letter-spacing:1px}
+.ep h2{font-size:26px;margin:8px 0 2px}
+.ep .subt{color:var(--sub);margin:0 0 14px;font-size:14px}
+/* cover */
+.cover{background:var(--yellow);color:#161616;text-align:center;position:relative;overflow:hidden}
+.cover .burst{position:absolute;inset:-40%;background:repeating-conic-gradient(from 0deg,rgba(255,255,255,.35) 0 8deg,transparent 8deg 16deg);z-index:0}
+.cover>*{position:relative;z-index:1}
+.cover h1{font-size:38px;margin:10px 0 6px;text-shadow:3px 3px 0 #fff}
+.cover .kick{font-family:'Jua';font-size:17px}
+.cover .by{font-size:13px;margin-top:10px}
+.cover .cast{display:flex;justify-content:center;gap:6px;margin:14px 0 6px;flex-wrap:wrap}
+.cover .cast svg{width:78px;height:78px;background:#fff;border:3px solid #161616;border-radius:50%}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.num{background:#fff;border:2.5px solid #161616;border-radius:6px;padding:8px 4px}
+.num b{display:block;font-family:'Black Han Sans';font-size:26px;color:var(--red);line-height:1.1}
+.num span{font-size:12px}
+/* panels */
+.g4{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.panel{border:2.5px solid var(--ink);background:var(--paper);border-radius:4px;padding:10px;position:relative;min-width:0}
+.panel.wide{grid-column:1/-1}
+.panel .cap{font-family:'Black Han Sans';font-size:13px;background:var(--yellow);color:#161616;display:inline-block;padding:1px 8px;border:2px solid var(--ink);margin-bottom:6px}
+.panel .fx{position:absolute;right:8px;top:4px;font-family:'Black Han Sans';color:var(--red);font-size:20px;transform:rotate(8deg)}
+/* scene */
+.scene{display:flex;align-items:flex-start;gap:8px;margin:8px 0}
+.scene.rev{flex-direction:row-reverse}
+.who{flex:0 0 64px;text-align:center;font-size:11px;color:var(--sub)}
+.who svg{width:62px;height:62px;border:2.5px solid var(--ink);border-radius:50%;background:#fff;display:block;margin:0 auto 2px}
+.bub{position:relative;background:#fff;color:#161616;border:2.5px solid var(--ink);border-radius:16px;padding:8px 12px;font-family:'Jua';font-size:15px;line-height:1.45;flex:1;min-width:0}
+.bub:before{content:"";position:absolute;left:-11px;top:16px;border:9px solid transparent;border-right-color:var(--ink);border-left:0}
+.bub:after{content:"";position:absolute;left:-7px;top:18px;border:7px solid transparent;border-right-color:#fff;border-left:0}
+.rev .bub:before{left:auto;right:-11px;border-right-color:transparent;border-left:9px solid var(--ink);border-right:0}
+.rev .bub:after{left:auto;right:-7px;border-right-color:transparent;border-left:7px solid #fff;border-right:0}
+.bub.shout{border-radius:4px;background:var(--yellow);font-size:16px}
+.bub.shout:after{border-right-color:var(--yellow)}
+.rev .bub.shout:after{border-left-color:var(--yellow)}
+.bub small{display:block;color:#666;font-family:'Gowun Dodum';font-size:11px;margin-top:2px}
+/* boxes */
+.box{border:2.5px dashed var(--ink);border-radius:6px;padding:10px 14px;margin:12px 0;background:var(--paper)}
+.box h3{font-size:17px;margin-bottom:6px}
+.box ul,.box ol{margin:0;padding-left:20px}
+.box li{margin:3px 0}
+.box.red{border-style:solid;border-color:var(--red)}
+.box.blue{border-style:solid;border-color:var(--blue)}
+.law{background:var(--soft);border-left:6px solid var(--blue);padding:10px 14px;font-size:14px;margin:12px 0;border-radius:0 6px 6px 0}
+.law b{color:var(--blue)}
+mark{background:var(--yellow);color:#161616;padding:0 3px}
+/* bars */
+.bars{margin:6px 0 4px}
+.bar{display:grid;grid-template-columns:110px 1fr 54px;align-items:center;gap:8px;margin:7px 0;font-size:14px}
+.bar .tr{height:20px;border:2px solid var(--ink);border-radius:3px;background:var(--paper)}
+.bar .fl{height:100%;background:var(--blue)}
+.bar .fl.r{background:var(--red)}.bar .fl.y{background:var(--yellow)}.bar .fl.g{background:var(--green)}
+.bar b{font-family:'Black Han Sans';font-weight:400;text-align:right}
+/* timeline */
+.tl{list-style:none;margin:6px 0;padding:0 0 0 22px;border-left:4px solid var(--ink)}
+.tl li{position:relative;margin:0 0 12px;padding-left:6px}
+.tl li:before{content:"";position:absolute;left:-33px;top:4px;width:16px;height:16px;background:var(--yellow);border:3px solid var(--ink);border-radius:50%}
+.tl li.now:before{background:var(--red)}
+.tl .d{font-family:'Black Han Sans';font-size:14px;color:var(--red)}
+/* flow */
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;align-items:stretch;margin:8px 0}
+.flow div{border:2.5px solid var(--ink);border-radius:5px;padding:8px 4px;text-align:center;font-size:13px;background:var(--paper);font-family:'Jua';display:flex;align-items:center;justify-content:center;min-width:0}
+.flow div.k{background:var(--yellow);color:#161616}
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.chip{border:2px solid var(--ink);border-radius:20px;padding:2px 10px;font-size:13px;background:var(--paper)}
+.chip.hl{background:var(--red);color:#fff;border-color:var(--red)}
+/* number cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.card{border:2.5px solid var(--ink);border-radius:6px;padding:10px;text-align:center;background:var(--paper)}
+.card b{font-family:'Black Han Sans';font-size:30px;font-weight:400;display:block;color:var(--blue);line-height:1.1}
+.card span{font-size:13px}
+/* checklist */
+.chk{list-style:none;padding:0;margin:6px 0}
+.chk li{border:2px solid var(--ink);border-radius:5px;padding:8px 10px 8px 40px;margin:7px 0;position:relative;background:var(--paper);font-size:14px}
+.chk li:before{content:"";position:absolute;left:10px;top:9px;width:18px;height:18px;border:2.5px solid var(--ink);border-radius:3px;background:#fff}
+.chk li b{color:var(--red)}
+.tagline{font-size:12px;color:var(--sub)}
+.quote{text-align:center;font-family:'Jua';font-size:19px;margin:14px 0 4px}
+.src{font-size:12px;color:var(--sub);border-top:2px dashed var(--ink);margin-top:14px;padding-top:8px}
+.theme-btn{position:fixed;right:12px;bottom:12px;z-index:9;border:2.5px solid var(--ink);background:var(--paper2);color:var(--ink);font-family:'Jua';border-radius:20px;padding:4px 12px;cursor:pointer}
+@media (max-width:540px){
+  .g4{grid-template-columns:1fr}
+  .cover h1{font-size:30px}
+  .ep h2{font-size:22px}
+  .nums,.cards{grid-template-columns:repeat(2,1fr)}
+  .flow{grid-template-columns:1fr}
+  .flow div{padding:6px}
+  .bar{grid-template-columns:86px 1fr 46px;font-size:13px}
+  .cover .cast svg{width:60px;height:60px}
+}
+@media print{.theme-btn{display:none}}
+</style>
+<style>
+.zt-nav{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:10px;justify-content:space-between;background:var(--paper2);border-bottom:3px solid var(--ink);padding:8px 14px;font-family:'Jua',sans-serif;font-size:14px}
+.zt-nav a{color:var(--ink);text-decoration:none;border:2px solid var(--ink);border-radius:16px;padding:1px 10px;background:var(--paper)}
+.zt-nav span{flex:1;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.zt-end{padding-top:0}
+.zt-cta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;background:#ffd23f;color:#161616;border:3px solid var(--ink);border-radius:6px;padding:14px 16px;box-shadow:5px 5px 0 var(--shadow);margin-right:6px}
+.zt-cta b{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:19px}
+.zt-cta span{font-size:13.5px}
+.zt-btn{background:#161616;color:#fff;text-decoration:none;font-family:'Jua',sans-serif;border-radius:5px;padding:7px 14px}
+.zt-links{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 50px}
+.zt-links a{color:var(--ink);text-decoration:none;border:2px solid var(--ink);border-radius:5px;padding:4px 12px;font-family:'Jua',sans-serif;background:var(--paper2)}
+.zt-like{display:flex;align-items:center;gap:12px;margin:18px 0 0;flex-wrap:wrap}
+.zt-like button{border:2.5px solid var(--ink);background:var(--paper2);color:var(--ink);border-radius:22px;padding:6px 16px;font-family:'Jua',sans-serif;font-size:16px;cursor:pointer}
+.zt-like button.on{background:#ffd23f;color:#161616}
+.zt-like span{font-size:13px;color:var(--sub)}
+@media print{.zt-nav,.zt-end{display:none}}
+</style>
+</head>
+<body>
+<div style="background:#161616;color:#fffdf7;font-size:12.5px;text-align:center;padding:6px 10px;font-family:'Gowun Dodum',sans-serif">제공 <a href="https://www.zenielinnovation.co.kr" target="_blank" rel="noopener" style="color:#ffd23f;font-weight:700;text-decoration:none">㈜제니엘이노베이션</a></div>
+<nav class="zt-nav"><a href="../index.html">← 제니툰</a><span>📰 특별편 · 003화</span><a href="003.pdf" class="zt-pdf">PDF</a></nav>
+<button class="theme-btn" onclick="toggleTheme()">☀︎ / ☾</button>
+<div class="wrap" id="app"></div>
+<div class="wrap zt-end"><div class="zt-cta"><div><b>작은 조직일수록 사람이 경쟁력입니다</b><br><span>핵심 인재 채용대행·헤드헌팅 · 인재파견 · 인력 운영 상담</span></div>
+<a class="zt-btn" href="../index.html?consult=1&from=003%ED%99%94">💬 상담 문의하기</a></div>
+<div class="zt-like" id="ztLike" hidden><button type="button" onclick="ztLike()">👍 도움됐어요 <b id="ztLikeN"></b></button><span id="ztViews"></span></div>
+<div class="zt-links"><a href="../index.html">🏠 제니툰 목록</a><a href="003.pdf">📄 PDF 저장</a><a href="../index.html#news">📰 노동뉴스 툰 더보기</a></div></div>
+
+
+<script>
+/* ---------- 오리지널 캐릭터 SVG (가상 인물) ---------- */
+const CH={
+  ceo:{name:'기획사 대표',skin:'#f1cba7',hair:'#222',style:'neat',acc:'none',shirt:'#1f2937'},
+  dir:{name:'작곡 이사',skin:'#f6d3b3',hair:'#3b2a1a',style:'bob',acc:'none',shirt:'#2e9e6a'},
+  idol:{name:'신인 멤버',skin:'#f8d9bd',hair:'#6b3f1f',style:'long',acc:'none',shirt:'#e2403a'},
+  investor:{name:'투자사 대표',skin:'#efc8a4',hair:'#2a2a2a',style:'side',acc:'tie',shirt:'#2f6fd6'},
+  pd:{name:'영상 PD',skin:'#e9bf98',hair:'#2a2a2a',style:'short',acc:'badge',shirt:'#f08c00'},
+  nomusa:{name:'도 노무사',skin:'#efc8a4',hair:'#9a9a9a',style:'side',acc:'glasses',shirt:'#4b5563'},
+  hr:{name:'한결 대리',skin:'#f6d3b3',hair:'#40261a',style:'long',acc:'none',shirt:'#8b5cf6'},
+  bot:{name:'안내로봇 체키',bot:true}
+};
+function face(k,mood='calm'){
+  const c=CH[k];
+  if(c.bot){
+    const eye= mood==='shock'?'<circle cx="30" cy="40" r="6" fill="#161616"/><circle cx="50" cy="40" r="6" fill="#161616"/>'
+      :'<rect x="24" y="36" width="12" height="8" rx="3" fill="#161616"/><rect x="44" y="36" width="12" height="8" rx="3" fill="#161616"/>';
+    const m= mood==='shock'?'<ellipse cx="40" cy="56" rx="5" ry="6" fill="#161616"/>':'<path d="M30 54 Q40 62 50 54" stroke="#161616" stroke-width="3" fill="none"/>';
+    return `<svg viewBox="0 0 80 80"><line x1="40" y1="8" x2="40" y2="18" stroke="#161616" stroke-width="3"/><circle cx="40" cy="7" r="4" fill="#e2403a" stroke="#161616" stroke-width="2"/><rect x="14" y="18" width="52" height="48" rx="12" fill="#ffd23f" stroke="#161616" stroke-width="3"/><rect x="20" y="28" width="40" height="34" rx="8" fill="#fff" stroke="#161616" stroke-width="2"/>${eye}${m}<rect x="8" y="34" width="6" height="14" rx="2" fill="#2f6fd6" stroke="#161616" stroke-width="2"/><rect x="66" y="34" width="6" height="14" rx="2" fill="#2f6fd6" stroke="#161616" stroke-width="2"/></svg>`;
+  }
+  const S='#161616';
+  let hair='';
+  switch(c.style){
+    case 'short': hair=`<path d="M18 38 Q18 14 40 14 Q62 14 62 38 Q58 24 40 24 Q26 24 18 38Z" fill="${c.hair}"/>`;break;
+    case 'side': hair=`<path d="M18 38 Q16 16 40 15 Q64 16 62 36 Q52 22 30 26 Q22 28 18 38Z" fill="${c.hair}"/>`;break;
+    case 'bob': hair=`<path d="M15 50 Q12 14 40 13 Q68 14 65 50 L58 50 Q60 26 40 24 Q20 26 22 50Z" fill="${c.hair}"/>`;break;
+    case 'bald': hair=`<path d="M19 36 Q20 30 24 30 L24 40 Z M61 36 Q60 30 56 30 L56 40Z" fill="${c.hair}"/>`;break;
+    case 'long': hair=`<path d="M14 66 Q10 14 40 13 Q70 14 66 66 L58 66 Q62 28 40 24 Q18 28 22 66Z" fill="${c.hair}"/>`;break;
+    case 'neat': hair=`<path d="M18 36 Q18 14 40 14 Q62 14 62 36 Q60 22 46 21 L44 26 Q30 22 18 36Z" fill="${c.hair}"/>`;break;
+  }
+  let brows='',eyes='',mouth='',extra='';
+  const ey=40;
+  if(mood==='angry'){brows=`<path d="M26 31 L36 35 M54 31 L44 35" stroke="${S}" stroke-width="3"/>`;}
+  else if(mood==='sad'){brows=`<path d="M26 34 L35 31 M54 34 L45 31" stroke="${S}" stroke-width="2.5"/>`;}
+  else if(mood==='shock'){brows=`<path d="M26 29 Q31 26 36 29 M44 29 Q49 26 54 29" stroke="${S}" stroke-width="2.5" fill="none"/>`;}
+  else {brows=`<path d="M27 32 Q31 30 35 32 M45 32 Q49 30 53 32" stroke="${S}" stroke-width="2.5" fill="none"/>`;}
+  if(mood==='shock'){eyes=`<circle cx="31" cy="${ey}" r="4.5" fill="#fff" stroke="${S}" stroke-width="2"/><circle cx="31" cy="${ey}" r="2" fill="${S}"/><circle cx="49" cy="${ey}" r="4.5" fill="#fff" stroke="${S}" stroke-width="2"/><circle cx="49" cy="${ey}" r="2" fill="${S}"/>`;mouth=`<ellipse cx="40" cy="56" rx="5" ry="6" fill="${S}"/>`;}
+  else if(mood==='happy'){eyes=`<path d="M27 41 Q31 36 35 41 M45 41 Q49 36 53 41" stroke="${S}" stroke-width="3" fill="none"/>`;mouth=`<path d="M30 52 Q40 63 50 52 Z" fill="${S}"/>`;}
+  else {eyes=`<circle cx="31" cy="${ey}" r="3" fill="${S}"/><circle cx="49" cy="${ey}" r="3" fill="${S}"/>`;
+    mouth= mood==='sad'?`<path d="M32 57 Q40 51 48 57" stroke="${S}" stroke-width="3" fill="none"/>`: mood==='angry'?`<path d="M32 56 L48 56" stroke="${S}" stroke-width="3"/>`:`<path d="M32 53 Q40 60 48 53" stroke="${S}" stroke-width="3" fill="none"/>`;}
+  if(c.acc==='glasses') extra+=`<circle cx="31" cy="${ey}" r="7" fill="none" stroke="${S}" stroke-width="2.2"/><circle cx="49" cy="${ey}" r="7" fill="none" stroke="${S}" stroke-width="2.2"/><path d="M38 ${ey} L42 ${ey}" stroke="${S}" stroke-width="2"/><path d="M33 49 Q40 46 47 49" stroke="#9a9a9a" stroke-width="3" fill="none"/>`;
+  let body=`<path d="M10 80 Q12 64 40 64 Q68 64 70 80Z" fill="${c.shirt}" stroke="${S}" stroke-width="2.5"/>`;
+  if(c.acc==='badge') body+=`<path d="M52 69 l5 0 l2 4 l-4.5 3 l-4.5 -3Z" fill="#ffd23f" stroke="${S}" stroke-width="1.5"/>`;
+  if(c.acc==='lanyard') body+=`<path d="M30 64 L40 76 L50 64" stroke="#ffd23f" stroke-width="3" fill="none"/><rect x="36" y="74" width="8" height="6" fill="#fff" stroke="${S}" stroke-width="1.5"/>`;
+  if(c.acc==='apron') body+=`<rect x="28" y="68" width="24" height="12" fill="#fff" stroke="${S}" stroke-width="2"/>`;
+  if(c.acc==='tie') body+=`<path d="M37 64 L43 64 L41.5 69 L44 78 L40 80 L36 78 L38.5 69Z" fill="#e2403a" stroke="${S}" stroke-width="1.5"/>`;
+  return `<svg viewBox="0 0 80 80">${body}<ellipse cx="40" cy="42" rx="22" ry="24" fill="${c.skin}" stroke="${S}" stroke-width="2.5"/>${hair}<circle cx="24" cy="50" r="3.5" fill="#f59e9e" opacity=".6"/><circle cx="56" cy="50" r="3.5" fill="#f59e9e" opacity=".6"/>${brows}${eyes}${mouth}${extra}</svg>`;
+}
+/* ---------- 컴포넌트 ---------- */
+function S(k,mood,name,text,o={}){
+  return `<div class="scene ${o.rev?'rev':''}"><div class="who">${face(k,mood)}${name||CH[k].name}</div><div class="bub ${o.shout?'shout':''}">${text}${o.note?`<small>${o.note}</small>`:''}</div></div>`;
+}
+function P(cap,body,o={}){return `<div class="panel ${o.wide?'wide':''}">${cap?`<div class="cap">${cap}</div>`:''}${o.fx?`<div class="fx">${o.fx}</div>`:''}${body}</div>`;}
+function WHO(list){return `<div class="chips">${list.map(([n,h])=>`<span class="chip ${h?'hl':''}">${n}</span>`).join('')}</div>`;}
+function bars(rows,max){return `<div class="bars">${rows.map(([l,v,u,c])=>`<div class="bar"><span>${l}</span><div class="tr"><div class="fl ${c||''}" style="width:${Math.max(4,v/max*100)}%"></div></div><b>${v}${u}</b></div>`).join('')}</div>`;}
+function EP(tag,title,sub,body,cls=''){return `<section class="ep ${cls}"><span class="eptag">${tag}</span><h2>${title}</h2>${sub?`<p class="subt">${sub}</p>`:''}${body}</section>`;}
+
+/* ---------- 본문 ---------- */
+let H='';
+
+/* 표지 */
+H+=`<section class="ep cover"><div class="burst"></div>
+<div class="kick">제니툰 특별편 · 숫자로 읽는 기업 이야기</div>
+<h1>천만 원 회사의<br>2,000일</h1>
+<div class="kick">노래가 멈춘 가수가 만든 역주행 1위, 그 뒤의 사람과 돈</div>
+<div class="cast">${face('ceo','calm')}${face('dir','happy')}${face('idol','happy')}${face('bot','calm')}</div>
+<div class="nums">
+ <div class="num"><b>1천만</b><span>창업 자본금(원)</span></div>
+ <div class="num"><b>3명</b><span>창업 멤버</span></div>
+ <div class="num"><b>904위</b><span>발매 첫 일간 순위</span></div>
+ <div class="num"><b>56억</b><span>2025년 영업손실</span></div>
+ <div class="num"><b>840일</b><span>데뷔→첫 음방 1위</span></div>
+ <div class="num"><b>1위</b><span>2년 전 노래의 역주행</span></div>
+</div>
+<div class="by">작성 · ㈜제니엘이노베이션 &nbsp;|&nbsp; 2026.10.26</div>
+</section>`;
+
+/* EP.0 */
+H+=EP('EP.0','2,000일을 한 장으로','작은 기획사와 걸그룹 리센느의 기록',
+`${S('bot','calm','','안녕하세요, 안내로봇 <b>체키</b>예요! 오늘은 직원 세 명, <mark>자본금 1천만 원</mark>으로 시작한 연예기획사 이야기예요.')}
+${S('hr','shock','','연예기획사요? 인사담당자랑 무슨 상관이에요?',{rev:true})}
+${S('bot','happy','','작은 회사가 <b>사람을 어떻게 모으고, 어떻게 지켜 냈는지</b>가 핵심이거든요. 끝에 체크리스트도 있어요!')}
+<div class="box"><h3>🗓️ 주요 흐름</h3>
+<ul class="tl">
+ <li><span class="d">2015</span><br>훗날의 대표, 2인조 보컬 그룹으로 가수 데뷔 → 싱글 두 장 뒤 활동 중단</li>
+ <li><span class="d">2020. 12</span><br>버클리 음대 선후배 등 3명이 1천만 원을 모아 법인 설립</li>
+ <li><span class="d">2023 봄</span><br>멤버도 다 모이기 전, 약 10억 원 규모 투자 유치</li>
+ <li><span class="d">2024. 3. 26</span><br>걸그룹 데뷔 — 설립 후 약 1,200일</li>
+ <li><span class="d">2025</span><br>매출 약 18억 원, 영업손실 약 56억 원, 완전 자본잠식</li>
+ <li><span class="d">2026. 2</span><br>멤버 개인 유튜브 채널 개설 → 콘텐츠가 입소문</li>
+ <li class="now"><span class="d">2026. 7</span><br>2년 전 노래가 멜론 1위, 데뷔 840일 만에 첫 음악방송 1위</li>
+</ul></div>`);
+
+/* EP.1 */
+H+=EP('EP.1','노래가 멈춘 자리','2015~2020 · 무대에서 내려와 회사를 세우기까지',
+`<div class="g4">
+${P('① 짧았던 무대',S('ceo','sad','','유학 중 올린 노래 영상으로 데뷔했지만, <b>싱글 두 장</b>을 끝으로 새 노래가 더 나오지 않았어요.'))}
+${P('② 만드는 사람으로',S('ceo','calm','','집에 작은 녹음실을 꾸려 곡을 쓰다가, 학교 후배들과 <b>작곡팀</b>을 만들었습니다.',{rev:true}))}
+${P('③ 거듭된 거절',S('dir','shock','','함께 회사를 차리자는 제안을 몇 번이나 거절했죠. 그런데 “<b>한 번만 믿어 달라</b>”는 말에 결국…'),{fx:'끄덕'})}
+${P('④ 천만 원 법인',S('dir','happy','','셋이 조금씩 모은 <b>1천만 원</b>으로 법인을 세웠어요. 뮤직비디오 한 편 값도 안 되는 돈이었죠.',{rev:true,note:'(요지) 영상 속 관계자 회고'}))}
+</div>
+<div class="box blue"><h3>🔎 포인트</h3>
+<ul>
+<li>대표는 창업 직후 인터뷰에서 “<b>성공은 아니지만 실패도 아니다</b>”라는 취지로 말함(요지)</li>
+<li>첫 제작은 걸그룹이 아닌 솔로 싱글, 작곡팀은 외부 곡 작업으로 이름을 알림</li>
+<li>2021년 첫 외부 투자 5천만 원 — 당시 회사 가치 <mark>약 8억 원</mark>(영상 전언)</li>
+</ul></div>`);
+
+/* EP.2 */
+H+=EP('EP.2','전쟁터의 숫자','작은 회사가 들어선 시장은 어떤 곳이었나',
+`${S('hr','shock','','그 돈으로 걸그룹을 만든다고요? 아이돌 시장은 대형 회사 판 아닌가요?')}
+${S('nomusa','calm','','숫자를 보면 무모해 보일 정도입니다. 생존 확률부터 낮아요.',{rev:true})}
+<div class="box"><h3>📊 아이돌 시장의 현실 (영상 인용 조사·보도)</h3>
+<ul>
+<li>국내 등록 대중문화예술기획업체 <b>6,700곳 이상</b></li>
+<li>30년간 데뷔한 아이돌 그룹 <b>1,182팀</b> — 한 해 평균 40팀 가까이</li>
+<li>데뷔 후 3년을 버틴 팀은 <b>절반 남짓</b>, 걸그룹 평균 활동 기간 <b>3.13년</b></li>
+<li>중소 기획사 평균 제작비는 대형 기획사의 <mark>약 19분의 1</mark>(KBS 보도 인용)</li>
+</ul>
+<p class="tagline">※ 영상이 인용한 대학 연구팀 조사·언론 보도 수치로, 원자료의 조사 기준과 다를 수 있습니다(전언).</p></div>
+<div class="g4">
+${P('① 투자자의 판단',S('investor','calm','','정식 계약 멤버가 한 명뿐이었지만, 아직 발매 전 <b>가이드 곡</b>을 50번 넘게 들으며 결정했습니다.',{note:'(요지) 영상 속 투자사 대표 회고'}))}
+${P('② 무리한 조건',S('investor','angry','','대신 작곡팀 개인의 <b>저작권</b>을 회사로 넘겨 달라고 했죠.',{rev:true}),{fx:'꿀꺽'})}
+</div>
+<div class="box red"><h3>📌 저작권까지 회사에 건 이유</h3><ul>
+<li>작곡가의 저작권료는 노래가 쓰일 때마다 들어오는 <b>평생 개인 수입</b></li>
+<li>이를 회사에 귀속시켜 <b>투자자와 운명을 함께</b>하겠다는 신호가 됨</li>
+<li>2023년 봄, 약 <mark>10억 원 규모</mark> 투자 유치(영상 전언)</li>
+</ul></div>`);
+
+/* EP.3 */
+H+=EP('EP.3','대표가 직접 간 캐스팅','캐스팅 팀도 없던 회사의 인재 확보법',
+`<div class="g4">
+${P('① 바다 건너',S('ceo','calm','','오디션 프로그램 결선까지 갔던 참가자를 만나러 <b>일본까지 직접</b> 갔습니다.'))}
+${P('② 부모님의 조건',S('idol','sad','','정해진 나이까지 데뷔 못 하면 돌아와 공부하기로 부모님과 약속했어요.',{rev:true}))}
+${P('③ 지방까지',S('ceo','happy','','경남 거제에 사는 학생의 부모님을 <b>직접 찾아가</b> 설득했죠. 학업과 생활도 책임지겠다고요.',{note:'(요지) 영상 속 멤버 회고'}))}
+${P('④ 작은 회사를 고른 이유',S('idol','happy','','다른 회사에도 붙었지만, 직원 10명도 안 되는 이 회사를 골랐어요. <b>약속을 믿었으니까요</b>.',{rev:true}),{fx:'결심!'})}
+</div>
+<div class="box blue"><h3>🔎 지킨 약속들</h3>
+<ul>
+<li>예술고 진학 지원, 연습생 생활비·식비 회사 부담 — <b>가족 부담 0원</b>(멤버 전언)</li>
+<li>연습생 시절 하루 두 번 직접 식사를 챙김</li>
+<li>다섯 명 모두 <b>지방·해외 출신</b> — “부잣집이어야 아이돌 한다”는 걱정을 덜어 줌</li>
+</ul></div>
+${S('nomusa','calm','','대기업처럼 연봉으로 못 이기면, <b>대표의 진정성과 지켜진 약속</b>이 채용 경쟁력이 됩니다.')}`);
+
+/* EP.4 */
+H+=EP('EP.4','좋은 노래, 아무도 모름','2024~2025 · 데뷔 후 가장 추웠던 시간',
+`<div class="g4">
+${P('① 냉정한 출발',S('idol','sad','','데뷔 후 잡힌 음악방송은 단 하나. 해외 매체 호평을 받은 노래가 멜론 일간 <b>904위</b>에서 시작했어요.'),{fx:'904위'})}
+${P('② 대표의 영업',S('ceo','calm','','프로필 수백 장을 돌리고 손편지를 쓰고, 출연 문의 메일을 몇백 통씩 보냈습니다. 운전도 직접 했고요.',{rev:true}))}
+${P('③ 작은 무대들',S('idol','happy','','군 위문공연, 대학 축제, 축구 하프타임, 초등학교 운동회, 주민센터 앞까지! <b>무대 크기는 중요하지 않았어요</b>.'))}
+${P('④ 지하 연습실',S('dir','shock','','아파트 지하 연습실에 물이 새서 <b>다 같이 양동이로</b> 퍼냈던 날도 있었죠.',{rev:true}),{fx:'첨벙'})}
+</div>
+<div class="box"><h3>📉 2025년 장부 (영상 인용 공시·보도, 단위 억 원)</h3>
+${bars([['매출',18,'억',''],['영업손실',56,'억','r'],['누적 투자',62,'억','y']],62)}
+<p class="tagline">※ 연말 현금 약 1,300만 원, 완전 자본잠식(영상 인용 경제매체 분석). 대표 개인 자금이 아닌 투자금으로 운영된 회사의 손실입니다(전언).</p></div>
+<div class="box red"><h3>📌 그래도 멈추지 않은 것</h3><ul>
+<li>자체 라이브 방송 <b>약 200회</b> — 돈 들지 않는 무대를 스스로 만듦</li>
+<li>데뷔 후 20개월간 국내 앨범 <b>5장</b> — 3번째 미니앨범 첫 주 10만 장 돌파</li>
+<li>지쳐 팀을 떠나려던 멤버를 <mark>리더가 붙잡음</mark> — 대표가 했던 “믿어 달라”는 말이 멤버 입에서 다시 나옴</li>
+</ul></div>`);
+
+/* EP.5 */
+H+=EP('EP.5','역주행의 공식','2026 · 불씨는 엉뚱한 곳에서 날아왔다',
+`${S('bot','calm','','K팝 역주행에는 공통점이 있어요. <b>① 노래가 원래 좋았다 ② 아무도 안 볼 때도 무대를 지켰다 ③ 누군가 발견해 세상에 꺼냈다</b>!')}
+<div class="g4">
+${P('① 탈락이 기회로',S('pd','happy','','기업 프로젝트에 멤버를 추천했다 떨어졌죠. 오히려 잘됐다 싶어 <b>개인 채널</b>을 직접 만들었습니다.',{note:'(요지) 영상 전언'}))}
+${P('② 밈의 탄생',S('idol','happy','','일본인 멤버가 동료의 고향 이름을 외친 짧은 장면이 SNS를 타고 <b>밈</b>이 됐어요!',{rev:true}),{fx:'야호!'})}
+${P('③ 숫자로 온 반응',S('bot','shock','','채널 개설 대비 노래 스트리밍 <b>최대 20배↑</b>, 검색량 <b>65배↑</b>(멜론 발표 인용).'))}
+${P('④ 그날 밤 10시',S('idol','shock','','신곡 발표 당일, 1위를 한 건 신곡이 아니라 <b>2년 전 그 노래</b>였어요!',{rev:true}),{fx:'1위!'})}
+</div>
+<div class="box"><h3>📈 반전의 속도 (2026년, 영상 전언)</h3>
+<ul class="tl">
+ <li><span class="d">2월</span><br>멤버 개인 채널 개설, 첫 영상 조회 20만 회</li>
+ <li><span class="d">4월</span><br>투자 20억 원 조기 마감 — 언론 추산 회사 가치 약 280억 원</li>
+ <li><span class="d">6월</span><br>채널 구독자 100만 명 돌파</li>
+ <li class="now"><span class="d">7월</span><br>멜론 일간 1위(7.8) → 첫 음악방송 1위(7.14), 8월 중순까지 트로피 6개</li>
+ <li><span class="d">8~9월</span><br>멜론 월간 1위, 미국 LA 대형 K팝 행사 무대, 지자체 홍보대사·광고 계약</li>
+</ul></div>
+${S('dir','happy','','약속도 하나 지켰어요. 화장실 하나를 다섯 명이 쓰던 숙소에서 <b>화장실 세 개</b> 숙소로 이사했답니다!')}`);
+
+/* 숫자 카드 */
+H+=EP('NUMBERS','한눈에 보는 숫자','이야기 속 핵심 수치 6',
+`<div class="cards">
+<div class="card"><b>1천만</b><span>창업 자본금(원)</span></div>
+<div class="card"><b>8억→280억</b><span>회사 가치 추산(2021→2026.4)</span></div>
+<div class="card"><b>약 200회</b><span>자체 라이브 방송</span></div>
+<div class="card"><b>56억</b><span>2025년 영업손실</span></div>
+<div class="card"><b>904위→1위</b><span>같은 노래의 2년</span></div>
+<div class="card"><b>840일</b><span>데뷔 후 첫 음방 1위</span></div>
+</div>
+<p class="tagline">※ 회사 가치는 투자 시점 보도·업계 추산치로 확정된 수치가 아닙니다.</p>`);
+
+/* 체크리스트 */
+H+=EP('CHECK','작은 조직의 사람 경쟁력 점검','중소기업 경영진·인사담당자용 (작성자 제안)',
+`${S('hr','calm','','우리처럼 대기업보다 작은 회사는 인재를 어떻게 모으고 지켜야 할까요?')}
+${S('nomusa','calm','','처우의 크기보다 <b>약속의 신뢰</b>, 그리고 버티는 동안의 <b>사기 관리</b>입니다.',{rev:true})}
+<ul class="chk">
+<li><b>핵심 인재는 경영진이 직접</b> — 지원자·가족의 걱정을 직접 듣고 설명하는가</li>
+<li>채용 때 한 약속(처우·교육·생활 지원)을 <b>문서로 남기고 실제로 지켰는가</b></li>
+<li>성과가 안 나는 시기에도 <b>작은 목표·작은 무대</b>로 성취 경험을 만드는가</li>
+<li>현장이 힘들 때 리더가 <b>먼저 움직이는가</b>(영업·운전·궂은일)</li>
+<li>매월 <b>현금흐름·잔여 운영 개월 수</b>를 점검하고 투자·자금 계획을 미리 세웠는가</li>
+<li>외부 협력자·고객사 등 <b>우리를 알아봐 줄 사람</b>과의 네트워크를 관리하는가</li>
+<li>성과가 나면 <b>근무·생활 환경 개선</b>으로 구성원에게 먼저 돌려주는가</li>
+</ul>
+<p class="tagline">※ 위 체크리스트는 공개된 사례를 바탕으로 ㈜제니엘이노베이션이 정리한 실무 제안입니다.</p>`);
+
+/* 흐름 정리 */
+H+=EP('SUMMARY','흐름 정리','문제 → 선택 → 결과 → 교훈',
+`<div class="g4">
+${P('😟 문제',`<ul style="margin:0;padding-left:18px"><li>자본·인력·경력 <b>모두 부족</b></li><li>대형사 위주의 시장</li></ul>`)}
+${P('🛠️ 선택',`<ul style="margin:0;padding-left:18px"><li>대표가 <b>직접 설득·영업</b></li><li>작은 무대라도 <b>멈추지 않기</b></li></ul>`)}
+${P('📈 결과',`<ul style="margin:0;padding-left:18px"><li>2년 전 노래의 <b>역주행 1위</b></li><li>투자·광고·후속 그룹 준비</li></ul>`)}
+${P('💡 교훈',`<ul style="margin:0;padding-left:18px"><li>기회는 <b>남아 있는 사람</b>에게</li><li>신뢰는 <b>지킨 약속</b>으로 쌓임</li></ul>`)}
+</div>`);
+
+/* 에필로그 */
+H+=EP('EPILOGUE','다음 숙제','',
+`${S('bot','happy','','운처럼 보였던 1위 뒤에는 <b>2,000일 동안 무대를 지킨 사람들</b>이 있었네요.')}
+${S('ceo','calm','','돌아보니 생각보다 훨씬 열악했는데, 어떻게 버텼나 싶습니다. 함께 꿈꿔 준 사람들 덕분이죠.',{rev:true,note:'(요지) 방송 통화 내용'})}
+<div class="box"><h3>📝 앞으로 지켜볼 것</h3><ul>
+<li>11월 새 미니앨범 발매 이후 <b>반짝 인기를 넘는 지속성</b></li>
+<li>대규모 손실·자본잠식 이후 <b>재무구조 정상화</b> 속도</li>
+<li>두 번째 그룹(보이 그룹) 준비 — <b>성공 방식의 재현 가능성</b></li>
+</ul></div>
+<p class="quote">“수적천석(水滴穿石) — 떨어지는 물방울이 바위를 뚫는다”</p>
+<p style="text-align:center;margin:0">끝까지 읽어 주셔서 감사합니다 🙏</p>
+<div class="src">작성 · ㈜제니엘이노베이션<br>
+자료 출처 · 유튜브 ‘셀럽인생’ 영상 「자본금 1천만 원으로 시작한 회사, 리센느의 기적 뒤에 있던 사람」(https://youtu.be/Uw12z3szSA0) 내용을 바탕으로 요약·재구성 · 영상이 인용한 대학 연구팀 조사, KBS 보도, 멜론 발표, 경제매체 분석<br>
+※ 등장인물은 이해를 돕기 위한 가상의 캐릭터로 실존 인물과 무관하며, ‘(요지)’·‘(전언)’ 표시는 원자료를 요약했거나 공시로 확인되지 않은 내용입니다. 특정 기업에 대한 평가나 투자 권유가 아닙니다.</div>`);
+
+document.getElementById('app').innerHTML=H;
+
+function toggleTheme(){
+  const r=document.documentElement;
+  const dark = r.dataset.theme ? r.dataset.theme==='dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  r.dataset.theme = dark?'light':'dark';
+}
+</script>
+<script src="../firebase-config.js"></script>
+<script type="module" src="../zt-fire.js"></script>
+<script>
+const ZT_ID='003';
+async function ztPaint(){const F=window.ZT_FIRE;if(!F||!F.enabled)return;document.getElementById('ztLike').hidden=false;
+ const d=(await F.getStats([ZT_ID]))[ZT_ID]||{};document.getElementById('ztLikeN').textContent=d.likes||0;
+ document.getElementById('ztViews').textContent='👁 조회 '+(d.views||0);
+ if(F.liked(ZT_ID))document.querySelector('#ztLike button').classList.add('on');}
+async function ztLike(){const F=window.ZT_FIRE;if(await F.addLike(ZT_ID)){document.querySelector('#ztLike button').classList.add('on');ztPaint()}}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{})}
+window.addEventListener('zt-fire-ready',async()=>{if(window.ZT_FIRE.enabled){await window.ZT_FIRE.addView(ZT_ID);ztPaint()}});
+</script>
+</body>
+</html>
