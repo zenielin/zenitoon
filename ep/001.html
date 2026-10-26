@@ -135,6 +135,10 @@ mark{background:var(--yellow);color:#161616;padding:0 3px}
 .zt-btn{background:#161616;color:#fff;text-decoration:none;font-family:'Jua',sans-serif;border-radius:5px;padding:7px 14px}
 .zt-links{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 50px}
 .zt-links a{color:var(--ink);text-decoration:none;border:2px solid var(--ink);border-radius:5px;padding:4px 12px;font-family:'Jua',sans-serif;background:var(--paper2)}
+.zt-like{display:flex;align-items:center;gap:12px;margin:18px 0 0;flex-wrap:wrap}
+.zt-like button{border:2.5px solid var(--ink);background:var(--paper2);color:var(--ink);border-radius:22px;padding:6px 16px;font-family:'Jua',sans-serif;font-size:16px;cursor:pointer}
+.zt-like button.on{background:#ffd23f;color:#161616}
+.zt-like span{font-size:13px;color:var(--sub)}
 @media print{.zt-nav,.zt-end{display:none}}
 </style>
 </head>
@@ -145,6 +149,7 @@ mark{background:var(--yellow);color:#161616;padding:0 3px}
 <div class="wrap" id="app"></div>
 <div class="wrap zt-end"><div class="zt-cta"><div><b>우리 회사 현장도 점검이 필요하신가요?</b><br><span>30명 미만 사업장 감독 대비 · 무료 노무진단 · 파견·도급·채용대행 상담</span></div>
 <a class="zt-btn" href="../index.html?consult=1&from=001%ED%99%94">💬 상담 문의하기</a></div>
+<div class="zt-like" id="ztLike" hidden><button type="button" onclick="ztLike()">👍 도움됐어요 <b id="ztLikeN"></b></button><span id="ztViews"></span></div>
 <div class="zt-links"><a href="../index.html">🏠 제니툰 목록</a><a href="001.pdf">📄 PDF 저장</a><a href="../index.html#news">📰 노동뉴스 툰 더보기</a></div></div>
 
 <script>
@@ -339,6 +344,17 @@ function toggleTheme(){
   const dark = r.dataset.theme ? r.dataset.theme==='dark' : matchMedia('(prefers-color-scheme: dark)').matches;
   r.dataset.theme = dark?'light':'dark';
 }
+</script>
+<script src="../firebase-config.js"></script>
+<script type="module" src="../zt-fire.js"></script>
+<script>
+const ZT_ID='001';
+async function ztPaint(){const F=window.ZT_FIRE;if(!F||!F.enabled)return;document.getElementById('ztLike').hidden=false;
+ const d=(await F.getStats([ZT_ID]))[ZT_ID]||{};document.getElementById('ztLikeN').textContent=d.likes||0;
+ document.getElementById('ztViews').textContent='👁 조회 '+(d.views||0);
+ if(F.liked(ZT_ID))document.querySelector('#ztLike button').classList.add('on');}
+async function ztLike(){const F=window.ZT_FIRE;if(await F.addLike(ZT_ID)){document.querySelector('#ztLike button').classList.add('on');ztPaint()}}
+window.addEventListener('zt-fire-ready',async()=>{if(window.ZT_FIRE.enabled){await window.ZT_FIRE.addView(ZT_ID);ztPaint()}});
 </script>
 </body>
 </html>

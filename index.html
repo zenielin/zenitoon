@@ -58,6 +58,7 @@ section{margin:26px 0}
 .card .bd{padding:12px 14px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
 .card h3{font-size:19px}
 .card p{margin:0;font-size:14px;color:var(--sub)}
+.card .st{font-size:12.5px;color:var(--sub)}.card .st:empty{display:none}
 .card .act{margin-top:auto;display:flex;gap:6px;padding-top:6px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:4px;border:2px solid var(--ink);border-radius:5px;padding:5px 12px;font-family:'Jua';font-size:14px;background:var(--yellow);color:#161616;text-decoration:none;cursor:pointer}
 .btn.ghost{background:var(--paper)}
@@ -160,6 +161,8 @@ footer .info{font-size:13px;color:var(--sub);margin-top:16px;line-height:1.8}
 </div>
 
 <script src="data.js"></script>
+<script src="firebase-config.js"></script>
+<script type="module" src="zt-fire.js"></script>
 <script>
 const T=window.TOON, C=T.corners;
 const fmt=d=>{const [y,m,dd]=d.split('-');return `${y}.${m}.${dd}`};
@@ -170,7 +173,7 @@ function card(e){
   const c=C[e.corner];
   return `<a class="card" href="${e.page}">
    <div class="th" style="background-image:url('${e.thumb}')"><span class="badge" style="background:${c.color}">${c.icon} ${c.name}</span><span class="no">${label(e.issue)} · ${e.id}화</span></div>
-   <div class="bd"><h3>${e.title}</h3><p>${e.summary}</p>
+   <div class="bd"><h3>${e.title}</h3><p>${e.summary}</p><span class="st" data-id="${e.id}"></span>
    <div class="act"><span class="btn">웹툰 보기 →</span>${e.pdf?`<span class="btn ghost" onclick="event.preventDefault();location.href='${e.pdf}'">PDF</span>`:''}</div></div></a>`;
 }
 function renderHome(){
@@ -196,7 +199,14 @@ function renderCorner(k){
   ${list.length?`<div class="grid">${list.map(card).join('')}</div>`:`<div class="empty">🛠️ 곧 연재가 시작됩니다. 다음 호를 기대해 주세요!</div>`}</section>`;
 }
 let cur='home';
-function go(k){cur=k;document.getElementById('main').innerHTML= k==='home'?renderHome():renderCorner(k);paintTabs();window.scrollTo({top:0});try{history.replaceState(null,'',k==='home'?'#':'#'+k)}catch(e){}}
+async function paintStats(){
+  if(!window.ZT_FIRE||!ZT_FIRE.enabled)return;
+  const els=[...document.querySelectorAll('.st[data-id]')];if(!els.length)return;
+  const st=await ZT_FIRE.getStats([...new Set(els.map(e=>e.dataset.id))]);
+  els.forEach(e=>{const d=st[e.dataset.id];if(d)e.textContent=`👁 조회 ${d.views||0} · 👍 도움됐어요 ${d.likes||0}`});
+}
+window.addEventListener('zt-fire-ready',paintStats);
+function go(k){cur=k;document.getElementById('main').innerHTML= k==='home'?renderHome():renderCorner(k);paintTabs();paintStats();window.scrollTo({top:0});try{history.replaceState(null,'',k==='home'?'#':'#'+k)}catch(e){}}
 function paintTabs(){
   const items=[['home','🏠','홈'],...Object.entries(C).map(([k,c])=>[k,c.icon,c.name])];
   document.getElementById('tabs').innerHTML=items.map(([k,i,n])=>`<button class="tab ${cur===k?'on':''}" onclick="go('${k}')">${i} ${n}</button>`).join('');
@@ -210,6 +220,7 @@ function openModal(){document.getElementById('modal').classList.add('on')}
 function closeModal(){document.getElementById('modal').classList.remove('on')}
 function sendForm(ev){
   ev.preventDefault();const f=ev.target;
+  if(window.ZT_FIRE){const o=Object.fromEntries(new FormData(f));delete o['bot-field'];delete o['form-name'];ZT_FIRE.saveConsult(o)}
   fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()})
    .then(()=>{alert('문의가 접수되었습니다. 곧 연락드리겠습니다.');f.reset();closeModal()})
    .catch(()=>{location.href='mailto:care114@zeniel.co.kr?subject='+encodeURIComponent('[제니툰] 상담 문의')});
