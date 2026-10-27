@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>선생님이 없어요 — 프랑스 교실에서 붙은 불 | 제니툰</title>
+<meta property="og:title" content="제니툰 · 선생님이 없어요 — 프랑스 교실에서 붙은 불">
+<meta property="og:image" content="../thumbs/005.png">
+<link rel="icon" href="../favicon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#ffd23f">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="제니툰">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fbf6ea; --paper2:#fffdf7; --ink:#161616; --sub:#4a4a4a;
+  --red:#e2403a; --blue:#2f6fd6; --yellow:#ffd23f; --green:#2e9e6a; --soft:#f1e7cf;
+  --shadow:#161616;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#1d1b17; --paper2:#262420; --ink:#f2ede1; --sub:#c9c2b2;
+    --soft:#34302a; --shadow:#000;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#1d1b17; --paper2:#262420; --ink:#f2ede1; --sub:#c9c2b2;
+  --soft:#34302a; --shadow:#000;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Gowun Dodum',sans-serif;line-height:1.6;font-size:15px}
+.wrap{max-width:760px;margin:0 auto;padding:18px 16px 40px}
+h1,h2,h3{font-family:'Black Han Sans',sans-serif;font-weight:400;margin:0;letter-spacing:.5px;line-height:1.25}
+.ep{background:var(--paper2);border:3px solid var(--ink);box-shadow:6px 6px 0 var(--shadow);margin:0 6px 30px 0;padding:20px 18px 22px;border-radius:6px}
+.eptag{display:inline-block;background:var(--ink);color:var(--paper2);font-family:'Black Han Sans';padding:3px 12px;border-radius:3px;font-size:14px;letter-spacing:1px}
+.ep h2{font-size:26px;margin:8px 0 2px}
+.ep .subt{color:var(--sub);margin:0 0 14px;font-size:14px}
+/* cover */
+.cover{background:var(--yellow);color:#161616;text-align:center;position:relative;overflow:hidden}
+.cover .burst{position:absolute;inset:0;background:repeating-conic-gradient(from 0deg at 0% 50%,rgba(255,255,255,.42) 0 2.5deg,transparent 2.5deg 8deg) left/50% 100% no-repeat,repeating-conic-gradient(from 0deg at 100% 50%,rgba(255,255,255,.42) 0 2.5deg,transparent 2.5deg 8deg) right/50% 100% no-repeat;-webkit-mask-image:linear-gradient(90deg,#000,transparent 42%,transparent 58%,#000);mask-image:linear-gradient(90deg,#000,transparent 42%,transparent 58%,#000);z-index:0}
+.cover>*{position:relative;z-index:1}
+.cover h1{font-size:38px;margin:10px 0 6px;text-shadow:3px 3px 0 #fff}
+.cover .kick{font-family:'Jua';font-size:17px}
+.cover .by{font-size:13px;margin-top:10px}
+.cover .cast{display:flex;justify-content:center;gap:6px;margin:14px 0 6px;flex-wrap:wrap}
+.cover .cast svg{width:78px;height:78px;background:#fff;border:3px solid #161616;border-radius:50%}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.num{background:#fff;border:2.5px solid #161616;border-radius:6px;padding:8px 4px}
+.num b{display:block;font-family:'Black Han Sans';font-size:26px;color:var(--red);line-height:1.1}
+.num span{font-size:12px}
+/* panels */
+.g4{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.panel{border:2.5px solid var(--ink);background:var(--paper);border-radius:4px;padding:10px;position:relative;min-width:0}
+.panel.wide{grid-column:1/-1}
+.panel .cap{font-family:'Black Han Sans';font-size:13px;background:var(--yellow);color:#161616;display:inline-block;padding:1px 8px;border:2px solid var(--ink);margin-bottom:6px}
+.panel .fx{position:absolute;right:8px;top:4px;font-family:'Black Han Sans';color:var(--red);font-size:20px;transform:rotate(8deg)}
+/* scene */
+.scene{display:flex;align-items:flex-start;gap:8px;margin:8px 0}
+.scene.rev{flex-direction:row-reverse}
+.who{flex:0 0 64px;text-align:center;font-size:11px;color:var(--sub)}
+.who svg{width:62px;height:62px;border:2.5px solid var(--ink);border-radius:50%;background:#fff;display:block;margin:0 auto 2px}
+.bub{position:relative;background:#fff;color:#161616;border:2.5px solid var(--ink);border-radius:16px;padding:8px 12px;font-family:'Jua';font-size:15px;line-height:1.45;flex:1;min-width:0}
+.bub:before{content:"";position:absolute;left:-11px;top:16px;border:9px solid transparent;border-right-color:var(--ink);border-left:0}
+.bub:after{content:"";position:absolute;left:-7px;top:18px;border:7px solid transparent;border-right-color:#fff;border-left:0}
+.rev .bub:before{left:auto;right:-11px;border-right-color:transparent;border-left:9px solid var(--ink);border-right:0}
+.rev .bub:after{left:auto;right:-7px;border-right-color:transparent;border-left:7px solid #fff;border-right:0}
+.bub.shout{border-radius:4px;background:var(--yellow);font-size:16px}
+.bub.shout:after{border-right-color:var(--yellow)}
+.rev .bub.shout:after{border-left-color:var(--yellow)}
+.bub small{display:block;color:#666;font-family:'Gowun Dodum';font-size:11px;margin-top:2px}
+/* boxes */
+.box{border:2.5px dashed var(--ink);border-radius:6px;padding:10px 14px;margin:12px 0;background:var(--paper)}
+.box h3{font-size:17px;margin-bottom:6px}
+.box ul,.box ol{margin:0;padding-left:20px}
+.box li{margin:3px 0}
+.box.red{border-style:solid;border-color:var(--red)}
+.box.blue{border-style:solid;border-color:var(--blue)}
+.law{background:var(--soft);border-left:6px solid var(--blue);padding:10px 14px;font-size:14px;margin:12px 0;border-radius:0 6px 6px 0}
+.law b{color:var(--blue)}
+mark{background:var(--yellow);color:#161616;padding:0 3px}
+/* bars */
+.bars{margin:6px 0 4px}
+.bar{display:grid;grid-template-columns:110px 1fr 54px;align-items:center;gap:8px;margin:7px 0;font-size:14px}
+.bar .tr{height:20px;border:2px solid var(--ink);border-radius:3px;background:var(--paper)}
+.bar .fl{height:100%;background:var(--blue)}
+.bar .fl.r{background:var(--red)}.bar .fl.y{background:var(--yellow)}.bar .fl.g{background:var(--green)}
+.bar b{font-family:'Black Han Sans';font-weight:400;text-align:right}
+/* timeline */
+.tl{list-style:none;margin:6px 0;padding:0 0 0 22px;border-left:4px solid var(--ink)}
+.tl li{position:relative;margin:0 0 12px;padding-left:6px}
+.tl li:before{content:"";position:absolute;left:-33px;top:4px;width:16px;height:16px;background:var(--yellow);border:3px solid var(--ink);border-radius:50%}
+.tl li.now:before{background:var(--red)}
+.tl .d{font-family:'Black Han Sans';font-size:14px;color:var(--red)}
+/* flow */
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;align-items:stretch;margin:8px 0}
+.flow div{border:2.5px solid var(--ink);border-radius:5px;padding:8px 4px;text-align:center;font-size:13px;background:var(--paper);font-family:'Jua';display:flex;align-items:center;justify-content:center;min-width:0}
+.flow div.k{background:var(--yellow);color:#161616}
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.chip{border:2px solid var(--ink);border-radius:20px;padding:2px 10px;font-size:13px;background:var(--paper)}
+.chip.hl{background:var(--red);color:#fff;border-color:var(--red)}
+/* number cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.card{border:2.5px solid var(--ink);border-radius:6px;padding:10px;text-align:center;background:var(--paper)}
+.card b{font-family:'Black Han Sans';font-size:30px;font-weight:400;display:block;color:var(--blue);line-height:1.1}
+.card span{font-size:13px}
+/* checklist */
+.chk{list-style:none;padding:0;margin:6px 0}
+.chk li{border:2px solid var(--ink);border-radius:5px;padding:8px 10px 8px 40px;margin:7px 0;position:relative;background:var(--paper);font-size:14px}
+.chk li:before{content:"";position:absolute;left:10px;top:9px;width:18px;height:18px;border:2.5px solid var(--ink);border-radius:3px;background:#fff}
+.chk li b{color:var(--red)}
+.tagline{font-size:12px;color:var(--sub)}
+.quote{text-align:center;font-family:'Jua';font-size:19px;margin:14px 0 4px}
+.src{font-size:12px;color:var(--sub);border-top:2px dashed var(--ink);margin-top:14px;padding-top:8px}
+.theme-btn{position:fixed;right:12px;bottom:12px;z-index:9;border:2.5px solid var(--ink);background:var(--paper2);color:var(--ink);font-family:'Jua';border-radius:20px;padding:4px 12px;cursor:pointer}
+@media (max-width:540px){
+  .g4{grid-template-columns:1fr}
+  .cover h1{font-size:30px}
+  .ep h2{font-size:22px}
+  .nums,.cards{grid-template-columns:repeat(2,1fr)}
+  .flow{grid-template-columns:1fr}
+  .flow div{padding:6px}
+  .bar{grid-template-columns:86px 1fr 46px;font-size:13px}
+  .cover .cast svg{width:60px;height:60px}
+}
+@media (min-width:1024px){.wrap{max-width:960px}body{font-size:17px}.bub{font-size:17px}.ep h2{font-size:30px}.who{flex-basis:80px}.who svg{width:76px;height:76px}.cover h1{font-size:46px}.num b{font-size:30px}}
+@media (min-width:1440px){.wrap{max-width:1280px}body{font-size:18px}.bub{font-size:18.5px;padding:10px 16px}.ep{padding:26px 28px 28px}.ep h2{font-size:34px}.ep .subt{font-size:16px}.who{flex-basis:92px;font-size:12.5px}.who svg{width:88px;height:88px}.cover h1{font-size:54px}.cover .kick{font-size:20px}.cover .cast svg{width:96px;height:96px}.num b{font-size:34px}.num span{font-size:14px}.g4{gap:16px}.panel{padding:14px}.panel .cap{font-size:15px}.box h3{font-size:20px}.law,.src{font-size:15px}.bar{grid-template-columns:200px 1fr 70px;font-size:16px}.bar .tr{height:24px}.card b{font-size:36px}.card span{font-size:15px}.chk li{font-size:16px}.zt-nav{font-size:16px}}
+@media print{.theme-btn{display:none}}
+</style>
+<style>
+.zt-nav{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:10px;justify-content:space-between;background:var(--paper2);border-bottom:3px solid var(--ink);padding:8px 14px;font-family:'Jua',sans-serif;font-size:14px}
+.zt-nav a{color:var(--ink);text-decoration:none;border:2px solid var(--ink);border-radius:16px;padding:1px 10px;background:var(--paper)}
+.zt-nav span{flex:1;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.zt-end{padding-top:0}
+.zt-cta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;background:#ffd23f;color:#161616;border:3px solid var(--ink);border-radius:6px;padding:14px 16px;box-shadow:5px 5px 0 var(--shadow);margin-right:6px}
+.zt-cta b{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:19px}
+.zt-cta span{font-size:13.5px}
+.zt-btn{background:#161616;color:#fff;text-decoration:none;font-family:'Jua',sans-serif;border-radius:5px;padding:7px 14px}
+.zt-links{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 50px}
+.zt-links a{color:var(--ink);text-decoration:none;border:2px solid var(--ink);border-radius:5px;padding:4px 12px;font-family:'Jua',sans-serif;background:var(--paper2)}
+.zt-like{display:flex;align-items:center;gap:12px;margin:18px 0 0;flex-wrap:wrap}
+.zt-like button{border:2.5px solid var(--ink);background:var(--paper2);color:var(--ink);border-radius:22px;padding:6px 16px;font-family:'Jua',sans-serif;font-size:16px;cursor:pointer}
+.zt-like button.on{background:#ffd23f;color:#161616}
+.zt-like span{font-size:13px;color:var(--sub)}
+@media print{.zt-nav,.zt-end{display:none}}
+</style>
+</head>
+<body>
+<div style="background:#161616;color:#fffdf7;font-size:12.5px;text-align:center;padding:6px 10px;font-family:'Gowun Dodum',sans-serif">제공 <a href="https://www.zenielinnovation.co.kr" target="_blank" rel="noopener" style="color:#ffd23f;font-weight:700;text-decoration:none">㈜제니엘이노베이션</a></div>
+<nav class="zt-nav"><a href="../index.html" data-zt-back>← 제니툰</a><span>📰 특별편 · 005화</span><a href="005.pdf" class="zt-pdf">PDF</a></nav>
+<button class="theme-btn" onclick="toggleTheme()">☀︎ / ☾</button>
+<div class="wrap" id="app"></div>
+<div class="wrap zt-end"><div class="zt-cta"><div><b>결원 없는 현장, 함께 만듭니다</b><br><span>대체인력 운영 · 인재파견 · 아웃소싱 · 청년·고용지원사업 상담</span></div>
+<a class="zt-btn" href="../index.html?consult=1&from=005%ED%99%94">💬 상담 문의하기</a></div>
+<div class="zt-like" id="ztLike" hidden><button type="button" onclick="ztLike()">👍 도움됐어요 <b id="ztLikeN"></b></button><span id="ztViews"></span></div>
+<div class="zt-links"><a href="../index.html">🏠 제니툰 목록</a><a href="005.pdf">📄 PDF 저장</a><a href="../index.html#news">📰 노동뉴스툰 더보기</a></div></div>
+
+
+<script>
+/* ---------- 오리지널 캐릭터 SVG (가상 인물) ---------- */
+const CH={
+  nomusa:{name:'도 노무사',skin:'#efc8a4',hair:'#9a9a9a',style:'side',acc:'glasses',shirt:'#4b5563'},
+  hr:{name:'한결 대리',skin:'#f6d3b3',hair:'#40261a',style:'long',acc:'none',shirt:'#8b5cf6'},
+  banjang:{name:'현장 반장',skin:'#e9bf98',hair:'#2a2a2a',style:'short',acc:'badge',shirt:'#f08c00'},
+  bot:{name:'안내로봇 체키',bot:true}
+};
+function face(k,mood='calm'){
+  const c=CH[k];
+  if(c.bot){
+    const eye= mood==='shock'?'<circle cx="30" cy="40" r="6" fill="#161616"/><circle cx="50" cy="40" r="6" fill="#161616"/>'
+      :'<rect x="24" y="36" width="12" height="8" rx="3" fill="#161616"/><rect x="44" y="36" width="12" height="8" rx="3" fill="#161616"/>';
+    const m= mood==='shock'?'<ellipse cx="40" cy="56" rx="5" ry="6" fill="#161616"/>':'<path d="M30 54 Q40 62 50 54" stroke="#161616" stroke-width="3" fill="none"/>';
+    return `<svg viewBox="0 0 80 80"><line x1="40" y1="8" x2="40" y2="18" stroke="#161616" stroke-width="3"/><circle cx="40" cy="7" r="4" fill="#e2403a" stroke="#161616" stroke-width="2"/><rect x="14" y="18" width="52" height="48" rx="12" fill="#ffd23f" stroke="#161616" stroke-width="3"/><rect x="20" y="28" width="40" height="34" rx="8" fill="#fff" stroke="#161616" stroke-width="2"/>${eye}${m}<rect x="8" y="34" width="6" height="14" rx="2" fill="#2f6fd6" stroke="#161616" stroke-width="2"/><rect x="66" y="34" width="6" height="14" rx="2" fill="#2f6fd6" stroke="#161616" stroke-width="2"/></svg>`;
+  }
+  const S='#161616';
+  let hair='';
+  switch(c.style){
+    case 'short': hair=`<path d="M18 38 Q18 14 40 14 Q62 14 62 38 Q58 24 40 24 Q26 24 18 38Z" fill="${c.hair}"/>`;break;
+    case 'side': hair=`<path d="M18 38 Q16 16 40 15 Q64 16 62 36 Q52 22 30 26 Q22 28 18 38Z" fill="${c.hair}"/>`;break;
+    case 'bob': hair=`<path d="M15 50 Q12 14 40 13 Q68 14 65 50 L58 50 Q60 26 40 24 Q20 26 22 50Z" fill="${c.hair}"/>`;break;
+    case 'bald': hair=`<path d="M19 36 Q20 30 24 30 L24 40 Z M61 36 Q60 30 56 30 L56 40Z" fill="${c.hair}"/>`;break;
+    case 'long': hair=`<path d="M14 66 Q10 14 40 13 Q70 14 66 66 L58 66 Q62 28 40 24 Q18 28 22 66Z" fill="${c.hair}"/>`;break;
+    case 'neat': hair=`<path d="M18 36 Q18 14 40 14 Q62 14 62 36 Q60 22 46 21 L44 26 Q30 22 18 36Z" fill="${c.hair}"/>`;break;
+  }
+  let brows='',eyes='',mouth='',extra='';
+  const ey=40;
+  if(mood==='angry'){brows=`<path d="M26 31 L36 35 M54 31 L44 35" stroke="${S}" stroke-width="3"/>`;}
+  else if(mood==='sad'){brows=`<path d="M26 34 L35 31 M54 34 L45 31" stroke="${S}" stroke-width="2.5"/>`;}
+  else if(mood==='shock'){brows=`<path d="M26 29 Q31 26 36 29 M44 29 Q49 26 54 29" stroke="${S}" stroke-width="2.5" fill="none"/>`;}
+  else {brows=`<path d="M27 32 Q31 30 35 32 M45 32 Q49 30 53 32" stroke="${S}" stroke-width="2.5" fill="none"/>`;}
+  if(mood==='shock'){eyes=`<circle cx="31" cy="${ey}" r="4.5" fill="#fff" stroke="${S}" stroke-width="2"/><circle cx="31" cy="${ey}" r="2" fill="${S}"/><circle cx="49" cy="${ey}" r="4.5" fill="#fff" stroke="${S}" stroke-width="2"/><circle cx="49" cy="${ey}" r="2" fill="${S}"/>`;mouth=`<ellipse cx="40" cy="56" rx="5" ry="6" fill="${S}"/>`;}
+  else if(mood==='happy'){eyes=`<path d="M27 41 Q31 36 35 41 M45 41 Q49 36 53 41" stroke="${S}" stroke-width="3" fill="none"/>`;mouth=`<path d="M30 52 Q40 63 50 52 Z" fill="${S}"/>`;}
+  else {eyes=`<circle cx="31" cy="${ey}" r="3" fill="${S}"/><circle cx="49" cy="${ey}" r="3" fill="${S}"/>`;
+    mouth= mood==='sad'?`<path d="M32 57 Q40 51 48 57" stroke="${S}" stroke-width="3" fill="none"/>`: mood==='angry'?`<path d="M32 56 L48 56" stroke="${S}" stroke-width="3"/>`:`<path d="M32 53 Q40 60 48 53" stroke="${S}" stroke-width="3" fill="none"/>`;}
+  if(c.acc==='glasses') extra+=`<circle cx="31" cy="${ey}" r="7" fill="none" stroke="${S}" stroke-width="2.2"/><circle cx="49" cy="${ey}" r="7" fill="none" stroke="${S}" stroke-width="2.2"/><path d="M38 ${ey} L42 ${ey}" stroke="${S}" stroke-width="2"/><path d="M33 49 Q40 46 47 49" stroke="#9a9a9a" stroke-width="3" fill="none"/>`;
+  let body=`<path d="M10 80 Q12 64 40 64 Q68 64 70 80Z" fill="${c.shirt}" stroke="${S}" stroke-width="2.5"/>`;
+  if(c.acc==='badge') body+=`<path d="M52 69 l5 0 l2 4 l-4.5 3 l-4.5 -3Z" fill="#ffd23f" stroke="${S}" stroke-width="1.5"/>`;
+  if(c.acc==='lanyard') body+=`<path d="M30 64 L40 76 L50 64" stroke="#ffd23f" stroke-width="3" fill="none"/><rect x="36" y="74" width="8" height="6" fill="#fff" stroke="${S}" stroke-width="1.5"/>`;
+  if(c.acc==='apron') body+=`<rect x="28" y="68" width="24" height="12" fill="#fff" stroke="${S}" stroke-width="2"/>`;
+  if(c.acc==='tie') body+=`<path d="M37 64 L43 64 L41.5 69 L44 78 L40 80 L36 78 L38.5 69Z" fill="#e2403a" stroke="${S}" stroke-width="1.5"/>`;
+  return `<svg viewBox="0 0 80 80">${body}<ellipse cx="40" cy="42" rx="22" ry="24" fill="${c.skin}" stroke="${S}" stroke-width="2.5"/>${hair}<circle cx="24" cy="50" r="3.5" fill="#f59e9e" opacity=".6"/><circle cx="56" cy="50" r="3.5" fill="#f59e9e" opacity=".6"/>${brows}${eyes}${mouth}${extra}</svg>`;
+}
+/* ---------- 컴포넌트 ---------- */
+function S(k,mood,name,text,o={}){
+  return `<div class="scene ${o.rev?'rev':''}"><div class="who">${face(k,mood)}${name||CH[k].name}</div><div class="bub ${o.shout?'shout':''}">${text}${o.note?`<small>${o.note}</small>`:''}</div></div>`;
+}
+function P(cap,body,o={}){return `<div class="panel ${o.wide?'wide':''}">${cap?`<div class="cap">${cap}</div>`:''}${o.fx?`<div class="fx">${o.fx}</div>`:''}${body}</div>`;}
+function WHO(list){return `<div class="chips">${list.map(([n,h])=>`<span class="chip ${h?'hl':''}">${n}</span>`).join('')}</div>`;}
+function bars(rows,max){return `<div class="bars">${rows.map(([l,v,u,c])=>`<div class="bar"><span>${l}</span><div class="tr"><div class="fl ${c||''}" style="width:${Math.max(4,v/max*100)}%"></div></div><b>${v}${u}</b></div>`).join('')}</div>`;}
+function EP(tag,title,sub,body,cls=''){return `<section class="ep ${cls}"><span class="eptag">${tag}</span><h2>${title}</h2>${sub?`<p class="subt">${sub}</p>`:''}${body}</section>`;}
+
+
+/* ---------- 본문 ---------- */
+let H='';
+const SRC_URL='https://youtu.be/UwzoPx8T5qI';
+
+/* 표지 */
+H+=`<section class="ep cover"><div class="burst"></div>
+<div class="kick">제니툰 특별편 · 노동뉴스툰</div>
+<h1>“선생님이 없어요”<br>프랑스 교실에서 붙은 불</h1>
+<div class="kick">불씨는 교사 부족, 장작은 수십 년 쌓인 청구서</div>
+<div class="cast">${face('bot','calm')}${face('hr','shock')}${face('nomusa','calm')}${face('banjang','calm')}</div>
+<div class="nums">
+ <div class="num"><b>25만</b><span>10월 6일 행진 인원(정부 추산)</span></div>
+ <div class="num"><b>86%</b><span>연행자 중 미성년자 비율</span></div>
+ <div class="num"><b>1,588</b><span>내년 예산안 교사 감축 인원</span></div>
+ <div class="num"><b>119.3%</b><span>프랑스 국가부채 / GDP</span></div>
+ <div class="num"><b>57%</b><span>나라 경제 중 정부 지출 몫</span></div>
+ <div class="num"><b>13%↑</b><span>GDP 중 연금 지출 몫</span></div>
+</div>
+<div class="by">작성 · ㈜제니엘이노베이션 &nbsp;|&nbsp; 2026.10.27</div>
+</section>`;
+
+/* 원작 안내 */
+H+=`<div class="box blue" style="margin:0 6px 30px 0"><h3>🎬 원작 영상 안내</h3>
+<p style="margin:0">이 웹툰은 유튜브 <b>‘조수빈큐레이션’</b> 채널의 ‘도도한 서재’ 영상 「프랑스는 정말 끝난 걸까? ‘돈의 대폭발’ 이전 유럽의 몰락을 예언한 책」(2026.10.24, 18분 42초)의 내용을 장면별로 요약·재구성했습니다. 원작의 표현과 분석은 영상에서 직접 확인해 주세요.</p>
+<p style="margin:8px 0 0"><a href="${SRC_URL}" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">▶ 원작 영상 보러 가기</a> &nbsp;·&nbsp; <a href="https://ebook-product.kyobobook.co.kr/dig/epd/sam/E000008431132" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">📚 영상이 소개한 책</a></p></div>`;
+
+/* EP.0 */
+H+=EP('EP.0','진열장이 깨진 밤','물가에 화난 시민이 왜 명품 매장을?',
+`${S('bot','calm','','안녕하세요, 안내로봇 <b>체키</b>예요! 오늘은 <mark>10월 17일 밤 프랑스</mark>에서 시작할게요.')}
+<div class="g4">
+${P('① 깨진 유리창',S('hr','shock','','유리창이 깨진 곳은 명품 시계·가방 매장들이었대요. 파리시 고위 관계자는 <b>“계획적인 약탈”</b>이라고 불렀고요.',{note:'(요지) 영상 전언'}),{fx:'쨍!'})}
+${P('② 이상한 장면',S('nomusa','calm','','먹고살기 힘들다며 나온 시위인데, 왜 하필 <b>명품 매장</b>이었을까요? 영상은 이 질문을 끝까지 붙들고 갑니다.',{rev:true}))}
+${P('③ 무너진 종탑',S('bot','shock','','같은 날 리모주에선 <b>140년 넘게</b> 도시를 지켜 온 시청 종탑이 불길 속에 무너졌어요. 하루 사이 전국에서 <b>약 2,000명</b> 가까이 체포됐고요.',{note:'(전언) 초기 보도는 전국 체포 1,200명'}))}
+${P('④ 관용의 나라',S('hr','sad','','프랑스 하면 낭만, 그리고 <b>똘레랑스(관용)</b>잖아요. 나와 다른 사람의 자리를 지켜 준다는…',{rev:true,note:'1763년 볼테르 「관용론」까지 거슬러 올라가는 전통'}))}
+</div>
+${S('nomusa','calm','','이 모든 일의 시작은 <b>한 고등학교</b>였어요. 파리 근교 크레테유의 <mark>생텍쥐페리 고교</mark>. 「어린 왕자」의 작가 이름을 딴 학교죠.')}
+${S('hr','shock','','학생들 요구는 딱 한마디였대요. <b>“선생님이 없어요.”</b>',{rev:true})}
+${S('nomusa','calm','','영상의 진단은 이래요. 교사 부족은 <b>불씨</b>일 뿐, <b>장작</b>은 수십 년 동안 따로 쌓여 왔다는 거죠.')}
+<div class="box"><h3>📚 영상이 펼친 책들</h3><ul>
+<li><b>「부자 미국 가난한 유럽」</b>(2023) — 전 파리 특파원 출신 기자 두 명의 책. 영상은 이번 사태를 <b>3년 전에 예언한 책</b>으로 소개</li>
+<li><b>「지리의 힘」</b> — 지도로 프랑스를 다시 읽기</li>
+<li>앵커·언론인이 쓴 책들, 그리고 마지막엔 <b>한국</b>은 이를 어떻게 봐야 하는지</li>
+</ul></div>
+<p class="tagline">※ 원작은 1인 진행 북 큐레이션 영상입니다. 웹툰 속 대사는 영상 내용을 캐릭터 대화로 새로 쓴 것입니다.</p>`);
+
+/* EP.1 */
+H+=EP('EP.1','한 달의 기록','학생의 불씨 위에 어른들의 장작이 얹히다',
+`<div class="box"><h3>🗓️ 9월 중순 → 10월 17일</h3>
+<ul class="tl">
+ <li><span class="d">9월 중순</span><br>생텍쥐페리 고교, 교사 자리가 여럿 비어 <b>수업이 자꾸 취소</b>. 감독하는 어른 없는 빈 교실도 늘어남</li>
+ <li><span class="d">학생들의 요구</span><br>① 선생님을 채워 달라 ② 낡은 건물을 고쳐 달라 ③ <b>폭염에 에어컨</b>을 달아 달라 — 결국 학생들이 학교 정문을 막아섬</li>
+ <li><span class="d">2주 만에</span><br><b>수백 개 학교</b>가 봉쇄</li>
+ <li><span class="d">10. 6</span><br>행진 인원 정부 추산 <b>25만 명</b></li>
+ <li><span class="d">이 무렵</span><br>연행 <b>약 7,000명</b>, 그중 <mark>86%가 미성년자</mark></li>
+ <li class="now"><span class="d">10. 17</span><br><b>노동조합·노란 조끼</b> 합류 — “물가가 너무 올랐다”는 어른들의 분노가 겹침</li>
+</ul>
+<p class="tagline">※ 확인: 25만 명은 내무부 집계 전국 약 25만 6천 명(파리 5만 6천 명), 연행자 6,877명 중 86%가 18세 미만(AFP 인용 보도).</p></div>
+<div class="g4">
+${P('① 숫자 싸움',S('hr','calm','','교사 노조는 중등학교 <b>53%</b>에서 교사가 한 명 이상 비어 있다고 했고, 정부는 <b>96%를 채웠다</b>고 했대요.',{note:'(전언)'}))}
+${P('② 체감은 다르다',S('nomusa','calm','','그런데 <b>우리 아이 반</b>에 선생님이 없다면 4%든 50%든 무슨 상관일까요. 영상은 정부 설명이 궁색했다고 봅니다.',{rev:true,note:'(요지)'}),{fx:'0명'})}
+</div>
+${S('bot','calm','','SNS에서 공감을 많이 받은 요약도 있었대요. <b>처음엔 학생 시위였는데, 물가에 지친 어른들이 합류하며 점점 과격해졌다</b>고요.')}
+<div class="box red"><h3>🔥 10월 17일 밤, 선을 넘다</h3><ul>
+<li>리모주: <b>140년 넘은</b> 시청 종탑 붕괴</li>
+<li>리옹: <b>121년 된</b> 관광 안내소 전소</li>
+<li>마르세유: 시위대가 <b>시청 안까지</b> 진입</li>
+<li>파리에서만 <b>1,000명 가까이</b> 체포(역대 최다라는 전언), 다친 경찰·소방관 <b>500명 이상</b></li>
+</ul>
+<p class="tagline">※ 리모주·리옹·마르세유 피해는 국내 보도로 확인. 체포·부상 인원은 영상 전언이며, 18일 총리 발표 기준 보도는 전국 체포 1,200명·경찰 부상 150명이었습니다.</p></div>
+${S('hr','sad','','아이들이 “에어컨 좀 달아 달라”고 외쳤던 바로 그 <b>오래된 건물들</b>이 불타고 있었던 거네요…')}`);
+
+/* EP.2 */
+H+=EP('EP.2','순환도로 안과 밖','왜 불은 늘 가장자리에서 붙을까',
+`${S('nomusa','calm','','지도를 펴 볼게요. 에펠탑·루브르·몽마르트르, 우리가 아는 파리는 전부 <b>길이 35km 순환도로(페리페리크)</b> 안쪽에 있어요.')}
+<div class="box"><h3>🗺️ 선 하나로 갈리는 두 세상 (인구, 명)</h3>
+${bars([['순환도로 안',210,'만',''],['파리 대도시권',1000,'만+','r']],1000)}
+<p class="tagline">※ 우리가 “파리의 낭만”이라 부르는 풍경은 대도시권 주민 <b>6명 중 1명</b>이 사는 동네 이야기라는 게 영상의 설명입니다.</p></div>
+<div class="g4">
+${P('① 지하철 몇 정거장',S('hr','calm','','생텍쥐페리 고교가 있는 크레테유는 그 선 <b>바깥</b>이래요. 지하철 8호선이면 닿는데, 사는 세상은 완전히 다르고요.'))}
+${P('② 170년 전 진단',S('nomusa','calm','','1856년 토크빌은 프랑스를 <b>수도가 지방을 가장 압도하고 나라 전체를 빨아들인 나라</b>로 봤어요. 그 진단이 이제 콘크리트 도로가 된 셈이죠.',{rev:true,note:'(요지)'}))}
+</div>
+<div class="box"><h3>📍 불은 늘 가장자리에서</h3>
+<ul class="tl">
+ <li><span class="d">2005</span><br>10대 두 명이 숨진 뒤 <b>파리 교외</b>에서 소요</li>
+ <li><span class="d">2018</span><br>유류값에 분노한 <b>지방</b>의 노란 조끼</li>
+ <li><span class="d">2023</span><br>경찰 총격으로 숨진 17세 청소년 사건 뒤 다시 <b>교외</b>에서</li>
+ <li class="now"><span class="d">2026</span><br>교외 고교의 교사 부족에서 시작, 이번엔 교외·지방·노동계가 <b>한꺼번에</b></li>
+</ul></div>
+${S('bot','sad','','그동안 교외는 교외대로, 지방은 지방대로 따로 불탔대요. 관용을 말하던 지식인들은 늘 <b>순환도로 안쪽</b>에서 이야기했고요.')}
+${S('nomusa','calm','','영상은 그 대가를 <b>바깥 사람들</b>이 치러 왔다고, 중심이 관용을 말하는 사이 가장자리엔 주고받을 돈조차 남지 않았다고 지적합니다.',{rev:true,note:'(요지)'})}`);
+
+/* EP.3 */
+H+=EP('EP.3','박물관 대륙','가난해진 게 아니라, 늙은 약속을 지키느라',
+`${S('hr','calm','','3년 전에 이 상황을 예언했다는 책, 핵심이 뭐예요?')}
+${S('nomusa','calm','','한 단어예요. <mark>박물관 대륙</mark>. 과거의 이름값으로 먹고사는 유럽이라는 뜻이죠.',{rev:true,note:'책 프롤로그 제목 「쇠락하는 ‘박물관 대륙’」'})}
+<div class="box"><h3>🏛️ 박물관 vs 🏭 공장 (2023년)</h3>
+<ul class="tl">
+ <li><span class="d">2023. 4</span><br>유럽 기업 최초로 시가총액 <b>5,000억 달러</b> 돌파 — 명품 가방을 파는 회사(루이비통 모회사)</li>
+ <li class="now"><span class="d">한 달 뒤</span><br>미국에선 <b>1조 달러</b> 돌파 — AI 칩을 파는 회사(엔비디아)</li>
+</ul>
+<p style="margin:4px 0 0">유럽 1등은 <b>과거의 이름값</b>을, 미국 1등은 <b>미래의 계산 능력</b>을 팔았다는 대비입니다.</p></div>
+<div class="g4">
+${P('① 박물관 관리비',S('bot','shock','','박물관을 지키려면 돈이 들죠. 프랑스는 나라 경제의 <b>57%</b>를 정부가 써요. OECD(경제협력개발기구) 최고 수준이래요.'),{fx:'57%'})}
+${P('② 가장 큰 덩어리',S('nomusa','calm','','그중 가장 큰 덩어리는 <b>연금</b>. 나라 경제의 <b>13% 넘게</b>, OECD 평균의 두 배 가까이 쓰입니다.',{rev:true}))}
+${P('③ 뜨겁던 시절의 약속',S('hr','calm','','주 35시간, 60대 초반 연금, 거의 공짜인 대학… 모두 <b>경제가 뜨겁던 시절</b>에 맺은 약속이었군요.'))}
+${P('④ 영상의 한 줄',S('nomusa','calm','','프랑스는 가난해진 게 아니라, <b>늙은 약속을 지키느라 젊은 돈을 미리 당겨 쓴 것</b>이라는 해석이에요.',{rev:true,note:'(요지)'}))}
+</div>
+${S('hr','calm','','그렇게 오래 문제라고 했는데, 왜 못 고쳤어요?')}
+${S('nomusa','calm','','1982년 경제학자 맨커 올슨의 경고가 답이 된대요. <b>오래 평화롭고 안정된 나라일수록 제 몫을 지키려는 집단이 촘촘해져 나라 전체가 굳어 버린다</b>는 거죠. 연금 개혁 한 번에 정권이 흔들리는 프랑스를 잘 설명한다고요.',{rev:true,note:'(요지) 「국가의 흥망성쇠」'})}
+<div class="box"><h3>⏱️ 그럼 프랑스인이 게을러서? — 아닙니다</h3>
+${bars([['프랑스(달러)',81.8,'','r'],['한국(달러)',51,'','']],90)}
+<p class="tagline">※ 1시간 일해서 만드는 가치(시간당 노동생산성), 영상 제시 수치. 문제는 게으름이 아니라 <b>방향</b> — 번 돈이 미래가 아니라 과거로 흘러갔다는 것이 영상의 진단입니다.</p></div>`);
+
+/* EP.4 */
+H+=EP('EP.4','진열장을 깬 손','반항일까, 소음일까',
+`${S('hr','shock','','다시 그 질문이요. 물가 때문에 나왔다면서 왜 명품을? <b>명품 가방으로 장바구니를 채울 순 없잖아요.</b>')}
+${S('bot','calm','','프랑스를 여행 중인 분이 SNS에 이런 글을 올렸대요. 길에서 롤렉스를 <b>너무 싸게</b> 파는데, 가짜가 아니라고 하더래요.',{rev:true,note:'(전언) 영상이 소개한 SNS 글'})}
+${S('nomusa','sad','','그날 털린 물건이 <b>장물</b>로 돌아다니는 거죠. 영상은 이 장면이 오늘 이야기 전체를 한 컷에 담고 있다고 봐요.')}
+<div class="box red"><h3>🪟 한 컷 요약</h3>
+<p style="margin:0">박물관 대륙이 세계에 팔아 온 것 = <b>과거의 이름값</b>. 그 진열장을 프랑스 사람들이 <mark>제 손으로 깼다</mark>.</p></div>
+<div class="g4">
+${P('① 반항하는 인간',S('nomusa','calm','','카뮈는 「반항하는 인간」에서 반항을 이렇게 봤어요. <b>“아니요”라고 말하면서도, 그 안에 지키고 싶은 “예”가 있는 것</b>.',{note:'(요지)'}))}
+${P('② 학생들의 “예”',S('hr','happy','','학생들의 “아니요”엔 <b>“배우고 싶다”는 “예”</b>가 들어 있었네요!',{rev:true}))}
+${P('③ 약탈의 “예”는?',S('banjang','angry','','진열장 깬 손에는 그런 “예”가 안 보입니다. 그건 <b>반항이 아니죠</b>.'))}
+${P('④ 영상의 결론',S('nomusa','calm','','그날 밤 약탈은 아이들의 목소리를 덮고 <b>취지를 왜곡한 소음</b>이었다고 영상은 정리합니다.',{rev:true,note:'(요지)'}),{fx:'소음'})}
+</div>`);
+
+/* EP.5 */
+H+=EP('EP.5','미래에 쓰는 미국, 과거에 쓰는 유럽','빚은 둘 다 많은데, 무엇이 다른가',
+`${S('hr','calm','','그럼 책 제목처럼 미국은 정말 <b>부자</b>예요?')}
+${S('nomusa','calm','','미국도 나랏빚이 올해 처음 <b>40조 달러</b>를 넘었고, 빚 이자가 <b>국방비보다 많은</b> 나라가 됐어요. 빚만 보면 프랑스와 다를 게 없죠.',{rev:true,note:'확인: 2026.8.18 재무부 집계 약 40조 달러, 이자비용은 2025회계연도부터 국방비 추월'})}
+<div class="g4">
+${P('🇺🇸 미국의 돈',S('bot','calm','','기업들이 번 돈을 <b>AI·반도체</b>, 곧 미래에 쏟아붓고 있어요.'))}
+${P('🇫🇷 프랑스의 돈',S('hr','sad','','프랑스의 돈은 미래가 아니라 <b>과거</b>로 흐르고 있고요.',{rev:true}))}
+</div>
+<div class="box"><h3>✏️ 영상 진행자가 고쳐 읽은 책 제목</h3>
+<p style="margin:0;text-align:center;font-family:'Jua';font-size:18px">부자 미국 가난한 유럽 → <mark>미래에 돈을 쓰는 미국, 과거에 돈을 쓰는 유럽</mark></p></div>
+${S('bot','calm','','영상이 던진 질문이에요. <b>한국은 어느 쪽일까요?</b>')}`);
+
+/* EP.6 */
+H+=EP('EP.6','청구서는 표 없는 교실로','앞세대와의 약속을 지키다 뒷세대와의 약속을 찢다',
+`${S('nomusa','calm','','프랑스에도 <b>청구서</b>가 날아왔어요. 올해 나랏빚이 나라 전체가 1년 동안 버는 돈보다 많습니다.')}
+<div class="cards">
+<div class="card"><b>119.3%</b><span>2026년 국가부채 / GDP<br>(경제재정부 전망)</span></div>
+<div class="card"><b>586억€</b><span>올해 예산 중<br>나랏빚 이자(전언)</span></div>
+<div class="card"><b>640억€</b><span>학교 교육 예산<br>(내년안 약 640억 유로)</span></div>
+</div>
+${S('hr','shock','','빚 갚는 돈이 <b>아이들 가르치는 돈</b>을 거의 따라잡았네요!',{rev:true})}
+<div class="box"><h3>🔄 연금 개혁, 시작했다가 멈추다</h3>
+<ul class="tl">
+ <li><span class="d">2023</span><br>대통령, 연금 수령 나이를 <b>62세 → 64세</b>로 상향. 의회 표결을 건너뛸 만큼 강한 의지</li>
+ <li class="now"><span class="d">2025. 10</span><br>정부 붕괴 직전, 총리가 그 개혁을 <b>멈춤(유예)</b></li>
+</ul></div>
+${S('nomusa','calm','','토크빌의 말에서 힌트를 얻을 수 있대요. <b>나쁜 정부에게 가장 위험한 순간은 대개 스스로 개혁을 시작할 때</b>. 개혁이 기대를 깨웠는데, 그 기대를 다시 꺾으면 분노가 터진다는 거죠.',{rev:true,note:'(요지) 「구체제와 대혁명」'})}
+<div class="g4">
+${P('① 청구서의 행선지',S('hr','calm','','그 청구서는 어디로 갔어요?'))}
+${P('② 표가 없는 곳',S('nomusa','calm','','<b>표가 없는 곳</b>이요. 고등학생은 대부분 투표권이 없고, 연금 받는 세대는 가장 꼬박꼬박 투표하는 세대죠.',{rev:true}))}
+${P('③ 정치의 셈법',S('bot','sad','','정치는 표 있는 곳엔 약속을 지키고, <b>표 없는 곳의 예산은 깎는다</b> — 그래서 불이 교실에서 붙었다는 해석이에요.',{note:'(요지)'}))}
+${P('④ 그래도 감축',S('hr','shock','','내년 예산안에도 <b>교사 1,588명 감축</b>이 들어 있대요. 시위가 커지자 정부는 급히 <b>대체 교사 약 3,000명</b> 투입을 발표했고요.',{rev:true,note:'확인: 2027 예산안 1,588명 감축, 교사 부족 고교 114곳에 약 3,000명 투입 발표'}),{fx:'1,588'})}
+</div>
+${S('nomusa','calm','','영상은 어르신 연금이 잘못이라는 게 아니라, <b>계산서가 가장 약한 사람에게 갔다는 게 잘못</b>이라고 분명히 해요. 16살에겐 떠날 길도, 투표권도 없고 <b>목소리</b>만 남았죠. 그래서 거리로 나온 거고요.',{note:'(요지)'})}
+<div class="box blue"><h3>🤝 사회는 세대 간의 계약</h3>
+<p style="margin:0">사회란 <b>살아 있는 사람, 이미 떠난 사람, 아직 태어나지 않은 사람</b> 사이의 동반자 관계이자 계약이라는 말이 있습니다(에드먼드 버크의 생각, 요지).</p>
+<ul style="margin:8px 0 0">
+<li><b>연금</b> = 앞세대와의 약속</li>
+<li><b>교실</b> = 뒷세대와의 약속</li>
+<li>프랑스는 앞의 약속을 지키려다 <mark>뒤의 약속을 찢었다</mark>는 것이 영상의 진단</li>
+</ul></div>
+${S('hr','sad','','대학 강단에 서고, 부모이기도 한 진행자에겐 “선생님이 없어요”가 이렇게 들렸대요. <b>어른들만 챙기지 말고, 우리한테도 투자해 달라</b>고.',{rev:true,note:'(요지)'})}
+${S('bot','calm','','영상의 질문이에요. <b>나라가 가장 나중에 깎아야 할 예산은 무엇일까요?</b>')}`);
+
+/* EP.7 */
+H+=EP('EP.7','한국의 거울 ①','공포가 아니라 거울로 — 1997년과 연금 개혁',
+`${S('hr','calm','','한국 사람들 반응은 어땠어요?')}
+${S('bot','calm','','가장 많이 보인 말은 <b>“남의 나라 얘기가 아니다, 우리의 10년 뒤일 수도 있다”</b>였대요. 영상은 이걸 공포가 아니라 <mark>거울</mark>로 삼자고 해요.',{rev:true})}
+<div class="g4">
+${P('① 1997년의 기억',S('nomusa','sad','','1997년 IMF 외환위기. 진행자는 당시 고등학생이었고, 주변에 <b>명예퇴직·도산</b>을 겪은 분이 정말 많았대요.'))}
+${P('② 역사의 아이러니',S('hr','shock','','그때 우리에게 강도 높은 긴축을 요구한 IMF 수장이 <b>프랑스 사람</b>이었는데, 29년이 지나 그 요구를 프랑스가 <b>스스로에게</b> 해야 하는 처지라니요.',{rev:true}),{fx:'!?'})}
+</div>
+${S('nomusa','calm','','1997년에 몸으로 배운 게 있어요. 당시 한국도 겉으로는 경제가 좋아 보였죠. <b>위기는 숫자가 나빠서가 아니라, 믿음이 한 번 무너질 때</b> 순식간에 닥친다는 것.',{note:'(요지)'})}
+<div class="box"><h3>🇰🇷 국민연금, 18년 만의 개혁 (2025년 봄)</h3>
+${bars([['보험료율 9%→',13,'%','r'],['소득대체율',43,'%','']],50)}
+<p class="tagline">※ 보험료는 2026년부터 매년 0.5%p씩 올려 13%까지, 받는 돈은 소득의 43%로 조정. 재정이 계속 나빠지고 있어 쉽지 않은 결정이었다는 것이 영상의 평가입니다.</p></div>
+<div class="box red"><h3>👣 우리가 배울 것 = 두 번째 걸음</h3><ul>
+<li>개혁의 순간이 가장 <b>위험</b>하다 — 프랑스는 다음 선거 때문에 버티지 못하고 멈춤</li>
+<li>중요한 건 첫걸음보다 <mark>두 번째 걸음</mark>, 멈추지 않고 이어 가는 힘</li>
+</ul></div>`);
+
+/* EP.8 */
+H+=EP('EP.8','한국의 거울 ②','아직 태어나지 않은 사람과의 약속',
+`${S('nomusa','calm','','두 번째 거울이에요. 우리는 아이가 가장 적게 태어나고, <b>가장 빨리 늙어 가는</b> 나라죠.')}
+${S('hr','calm','','그래서 “학생이 줄었으니 교실도 선생님도 줄이자”, “대학 구조조정을 서둘러야 한다”는 말이 자연스럽게 나오죠.',{rev:true})}
+<div class="g4">
+${P('① 똑같은 논리',S('bot','shock','','놀랍게도 프랑스 정부 논리도 같았대요. 교사 1,588명을 줄이며 든 이유가 <b>학생 수 감소</b>(올해 16만 명, 내년 18만 명).',{note:'확인: 전년 약 16만 명 감소, 2027년 약 18만 명 감소 예상'}),{fx:'똑같다'})}
+${P('② 정부의 반박',S('nomusa','calm','','정부는 교육 예산 <b>총액은 오히려 늘었다</b>고 반박했어요. 하지만 학생이 교실에서 느낀 건 숫자가 아니라 <b>비어 있는 교단</b>이었죠.',{rev:true,note:'확인: 2027 교육 예산 약 12억 유로 증액'}))}
+</div>
+<div class="box blue"><h3>🌱 프랑스가 보여 준 것</h3><ul>
+<li>줄이더라도 <b>아이 한 명에게 돌아가는 몫</b>까지 줄여선 안 된다</li>
+<li>수가 적을수록 한 명 한 명이 더 귀하다</li>
+<li>학생이 줄어드는 건 교실을 닫을 이유가 아니라 <mark>한 교실을 더 깊게 가꾸라는 신호</mark>일지도</li>
+</ul></div>
+${S('hr','sad','','너무 나쁜 얘기만 들은 것 같아요…')}
+${S('nomusa','happy','','그래도 우리는 프랑스와 다른 점이 있어요. 나랏빚이 올해 처음 GDP의 <b>50%</b>를 넘었다지만 프랑스의 절반에도 못 미치고, 무엇보다 지금도 돌아가는 엔진, <mark>반도체</mark>가 있습니다.',{rev:true,note:'(전언) 정부 결산 기준 2025년 49%'})}
+<div class="box red"><h3>❓ 단 하나의 조건</h3>
+<p style="margin:0">반도체가 크게 벌 때, <b>지금 버는 돈을 어디에 쓸 것인가</b>. 과거에 돈을 쓰는 나라가 될 것인가, 미래에 돈을 쓰는 나라가 될 것인가. 영상은 지금이 그 답을 고를 수 있는 <b>가장 좋은 때</b>이고, 프랑스는 그때를 놓쳤다고 말합니다.</p></div>
+${S('bot','calm','','영상의 질문이에요. <b>한국이 지금 꼭 돈을 써야 할 미래는 어디일까요?</b>')}`);
+
+/* EP.9 우리 현장 관점 */
+H+=EP('EP.9','그럼 우리 현장은?','“선생님이 없어요”를 “담당자가 없어요”로 바꿔 읽으면 (작성자 정리)',
+`${S('banjang','calm','','반장으로서 한마디 하겠습니다. 이거 <b>남의 나라 학교 얘기</b>만은 아닌 것 같은데요.')}
+${S('nomusa','calm','','맞아요. 아웃소싱·파견 현장에서 결원은 곧 <b>“담당자가 없어요”</b>죠. 영상의 교훈을 우리 일터에 옮겨 볼게요.',{rev:true})}
+<div class="g4">
+${P('① 평균의 함정',S('hr','calm','','“충원율 96%”여도 <b>내 라인에 사람이 없으면</b> 현장은 0%예요. 결원은 평균이 아니라 <b>사업장·근무조 단위</b>로 봐야겠네요.'))}
+${P('② 청구서의 행선지',S('banjang','sad','','비용 줄일 때 가장 먼저 깎이는 게 <b>신입 교육·대체인력·작업환경</b>이죠. 목소리 작은 곳으로 청구서가 갑니다.',{rev:true}),{fx:'꾹'})}
+${P('③ 오래된 건물',S('nomusa','calm','','학생들이 에어컨을 요구했듯, 현장도 <b>폭염·노후 설비</b>가 쌓이면 불만과 사고로 터집니다. 안전관리는 미룰수록 비싸져요.'))}
+${P('④ 두 번째 걸음',S('hr','happy','','제도 개선은 한 번 발표로 끝나지 않아요. 고충 처리·개선 약속을 <b>끝까지 이행</b>해야 믿음이 생기죠.',{rev:true}))}
+</div>
+<div class="box"><h3>💰 원가에도 청구서가 온다 — 국민연금 보험료율 단계 인상</h3>
+${bars([['2025년',9,'%',''],['2026년',9.5,'%','y'],['2030년',11.5,'%','y'],['2033년',13,'%','r']],13)}
+<p class="tagline">※ 매년 0.5%p 인상, 사업주·근로자 절반씩 부담. 인건비 비중이 큰 도급·파견 계약은 <b>4대보험 요율 변동 반영 조항</b>을 미리 점검해 두는 것이 좋습니다(작성자 정리).</p></div>`);
+
+/* 다른 시각 */
+H+=EP('BALANCE','함께 보면 좋은 다른 시각','영상의 해석과 다른 의견도 있습니다 (작성자 정리)',
+`<div class="g4">
+${P('정부 측 설명',`<ul style="margin:0;padding-left:18px"><li>교육 예산 <b>총액은 증액</b>(약 640억 유로)</li><li>학생 수에 비례해 줄이면 약 9,600명 감축이지만 1,588명으로 <b>최소화</b>했다는 입장</li></ul>`)}
+${P('연금 개혁 반대 측',`<ul style="margin:0;padding-left:18px"><li>연금은 평생 낸 보험료에 대한 <b>권리</b>라는 시각</li><li>육체노동자 등 <b>노동 강도</b>가 다른 직군에 일률적 상향은 부당하다는 주장</li></ul>`)}
+${P('시위의 구분',`<ul style="margin:0;padding-left:18px"><li>대다수 학생·노조 행진은 <b>평화 시위</b></li><li>주요 정당들도 약탈·방화와는 <b>선을 그음</b></li></ul>`)}
+${P('숫자 해석',`<ul style="margin:0;padding-left:18px"><li>정부 지출·연금 비중은 <b>복지 제도 설계</b>의 차이를 반영</li><li>국가 간 부채 비교는 금리·통화 여건도 함께 봐야</li></ul>`)}
+</div>
+<p class="tagline">※ 이 칸은 균형을 위해 ㈜제니엘이노베이션이 덧붙인 것으로, 영상 내용이 아닙니다. 프랑스 연금·재정 정책에 대한 평가는 국내외에서 엇갈립니다.</p>`);
+
+/* 숫자 카드 */
+H+=EP('NUMBERS','한눈에 보는 숫자','이야기 속 핵심 수치 6',
+`<div class="cards">
+<div class="card"><b>86%</b><span>연행자 6,877명 중<br>18세 미만 비율</span></div>
+<div class="card"><b>1,588</b><span>2027 예산안<br>교사 감축 인원</span></div>
+<div class="card"><b>119.3%</b><span>프랑스 국가부채<br>/ GDP (2026)</span></div>
+<div class="card"><b>586 vs 640</b><span>나랏빚 이자 vs 교육 예산<br>(억 유로, 이자는 전언)</span></div>
+<div class="card"><b>57%</b><span>나라 경제 중<br>정부 지출 비중</span></div>
+<div class="card"><b>13% · 43%</b><span>한국 국민연금 개혁<br>보험료율 · 소득대체율</span></div>
+</div>
+<p class="tagline">※ ‘전언’ 표시 수치는 원자료로 개별 확인하지 못한 영상 소개 내용입니다.</p>`);
+
+/* 체크리스트 */
+H+=EP('CHECK','결원·청구서 점검표','경영진·인사담당자용 (작성자 제안)',
+`${S('hr','calm','','우리 회사는 뭘 점검하면 될까요?')}
+${S('nomusa','calm','','“얼마를 아낄까”보다 <b>“그 청구서가 누구에게 가는가”</b>를 먼저 보세요.',{rev:true})}
+<ul class="chk">
+<li>결원 현황을 전사 평균이 아닌 <b>사업장·근무조 단위</b>로 매주 보고 있는가</li>
+<li>결원 발생 시 <b>대체인력 투입 기준과 시한</b>이 정해져 있는가</li>
+<li>비용 절감안이 <b>신입 교육·현장 안전 예산</b>부터 깎고 있지 않은가</li>
+<li>노후 설비·<b>폭염 등 작업환경</b> 개선 요구를 기록하고 처리 결과를 알려 주는가</li>
+<li>현장 목소리를 듣는 <b>고충처리·노사협의회</b>가 실제로 작동하는가</li>
+<li><b>국민연금 보험료율 단계 인상</b>(2026~2033년)을 도급·파견 단가에 반영했는가</li>
+<li>정년·근로시간 등 제도 변경을 일회성이 아닌 <b>연도별 로드맵</b>으로 관리하는가</li>
+<li>위기 때 숫자만이 아니라 <b>현장이 체감하는 변화</b>로 설명하고 있는가</li>
+</ul>
+<p class="tagline">※ 위 점검표는 ㈜제니엘이노베이션이 정리한 실무 제안이며 법률 자문이 아닙니다. 근로조건 변경은 사안별로 노무 전문가 검토를 받으세요.</p>`);
+
+/* 흐름 정리 */
+H+=EP('SUMMARY','흐름 정리','불씨 → 장작 → 청구서 → 거울',
+`<div class="g4">
+${P('🔥 불씨',`<ul style="margin:0;padding-left:18px"><li>교외 고교의 <b>교사 부족</b></li><li>학생 시위에 노조·노란 조끼 합류</li></ul>`)}
+${P('🪵 장작',`<ul style="margin:0;padding-left:18px"><li>순환도로 <b>안과 밖의 격차</b></li><li>과거로 흐르는 돈, <b>박물관 대륙</b></li></ul>`)}
+${P('🧾 청구서',`<ul style="margin:0;padding-left:18px"><li>국가부채 <b>119.3%</b>, 멈춘 연금 개혁</li><li>표 없는 <b>교실</b>로 간 비용</li></ul>`)}
+${P('🪞 한국의 거울',`<ul style="margin:0;padding-left:18px"><li>개혁은 <b>두 번째 걸음</b>이 중요</li><li>버는 돈을 <b>미래</b>에 쓸 것인가</li></ul>`)}
+</div>`);
+
+/* 에필로그 */
+H+=EP('EPILOGUE','사람을 위한 정원사','관용은 아직 오지 않은 사람의 자리를 지키는 것',
+`${S('bot','calm','','이번 사태가 생텍쥐페리 고교에서 시작됐잖아요. 영상은 그의 책 <b>「인간의 대지」</b>를 꺼내 들어요.')}
+${S('nomusa','calm','','정원에 새 장미가 피면 정원사들이 모두 설레지만, <b>사람을 위한 정원사는 없다</b>는 대목이죠. 영상은 선생님이 바로 <mark>사람을 위한 정원사</mark>라고 말합니다.',{rev:true,note:'(요지)'})}
+${S('hr','sad','','그럼 “선생님이 없어요”는 어쩌면 <b>“정원사가 없어요”</b>라는 말이었겠네요.')}
+${S('nomusa','calm','','선생님이 모자랐다는 건 그 나라가 <b>미래에 내어 줄 시간</b>이 모자랐다는 뜻. 프랑스는 그 정원사의 자리부터 잘랐다는 게 영상의 결론이에요.',{rev:true,note:'(요지)'})}
+${S('banjang','calm','','현장도 마찬가지입니다. <b>사람을 가르치고 챙기는 자리</b>부터 비우면 결국 다 무너지죠.')}
+<div class="box blue"><h3>🌹 영상이 새로 더한 관용의 뜻</h3>
+<ul>
+<li>관용 = 나와 <b>다른</b> 사람의 자리를 지켜 주는 것</li>
+<li>+ <mark>아직 오지 않은</mark> 사람의 자리를 지켜 주는 것 — 투표할 수 없는 아이들, 아직 태어나지 않은 아이들</li>
+<li>낭만은 끝났을지 몰라도 관용은 다시 시작될 수 있다. 그 시작은 <b>교실</b>이라는 믿음</li>
+</ul></div>
+${S('hr','happy','','우리 회사에선 그 “교실”이 신입 교육이고 현장 교육이겠네요. 저부터 챙길게요!',{rev:true})}
+<p class="quote">“십년수목 백년수인(十年樹木 百年樹人) — 나무는 십 년, 사람은 백 년을 내다보고 기른다”</p>
+<p style="text-align:center;margin:0">끝까지 읽어 주셔서 감사합니다 🙏</p>
+<div class="src">작성 · ㈜제니엘이노베이션<br>
+<b>원작</b> · 유튜브 ‘조수빈큐레이션’ 「프랑스는 정말 끝난 걸까? ‘돈의 대폭발’ 이전 유럽의 몰락을 예언한 책 | 도도한서재」(2026.10.24) — <a href="${SRC_URL}" target="_blank" rel="noopener">${SRC_URL}</a> 의 내용을 장면별로 요약·재구성했습니다. 영상의 문장을 그대로 옮기지 않았으며, 원작의 저작권은 해당 채널에 있습니다.<br>
+<b>영상이 소개한 책</b> · 손진석·홍준기 「부자 미국 가난한 유럽」(플랜비디자인, 2023), 「지리의 힘」, 생텍쥐페리 「인간의 대지」, 카뮈 「반항하는 인간」, 토크빌 「구체제와 대혁명」, 맨커 올슨 「국가의 흥망성쇠」<br>
+<b>확인 자료</b> · 머니투데이 2026.10.18(10.17 시위 피해·체포), YTN 2026.10.10(연행자·미성년 비율·대체 교사), 파리마치 2026.10.6(행진 인원), 프랑스 경제재정부 발표 2026.9.19(국가부채 119.3%), FratMat·Sud Radio(2027 교육 예산·교사 감축·학생 수), MTN 2026.8.20(미국 국가부채 40조 달러), 2025회계연도 국가결산(한국 국가채무 49%)<br>
+※ 등장인물은 가상의 캐릭터이며, 실존 인물의 발언은 직책만 표기해 ‘(요지)’로 요약했습니다. ‘(전언)’은 원자료로 개별 확인하지 못한 영상 소개 내용입니다. 특정 국가·정당·정책에 대한 지지나 반대가 아닙니다.</div>`);
+
+
+document.getElementById('app').innerHTML=H;
+
+function toggleTheme(){
+  const r=document.documentElement;
+  const dark = r.dataset.theme ? r.dataset.theme==='dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  r.dataset.theme = dark?'light':'dark';
+}
+</script>
+<script src="../zt-nav.js"></script>
+<script src="../firebase-config.js"></script>
+<script type="module" src="../zt-fire.js"></script>
+<script>
+const ZT_ID='005';
+async function ztPaint(){const F=window.ZT_FIRE;if(!F||!F.enabled)return;document.getElementById('ztLike').hidden=false;
+ const d=(await F.getStats([ZT_ID]))[ZT_ID]||{};document.getElementById('ztLikeN').textContent=d.likes||0;
+ document.getElementById('ztViews').textContent='👁 조회 '+(d.views||0);
+ if(F.liked(ZT_ID))document.querySelector('#ztLike button').classList.add('on');}
+async function ztLike(){const F=window.ZT_FIRE;if(await F.addLike(ZT_ID)){document.querySelector('#ztLike button').classList.add('on');ztPaint()}}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{})}
+window.addEventListener('zt-fire-ready',async()=>{if(window.ZT_FIRE.enabled){await window.ZT_FIRE.addView(ZT_ID);ztPaint()}});
+</script>
+</body>
+</html>
