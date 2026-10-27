@@ -11,6 +11,26 @@ window.TOON = {
   },
   issues: [
     {
+      no: 6,
+      type: 'special',
+      date: '2026-10-27',
+      title: 'AI에게 ‘눈치’를 가르치는 법 — 온톨로지',
+      saying: { text: '구슬이 서 말이라도 꿰어야 보배', note: '흩어진 데이터도 연결해야 지식이 된다' },
+      next: '노동판례툰 「도급과 파견의 경계」 · 안전관리툰 「물류센터 지게차」',
+      episodes: [
+        {
+          id: '006',
+          corner: 'biz',
+          title: 'AI에게 ‘눈치’를 가르치는 법 — 온톨로지',
+          summary: '온톨로지의 뜻, LLM 환각의 한계, 구글 지식 그래프·팔란티어 3계층, 그래프 RAG와 AI 레디 데이터, 타겟 캐나다·자율주행 사고로 본 “쓰레기를 넣으면 재앙이 나온다”, 데이터 부채와 골든 데이터. 인력 운영 데이터 점검표 수록.',
+          page: 'ep/006.html',
+          pdf: 'ep/006.pdf',
+          thumb: 'thumbs/006.png',
+          source: '유튜브 티타임즈TV 영상(2026.3.3) 재구성 · IEEE Spectrum·AP·Jalopnik 등 확인'
+        }
+      ]
+    },
+    {
       no: 5,
       type: 'special',
       date: '2026-10-27',

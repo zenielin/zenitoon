@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI에게 눈치를 가르치는 법, 온톨로지 | 제니툰</title>
+<meta property="og:title" content="제니툰 · AI에게 눈치를 가르치는 법, 온톨로지">
+<meta property="og:image" content="../thumbs/006.png">
+<link rel="icon" href="../favicon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#ffd23f">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="제니툰">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fbf6ea; --paper2:#fffdf7; --ink:#161616; --sub:#4a4a4a;
+  --red:#e2403a; --blue:#2f6fd6; --yellow:#ffd23f; --green:#2e9e6a; --soft:#f1e7cf;
+  --shadow:#161616;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#1d1b17; --paper2:#262420; --ink:#f2ede1; --sub:#c9c2b2;
+    --soft:#34302a; --shadow:#000;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#1d1b17; --paper2:#262420; --ink:#f2ede1; --sub:#c9c2b2;
+  --soft:#34302a; --shadow:#000;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Gowun Dodum',sans-serif;line-height:1.6;font-size:15px}
+.wrap{max-width:760px;margin:0 auto;padding:18px 16px 40px}
+h1,h2,h3{font-family:'Black Han Sans',sans-serif;font-weight:400;margin:0;letter-spacing:.5px;line-height:1.25}
+.ep{background:var(--paper2);border:3px solid var(--ink);box-shadow:6px 6px 0 var(--shadow);margin:0 6px 30px 0;padding:20px 18px 22px;border-radius:6px}
+.eptag{display:inline-block;background:var(--ink);color:var(--paper2);font-family:'Black Han Sans';padding:3px 12px;border-radius:3px;font-size:14px;letter-spacing:1px}
+.ep h2{font-size:26px;margin:8px 0 2px}
+.ep .subt{color:var(--sub);margin:0 0 14px;font-size:14px}
+/* cover */
+.cover{background:var(--yellow);color:#161616;text-align:center;position:relative;overflow:hidden}
+.cover .burst{position:absolute;inset:0;background:repeating-conic-gradient(from 0deg at 0% 50%,rgba(255,255,255,.42) 0 2.5deg,transparent 2.5deg 8deg) left/50% 100% no-repeat,repeating-conic-gradient(from 0deg at 100% 50%,rgba(255,255,255,.42) 0 2.5deg,transparent 2.5deg 8deg) right/50% 100% no-repeat;-webkit-mask-image:linear-gradient(90deg,#000,transparent 42%,transparent 58%,#000);mask-image:linear-gradient(90deg,#000,transparent 42%,transparent 58%,#000);z-index:0}
+.cover>*{position:relative;z-index:1}
+.cover h1{font-size:38px;margin:10px 0 6px;text-shadow:3px 3px 0 #fff}
+.cover .kick{font-family:'Jua';font-size:17px}
+.cover .by{font-size:13px;margin-top:10px}
+.cover .cast{display:flex;justify-content:center;gap:6px;margin:14px 0 6px;flex-wrap:wrap}
+.cover .cast svg{width:78px;height:78px;background:#fff;border:3px solid #161616;border-radius:50%}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.num{background:#fff;border:2.5px solid #161616;border-radius:6px;padding:8px 4px}
+.num b{display:block;font-family:'Black Han Sans';font-size:26px;color:var(--red);line-height:1.1}
+.num span{font-size:12px}
+/* panels */
+.g4{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.panel{border:2.5px solid var(--ink);background:var(--paper);border-radius:4px;padding:10px;position:relative;min-width:0}
+.panel.wide{grid-column:1/-1}
+.panel .cap{font-family:'Black Han Sans';font-size:13px;background:var(--yellow);color:#161616;display:inline-block;padding:1px 8px;border:2px solid var(--ink);margin-bottom:6px}
+.panel .fx{position:absolute;right:8px;top:4px;font-family:'Black Han Sans';color:var(--red);font-size:20px;transform:rotate(8deg)}
+/* scene */
+.scene{display:flex;align-items:flex-start;gap:8px;margin:8px 0}
+.scene.rev{flex-direction:row-reverse}
+.who{flex:0 0 64px;text-align:center;font-size:11px;color:var(--sub)}
+.who svg{width:62px;height:62px;border:2.5px solid var(--ink);border-radius:50%;background:#fff;display:block;margin:0 auto 2px}
+.bub{position:relative;background:#fff;color:#161616;border:2.5px solid var(--ink);border-radius:16px;padding:8px 12px;font-family:'Jua';font-size:15px;line-height:1.45;flex:1;min-width:0}
+.bub:before{content:"";position:absolute;left:-11px;top:16px;border:9px solid transparent;border-right-color:var(--ink);border-left:0}
+.bub:after{content:"";position:absolute;left:-7px;top:18px;border:7px solid transparent;border-right-color:#fff;border-left:0}
+.rev .bub:before{left:auto;right:-11px;border-right-color:transparent;border-left:9px solid var(--ink);border-right:0}
+.rev .bub:after{left:auto;right:-7px;border-right-color:transparent;border-left:7px solid #fff;border-right:0}
+.bub.shout{border-radius:4px;background:var(--yellow);font-size:16px}
+.bub.shout:after{border-right-color:var(--yellow)}
+.rev .bub.shout:after{border-left-color:var(--yellow)}
+.bub small{display:block;color:#666;font-family:'Gowun Dodum';font-size:11px;margin-top:2px}
+/* boxes */
+.box{border:2.5px dashed var(--ink);border-radius:6px;padding:10px 14px;margin:12px 0;background:var(--paper)}
+.box h3{font-size:17px;margin-bottom:6px}
+.box ul,.box ol{margin:0;padding-left:20px}
+.box li{margin:3px 0}
+.box.red{border-style:solid;border-color:var(--red)}
+.box.blue{border-style:solid;border-color:var(--blue)}
+.law{background:var(--soft);border-left:6px solid var(--blue);padding:10px 14px;font-size:14px;margin:12px 0;border-radius:0 6px 6px 0}
+.law b{color:var(--blue)}
+mark{background:var(--yellow);color:#161616;padding:0 3px}
+/* bars */
+.bars{margin:6px 0 4px}
+.bar{display:grid;grid-template-columns:110px 1fr 54px;align-items:center;gap:8px;margin:7px 0;font-size:14px}
+.bar .tr{height:20px;border:2px solid var(--ink);border-radius:3px;background:var(--paper)}
+.bar .fl{height:100%;background:var(--blue)}
+.bar .fl.r{background:var(--red)}.bar .fl.y{background:var(--yellow)}.bar .fl.g{background:var(--green)}
+.bar b{font-family:'Black Han Sans';font-weight:400;text-align:right}
+/* timeline */
+.tl{list-style:none;margin:6px 0;padding:0 0 0 22px;border-left:4px solid var(--ink)}
+.tl li{position:relative;margin:0 0 12px;padding-left:6px}
+.tl li:before{content:"";position:absolute;left:-33px;top:4px;width:16px;height:16px;background:var(--yellow);border:3px solid var(--ink);border-radius:50%}
+.tl li.now:before{background:var(--red)}
+.tl .d{font-family:'Black Han Sans';font-size:14px;color:var(--red)}
+/* flow */
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;align-items:stretch;margin:8px 0}
+.flow div{border:2.5px solid var(--ink);border-radius:5px;padding:8px 4px;text-align:center;font-size:13px;background:var(--paper);font-family:'Jua';display:flex;align-items:center;justify-content:center;min-width:0}
+.flow div.k{background:var(--yellow);color:#161616}
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.chip{border:2px solid var(--ink);border-radius:20px;padding:2px 10px;font-size:13px;background:var(--paper)}
+.chip.hl{background:var(--red);color:#fff;border-color:var(--red)}
+/* number cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.card{border:2.5px solid var(--ink);border-radius:6px;padding:10px;text-align:center;background:var(--paper)}
+.card b{font-family:'Black Han Sans';font-size:30px;font-weight:400;display:block;color:var(--blue);line-height:1.1}
+.card span{font-size:13px}
+/* checklist */
+.chk{list-style:none;padding:0;margin:6px 0}
+.chk li{border:2px solid var(--ink);border-radius:5px;padding:8px 10px 8px 40px;margin:7px 0;position:relative;background:var(--paper);font-size:14px}
+.chk li:before{content:"";position:absolute;left:10px;top:9px;width:18px;height:18px;border:2.5px solid var(--ink);border-radius:3px;background:#fff}
+.chk li b{color:var(--red)}
+.tagline{font-size:12px;color:var(--sub)}
+.quote{text-align:center;font-family:'Jua';font-size:19px;margin:14px 0 4px}
+.src{font-size:12px;color:var(--sub);border-top:2px dashed var(--ink);margin-top:14px;padding-top:8px}
+.theme-btn{position:fixed;right:12px;bottom:12px;z-index:9;border:2.5px solid var(--ink);background:var(--paper2);color:var(--ink);font-family:'Jua';border-radius:20px;padding:4px 12px;cursor:pointer}
+@media (max-width:540px){
+  .g4{grid-template-columns:1fr}
+  .cover h1{font-size:30px}
+  .ep h2{font-size:22px}
+  .nums,.cards{grid-template-columns:repeat(2,1fr)}
+  .flow{grid-template-columns:1fr}
+  .flow div{padding:6px}
+  .bar{grid-template-columns:86px 1fr 46px;font-size:13px}
+  .cover .cast svg{width:60px;height:60px}
+}
+@media (min-width:1024px){.wrap{max-width:960px}body{font-size:17px}.bub{font-size:17px}.ep h2{font-size:30px}.who{flex-basis:80px}.who svg{width:76px;height:76px}.cover h1{font-size:46px}.num b{font-size:30px}}
+@media (min-width:1440px){.wrap{max-width:1280px}body{font-size:18px}.bub{font-size:18.5px;padding:10px 16px}.ep{padding:26px 28px 28px}.ep h2{font-size:34px}.ep .subt{font-size:16px}.who{flex-basis:92px;font-size:12.5px}.who svg{width:88px;height:88px}.cover h1{font-size:54px}.cover .kick{font-size:20px}.cover .cast svg{width:96px;height:96px}.num b{font-size:34px}.num span{font-size:14px}.g4{gap:16px}.panel{padding:14px}.panel .cap{font-size:15px}.box h3{font-size:20px}.law,.src{font-size:15px}.bar{grid-template-columns:200px 1fr 70px;font-size:16px}.bar .tr{height:24px}.card b{font-size:36px}.card span{font-size:15px}.chk li{font-size:16px}.zt-nav{font-size:16px}}
+@media print{.theme-btn{display:none}}
+</style>
+<style>
+.zt-nav{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:10px;justify-content:space-between;background:var(--paper2);border-bottom:3px solid var(--ink);padding:8px 14px;font-family:'Jua',sans-serif;font-size:14px}
+.zt-nav a{color:var(--ink);text-decoration:none;border:2px solid var(--ink);border-radius:16px;padding:1px 10px;background:var(--paper)}
+.zt-nav span{flex:1;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.zt-end{padding-top:0}
+.zt-cta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;background:#ffd23f;color:#161616;border:3px solid var(--ink);border-radius:6px;padding:14px 16px;box-shadow:5px 5px 0 var(--shadow);margin-right:6px}
+.zt-cta b{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:19px}
+.zt-cta span{font-size:13.5px}
+.zt-btn{background:#161616;color:#fff;text-decoration:none;font-family:'Jua',sans-serif;border-radius:5px;padding:7px 14px}
+.zt-links{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 50px}
+.zt-links a{color:var(--ink);text-decoration:none;border:2px solid var(--ink);border-radius:5px;padding:4px 12px;font-family:'Jua',sans-serif;background:var(--paper2)}
+.zt-like{display:flex;align-items:center;gap:12px;margin:18px 0 0;flex-wrap:wrap}
+.zt-like button{border:2.5px solid var(--ink);background:var(--paper2);color:var(--ink);border-radius:22px;padding:6px 16px;font-family:'Jua',sans-serif;font-size:16px;cursor:pointer}
+.zt-like button.on{background:#ffd23f;color:#161616}
+.zt-like span{font-size:13px;color:var(--sub)}
+@media print{.zt-nav,.zt-end{display:none}}
+</style>
+</head>
+<body>
+<div style="background:#161616;color:#fffdf7;font-size:12.5px;text-align:center;padding:6px 10px;font-family:'Gowun Dodum',sans-serif">제공 <a href="https://www.zenielinnovation.co.kr" target="_blank" rel="noopener" style="color:#ffd23f;font-weight:700;text-decoration:none">㈜제니엘이노베이션</a></div>
+<nav class="zt-nav"><a href="../index.html" data-zt-back>← 제니툰</a><span>🏢 특별편 · 006화</span><a href="006.pdf" class="zt-pdf">PDF</a></nav>
+<button class="theme-btn" onclick="toggleTheme()">☀︎ / ☾</button>
+<div class="wrap" id="app"></div>
+<div class="wrap zt-end"><div class="zt-cta"><div><b>데이터로 일하는 인력 운영, 함께 설계합니다</b><br><span>인재파견 · 아웃소싱 · 채용대행 · 고용서비스 상담</span></div>
+<a class="zt-btn" href="../index.html?consult=1&from=006%ED%99%94">💬 상담 문의하기</a></div>
+<div class="zt-like" id="ztLike" hidden><button type="button" onclick="ztLike()">👍 도움됐어요 <b id="ztLikeN"></b></button><span id="ztViews"></span></div>
+<div class="zt-links"><a href="../index.html">🏠 제니툰 목록</a><a href="006.pdf">📄 PDF 저장</a><a href="../index.html#biz">🏢 기업뉴스툰 더보기</a></div></div>
+
+
+<script>
+/* ---------- 오리지널 캐릭터 SVG (가상 인물) ---------- */
+const CH={
+  nomusa:{name:'도 노무사',skin:'#efc8a4',hair:'#9a9a9a',style:'side',acc:'glasses',shirt:'#4b5563'},
+  hr:{name:'한결 대리',skin:'#f6d3b3',hair:'#40261a',style:'long',acc:'none',shirt:'#8b5cf6'},
+  banjang:{name:'현장 반장',skin:'#e9bf98',hair:'#2a2a2a',style:'short',acc:'badge',shirt:'#f08c00'},
+  bot:{name:'안내로봇 체키',bot:true}
+};
+function face(k,mood='calm'){
+  const c=CH[k];
+  if(c.bot){
+    const eye= mood==='shock'?'<circle cx="30" cy="40" r="6" fill="#161616"/><circle cx="50" cy="40" r="6" fill="#161616"/>'
+      :'<rect x="24" y="36" width="12" height="8" rx="3" fill="#161616"/><rect x="44" y="36" width="12" height="8" rx="3" fill="#161616"/>';
+    const m= mood==='shock'?'<ellipse cx="40" cy="56" rx="5" ry="6" fill="#161616"/>':'<path d="M30 54 Q40 62 50 54" stroke="#161616" stroke-width="3" fill="none"/>';
+    return `<svg viewBox="0 0 80 80"><line x1="40" y1="8" x2="40" y2="18" stroke="#161616" stroke-width="3"/><circle cx="40" cy="7" r="4" fill="#e2403a" stroke="#161616" stroke-width="2"/><rect x="14" y="18" width="52" height="48" rx="12" fill="#ffd23f" stroke="#161616" stroke-width="3"/><rect x="20" y="28" width="40" height="34" rx="8" fill="#fff" stroke="#161616" stroke-width="2"/>${eye}${m}<rect x="8" y="34" width="6" height="14" rx="2" fill="#2f6fd6" stroke="#161616" stroke-width="2"/><rect x="66" y="34" width="6" height="14" rx="2" fill="#2f6fd6" stroke="#161616" stroke-width="2"/></svg>`;
+  }
+  const S='#161616';
+  let hair='';
+  switch(c.style){
+    case 'short': hair=`<path d="M18 38 Q18 14 40 14 Q62 14 62 38 Q58 24 40 24 Q26 24 18 38Z" fill="${c.hair}"/>`;break;
+    case 'side': hair=`<path d="M18 38 Q16 16 40 15 Q64 16 62 36 Q52 22 30 26 Q22 28 18 38Z" fill="${c.hair}"/>`;break;
+    case 'bob': hair=`<path d="M15 50 Q12 14 40 13 Q68 14 65 50 L58 50 Q60 26 40 24 Q20 26 22 50Z" fill="${c.hair}"/>`;break;
+    case 'bald': hair=`<path d="M19 36 Q20 30 24 30 L24 40 Z M61 36 Q60 30 56 30 L56 40Z" fill="${c.hair}"/>`;break;
+    case 'long': hair=`<path d="M14 66 Q10 14 40 13 Q70 14 66 66 L58 66 Q62 28 40 24 Q18 28 22 66Z" fill="${c.hair}"/>`;break;
+    case 'neat': hair=`<path d="M18 36 Q18 14 40 14 Q62 14 62 36 Q60 22 46 21 L44 26 Q30 22 18 36Z" fill="${c.hair}"/>`;break;
+  }
+  let brows='',eyes='',mouth='',extra='';
+  const ey=40;
+  if(mood==='angry'){brows=`<path d="M26 31 L36 35 M54 31 L44 35" stroke="${S}" stroke-width="3"/>`;}
+  else if(mood==='sad'){brows=`<path d="M26 34 L35 31 M54 34 L45 31" stroke="${S}" stroke-width="2.5"/>`;}
+  else if(mood==='shock'){brows=`<path d="M26 29 Q31 26 36 29 M44 29 Q49 26 54 29" stroke="${S}" stroke-width="2.5" fill="none"/>`;}
+  else {brows=`<path d="M27 32 Q31 30 35 32 M45 32 Q49 30 53 32" stroke="${S}" stroke-width="2.5" fill="none"/>`;}
+  if(mood==='shock'){eyes=`<circle cx="31" cy="${ey}" r="4.5" fill="#fff" stroke="${S}" stroke-width="2"/><circle cx="31" cy="${ey}" r="2" fill="${S}"/><circle cx="49" cy="${ey}" r="4.5" fill="#fff" stroke="${S}" stroke-width="2"/><circle cx="49" cy="${ey}" r="2" fill="${S}"/>`;mouth=`<ellipse cx="40" cy="56" rx="5" ry="6" fill="${S}"/>`;}
+  else if(mood==='happy'){eyes=`<path d="M27 41 Q31 36 35 41 M45 41 Q49 36 53 41" stroke="${S}" stroke-width="3" fill="none"/>`;mouth=`<path d="M30 52 Q40 63 50 52 Z" fill="${S}"/>`;}
+  else {eyes=`<circle cx="31" cy="${ey}" r="3" fill="${S}"/><circle cx="49" cy="${ey}" r="3" fill="${S}"/>`;
+    mouth= mood==='sad'?`<path d="M32 57 Q40 51 48 57" stroke="${S}" stroke-width="3" fill="none"/>`: mood==='angry'?`<path d="M32 56 L48 56" stroke="${S}" stroke-width="3"/>`:`<path d="M32 53 Q40 60 48 53" stroke="${S}" stroke-width="3" fill="none"/>`;}
+  if(c.acc==='glasses') extra+=`<circle cx="31" cy="${ey}" r="7" fill="none" stroke="${S}" stroke-width="2.2"/><circle cx="49" cy="${ey}" r="7" fill="none" stroke="${S}" stroke-width="2.2"/><path d="M38 ${ey} L42 ${ey}" stroke="${S}" stroke-width="2"/><path d="M33 49 Q40 46 47 49" stroke="#9a9a9a" stroke-width="3" fill="none"/>`;
+  let body=`<path d="M10 80 Q12 64 40 64 Q68 64 70 80Z" fill="${c.shirt}" stroke="${S}" stroke-width="2.5"/>`;
+  if(c.acc==='badge') body+=`<path d="M52 69 l5 0 l2 4 l-4.5 3 l-4.5 -3Z" fill="#ffd23f" stroke="${S}" stroke-width="1.5"/>`;
+  if(c.acc==='lanyard') body+=`<path d="M30 64 L40 76 L50 64" stroke="#ffd23f" stroke-width="3" fill="none"/><rect x="36" y="74" width="8" height="6" fill="#fff" stroke="${S}" stroke-width="1.5"/>`;
+  if(c.acc==='apron') body+=`<rect x="28" y="68" width="24" height="12" fill="#fff" stroke="${S}" stroke-width="2"/>`;
+  if(c.acc==='tie') body+=`<path d="M37 64 L43 64 L41.5 69 L44 78 L40 80 L36 78 L38.5 69Z" fill="#e2403a" stroke="${S}" stroke-width="1.5"/>`;
+  return `<svg viewBox="0 0 80 80">${body}<ellipse cx="40" cy="42" rx="22" ry="24" fill="${c.skin}" stroke="${S}" stroke-width="2.5"/>${hair}<circle cx="24" cy="50" r="3.5" fill="#f59e9e" opacity=".6"/><circle cx="56" cy="50" r="3.5" fill="#f59e9e" opacity=".6"/>${brows}${eyes}${mouth}${extra}</svg>`;
+}
+/* ---------- 컴포넌트 ---------- */
+function S(k,mood,name,text,o={}){
+  return `<div class="scene ${o.rev?'rev':''}"><div class="who">${face(k,mood)}${name||CH[k].name}</div><div class="bub ${o.shout?'shout':''}">${text}${o.note?`<small>${o.note}</small>`:''}</div></div>`;
+}
+function P(cap,body,o={}){return `<div class="panel ${o.wide?'wide':''}">${cap?`<div class="cap">${cap}</div>`:''}${o.fx?`<div class="fx">${o.fx}</div>`:''}${body}</div>`;}
+function WHO(list){return `<div class="chips">${list.map(([n,h])=>`<span class="chip ${h?'hl':''}">${n}</span>`).join('')}</div>`;}
+function bars(rows,max){return `<div class="bars">${rows.map(([l,v,u,c])=>`<div class="bar"><span>${l}</span><div class="tr"><div class="fl ${c||''}" style="width:${Math.max(4,v/max*100)}%"></div></div><b>${v}${u}</b></div>`).join('')}</div>`;}
+function EP(tag,title,sub,body,cls=''){return `<section class="ep ${cls}"><span class="eptag">${tag}</span><h2>${title}</h2>${sub?`<p class="subt">${sub}</p>`:''}${body}</section>`;}
+
+
+/* ---------- 본문 ---------- */
+let H='';
+const SRC_URL='https://youtu.be/W0MBC6in4Q4';
+
+/* 표지 */
+H+=`<section class="ep cover"><div class="burst"></div>
+<div class="kick">제니툰 특별편 · 기업뉴스툰</div>
+<h1>AI에게 ‘눈치’를<br>가르치는 법, 온톨로지</h1>
+<div class="kick">마법 방망이가 아니라, 사고를 막는 가드레일</div>
+<div class="cast">${face('bot','calm')}${face('hr','shock')}${face('nomusa','calm')}${face('banjang','calm')}</div>
+<div class="nums">
+ <div class="num"><b>2001</b><span>정보와 정보를 잇는 ‘의미의 웹’ 제안</span></div>
+ <div class="num"><b>2012</b><span>구글 지식 그래프 검색 적용</span></div>
+ <div class="num"><b>3계층</b><span>팔란티어식 온톨로지 구조</span></div>
+ <div class="num"><b>약 2년</b><span>타겟 캐나다 진출 후 철수까지</span></div>
+ <div class="num"><b>6m</b><span>자율주행차가 사람을 끈 거리(약 20피트)</span></div>
+ <div class="num"><b>26~27년</b><span>‘AI 레디 데이터’가 화두가 될 시기(전망)</span></div>
+</div>
+<div class="by">작성 · ㈜제니엘이노베이션 &nbsp;|&nbsp; 2026.10.27</div>
+</section>`;
+
+/* 원작 안내 */
+H+=`<div class="box blue" style="margin:0 6px 30px 0"><h3>🎬 원작 영상 안내</h3>
+<p style="margin:0">이 웹툰은 유튜브 <b>‘티타임즈TV’</b> 채널의 「기업이 꼭 알아야 할 ‘온톨로지’의 모든 것」(2026.3.3, 42분 13초) 인터뷰 영상의 내용을 챕터별로 요약·재구성했습니다. 출연자는 대학 문헌정보학과 교수(컴퓨터공학 전공), 진행은 같은 채널 기자입니다. 원작의 표현과 설명은 영상에서 직접 확인해 주세요.</p>
+<p style="margin:8px 0 0"><a href="${SRC_URL}" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">▶ 원작 영상 보러 가기</a> &nbsp;·&nbsp; <a href="http://www.ttimes.co.kr/index.html" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">📰 티타임즈 홈페이지</a></p></div>`;
+
+/* EP.0 하이라이트 */
+H+=EP('EP.0','쓰레기가 들어가면, 재앙이 나온다','온톨로지는 비용이 아니라 보험',
+`${S('bot','calm','','안녕하세요, 안내로봇 <b>체키</b>예요! 오늘 주제는 요즘 AI 뉴스마다 나오는 그 단어, <mark>온톨로지</mark>예요.')}
+${S('hr','shock','','저 그 단어 들을 때마다 그냥 넘겼어요… 단어도 어렵고 개념도 어렵고요.',{rev:true})}
+<div class="g4">
+${P('① 예전 격언',S('nomusa','calm','','데이터 쪽엔 오래된 말이 있죠. <b>쓰레기를 넣으면 쓰레기가 나온다</b>(Garbage In, Garbage Out).'))}
+${P('② 새 격언',S('nomusa','shock','','출연 교수는 AI가 스스로 움직이는 시대엔 이렇게 바뀔 거래요. <b>쓰레기를 넣으면 재앙이 나온다</b>(Garbage In, Disaster Out).',{rev:true,note:'(요지)'}),{fx:'쾅!'})}
+${P('③ 6미터',S('bot','sad','','자율주행차가 사고 뒤 차 밑에 사람이 낀 줄 모르고 <b>약 6m</b>를 그대로 움직인 일이 있었대요. 사람이라면 “사람부터 지켜야지” 했을 텐데요.'))}
+${P('④ 보험',S('hr','calm','','그래서 온톨로지를 <b>돈 드는 기술</b>이 아니라 <b>재앙을 막는 보험</b>으로 보라는 거군요!',{rev:true}))}
+</div>
+<p class="tagline">※ 원작은 기자와 교수의 1:1 인터뷰입니다. 웹툰 속 대사는 영상 내용을 캐릭터 대화로 새로 쓴 것이며, 교수·기자의 발언은 ‘(요지)’로 요약했습니다.</p>`);
+
+/* EP.1 온톨로지란 */
+H+=EP('EP.1','온톨로지란 무엇인가','철학의 ‘존재론’에서 AI의 ‘개념 데이터’로',
+`${S('hr','calm','','문헌정보학과 교수님이 AI 얘기를요? 도서관 전공 아니에요?')}
+${S('nomusa','calm','','교수 본인은 <b>컴퓨터공학 전공</b>이래요. 그리고 책에 대한 데이터를 체계화하는 일은 사실 <b>도서관 쪽이 가장 먼저</b> 해 왔죠. 데이터 과학과 융합이 활발한 분야고요.',{rev:true,note:'(요지)'})}
+<div class="box"><h3>📖 단어의 뜻 → 공학의 뜻</h3>
+<ul>
+<li><b>철학</b>: 온톨로지 = <b>존재론</b>. 세상에 무엇이 있고 없는지를 따지는 학문</li>
+<li><b>공학</b>: 사람이 가진 개념·지식을 <mark>컴퓨터가 이해할 수 있게 표현</mark>한 것 → 출연 교수 표현으로 ‘<b>인공지능 데이터</b>’</li>
+<li>그중에서도 <b>개념과 지식을 표현하는 것</b>이 목적</li>
+</ul></div>
+<div class="g4">
+${P('🗄️ 일반 데이터베이스',S('bot','calm','','“서울 인구는 천만”이라면 <b>서울 · 인구 · 천만</b>이라는 값을 저장해요.'))}
+${P('🧠 온톨로지',S('nomusa','calm','','온톨로지는 <b>서울이 무엇인지, 인구가 무엇인지</b> — 단어의 개념 자체를 정의해요.',{rev:true}))}
+</div>
+${S('hr','calm','','서울 하면 인천·수원·용인이 떠오르는 것처럼, <b>연결된 관계</b>를 말하는 거예요?')}
+${S('nomusa','calm','','그게 바로 맥락이에요. 우리는 그것들을 모두 <b>‘도시’</b>로 묶는다는 걸 이미 공유하고 있죠. 온톨로지는 그 <b>윗단</b>에서 “도시라면 사람이 살고, 도로가 있다” 같은 <mark>속성</mark>을 정해 줍니다.',{rev:true,note:'(요지)'})}
+<div class="box blue"><h3>🔑 한 줄 정리</h3>
+<p style="margin:0">서울 하나하나를 적는 게 아니라, <b>“도시란 어떤 특성을 가져야 하는가”</b>를 개념 수준에서 정의하는 것 — 그것이 온톨로지입니다.</p></div>`);
+
+/* EP.2 LLM의 한계 + 역사 */
+H+=EP('EP.2','LLM은 왜 그럴싸하게 틀릴까','확률로 계산한 답 vs 늘 같은 답',
+`${S('hr','calm','','요즘 LLM(대규모 언어모델)은 서울이 수도라는 것쯤은 다 알지 않아요?')}
+${S('nomusa','calm','','물론 잘해요. 다만 그 답은 <b>확률로 계산해 낸 것</b>이에요. 사실인지 확인한 게 아니라, 학습한 것 안에서 가장 그럴듯한 숫자를 내놓는 거죠.',{rev:true,note:'(요지)'})}
+<div class="g4">
+${P('① 질문마다 다른 답',S('bot','shock','','“서울 살기 좋아요?”를 <b>주민</b>으로 물을 때와 <b>여행자</b>로 물을 때, LLM 답은 달라질 수 있어요.'),{fx:'?!'})}
+${P('② 흔들리지 않는 기준',S('nomusa','calm','','온톨로지는 관점이 바뀌어도 <b>가진 답만으로</b> 답해요. 그래서 <mark>판단 기준</mark>을 줄 수 있죠.',{rev:true}))}
+</div>
+<div class="box"><h3>🗓️ 온톨로지가 다시 떠오르기까지</h3>
+<ul class="tl">
+ <li><span class="d">고대</span><br>그리스 철학의 <b>존재론</b>에서 출발</li>
+ <li><span class="d">2001</span><br>월드와이드웹 창시자가 <b>정보와 정보 사이를 의미로 잇자</b>는 구상 발표. “나와 기자는 인터뷰이-인터뷰어 관계”처럼 관계를 링크로 만들고, ‘사람’ 같은 <b>개념을 정의하는 것</b>이 온톨로지의 몫</li>
+ <li><span class="d">2010</span><br>구글, 데이터베이스 ‘프리베이스’를 만든 스타트업 <b>메타웹</b> 인수</li>
+ <li><span class="d">2012</span><br>구글 검색에 <b>지식 그래프</b> 적용 — “글자가 아니라 <b>사물(의미)</b>을 찾겠다”</li>
+ <li><span class="d">이후</span><br>LLM 열풍 속에 잠시 <b>수면 아래</b>로</li>
+ <li class="now"><span class="d">지금</span><br>환각, 그리고 기업용 LLM이 <b>우리 회사 문제를 제대로 못 푸는 한계</b> → “우리 맥락에 맞게 쓰는 법”을 찾다 온톨로지가 다시 등장</li>
+</ul>
+<p class="tagline">※ 확인: 구글의 메타웹 인수 2010년 7월, 지식 그래프 공개 2012년 5월(IEEE Spectrum 등).</p></div>`);
+
+/* EP.3 구글 지식 그래프 */
+H+=EP('EP.3','검색창 오른쪽의 비밀','구글 지식 그래프는 어떻게 작동하나',
+`${S('nomusa','calm','','구글에서 검색하면 오른쪽에 <b>사진·요약 정보 칸</b>이 따로 뜨죠? 그게 지식 그래프로 처음 선보인 <mark>지식 패널</mark>이에요.')}
+<div class="g4">
+${P('⬅️ 예전 검색',S('bot','calm','','“서울의 날씨는”이라는 <b>글자</b>를 가지고 링크가 많은 페이지, 광고와 연관된 페이지를 위로 올렸어요.'))}
+${P('➡️ 지식 그래프 이후',S('hr','shock','','먼저 <b>“서울 = 도시”</b>임을 알아채고, 오른쪽에 서울 사진·인구·면적·현 시장·전임 시장 목록을 보여 줘요!',{rev:true}),{fx:'척!'})}
+</div>
+${S('nomusa','calm','','유명 과학자를 찾으면 <b>사망일</b>도 나오죠. 들어온 글자가 <b>사람인지, 도시인지, 제품인지</b>, 살아 있는 인물인지까지 먼저 가린 다음 정보를 주는 거예요.',{note:'(요지)'})}
+<div class="box blue"><h3>🔍 핵심</h3>
+<p style="margin:0">“이 단어는 <b>어떤 종류의 것</b>인가”를 먼저 아는 힘 — 그게 온톨로지·지식 그래프가 있어서 가능한 일입니다.</p></div>`);
+
+/* EP.4 제작 과정 */
+H+=EP('EP.4','온톨로지는 누가, 어떻게 만드나','형광펜 수작업에서 ‘LLM 초안 + 사람 보정’으로',
+`${S('hr','calm','','그런데 그 연결은 결국 <b>누군가 해 줘야</b> 하는 거잖아요?')}
+${S('nomusa','sad','','출연 교수도 그게 온톨로지가 비판받을 때 <b>가장 아픈 지점</b>이라고 인정해요.',{rev:true,note:'(요지)'})}
+<div class="box"><h3>🛠️ 예전 방식 — 사람이 다 했다</h3>
+<ul>
+<li><b>도메인 전문가</b>: 이 지식이 어떤 지식인지 정리</li>
+<li><b>온톨로지 전문가</b>: 그 내용을 구조로 구축 — <b>개체</b>(엔티티)를 정하고, 개체의 <b>속성</b>을 붙이고, 이어질 곳을 <b>연결</b></li>
+<li>웹 초창기엔 웹페이지에 <b>형광펜</b>을 긋고 “이건 도시, 이건 사람” 태그를 일일이 달았음</li>
+<li>교수 본인도 <b>눈이 빨개질 정도로</b> 모니터 앞에서 구축했다고 회고</li>
+</ul></div>
+<div class="g4">
+${P('① 클래스와 사례',S('nomusa','calm','','‘도시’는 <b>클래스</b>, 서울·용인은 그 <b>사례</b>예요. “서울은 도시의 한 사례(타입)다”라고 표현하죠.'))}
+${P('② 표준 언어',S('bot','calm','','이걸 기계가 그대로 처리하도록 쓰는 <b>표준 언어</b>가 있어요. <b>RDF</b>(자원 기술 프레임워크)예요.',{rev:true}))}
+${P('③ 지금은',S('hr','shock','','LLM이 <b>초안</b>을 쭉 만들고, 판단 근거나 체계 보정이 필요한 곳만 <b>사람</b>이 손본대요. 일이 <b>몇백 분의 1</b>로 줄었다고요!',{note:'(요지)'}),{fx:'↓↓'})}
+${P('④ 서로 돕는 관계',S('nomusa','happy','','LLM의 발전이 온톨로지에 다시 <b>좋은 영향</b>을 주고 있는 셈이에요.',{rev:true}))}
+</div>
+<div class="box"><h3>🔌 LLM에 어떻게 붙이나 — 두 갈래</h3>
+<ul>
+<li><b>직접 접근</b>: LLM이 온톨로지 저장소에 바로 접근 → 전문적으로 구축된 환경에서나 쓰여 <b>국내엔 아직 드묾</b>(교수 견해)</li>
+<li><b>RAG</b>(검색 증강 생성)로 접근 → 더 보편적. 검색하러 내려갈 때 <b>일반 문서</b>를 쓰느냐, <b>지식 그래프</b>를 쓰느냐로 나뉨 → 후자가 <mark>그래프 RAG</mark></li>
+</ul></div>`);
+
+/* EP.5 온톨로지와 지식그래프 */
+H+=EP('EP.5','빵틀과 빵','온톨로지와 지식 그래프의 관계',
+`${S('hr','calm','','지식 그래프랑 온톨로지는 같은 말이에요?')}
+${S('nomusa','calm','','엄밀히는 달라요. 전 세계 도시의 지식 그래프를 만든다고 해 볼게요. 서울·런던·뉴욕은 조금씩 다르지만 <b>도시라면 가져야 할 속성</b>은 비슷하잖아요.',{rev:true})}
+<div class="g4">
+${P('🍞 빵틀 = 온톨로지',S('bot','calm','','도시의 특성, 꼭 있어야 할 속성을 정한 <b>틀</b>. <b>개념</b>에 대한 것이에요.'),{fx:'틀'})}
+${P('🥐 빵 = 지식 그래프',S('hr','happy','','그 틀에 실제 데이터를 부어 구운 결과물! 하나하나의 <b>사례</b>, 곧 <b>데이터</b>군요.',{rev:true}),{fx:'빵!'})}
+</div>
+${S('nomusa','calm','','그래서 요즘은 둘을 붙여서 말하는 경우가 많아요. <b>지식 그래프를 쓴다</b>는 건 일종의 <mark>데이터 세트를 가져다 쓴다</mark>는 뜻이고요.')}`);
+
+/* EP.6 맥락과 눈치 */
+H+=EP('EP.6','“운전은 스틱이지”','AI에게 맥락과 눈치를 가르친다는 것',
+`${S('banjang','happy','','<b>운전은 역시 스틱이지!</b>')}
+${S('hr','calm','','아… 수동변속기, 운전하는 손맛 얘기죠? 무슨 뜻인지는 알겠어요.',{rev:true})}
+${S('nomusa','calm','','바로 그거예요. 같은 경험이나 이해가 있는 사람끼리는 <b>맥락이 같아서</b> 농담이 통하죠. 출연 교수는 이 차이를 <mark>맥락</mark>으로 설명해요.',{note:'(요지) 교수가 다른 강연에서 든 예'})}
+<div class="g4">
+${P('① 맥락이란',S('nomusa','calm','','맥락 안에는 <b>정의해야 할 개념</b>과 그 개념들 사이의 <b>관계</b>가 들어 있어요. 온톨로지가 그걸 정의해 주죠.'))}
+${P('② 맥락을 지닌 LLM',S('bot','calm','','온톨로지를 가진 상태에서 LLM에게 물으면, 답이 <b>그 맥락을 유지</b>한 채 돌아와요.',{rev:true}))}
+${P('③ 눈치란',S('hr','calm','','눈치가 있다 = 상황을 다 안다. 눈치가 없다 = 상황이 아닌데 엉뚱하게 움직인다!'))}
+${P('④ 비유하자면',S('nomusa','happy','','온톨로지가 맥락을 충분히 주면 LLM이 <b>덜 눈치 없게</b> 굴 수 있다는 거죠.',{rev:true,note:'(요지)'}))}
+</div>
+<div class="box"><h3>📦 온톨로지는 어디에 실려 있나</h3>
+<ul>
+<li>대개 <b>별도 저장소</b>에 있거나, 시스템을 만든 쪽이 이미 <b>학습</b>시켰을 수도 있음</li>
+<li>또는 질문이 들어올 때 <b>그래프 RAG</b>로 지식 그래프에 한 번 다녀오는데, 그 안에 온톨로지가 함께 있음</li>
+</ul></div>
+${S('hr','shock','','그럼 범용 챗봇에선 쓰기 어렵겠네요?')}
+${S('nomusa','calm','','좋은 질문이에요. 실제로 온톨로지는 범용·상식 수준보다 <b>특정 도메인</b>에서 주로 쓰여요. 세상 상식 전체를 그 규모로 만들어 본 적은 없거든요. 기업이 기대하는 것도 <mark>우리 회사 데이터를 정확히 다루고 환각을 없애는 용도</mark>고요.',{rev:true,note:'(요지)'})}`);
+
+/* EP.7 기업에 더 필요한 이유 */
+H+=EP('EP.7','“재고가 부족합니다”','기업에 온톨로지가 더 필요한 이유',
+`${S('bot','shock','','띵동! 알림이 왔어요. <b>“재고가 부족합니다.”</b>')}
+${S('hr','calm','','바로 발주하면 되죠?',{rev:true})}
+${S('nomusa','calm','','잠깐요. <b>‘부족’의 기준</b>이 A사와 B사는 달라요. 부족할 때 취할 <b>다음 행동</b>도 회사마다 다르고요.')}
+<div class="g4">
+${P('① 학습으로 정하면 안 된다',S('nomusa','angry','','의사결정에 쓰는 용어와 판단 알고리즘은 <b>명시적으로 정의</b>돼야 해요. 그 근거가 <b>확률·학습에서 나오면 안 되죠</b>.',{note:'(요지)'}),{fx:'NO'})}
+${P('② 누군가 만들어야',S('hr','calm','','그 기준은 결국 <b>사람이 만들고</b>, 판단 로직을 <b>온톨로지 구조</b>로 짜 둘 때 쓸모가 있다는 거군요.',{rev:true}))}
+</div>
+<p class="tagline">※ 출연 교수는 기업이 자체 AI를 만들어도 성능이 안 나오는 이유로, 데이터 부족과 함께 이런 <b>판단 기준의 부재</b>를 ‘가장 큰 딜레마’로 꼽았습니다(요지).</p>`);
+
+/* EP.8 팔란티어 */
+H+=EP('EP.8','팔란티어의 온톨로지는 뭐가 다른가','의미 → 행동 → 결정, 그리고 되먹임',
+`${S('hr','calm','','온톨로지 하면 <b>팔란티어</b>가 제일 유명하잖아요. 같은 거예요?')}
+${S('nomusa','calm','','출연 교수 설명으로는 팔란티어는 온톨로지를 <b>세 층</b>으로 나눴대요.',{rev:true,note:'(요지)'})}
+<div class="box"><h3>🧱 세 개의 층</h3>
+<ul class="tl">
+ <li><span class="d">① 시맨틱(의미)</span><br>전통적 온톨로지처럼 <b>의미와 관계</b>를 정의 — <b>오브젝트</b>(대상)와 <b>링크</b>(연결)</li>
+ <li><span class="d">② 키네틱(행동)</span><br>실제 <b>액션</b>을 취할 수 있는 개념을 넣음 → 예전 온톨로지와 <b>완전히 다르다</b>고 느끼는 지점</li>
+ <li class="now"><span class="d">③ 다이내믹(결정)</span><br>액션을 통해 <b>의사결정</b>까지 가능하게 함. 결정 결과가 <mark>되먹임(피드백 루프)</mark>으로 돌아와 의미 층까지 바꿈</li>
+</ul></div>
+<div class="g4">
+${P('① 관계가 바뀌면',S('hr','calm','','전기차가 들어오면서 자동차의 관계가 바뀌는 식이라면, 그게 <b>행동 층</b>에서 일어나는 일이에요?'))}
+${P('② 맞아요',S('nomusa','calm','','행동 층에서 그런 결정이 계속 이뤄지면 앞쪽 <b>의미 층의 오브젝트 특성</b>, 곧 관계 자체를 바꿔 줘요.',{rev:true}))}
+${P('③ 어디에 쓰나',S('bot','calm','','가장 많이 쓰는 곳은 <b>국방</b>. 이후 기업(B2B)으로 넓어졌대요.'))}
+${P('④ 기업에선',S('nomusa','calm','','SCM(공급망관리)·CRM(고객관계관리)·ERP(전사자원관리) 같은 기존 시스템에 <b>단단히 직접 연결</b>해 데이터를 통합하고, 그걸 의사결정에 써요.',{rev:true}))}
+</div>
+${S('hr','calm','','그럼 LLM처럼 작동하는 건가요?')}
+${S('nomusa','calm','','시스템 하나에 붙는 게 아니라, 기업이 원하는 결정에 필요한 <b>돌아가는 시스템들을 사슬처럼 연결</b>하고, 그 안에서 결정과 프로세스가 실제로 실행되게 하는 것이라고 봐야 한대요. 실행 결과는 다시 의미 층에 반영되며 <b>계속 고도화</b>되고요.',{rev:true,note:'(요지)'})}
+<p class="tagline">※ 확인: 팔란티어 공개 자료·해설은 의미 요소(오브젝트·링크·속성)와 행동 요소(액션·함수)를 나누고, 사용자 결정이 다시 온톨로지에 기록되는 구조를 설명합니다. ‘다이내믹’ 층 구분은 출연 교수의 설명입니다.</p>`);
+
+/* EP.9 어떤 기업이 쓰면 좋은가 */
+H+=EP('EP.9','어떤 기업이 써야 할까','성능 투자가 아니라 리스크 투자',
+`${S('hr','calm','','어떤 업종이 온톨로지 효과를 제일 크게 볼까요?')}
+${S('nomusa','calm','','출연 교수는 업종보다 <b>관점</b>을 먼저 말해요. LLM은 앞으로 모든 기업의 <b>공통 인프라</b>가 될 거라고요.',{rev:true,note:'(요지)'})}
+<div class="g4">
+${P('❌ 흔한 시각',S('bot','calm','','“온톨로지를 만들면 환각이 줄고, LLM <b>성능</b>이 올라간다.”'))}
+${P('⭕ 교수의 시각',S('nomusa','calm','','LLM과 온톨로지의 보완 관계는 <b>성능을 올리는 게 목적이 아니다</b>. 온톨로지가 없어 생길 <mark>리스크에 대한 투자</mark>다.',{rev:true,note:'(요지)'}),{fx:'!'})}
+</div>
+<div class="box red"><h3>💸 그래도 비용은 비용</h3><ul>
+<li>LLM 자체도 이미 <b>무겁고 비싸다</b></li>
+<li>기존 데이터베이스가 있는데 <b>그래프 데이터</b>를 또 만든다</li>
+<li>그래프 데이터는 <b>늘기만 하지 절대 줄지 않는다</b> — 관리·유지보수도 계속</li>
+</ul></div>
+<div class="box blue"><h3>🛡️ 그럼에도 만드는 이유</h3><ul>
+<li>회사의 <b>의사결정·판단 기준</b>을 명확히 세워 둔다</li>
+<li>시스템이 온톨로지로 움직이면 적어도 <b>환각은 통제</b>할 수 있다</li>
+<li>LLM에게 <b>맥락 정보</b>도 줄 수 있다 → 앞으로 크게 나타날 리스크를 <mark>헤지(회피)</mark></li>
+</ul></div>
+${S('hr','happy','','무엇을 더 해 주느냐보다, <b>거대한 울타리</b>를 쳐 주는 일이네요!')}`);
+
+/* EP.10 환각과 그라운딩 */
+H+=EP('EP.10','환각은 어떻게 잡나','그라운딩 · 그래프 RAG · AI 레디 데이터',
+`${S('nomusa','calm','','환각을 잡는 기술로 <b>그라운딩</b>이 있어요. 말 그대로 <b>땅에 딱 붙이자</b>는 거죠. LLM 답변에 <b>정확한 근거</b>를 대 주자는 게 출발점이에요.')}
+<div class="box"><h3>🪜 그라운딩의 단계</h3>
+<ul class="tl">
+ <li><span class="d">RAG</span><br>“이 문서를 기반으로 답해”라고 범위를 좁혀 줌 → <b>맥락이 좁혀지는</b> 장점</li>
+ <li><span class="d">한계</span><br>문서·데이터에 그냥 연결하는 방식(네이티브 RAG)으로는 여전히 개선이 부족</li>
+ <li class="now"><span class="d">그래프 RAG</span><br>지식 그래프·온톨로지를 연결한 RAG — 기술 구조로 보면 괜찮은 방법</li>
+</ul></div>
+<div class="g4">
+${P('① 함정 하나',S('hr','shock','','그런데 요즘 지식 그래프·온톨로지를 <b>LLM으로 자동 생성</b>한다면서요? 정확한 근거를 찾으러 갔는데 그 근거도 LLM이 만들었으면…',{}),{fx:'헉'})}
+${P('② 그것도 환각',S('nomusa','calm','','네, <b>그것도 환각</b>일 수 있죠. 그래서 그래프 RAG 방식도 한 번은 <b>검토</b>해 봐야 한다는 거예요.',{rev:true,note:'(요지)'}))}
+${P('③ 함정 둘',S('bot','calm','','손으로 만들었다 해도, 요즘 그래프 RAG의 온톨로지는 대부분 <b>단순한 분류 계층</b>이래요. 공장 → 사료·음식·김치 공장처럼요.'))}
+${P('④ 행동엔 부족',S('nomusa','calm','','그 정도면 <b>맥락은 좁혀지지만</b>, <b>행동</b>을 취하려는 온톨로지로는 부족해요. 앞으로 훨씬 <b>정교해질</b> 거래요.',{rev:true,note:'(요지)'}))}
+</div>
+<div class="box blue"><h3>🎯 그라운딩의 두 축 (출연 교수 정리, 요지)</h3><ul>
+<li><b>프로세스 측면</b>: 그래프 RAG처럼 기술 구조 안에서 온톨로지까지 접근해 잘 활용하는 방법</li>
+<li><b>데이터 측면</b>: 필요할 때 만드는 게 아니라, AI가 물었을 때 <b>거의 실시간으로 바로 붙어 쓸 수 있게</b> 준비된 데이터 → <mark>AI 레디 데이터</mark></li>
+</ul>
+<p class="tagline">※ 출연 교수는 AI 레디 데이터가 <b>2026~2027년 큰 화두</b>가 될 것으로 내다봤습니다(전망, 예측 아님).</p></div>`);
+
+/* EP.11 에이전틱·피지컬 AI */
+H+=EP('EP.11','AI가 스스로 움직이는 시대','에이전틱 AI · 피지컬 AI와 온톨로지',
+`${S('hr','calm','','AI 에이전트, 로봇 같은 <b>생활 밀착형 AI</b>에서도 온톨로지가 중요해요?')}
+${S('nomusa','calm','','출연 교수는 <b>훨씬 더 중요해진다</b>, 오히려 지금 투자를 더 해야 할 때라고 봐요. 에이전트가 스스로 결정하고 <b>다른 에이전트에게 행동을 시키는</b> 상황이 오니까요.',{rev:true,note:'(요지) 교수는 코딩 에이전트를 써 보며 실감했다고 언급'})}
+<div class="box red"><h3>🏬 사례 ① 경영학 교과서 속 타겟 캐나다</h3>
+<ul class="tl">
+ <li><span class="d">진출</span><br>미국 유통사 타겟이 캐나다 진출. 당시 최고 수준의 <b>ERP</b>(전사자원관리) 시스템을 들고 감</li>
+ <li><span class="d">문제</span><br>짧은 시간에 개점하느라 <b>많은 사람이 데이터를 급히 입력</b> → 단위가 제각각, 규격을 벗어난 값이 대량 유입</li>
+ <li><span class="d">결과</span><br>매장엔 물건이 없는데 시스템은 <b>재고가 넘친다</b>고 하고, 반대 경우도 속출</li>
+ <li class="now"><span class="d">약 2년 뒤</span><br>막대한 손실을 내고 <b>철수</b>(영상: 2조 원 넘는 손실)</li>
+</ul>
+<p class="tagline">※ 확인: 2015년 1월 캐나다 매장 133곳 전체 폐쇄 발표, 연간 손실 최대 약 10억 달러·철수 관련 손실 약 54억 달러 반영(외신 보도). 데이터 입력 오류는 다수 사례 분석에서 지적된 원인입니다.</p></div>
+${S('bot','shock','','이게 <b>AI 에이전트들이 일하는 환경</b>에서 벌어진다면요? 오류가 <b>연쇄로 증폭</b>되겠죠.',{rev:true})}
+${S('nomusa','calm','','그래서 <b>쓰레기를 넣으면 재앙이 나온다</b>는 거예요. 기업 데이터를 온톨로지로 <b>규격화·체계화</b>하는 건 비용이 아니라 그 재앙을 막는 <mark>보험</mark>이라는 게 교수의 메시지예요.',{note:'(요지)'})}
+<div class="box red"><h3>🚗 사례 ② 2023년 샌프란시스코 자율주행 사고</h3>
+<p style="margin:0">다른 차에 치인 보행자가 자율주행 택시 아래로 들어갔는데, 차량은 사고가 났으니 <b>안전한 곳으로 옮겨야 한다</b>고 판단해 그대로 <b>약 6m</b> 움직였습니다. “끼어 있는 건 사람이고, 가장 먼저 지켜야 한다”는 판단이 시스템에는 없었다는 것이 출연 교수의 지적입니다(요지).</p>
+<p class="tagline">※ 확인: 2023.10.2 발생, 시속 약 7마일로 약 20피트 이동, 이후 캘리포니아 차량국이 해당 업체의 무인 운행 허가를 중단(외신 보도).</p></div>
+<div class="g4">
+${P('① 가드레일',S('hr','calm','','물리 세계에서 <b>확률 계산</b>으로 움직이는 시스템이라면, 어느 순간이든 <b>명확한 가드레일</b>이 필요하겠네요.'))}
+${P('② 꼭 온톨로지?',S('nomusa','calm','','교수는 <b>반드시 온톨로지여야 하는 건 아니지만</b>, 온톨로지 방식을 적용해 볼 수 있는 영역이라고 봐요.',{rev:true,note:'(요지)'}))}
+${P('③ 영상·센서 데이터는?',S('bot','calm','','여러 형태의 데이터를 학습하는 피지컬 AI는 <b>월드 모델</b>과 더 관련이 있대요. 텍스트로만 세상을 배운 LLM은 물리적 실체를 모르니까요.'))}
+${P('④ 한 번에는 불가능',S('nomusa','calm','','표현할 영역이 넓어지니 <b>전체를 한 번에</b> 온톨로지로 만들긴 어렵고, <b>영역별로</b> 정리할 수는 있을 거래요.',{rev:true,note:'(요지)'}))}
+</div>`);
+
+/* EP.12 데이터 구축 */
+H+=EP('EP.12','어디서부터 시작할까','데이터 부채, 사일로, 그리고 골든 데이터',
+`${S('hr','calm','','AI는 최신 로봇인데 우리 데이터는 낡았다… 쓸 만한 데이터, 뭐부터 하면 돼요?')}
+${S('nomusa','calm','','출연 교수는 <b>기술 부채</b>에 빗대 <mark>데이터 부채</mark>라는 말을 써요. 에이전트로 자동화하다 보면 <b>무엇인지 모르는 채 자동화</b>되고, 나중엔 다 미지의 영역이 된다고요.',{rev:true,note:'(요지)'})}
+<div class="box"><h3>🧩 왜 데이터 부채가 쌓였나</h3><ul>
+<li>대부분 기업은 큰 <b>데이터 거버넌스</b>를 먼저 세우고 시스템을 만들지 않음 — <b>필요할 때마다</b> 만들었음</li>
+<li>그래서 “데이터 통합합시다” 하면 대기업이든 작은 회사든 <b>모두 망설임</b></li>
+<li>데이터는 쪼개져 <b>사일로</b>(칸막이)마다 따로 돌아감</li>
+</ul></div>
+<div class="g4">
+${P('① 흔한 요청',S('bot','calm','','온톨로지 프로젝트를 하면 “<b>제일 잘되는 사일로 하나</b>만 먼저 해 주세요” 한대요.'))}
+${P('② 반짝 성공',S('hr','happy','','사람 손 많이 들여서 그 하나는 <b>그럴싸하게</b> 바뀌겠네요. PoC(개념 검증) 성공!',{rev:true}))}
+${P('③ 옆 칸을 열면',S('nomusa','sad','','그런데 옆 사일로를 열면 <b>작동을 안 해요</b>. 처음부터 다르게 설계해야 하니까요. 결국 <b>PoC로 끝</b>나죠.',{note:'(요지)'}),{fx:'멈춤'})}
+${P('④ 진짜 출발점',S('nomusa','calm','','온톨로지 구축은 <b>사일로를 어느 수준까지 풀 것인가</b>에서 시작한대요.',{rev:true}))}
+</div>
+<div class="box blue"><h3>🥇 골든 데이터부터</h3><ul>
+<li>회사 안에서 <b>참조가 가장 많은</b> 데이터 — 여러 곳에서 반복해 쓰는 <mark>금 같은 데이터</mark>를 먼저 정비</li>
+<li>여력 있는 기업은 처음부터 큰 솔루션 도입도 가능</li>
+<li>그렇지 않다면 <b>작지만 정교하고 깔끔한</b> 데이터를 만드는 일은 <b>비교적 적은 비용</b>으로 시작할 수 있음(교수 견해)</li>
+</ul></div>
+${S('hr','calm','','처음엔 온톨로지가 LLM 성능을 확 올려 주는 <b>마법 방망이</b>인 줄 알았어요.')}
+${S('nomusa','happy','','진행 기자도 같은 말로 정리했어요. 마법 재료라기보다, 데이터를 가진 모든 기업이 AI를 들일 때 <b>큰 사고를 막는 가드레일</b>로서의 의미가 더 크다고요.',{rev:true,note:'(요지)'})}`);
+
+/* EP.13 우리 현장 관점 */
+H+=EP('EP.13','그럼 우리 현장은?','인력 운영에 온톨로지를 비춰 보면 (작성자 정리)',
+`${S('banjang','calm','','반장으로서 한마디 하겠습니다. 우리 현장도 <b>“재고 부족” 대신 “결원”</b>이라는 알림이 매일 오는데요.')}
+${S('nomusa','calm','','맞아요. 아웃소싱·파견 현장 데이터에 영상의 교훈을 옮겨 볼게요.',{rev:true})}
+<div class="g4">
+${P('① ‘결원’의 기준',S('hr','calm','','재고 부족처럼 <b>결원</b>도 고객사·사업장마다 기준이 달라요. 몇 명 빠지면 결원인지, 몇 시간 안에 채워야 하는지 <b>명시적으로</b> 정해 둬야겠네요.'))}
+${P('② 확률로 판단하면 안 될 것',S('nomusa','angry','','파견 가능 업무인지, 도급인지 같은 판단은 <b>법령 기준</b>이에요. AI가 “그럴듯하게” 답하면 곤란하죠. 이런 건 <b>규칙으로 박아 둘</b> 대상입니다.',{rev:true}),{fx:'규칙'})}
+${P('③ 골든 데이터',S('banjang','calm','','우리 회사에서 가장 많이 참조하는 건 <b>근로자·계약·사업장 마스터</b>죠. 여기부터 단위·코드를 통일하면 되겠습니다.'))}
+${P('④ 급하게 넣은 데이터',S('hr','shock','','신규 현장 오픈 때 여러 사람이 <b>급히 입력한 인사 데이터</b>… 타겟 캐나다 이야기가 남 일 같지 않아요.',{rev:true}))}
+</div>
+<div class="box"><h3>🧭 인력 운영 온톨로지 밑그림 (예시)</h3>
+<ul class="tl">
+ <li><span class="d">클래스</span><br>근로자 · 고객사 · 사업장 · 계약(파견/도급/채용대행) · 직무 · 근무조</li>
+ <li><span class="d">관계</span><br>근로자 —<b>배치됨</b>→ 사업장 / 계약 —<b>적용됨</b>→ 사업장 / 직무 —<b>허용 여부</b>→ 계약 유형</li>
+ <li class="now"><span class="d">규칙</span><br>결원 기준·충원 시한, 파견 기간·허용 업무, 근로시간 한도 등은 <b>사람이 정의하고 AI는 따르게</b></li>
+</ul>
+<p class="tagline">※ 위 내용은 ㈜제니엘이노베이션이 영상의 개념을 인력 운영에 적용해 본 예시이며, 특정 솔루션 도입 권유가 아닙니다.</p></div>`);
+
+/* 다른 시각 */
+H+=EP('BALANCE','함께 보면 좋은 다른 시각','온톨로지에 대한 다른 의견도 있습니다 (작성자 정리)',
+`<div class="g4">
+${P('구축·유지 비용',`<ul style="margin:0;padding-left:18px"><li>도메인 전문가 투입과 <b>지속 관리</b>가 필요해 중소기업엔 부담이라는 지적</li><li>출연 교수도 “늘기만 하는 데이터”라고 언급</li></ul>`)}
+${P('LLM 발전 속도',`<ul style="margin:0;padding-left:18px"><li>모델이 빠르게 좋아지며 <b>긴 문맥·도구 호출</b>로 상당 부분 해결된다는 시각도 존재</li></ul>`)}
+${P('용어의 혼용',`<ul style="margin:0;padding-left:18px"><li>업체마다 ‘온톨로지’를 <b>다른 뜻</b>으로 쓰기도 해, 도입 전 범위 확인 필요</li></ul>`)}
+${P('대안 수단',`<ul style="margin:0;padding-left:18px"><li>데이터 표준화·<b>마스터데이터 관리</b>·업무 규칙 엔진 등도 같은 목적의 수단</li></ul>`)}
+</div>
+<p class="tagline">※ 이 칸은 균형을 위해 ㈜제니엘이노베이션이 덧붙인 것으로, 영상 내용이 아닙니다. 특정 기업 평가·투자 권유가 아닙니다.</p>`);
+
+/* 숫자 카드 */
+H+=EP('NUMBERS','한눈에 보는 숫자','이야기 속 핵심 수치 6',
+`<div class="cards">
+<div class="card"><b>2001</b><span>정보 사이를 의미로 잇자는<br>‘의미의 웹’ 구상 발표</span></div>
+<div class="card"><b>2010 → 2012</b><span>구글 메타웹 인수 →<br>지식 그래프 적용</span></div>
+<div class="card"><b>몇백 분의 1</b><span>LLM 초안 활용 후<br>온톨로지 구축 공수(요지)</span></div>
+<div class="card"><b>3계층</b><span>시맨틱 · 키네틱 · 다이내믹<br>(출연 교수 설명)</span></div>
+<div class="card"><b>133곳</b><span>타겟 캐나다<br>철수 때 폐쇄 매장 수</span></div>
+<div class="card"><b>약 6m</b><span>2023년 자율주행 사고<br>보행자를 끈 거리</span></div>
+</div>
+<p class="tagline">※ ‘요지’ 표시는 출연자 발언을 요약한 것이며, 개별 수치로 검증된 값이 아닙니다.</p>`);
+
+/* 체크리스트 */
+H+=EP('CHECK','AI 도입 전 데이터 점검표','경영진·인사담당자용 (작성자 제안)',
+`${S('hr','calm','','우리 회사는 뭘 점검하면 될까요?')}
+${S('nomusa','calm','','“AI가 얼마나 똑똑한가”보다 <b>“AI가 따를 기준이 우리에게 있는가”</b>를 먼저 보세요.',{rev:true})}
+<ul class="chk">
+<li>결원·충원·근태 이상 등 핵심 판단의 <b>기준이 문서로 정의</b>돼 있는가</li>
+<li>근로자·고객사·사업장·계약 데이터에 <b>공통 코드와 단위</b>가 있는가</li>
+<li>가장 많이 참조하는 <b>골든 데이터</b>(마스터)가 무엇인지 정해 두었는가</li>
+<li>신규 현장 오픈 때 <b>대량 입력 데이터의 검증 절차</b>가 있는가</li>
+<li>파견 허용 업무·기간, 근로시간 한도 등 <b>법정 기준을 AI가 임의 판단하지 않도록</b> 규칙화했는가</li>
+<li>AI 답변에 <b>근거 자료(출처)</b>를 함께 보여 주도록 설정했는가</li>
+<li>시스템별로 흩어진 데이터를 <b>어디까지 통합할지</b> 범위를 정했는가</li>
+<li>PoC(개념 검증) 이후 <b>옆 부서로 확장할 설계</b>를 미리 고려했는가</li>
+</ul>
+<p class="tagline">※ 위 점검표는 ㈜제니엘이노베이션이 정리한 실무 제안이며 법률·기술 자문이 아닙니다.</p>`);
+
+/* 흐름 정리 */
+H+=EP('SUMMARY','흐름 정리','개념 → 연결 → 기준 → 가드레일',
+`<div class="g4">
+${P('🧠 개념',`<ul style="margin:0;padding-left:18px"><li>온톨로지 = 컴퓨터가 이해하는 <b>개념 정의</b></li><li>빵틀(온톨로지)과 빵(지식 그래프)</li></ul>`)}
+${P('🔗 연결',`<ul style="margin:0;padding-left:18px"><li>구글 지식 그래프 — <b>글자 대신 의미</b></li><li>그래프 RAG로 LLM에 <b>맥락·눈치</b></li></ul>`)}
+${P('📏 기준',`<ul style="margin:0;padding-left:18px"><li>회사의 판단 기준은 <b>확률이 아닌 정의</b>로</li><li>팔란티어: 의미 → 행동 → 결정</li></ul>`)}
+${P('🛡️ 가드레일',`<ul style="margin:0;padding-left:18px"><li>성능이 아니라 <b>리스크 투자</b></li><li>데이터 부채 정리, <b>골든 데이터</b>부터</li></ul>`)}
+</div>`);
+
+/* 에필로그 */
+H+=EP('EPILOGUE','구슬을 꿰는 일','데이터는 연결될 때 지식이 된다',
+`${S('bot','calm','','오늘 이야기, 한 문장으로 하면 뭘까요?')}
+${S('nomusa','calm','','데이터는 이미 다들 <b>잔뜩</b> 가지고 있어요. 그런데 무엇이 무엇인지, 무엇과 이어지는지 정해 두지 않으면 AI는 <b>그럴싸하게 틀리죠</b>.',{rev:true})}
+${S('banjang','calm','','현장으로 치면, 사람은 많은데 <b>누가 어디서 무슨 일을 하는지</b> 정리가 안 된 상태군요.')}
+${S('hr','happy','','그럼 저는 우리 근로자 마스터 데이터부터 <b>깔끔하게</b> 정리해 볼게요!',{rev:true})}
+<p class="quote">“구슬이 서 말이라도 꿰어야 보배”</p>
+<p style="text-align:center;margin:0">끝까지 읽어 주셔서 감사합니다 🙏</p>
+<div class="src">작성 · ㈜제니엘이노베이션<br>
+<b>원작</b> · 유튜브 ‘티타임즈TV’ 「기업이 꼭 알아야 할 ‘온톨로지’의 모든 것」(2026.3.3, 42분 13초) — <a href="${SRC_URL}" target="_blank" rel="noopener">${SRC_URL}</a> 의 내용을 챕터별로 요약·재구성했습니다. 영상의 문장을 그대로 옮기지 않았으며, 원작의 저작권은 해당 채널에 있습니다.<br>
+<b>확인 자료</b> · IEEE Spectrum 2012.6(구글 지식 그래프·메타웹 인수), 6abc/AP 2015.1.15(타겟 캐나다 철수·손실), Jalopnik 2023.10(샌프란시스코 자율주행 사고 경위), PuppyGraph 블로그(팔란티어 온톨로지 구조 해설)<br>
+※ 등장인물은 가상의 캐릭터이며, 출연 교수·진행 기자의 발언은 직책만 표기해 ‘(요지)’로 요약했습니다. 영상 화면·인물 사진은 사용하지 않았습니다. 특정 기업 평가·투자 권유가 아닙니다.</div>`);
+
+
+document.getElementById('app').innerHTML=H;
+
+function toggleTheme(){
+  const r=document.documentElement;
+  const dark = r.dataset.theme ? r.dataset.theme==='dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  r.dataset.theme = dark?'light':'dark';
+}
+</script>
+<script src="../zt-nav.js"></script>
+<script src="../firebase-config.js"></script>
+<script type="module" src="../zt-fire.js"></script>
+<script>
+const ZT_ID='006';
+async function ztPaint(){const F=window.ZT_FIRE;if(!F||!F.enabled)return;document.getElementById('ztLike').hidden=false;
+ const d=(await F.getStats([ZT_ID]))[ZT_ID]||{};document.getElementById('ztLikeN').textContent=d.likes||0;
+ document.getElementById('ztViews').textContent='👁 조회 '+(d.views||0);
+ if(F.liked(ZT_ID))document.querySelector('#ztLike button').classList.add('on');}
+async function ztLike(){const F=window.ZT_FIRE;if(await F.addLike(ZT_ID)){document.querySelector('#ztLike button').classList.add('on');ztPaint()}}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{})}
+window.addEventListener('zt-fire-ready',async()=>{if(window.ZT_FIRE.enabled){await window.ZT_FIRE.addView(ZT_ID);ztPaint()}});
+</script>
+</body>
+</html>
