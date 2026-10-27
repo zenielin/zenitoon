@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>제니툰 — 보고 이해하는 일터 이야기</title>
-<meta name="description" content="노동뉴스·판례·아웃소싱 실무를 웹툰으로 쉽게. 매주 월요일 발행, 제공 ㈜제니엘이노베이션">
+<meta name="description" content="노동뉴스·판례·아웃소싱 실무를 웹툰으로 쉽게. 매주 월요일 발행·수시 발행, 제공 ㈜제니엘이노베이션">
 <meta property="og:title" content="제니툰 — 보고 이해하는 일터 이야기">
 <meta property="og:description" content="노동뉴스·판례·아웃소싱 실무를 웹툰으로 쉽게. 제공 ㈜제니엘이노베이션">
 <meta property="og:image" content="thumbs/001.png">
@@ -32,7 +32,7 @@ h1,h2,h3{font-family:'Black Han Sans',sans-serif;font-weight:400;margin:0;line-h
 .provider a{color:var(--yellow);text-decoration:none;font-weight:700}
 /* hero */
 .hero{background:var(--yellow);color:#161616;border-bottom:3px solid #161616;position:relative;overflow:hidden}
-.hero:before{content:"";position:absolute;inset:-60%;background:repeating-conic-gradient(rgba(255,255,255,.35) 0 7deg,transparent 7deg 14deg)}
+.hero:before{content:"";position:absolute;inset:0;background:repeating-conic-gradient(from 0deg at 0% 50%,rgba(255,255,255,.42) 0 2.5deg,transparent 2.5deg 8deg) left/50% 100% no-repeat,repeating-conic-gradient(from 0deg at 100% 50%,rgba(255,255,255,.42) 0 2.5deg,transparent 2.5deg 8deg) right/50% 100% no-repeat;-webkit-mask-image:linear-gradient(90deg,#000,transparent 42%,transparent 58%,#000);mask-image:linear-gradient(90deg,#000,transparent 42%,transparent 58%,#000)}
 .hero .wrap{position:relative;display:flex;align-items:center;gap:18px;padding-top:22px;padding-bottom:22px}
 .logo{font-family:'Black Han Sans';font-size:54px;line-height:1;text-shadow:4px 4px 0 #fff;letter-spacing:1px}
 .logo small{display:block;font-family:'Jua';font-size:16px;text-shadow:none;margin-top:6px;letter-spacing:0}
@@ -123,6 +123,7 @@ footer .info{font-size:13px;color:var(--sub);margin-top:16px;line-height:1.8}
   .bbar{display:block}
   .logo{font-size:40px}
   .logo small{font-size:13.5px}
+  .logo .sch{display:none}.logo .sch2{display:block}
   .mascot{width:70px;height:70px;flex-basis:70px}
   .hero .meta{display:none}
   .grid{grid-template-columns:1fr}
@@ -134,7 +135,7 @@ footer .info{font-size:13px;color:var(--sub);margin-top:16px;line-height:1.8}
 
 <header class="hero"><div class="wrap">
   <svg class="mascot" viewBox="0 0 80 80" aria-hidden="true"><line x1="40" y1="8" x2="40" y2="18" stroke="#161616" stroke-width="3"/><circle cx="40" cy="7" r="4" fill="#e2403a" stroke="#161616" stroke-width="2"/><rect x="14" y="18" width="52" height="48" rx="12" fill="#ffd23f" stroke="#161616" stroke-width="3"/><rect x="20" y="28" width="40" height="34" rx="8" fill="#fff" stroke="#161616" stroke-width="2"/><path d="M26 41 Q30 36 34 41 M46 41 Q50 36 54 41" stroke="#161616" stroke-width="3" fill="none"/><path d="M30 52 Q40 61 50 52 Z" fill="#161616"/><rect x="8" y="34" width="6" height="14" rx="2" fill="#2f6fd6" stroke="#161616" stroke-width="2"/><rect x="66" y="34" width="6" height="14" rx="2" fill="#2f6fd6" stroke="#161616" stroke-width="2"/></svg>
-  <div class="logo">제니툰<small>보고 이해하는 일터 이야기 · 매주 월요일 발행</small></div>
+  <div class="logo">제니툰<small>보고 이해하는 일터 이야기<span class="sch"> · </span><span class="sch2">매주 월요일 발행 · 수시 발행</span></small></div>
   <div class="meta"><b id="heroNo"></b><span id="heroDate"></span><br><button class="theme" onclick="toggleTheme()">☀︎ / ☾</button> <button class="theme inst" hidden onclick="installApp()">📲 앱 설치</button></div>
 </div></header>
 
@@ -160,7 +161,7 @@ footer .info{font-size:13px;color:var(--sub);margin-top:16px;line-height:1.8}
   <button class="go" onclick="installApp()">설치</button>
   <button class="x" onclick="dismissInstall()" aria-label="닫기">✕</button>
 </div>
-<div class="modal" id="iosModal" onclick="if(event.target===this)this.classList.remove('on')">
+<div class="modal" id="iosModal" onclick="if(event.target===this)popModal('iosModal')">
   <div class="sheet">
     <h3>📲 아이폰에 제니툰 설치하기</h3>
     <ol class="ios-steps">
@@ -169,7 +170,14 @@ footer .info{font-size:13px;color:var(--sub);margin-top:16px;line-height:1.8}
       <li>오른쪽 위 <b>‘추가’</b>를 누르면 완료!</li>
     </ol>
     <div style="font-size:12.5px;color:var(--sub);margin-top:8px">※ 카카오톡 등 앱 안에서 열었다면, 먼저 Safari로 열어 주세요.</div>
-    <div class="row"><button type="button" class="btn" onclick="document.getElementById('iosModal').classList.remove('on')">확인</button></div>
+    <div class="row"><button type="button" class="btn" onclick="popModal('iosModal')">확인</button></div>
+  </div>
+</div>
+<div class="modal" id="exitModal" onclick="if(event.target===this)stayApp()">
+  <div class="sheet" style="text-align:center">
+    <h3>제니툰을 나가시겠어요?</h3>
+    <div style="font-size:14px;color:var(--sub);margin-top:4px">새 회차는 매주 월요일, 그리고 수시로 올라옵니다.</div>
+    <div class="row"><button type="button" class="btn ghost" onclick="leaveApp()">나가기</button><button type="button" class="btn" onclick="stayApp()">계속 보기</button></div>
   </div>
 </div>
 <div class="toast" id="toast"><span>새 회차가 준비됐어요</span><button onclick="location.reload()">새로고침</button></div>
@@ -225,7 +233,9 @@ function renderHome(){
    <a href="https://zeniel-laborletter.netlify.app" target="_blank" rel="noopener"><b>⚖️ 노동법 레터</b><span>주제별 판례 · 행정해석 · 예규 정리</span></a></div></section>`;
   return h;
 }
-const desc={news:'정책·보도자료를 쉽게',case:'판례 한 건을 4컷으로',qa:'고객사가 자주 묻는 질문',safety:'부문별 현장 안전수칙',support:'정부 고용지원사업 안내',stats:'통계를 그림으로',check:'이번 주 실무 대비 점검표'};
+const desc={news:'노동 뉴스·노동관계법 변화를 쉽게',case:'법원 판례를 만화로',outsourcing:'도급·파견·채용대행 등 아웃소싱 이야기',safety:'산업안전보건·중대재해 예방',biz:'기업 이야기와 경영 이슈',check:'채용·노무·지도점검 실무 점검표',aha:'상식·연예·스포츠·리더십 이야기'};
+const LEGACY={qa:'outsourcing',support:'news',stats:'news'};
+const keyOf=h=>{h=(h||'').replace('#','');h=LEGACY[h]||h;return h in C?h:'home'};
 function renderCorner(k){
   const c=C[k],list=allEps.filter(e=>e.corner===k);
   return `<section><div class="sec-h"><span class="tag" style="background:${c.color}">${c.icon} 코너</span><h2>${c.name}</h2><span class="d">${desc[k]}</span></div>
@@ -239,7 +249,9 @@ async function paintStats(){
   els.forEach(e=>{const d=st[e.dataset.id];if(d)e.textContent=`👁 조회 ${d.views||0} · 👍 도움됐어요 ${d.likes||0}`});
 }
 window.addEventListener('zt-fire-ready',paintStats);
-function go(k){cur=k;document.getElementById('main').innerHTML= k==='home'?renderHome():renderCorner(k);paintTabs();paintStats();window.scrollTo({top:0});try{history.replaceState(null,'',k==='home'?'#':'#'+k)}catch(e){}}
+function render(k){cur=k;document.getElementById('main').innerHTML= k==='home'?renderHome():renderCorner(k);paintTabs();paintStats();window.scrollTo({top:0})}
+/* 화면 이동은 기록에 남겨 뒤로가기가 이전 화면으로 가게 한다 */
+function go(k){if(k===cur){window.scrollTo({top:0});return}render(k);try{history.pushState({zt:'view',k},'',k==='home'?location.pathname:'#'+k)}catch(e){}}
 function paintTabs(){
   const items=[['home','🏠','홈'],...Object.entries(C).map(([k,c])=>[k,c.icon,c.name])];
   document.getElementById('tabs').innerHTML=items.map(([k,i,n])=>`<button class="tab ${cur===k?'on':''}" onclick="go('${k}')">${i} ${n}</button>`).join('');
@@ -247,10 +259,35 @@ function paintTabs(){
 }
 document.getElementById('heroNo').textContent=label(T.issues[0]);
 document.getElementById('heroDate').textContent=fmt(T.issues[0].date)+' 발행';
-go((location.hash||'#home').slice(1) in C ? location.hash.slice(1):'home');
+/* ---------- 뒤로가기·종료 확인 ----------
+   진입 기록 = [root(종료 감지용)] → [view(첫 화면)] → 이후 화면 이동마다 view 추가.
+   root 로 되돌아오면 종료 확인 창을 띄운다. */
+const anyModal=()=>[...document.querySelectorAll('.modal.on')].filter(m=>m.id!=='exitModal');
+(function initNav(){
+  const st=history.state;
+  if(!st||!st.zt){
+    const k=keyOf(location.hash);
+    try{history.replaceState({zt:'root'},'',location.href);history.pushState({zt:'view',k},'',location.href)}catch(e){}
+    render(k);
+  }else if(st.zt==='root'){render('home');try{history.pushState({zt:'view',k:'home'},'',location.href)}catch(e){}}
+  else render(st.k||keyOf(location.hash));
+})();
+window.addEventListener('popstate',e=>{
+  const st=e.state||{};
+  const open=anyModal();
+  if(open.length){open.forEach(m=>m.classList.remove('on'));if(st.zt==='modal')return}
+  if(st.zt==='root'){document.getElementById('exitModal').classList.add('on');return}
+  document.getElementById('exitModal').classList.remove('on');
+  if(st.zt==='modal')return;
+  render(st.k||keyOf(location.hash));
+});
+function stayApp(){document.getElementById('exitModal').classList.remove('on');try{history.pushState({zt:'view',k:cur},'',cur==='home'?location.pathname:'#'+cur)}catch(e){}}
+function leaveApp(){document.getElementById('exitModal').classList.remove('on');history.back();setTimeout(()=>{if(document.visibilityState==='visible'&&history.state&&history.state.zt==='root'){try{window.close()}catch(e){}}},400)}
+function pushModal(){try{history.pushState({zt:'modal',k:cur},'',location.href)}catch(e){}}
+function popModal(id){const m=document.getElementById(id);if(!m.classList.contains('on'))return;m.classList.remove('on');if(history.state&&history.state.zt==='modal')history.back()}
 
-function openModal(){document.getElementById('modal').classList.add('on')}
-function closeModal(){document.getElementById('modal').classList.remove('on')}
+function openModal(){document.getElementById('modal').classList.add('on');pushModal()}
+function closeModal(){popModal('modal')}
 function sendForm(ev){
   ev.preventDefault();const f=ev.target;
   if(window.ZT_FIRE){const o=Object.fromEntries(new FormData(f));delete o['bot-field'];delete o['form-name'];ZT_FIRE.saveConsult(o)}
@@ -278,7 +315,7 @@ window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPro
 if(isIOS&&!isStandalone())showInstall();
 async function installApp(){
   if(deferredPrompt){deferredPrompt.prompt();const r=await deferredPrompt.userChoice;deferredPrompt=null;if(r.outcome==='accepted')hideInstall();return}
-  if(isIOS){document.getElementById('iosModal').classList.add('on');return}
+  if(isIOS){document.getElementById('iosModal').classList.add('on');pushModal();return}
   alert('브라우저 메뉴(⋮)에서 「앱 설치」 또는 「홈 화면에 추가」를 눌러 주세요.');
 }
 function hideInstall(){document.getElementById('ibar').classList.remove('on');document.querySelectorAll('.inst').forEach(b=>b.hidden=true)}

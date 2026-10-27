@@ -1,13 +1,13 @@
 /* 제니툰 데이터 — 새 회차는 issues 배열 맨 앞에 추가 */
 window.TOON = {
   corners: {
-    news:    { name: '노동뉴스 툰',          icon: '📰', color: '#e2403a' },
-    case:    { name: '판례 4컷',             icon: '⚖️', color: '#2f6fd6' },
-    qa:      { name: '아웃소싱 Q&A',         icon: '💬', color: '#8b5cf6' },
-    safety:  { name: '현장 안전툰',          icon: '⛑️', color: '#f08c00' },
-    support: { name: '고용지원사업',         icon: '🤝', color: '#2e9e6a' },
-    stats:   { name: '숫자로 보는 노동시장', icon: '📊', color: '#0891b2' },
-    check:   { name: '인사담당자 체크리스트', icon: '✅', color: '#be185d' }
+    news:        { name: '노동뉴스툰',            icon: '📰', color: '#e2403a' },
+    case:        { name: '노동판례툰',            icon: '⚖️', color: '#2f6fd6' },
+    outsourcing: { name: '아웃소싱툰',            icon: '🤝', color: '#8b5cf6' },
+    safety:      { name: '안전관리툰',            icon: '⛑️', color: '#f08c00' },
+    biz:         { name: '기업뉴스툰',            icon: '🏢', color: '#0891b2' },
+    check:       { name: '인사담당자 체크리스트', icon: '✅', color: '#be185d' },
+    aha:         { name: '그렇구나툰',            icon: '💡', color: '#2e9e6a' }
   },
   issues: [
     {
@@ -16,11 +16,11 @@ window.TOON = {
       date: '2026-10-27',
       title: 'AI를 만드는 사람들이 본 2030년 — 신입이 사라지는 일터',
       saying: { text: '유비무환(有備無患)', note: '미리 준비하면 걱정이 없다' },
-      next: '판례 4컷 「도급과 파견의 경계」 · 현장 안전툰 「물류센터 지게차」',
+      next: '노동판례툰 「도급과 파견의 경계」 · 안전관리툰 「물류센터 지게차」',
       episodes: [
         {
           id: '004',
-          corner: 'stats',
+          corner: 'news',
           title: 'AI를 만드는 사람들이 본 2030년',
           summary: 'AI 개발사 직원 1,334명과 미국 성인 약 1만 1천 명의 2030년 전망 비교, AI 에이전트 근무시간 6배·기술직 신입 채용 비중 27%→9% 등 사내 고용 변화. AI 시대 인력 운영 점검표 수록.',
           page: 'ep/004.html',
@@ -36,11 +36,11 @@ window.TOON = {
       date: '2026-10-26',
       title: '천만 원 회사의 2,000일 — 역주행 1위 뒤의 사람과 돈',
       saying: { text: '수적천석(水滴穿石)', note: '떨어지는 물방울이 바위를 뚫는다' },
-      next: '판례 4컷 「도급과 파견의 경계」 · 현장 안전툰 「물류센터 지게차」',
+      next: '노동판례툰 「도급과 파견의 경계」 · 안전관리툰 「물류센터 지게차」',
       episodes: [
         {
           id: '003',
-          corner: 'news',
+          corner: 'biz',
           title: '천만 원 회사의 2,000일',
           summary: '직원 3명·자본금 1천만 원 기획사가 대표의 직접 캐스팅과 지켜진 약속, 작은 무대의 반복으로 2년 전 노래를 역주행 1위에 올린 사례. 작은 조직의 사람 경쟁력 체크리스트 수록.',
           page: 'ep/003.html',
@@ -56,11 +56,11 @@ window.TOON = {
       date: '2026-10-26',
       title: '새우가 고래를 삼킨 뒤 — 크라운·해태 20년',
       saying: { text: '과유불급(過猶不及)', note: '지나침은 미치지 못함과 같다' },
-      next: '판례 4컷 「도급과 파견의 경계」 · 현장 안전툰 「물류센터 지게차」',
+      next: '노동판례툰 「도급과 파견의 경계」 · 안전관리툰 「물류센터 지게차」',
       episodes: [
         {
           id: '002',
-          corner: 'news',
+          corner: 'biz',
           title: '새우가 고래를 삼킨 뒤',
           summary: '업계 4위가 차입매수(LBO)로 2위를 인수한 뒤 이자 부담·조직 통합 진통·과잉 증설로 20년간 매출 1조 원 안팎에 머문 사례. 인수·증설 전 점검 체크리스트 수록.',
           page: 'ep/002.html',
@@ -76,7 +76,7 @@ window.TOON = {
       date: '2026-10-26',
       title: '창간호 — 지방노동감독 시대가 온다',
       saying: { text: '적소성대(積小成大)', note: '작은 것이 쌓여 큰 것을 이룬다' },
-      next: '판례 4컷 「도급과 파견의 경계」 · 현장 안전툰 「물류센터 지게차」',
+      next: '노동판례툰 「도급과 파견의 경계」 · 안전관리툰 「물류센터 지게차」',
       episodes: [
         {
           id: '001',

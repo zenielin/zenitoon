@@ -1,7 +1,7 @@
 /* 제니툰 서비스워커 — 발행 시 V(캐시 버전)를 올릴 것 */
-const V = 'zenitoon-v7';
+const V = 'zenitoon-v8';
 const SHELL = [
-  '/', '/index.html', '/data.js', '/firebase-config.js', '/zt-fire.js',
+  '/', '/index.html', '/data.js', '/firebase-config.js', '/zt-fire.js', '/zt-nav.js',
   '/manifest.webmanifest', '/offline.html',
   '/icon-192.png', '/icon-512.png', '/icon-maskable-512.png', '/apple-touch-icon.png', '/favicon.png'
 ];
