@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>수고했어요, 그런데 그 수고 어디로 갔죠? | 제니툰</title>
+<meta property="og:title" content="제니툰 · 수고했어요, 그런데 그 수고 어디로 갔죠?">
+<meta property="og:image" content="../thumbs/008.png">
+<link rel="icon" href="../favicon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#ffd23f">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="제니툰">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fbf6ea; --paper2:#fffdf7; --ink:#161616; --sub:#4a4a4a;
+  --red:#e2403a; --blue:#2f6fd6; --yellow:#ffd23f; --green:#2e9e6a; --soft:#f1e7cf;
+  --shadow:#161616;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#1d1b17; --paper2:#262420; --ink:#f2ede1; --sub:#c9c2b2;
+    --soft:#34302a; --shadow:#000;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#1d1b17; --paper2:#262420; --ink:#f2ede1; --sub:#c9c2b2;
+  --soft:#34302a; --shadow:#000;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Gowun Dodum',sans-serif;line-height:1.6;font-size:15px}
+.wrap{max-width:760px;margin:0 auto;padding:18px 16px 40px}
+h1,h2,h3{font-family:'Black Han Sans',sans-serif;font-weight:400;margin:0;letter-spacing:.5px;line-height:1.25}
+.ep{background:var(--paper2);border:3px solid var(--ink);box-shadow:6px 6px 0 var(--shadow);margin:0 6px 30px 0;padding:20px 18px 22px;border-radius:6px}
+.eptag{display:inline-block;background:var(--ink);color:var(--paper2);font-family:'Black Han Sans';padding:3px 12px;border-radius:3px;font-size:14px;letter-spacing:1px}
+.ep h2{font-size:26px;margin:8px 0 2px}
+.ep .subt{color:var(--sub);margin:0 0 14px;font-size:14px}
+/* cover */
+.cover{background:var(--yellow);color:#161616;text-align:center;position:relative;overflow:hidden}
+.cover .burst{position:absolute;inset:0;background:repeating-conic-gradient(from 0deg at 0% 50%,rgba(255,255,255,.42) 0 2.5deg,transparent 2.5deg 8deg) left/50% 100% no-repeat,repeating-conic-gradient(from 0deg at 100% 50%,rgba(255,255,255,.42) 0 2.5deg,transparent 2.5deg 8deg) right/50% 100% no-repeat;-webkit-mask-image:linear-gradient(90deg,#000,transparent 42%,transparent 58%,#000);mask-image:linear-gradient(90deg,#000,transparent 42%,transparent 58%,#000);z-index:0}
+.cover>*{position:relative;z-index:1}
+.cover h1{font-size:38px;margin:10px 0 6px;text-shadow:3px 3px 0 #fff}
+.cover .kick{font-family:'Jua';font-size:17px}
+.cover .by{font-size:13px;margin-top:10px}
+.cover .cast{display:flex;justify-content:center;gap:6px;margin:14px 0 6px;flex-wrap:wrap}
+.cover .cast svg{width:78px;height:78px;background:#fff;border:3px solid #161616;border-radius:50%}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.num{background:#fff;border:2.5px solid #161616;border-radius:6px;padding:8px 4px}
+.num b{display:block;font-family:'Black Han Sans';font-size:26px;color:var(--red);line-height:1.1}
+.num span{font-size:12px}
+/* panels */
+.g4{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.panel{border:2.5px solid var(--ink);background:var(--paper);border-radius:4px;padding:10px;position:relative;min-width:0}
+.panel.wide{grid-column:1/-1}
+.panel .cap{font-family:'Black Han Sans';font-size:13px;background:var(--yellow);color:#161616;display:inline-block;padding:1px 8px;border:2px solid var(--ink);margin-bottom:6px}
+.panel .fx{position:absolute;right:8px;top:4px;font-family:'Black Han Sans';color:var(--red);font-size:20px;transform:rotate(8deg)}
+/* scene */
+.scene{display:flex;align-items:flex-start;gap:8px;margin:8px 0}
+.scene.rev{flex-direction:row-reverse}
+.who{flex:0 0 64px;text-align:center;font-size:11px;color:var(--sub)}
+.who svg{width:62px;height:62px;border:2.5px solid var(--ink);border-radius:50%;background:#fff;display:block;margin:0 auto 2px}
+.bub{position:relative;background:#fff;color:#161616;border:2.5px solid var(--ink);border-radius:16px;padding:8px 12px;font-family:'Jua';font-size:15px;line-height:1.45;flex:1;min-width:0}
+.bub:before{content:"";position:absolute;left:-11px;top:16px;border:9px solid transparent;border-right-color:var(--ink);border-left:0}
+.bub:after{content:"";position:absolute;left:-7px;top:18px;border:7px solid transparent;border-right-color:#fff;border-left:0}
+.rev .bub:before{left:auto;right:-11px;border-right-color:transparent;border-left:9px solid var(--ink);border-right:0}
+.rev .bub:after{left:auto;right:-7px;border-right-color:transparent;border-left:7px solid #fff;border-right:0}
+.bub.shout{border-radius:4px;background:var(--yellow);font-size:16px}
+.bub.shout:after{border-right-color:var(--yellow)}
+.rev .bub.shout:after{border-left-color:var(--yellow)}
+.bub small{display:block;color:#666;font-family:'Gowun Dodum';font-size:11px;margin-top:2px}
+/* boxes */
+.box{border:2.5px dashed var(--ink);border-radius:6px;padding:10px 14px;margin:12px 0;background:var(--paper)}
+.box h3{font-size:17px;margin-bottom:6px}
+.box ul,.box ol{margin:0;padding-left:20px}
+.box li{margin:3px 0}
+.box.red{border-style:solid;border-color:var(--red)}
+.box.blue{border-style:solid;border-color:var(--blue)}
+.law{background:var(--soft);border-left:6px solid var(--blue);padding:10px 14px;font-size:14px;margin:12px 0;border-radius:0 6px 6px 0}
+.law b{color:var(--blue)}
+mark{background:var(--yellow);color:#161616;padding:0 3px}
+/* bars */
+.bars{margin:6px 0 4px}
+.bar{display:grid;grid-template-columns:110px 1fr 54px;align-items:center;gap:8px;margin:7px 0;font-size:14px}
+.bar .tr{height:20px;border:2px solid var(--ink);border-radius:3px;background:var(--paper)}
+.bar .fl{height:100%;background:var(--blue)}
+.bar .fl.r{background:var(--red)}.bar .fl.y{background:var(--yellow)}.bar .fl.g{background:var(--green)}
+.bar b{font-family:'Black Han Sans';font-weight:400;text-align:right}
+/* timeline */
+.tl{list-style:none;margin:6px 0;padding:0 0 0 22px;border-left:4px solid var(--ink)}
+.tl li{position:relative;margin:0 0 12px;padding-left:6px}
+.tl li:before{content:"";position:absolute;left:-33px;top:4px;width:16px;height:16px;background:var(--yellow);border:3px solid var(--ink);border-radius:50%}
+.tl li.now:before{background:var(--red)}
+.tl .d{font-family:'Black Han Sans';font-size:14px;color:var(--red)}
+/* flow */
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;align-items:stretch;margin:8px 0}
+.flow div{border:2.5px solid var(--ink);border-radius:5px;padding:8px 4px;text-align:center;font-size:13px;background:var(--paper);font-family:'Jua';display:flex;align-items:center;justify-content:center;min-width:0}
+.flow div.k{background:var(--yellow);color:#161616}
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.chip{border:2px solid var(--ink);border-radius:20px;padding:2px 10px;font-size:13px;background:var(--paper)}
+.chip.hl{background:var(--red);color:#fff;border-color:var(--red)}
+/* number cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.card{border:2.5px solid var(--ink);border-radius:6px;padding:10px;text-align:center;background:var(--paper)}
+.card b{font-family:'Black Han Sans';font-size:30px;font-weight:400;display:block;color:var(--blue);line-height:1.1}
+.card span{font-size:13px}
+/* checklist */
+.chk{list-style:none;padding:0;margin:6px 0}
+.chk li{border:2px solid var(--ink);border-radius:5px;padding:8px 10px 8px 40px;margin:7px 0;position:relative;background:var(--paper);font-size:14px}
+.chk li:before{content:"";position:absolute;left:10px;top:9px;width:18px;height:18px;border:2.5px solid var(--ink);border-radius:3px;background:#fff}
+.chk li b{color:var(--red)}
+.tagline{font-size:12px;color:var(--sub)}
+.quote{text-align:center;font-family:'Jua';font-size:19px;margin:14px 0 4px}
+.src{font-size:12px;color:var(--sub);border-top:2px dashed var(--ink);margin-top:14px;padding-top:8px}
+.theme-btn{position:fixed;right:12px;bottom:12px;z-index:9;border:2.5px solid var(--ink);background:var(--paper2);color:var(--ink);font-family:'Jua';border-radius:20px;padding:4px 12px;cursor:pointer}
+@media (max-width:540px){
+  .g4{grid-template-columns:1fr}
+  .cover h1{font-size:30px}
+  .ep h2{font-size:22px}
+  .nums,.cards{grid-template-columns:repeat(2,1fr)}
+  .flow{grid-template-columns:1fr}
+  .flow div{padding:6px}
+  .bar{grid-template-columns:86px 1fr 46px;font-size:13px}
+  .cover .cast svg{width:60px;height:60px}
+}
+@media (min-width:1024px){.wrap{max-width:960px}body{font-size:17px}.bub{font-size:17px}.ep h2{font-size:30px}.who{flex-basis:80px}.who svg{width:76px;height:76px}.cover h1{font-size:46px}.num b{font-size:30px}}
+@media (min-width:1440px){.wrap{max-width:1280px}body{font-size:18px}.bub{font-size:18.5px;padding:10px 16px}.ep{padding:26px 28px 28px}.ep h2{font-size:34px}.ep .subt{font-size:16px}.who{flex-basis:92px;font-size:12.5px}.who svg{width:88px;height:88px}.cover h1{font-size:54px}.cover .kick{font-size:20px}.cover .cast svg{width:96px;height:96px}.num b{font-size:34px}.num span{font-size:14px}.g4{gap:16px}.panel{padding:14px}.panel .cap{font-size:15px}.box h3{font-size:20px}.law,.src{font-size:15px}.bar{grid-template-columns:200px 1fr 70px;font-size:16px}.bar .tr{height:24px}.card b{font-size:36px}.card span{font-size:15px}.chk li{font-size:16px}.zt-nav{font-size:16px}}
+@media print{.theme-btn{display:none}}
+</style>
+<style>
+.zt-nav{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:10px;justify-content:space-between;background:var(--paper2);border-bottom:3px solid var(--ink);padding:8px 14px;font-family:'Jua',sans-serif;font-size:14px}
+.zt-nav a{color:var(--ink);text-decoration:none;border:2px solid var(--ink);border-radius:16px;padding:1px 10px;background:var(--paper)}
+.zt-nav span{flex:1;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.zt-end{padding-top:0}
+.zt-cta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;background:#ffd23f;color:#161616;border:3px solid var(--ink);border-radius:6px;padding:14px 16px;box-shadow:5px 5px 0 var(--shadow);margin-right:6px}
+.zt-cta b{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:19px}
+.zt-cta span{font-size:13.5px}
+.zt-btn{background:#161616;color:#fff;text-decoration:none;font-family:'Jua',sans-serif;border-radius:5px;padding:7px 14px}
+.zt-links{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 50px}
+.zt-links a{color:var(--ink);text-decoration:none;border:2px solid var(--ink);border-radius:5px;padding:4px 12px;font-family:'Jua',sans-serif;background:var(--paper2)}
+.zt-like{display:flex;align-items:center;gap:12px;margin:18px 0 0;flex-wrap:wrap}
+.zt-like button{border:2.5px solid var(--ink);background:var(--paper2);color:var(--ink);border-radius:22px;padding:6px 16px;font-family:'Jua',sans-serif;font-size:16px;cursor:pointer}
+.zt-like button.on{background:#ffd23f;color:#161616}
+.zt-like span{font-size:13px;color:var(--sub)}
+@media print{.zt-nav,.zt-end{display:none}}
+</style>
+</head>
+<body>
+<div style="background:#161616;color:#fffdf7;font-size:12.5px;text-align:center;padding:6px 10px;font-family:'Gowun Dodum',sans-serif">제공 <a href="https://www.zenielinnovation.co.kr" target="_blank" rel="noopener" style="color:#ffd23f;font-weight:700;text-decoration:none">㈜제니엘이노베이션</a></div>
+<nav class="zt-nav"><a href="../index.html" data-zt-back>← 제니툰</a><span>💡 특별편 · 008화</span><a href="008.pdf" class="zt-pdf">PDF</a></nav>
+<button class="theme-btn" onclick="toggleTheme()">☀︎ / ☾</button>
+<div class="wrap" id="app"></div>
+<div class="wrap zt-end"><div class="zt-cta"><div><b>직무가 경력이 되는 일터, 함께 만듭니다</b><br><span>인재파견 · 아웃소싱 · 채용대행·헤드헌팅 · 고용지원사업 상담</span></div>
+<a class="zt-btn" href="../index.html?consult=1&from=008%ED%99%94">💬 상담 문의하기</a></div>
+<div class="zt-like" id="ztLike" hidden><button type="button" onclick="ztLike()">👍 도움됐어요 <b id="ztLikeN"></b></button><span id="ztViews"></span></div>
+<div class="zt-links"><a href="../index.html">🏠 제니툰 목록</a><a href="008.pdf">📄 PDF 저장</a><a href="../index.html#aha">💡 그렇구나툰 더보기</a></div></div>
+
+
+<script>
+/* ---------- 오리지널 캐릭터 SVG (가상 인물) ---------- */
+const CH={
+  nomusa:{name:'도 노무사',skin:'#efc8a4',hair:'#9a9a9a',style:'side',acc:'glasses',shirt:'#4b5563'},
+  hr:{name:'한결 대리',skin:'#f6d3b3',hair:'#40261a',style:'long',acc:'none',shirt:'#8b5cf6'},
+  banjang:{name:'현장 반장',skin:'#e9bf98',hair:'#2a2a2a',style:'short',acc:'badge',shirt:'#f08c00'},
+  bot:{name:'안내로봇 체키',bot:true}
+};
+function face(k,mood='calm'){
+  const c=CH[k];
+  if(c.bot){
+    const eye= mood==='shock'?'<circle cx="30" cy="40" r="6" fill="#161616"/><circle cx="50" cy="40" r="6" fill="#161616"/>'
+      :'<rect x="24" y="36" width="12" height="8" rx="3" fill="#161616"/><rect x="44" y="36" width="12" height="8" rx="3" fill="#161616"/>';
+    const m= mood==='shock'?'<ellipse cx="40" cy="56" rx="5" ry="6" fill="#161616"/>':'<path d="M30 54 Q40 62 50 54" stroke="#161616" stroke-width="3" fill="none"/>';
+    return `<svg viewBox="0 0 80 80"><line x1="40" y1="8" x2="40" y2="18" stroke="#161616" stroke-width="3"/><circle cx="40" cy="7" r="4" fill="#e2403a" stroke="#161616" stroke-width="2"/><rect x="14" y="18" width="52" height="48" rx="12" fill="#ffd23f" stroke="#161616" stroke-width="3"/><rect x="20" y="28" width="40" height="34" rx="8" fill="#fff" stroke="#161616" stroke-width="2"/>${eye}${m}<rect x="8" y="34" width="6" height="14" rx="2" fill="#2f6fd6" stroke="#161616" stroke-width="2"/><rect x="66" y="34" width="6" height="14" rx="2" fill="#2f6fd6" stroke="#161616" stroke-width="2"/></svg>`;
+  }
+  const S='#161616';
+  let hair='';
+  switch(c.style){
+    case 'short': hair=`<path d="M18 38 Q18 14 40 14 Q62 14 62 38 Q58 24 40 24 Q26 24 18 38Z" fill="${c.hair}"/>`;break;
+    case 'side': hair=`<path d="M18 38 Q16 16 40 15 Q64 16 62 36 Q52 22 30 26 Q22 28 18 38Z" fill="${c.hair}"/>`;break;
+    case 'bob': hair=`<path d="M15 50 Q12 14 40 13 Q68 14 65 50 L58 50 Q60 26 40 24 Q20 26 22 50Z" fill="${c.hair}"/>`;break;
+    case 'bald': hair=`<path d="M19 36 Q20 30 24 30 L24 40 Z M61 36 Q60 30 56 30 L56 40Z" fill="${c.hair}"/>`;break;
+    case 'long': hair=`<path d="M14 66 Q10 14 40 13 Q70 14 66 66 L58 66 Q62 28 40 24 Q18 28 22 66Z" fill="${c.hair}"/>`;break;
+    case 'neat': hair=`<path d="M18 36 Q18 14 40 14 Q62 14 62 36 Q60 22 46 21 L44 26 Q30 22 18 36Z" fill="${c.hair}"/>`;break;
+  }
+  let brows='',eyes='',mouth='',extra='';
+  const ey=40;
+  if(mood==='angry'){brows=`<path d="M26 31 L36 35 M54 31 L44 35" stroke="${S}" stroke-width="3"/>`;}
+  else if(mood==='sad'){brows=`<path d="M26 34 L35 31 M54 34 L45 31" stroke="${S}" stroke-width="2.5"/>`;}
+  else if(mood==='shock'){brows=`<path d="M26 29 Q31 26 36 29 M44 29 Q49 26 54 29" stroke="${S}" stroke-width="2.5" fill="none"/>`;}
+  else {brows=`<path d="M27 32 Q31 30 35 32 M45 32 Q49 30 53 32" stroke="${S}" stroke-width="2.5" fill="none"/>`;}
+  if(mood==='shock'){eyes=`<circle cx="31" cy="${ey}" r="4.5" fill="#fff" stroke="${S}" stroke-width="2"/><circle cx="31" cy="${ey}" r="2" fill="${S}"/><circle cx="49" cy="${ey}" r="4.5" fill="#fff" stroke="${S}" stroke-width="2"/><circle cx="49" cy="${ey}" r="2" fill="${S}"/>`;mouth=`<ellipse cx="40" cy="56" rx="5" ry="6" fill="${S}"/>`;}
+  else if(mood==='happy'){eyes=`<path d="M27 41 Q31 36 35 41 M45 41 Q49 36 53 41" stroke="${S}" stroke-width="3" fill="none"/>`;mouth=`<path d="M30 52 Q40 63 50 52 Z" fill="${S}"/>`;}
+  else {eyes=`<circle cx="31" cy="${ey}" r="3" fill="${S}"/><circle cx="49" cy="${ey}" r="3" fill="${S}"/>`;
+    mouth= mood==='sad'?`<path d="M32 57 Q40 51 48 57" stroke="${S}" stroke-width="3" fill="none"/>`: mood==='angry'?`<path d="M32 56 L48 56" stroke="${S}" stroke-width="3"/>`:`<path d="M32 53 Q40 60 48 53" stroke="${S}" stroke-width="3" fill="none"/>`;}
+  if(c.acc==='glasses') extra+=`<circle cx="31" cy="${ey}" r="7" fill="none" stroke="${S}" stroke-width="2.2"/><circle cx="49" cy="${ey}" r="7" fill="none" stroke="${S}" stroke-width="2.2"/><path d="M38 ${ey} L42 ${ey}" stroke="${S}" stroke-width="2"/><path d="M33 49 Q40 46 47 49" stroke="#9a9a9a" stroke-width="3" fill="none"/>`;
+  let body=`<path d="M10 80 Q12 64 40 64 Q68 64 70 80Z" fill="${c.shirt}" stroke="${S}" stroke-width="2.5"/>`;
+  if(c.acc==='badge') body+=`<path d="M52 69 l5 0 l2 4 l-4.5 3 l-4.5 -3Z" fill="#ffd23f" stroke="${S}" stroke-width="1.5"/>`;
+  if(c.acc==='lanyard') body+=`<path d="M30 64 L40 76 L50 64" stroke="#ffd23f" stroke-width="3" fill="none"/><rect x="36" y="74" width="8" height="6" fill="#fff" stroke="${S}" stroke-width="1.5"/>`;
+  if(c.acc==='apron') body+=`<rect x="28" y="68" width="24" height="12" fill="#fff" stroke="${S}" stroke-width="2"/>`;
+  if(c.acc==='tie') body+=`<path d="M37 64 L43 64 L41.5 69 L44 78 L40 80 L36 78 L38.5 69Z" fill="#e2403a" stroke="${S}" stroke-width="1.5"/>`;
+  return `<svg viewBox="0 0 80 80">${body}<ellipse cx="40" cy="42" rx="22" ry="24" fill="${c.skin}" stroke="${S}" stroke-width="2.5"/>${hair}<circle cx="24" cy="50" r="3.5" fill="#f59e9e" opacity=".6"/><circle cx="56" cy="50" r="3.5" fill="#f59e9e" opacity=".6"/>${brows}${eyes}${mouth}${extra}</svg>`;
+}
+/* ---------- 컴포넌트 ---------- */
+function S(k,mood,name,text,o={}){
+  return `<div class="scene ${o.rev?'rev':''}"><div class="who">${face(k,mood)}${name||CH[k].name}</div><div class="bub ${o.shout?'shout':''}">${text}${o.note?`<small>${o.note}</small>`:''}</div></div>`;
+}
+function P(cap,body,o={}){return `<div class="panel ${o.wide?'wide':''}">${cap?`<div class="cap">${cap}</div>`:''}${o.fx?`<div class="fx">${o.fx}</div>`:''}${body}</div>`;}
+function WHO(list){return `<div class="chips">${list.map(([n,h])=>`<span class="chip ${h?'hl':''}">${n}</span>`).join('')}</div>`;}
+function bars(rows,max){return `<div class="bars">${rows.map(([l,v,u,c])=>`<div class="bar"><span>${l}</span><div class="tr"><div class="fl ${c||''}" style="width:${Math.max(4,v/max*100)}%"></div></div><b>${v}${u}</b></div>`).join('')}</div>`;}
+function EP(tag,title,sub,body,cls=''){return `<section class="ep ${cls}"><span class="eptag">${tag}</span><h2>${title}</h2>${sub?`<p class="subt">${sub}</p>`:''}${body}</section>`;}
+
+
+/* ---------- 본문 ---------- */
+let H='';
+const SRC_URL='https://youtu.be/GxbZIdjbIlI';
+
+/* 표지 */
+H+=`<section class="ep cover"><div class="burst"></div>
+<div class="kick">제니툰 특별편 · 그렇구나툰</div>
+<h1>수고했어요!<br>그런데 그 수고, 어디로 갔죠?</h1>
+<div class="kick">AI 시대, 열심히 하는 것과 잘하는 것 사이</div>
+<div class="cast">${face('bot','calm')}${face('hr','shock')}${face('nomusa','calm')}${face('banjang','happy')}</div>
+<div class="nums">
+ <div class="num"><b>시간→결과</b><span>평가 기준이 옮겨 간다</span></div>
+ <div class="num"><b>AI</b><span>아낀 시간은 어디로?</span></div>
+ <div class="num"><b>직무</b><span>회사 이름보다 내가 한 일</span></div>
+ <div class="num"><b>기록</b><span>보여 줄 수 있어야 경력</span></div>
+ <div class="num"><b>수평</b><span>오늘의 동료가 내일의 고객</span></div>
+ <div class="num"><b>평생학습</b><span>졸업장보다 오래 가는 힘</span></div>
+</div>
+<div class="by">작성 · ㈜제니엘이노베이션 &nbsp;|&nbsp; 2026.10.29</div>
+</section>`;
+
+/* 참고 영상 안내 */
+H+=`<div class="box blue" style="margin:0 6px 30px 0"><h3>🎬 이번 회차를 만든 계기</h3>
+<p style="margin:0">유튜브 <b>‘책과삶’</b> 채널의 송길영 작가 인터뷰(2026.10.22)를 보고, ‘수고’라는 말을 우리 일터의 눈으로 다시 생각해 보았습니다. 이 웹툰은 영상을 요약하거나 옮긴 것이 아니라, 제니툰 캐릭터와 <b>아웃소싱·인재고용 현장의 이야기</b>로 새로 쓴 오리지널 회차입니다. 작가의 생각은 영상과 책에서 직접 만나 보세요.</p>
+<p style="margin:8px 0 0"><a href="${SRC_URL}" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">▶ 영상 보러 가기</a> &nbsp;·&nbsp; 📖 송길영 『시대예보 – 수고인류의 시간』</p></div>`;
+
+/* EP.1 */
+H+=EP('EP.1','아침 7시의 사무실','일찍 오면 열심히 하는 걸까?',
+`${S('hr','happy','','오늘도 제가 1등 출근이에요! 팀장님이 보시면 좋아하시겠죠?')}
+${S('bot','calm','','한결 대리님, 오늘 회의는 전부 <b>화상회의</b>예요. 사무실엔 아무도 안 오는데요?',{rev:true})}
+<div class="g4">
+${P('① 보이는 수고',S('hr','shock','','어… 그럼 제 이른 출근은 아무도 모르는 거예요?'),{fx:'헉'})}
+${P('② 보여야 할 것',S('nomusa','calm','','예전엔 <b>자리에 있는 시간</b>이 성실함의 증거였죠. 이제는 <b>무엇을 끝냈는지</b>가 증거예요.',{rev:true}))}
+${P('③ 옆 사람의 부담',S('banjang','calm','','현장에서도 그래요. 누가 매일 일찍 나오면 다른 사람까지 <b>눈치 출근</b>을 하게 되거든요.'))}
+${P('④ 시간도 비용',S('nomusa','calm','','그리고 회사 입장에선 일찍 나와 일하면 그것도 <b>근로시간</b>이에요. 관리되지 않는 수고는 나중에 <b>분쟁</b>이 되기도 하죠.',{rev:true}),{fx:'!'})}
+</div>
+${S('bot','calm','','오늘의 첫 번째 “그렇구나!” — <mark>수고의 양보다 수고의 방향</mark>이 중요해요.')}`);
+
+/* EP.2 */
+H+=EP('EP.2','아낀 시간은 어디로 갔을까','AI가 일을 줄여 줬는데 왜 더 바쁠까?',
+`${S('hr','sad','','요즘 보고서 초안은 AI가 써 주고, 서류는 온라인으로 바로 떼잖아요. 그런데 왜 저는 더 바쁘죠?')}
+${S('nomusa','calm','','아낀 시간을 <b>새 일이 바로 채우기</b> 때문이에요. 도구가 빨라질수록 “그럼 이것도 해 볼까?”가 따라오거든요.',{rev:true})}
+<div class="g4">
+${P('① 쌓이기만 하는 절차',S('bot','calm','','사고가 한 번 나면 결재 단계가 하나 생겨요. 그런데 <b>없어지는 단계</b>는 거의 없죠.'),{fx:'+1'})}
+${P('② “혹시 모르니까”',S('banjang','angry','','“혹시 문제 생기면 책임질 거야?” 이 말 한마디면 다들 조용해져요.',{rev:true}))}
+${P('③ 걱정의 값',S('nomusa','calm','','걱정을 막는 비용이 <b>실제 위험보다 커졌는지</b> 가끔은 계산해 봐야 해요.'))}
+${P('④ 덜어내는 용기',S('hr','happy','','그럼 새 일을 더하기 전에 <b>뺄 일</b>부터 찾아보면 되겠네요!',{rev:true}))}
+</div>
+<div class="box"><h3>🧹 이번 달 ‘빼기’ 회의 안건 예시 (작성자 제안)</h3><ul>
+<li>아무도 보지 않는데 매주 만드는 <b>정기 보고서</b>가 있는가</li>
+<li>같은 내용을 두 번 입력하는 <b>중복 결재·대장</b>이 있는가</li>
+<li>만든 이유는 사라졌는데 남아 있는 <b>점검 절차</b>가 있는가</li>
+</ul></div>`);
+
+/* EP.3 */
+H+=EP('EP.3','직업, 직장, 그리고 직무','명함보다 오래 남는 것',
+`${S('hr','calm','','노무사님, 저희 부모님 세대는 “좋은 회사 들어가면 끝”이라고 하셨거든요.')}
+${S('nomusa','calm','','한때는 <b>어떤 직업</b>이 목표였고, 그다음엔 <b>어떤 직장</b>이 목표였죠. 지금은 <b>내가 어떤 일을 해냈는지</b>, 즉 직무가 경력이 되는 시대예요.',{rev:true})}
+<div class="g4">
+${P('직업',`<ul style="margin:0;padding-left:18px"><li>“나는 ○○사입니다”</li><li>자격과 면허가 중심</li></ul>`)}
+${P('직장',`<ul style="margin:0;padding-left:18px"><li>“나는 ○○회사 다닙니다”</li><li>입사와 정년이 중심</li></ul>`)}
+${P('직무',`<ul style="margin:0;padding-left:18px"><li>“나는 ○○을 해냈습니다”</li><li>성과와 기록이 중심</li></ul>`)}
+${P('그다음은?',S('bot','happy','','직무가 쌓이면 <b>커리어</b>, 커리어가 깊어지면 평생의 <b>업(業)</b>이 되는 거죠!'),{fx:'UP'})}
+</div>
+${S('banjang','calm','','현장에서도 똑같아요. “어디 소속이었냐”보다 <b>“지게차 몇 년, 어떤 라인에서, 무사고로”</b>가 다음 일자리를 열어 줍니다.')}
+${S('nomusa','calm','','조직은 짧아지고 일하는 인생은 길어졌어요. 그래서 <mark>회사 이름 없이도 설명되는 내 경력</mark>이 필요하죠.',{rev:true})}`);
+
+/* EP.4 */
+H+=EP('EP.4','“그 일, 제가 했어요”','증명할 수 없으면 경력이 아니다',
+`${S('hr','shock','','면접관으로 들어가 보니, 지원자마다 “그 프로젝트 제가 했어요”라고 하더라고요. 다 믿어도 되나요?')}
+${S('nomusa','calm','','잘된 일은 모두가 했고, 안 된 일은 아무도 안 했다고 하죠. 그래서 <b>기록과 근거</b>가 중요해요.',{rev:true})}
+<div class="g4">
+${P('① 내 몫을 말하기',S('nomusa','calm','','팀 성과 안에서 <b>내가 맡은 부분</b>을 숫자와 결과로 설명할 수 있어야 해요.'))}
+${P('② 꾸준히 남기기',S('hr','calm','','업무일지, 개선 제안, 사내 발표 자료… 차곡차곡 남겨 두면 그게 <b>포트폴리오</b>네요.',{rev:true}))}
+${P('③ 바깥에 보여 주기',S('bot','calm','','혼자만 아는 실력은 아무도 찾지 못해요. 사내 공유, 세미나 발표처럼 <b>내놓아야</b> 피드백도 생겨요.'))}
+${P('④ 이름을 걸고',S('banjang','happy','','“제가 정리했습니다” 하고 이름을 거는 순간, 책임감도 신뢰도 같이 올라가더라고요.',{rev:true}),{fx:'✔'})}
+</div>`);
+
+/* EP.5 우리 현장 관점 */
+H+=EP('EP.5','그럼 우리 현장은?','아웃소싱·파견·채용 현장에서 읽는 변화 (작성자 정리)',
+`${S('banjang','calm','','파견·도급 현장은 일터를 옮기는 일이 잦아요. 그래서 이 이야기가 더 와닿습니다.')}
+${S('nomusa','calm','','맞아요. 회사가 <b>근로자의 직무 경력을 함께 쌓아 주는 것</b>이 곧 경쟁력이 되는 시대예요.',{rev:true})}
+<div class="g4">
+${P('① 직무 이력 관리',S('hr','calm','','파견·도급 근로자의 <b>수행 직무·교육·자격·안전 이력</b>을 정리해 두면, 다음 현장 배치와 재취업에 바로 쓸 수 있어요.'))}
+${P('② 채용은 직무 중심',S('nomusa','calm','','채용대행·헤드헌팅도 학력·회사명보다 <b>해낸 일</b>을 묻는 구조화 면접으로 가고 있죠.',{rev:true}))}
+${P('③ 고용서비스의 역할',S('bot','calm','','스스로 진로 숙제를 내야 하는 시대엔 <b>누군가 함께 설계해 주는 일</b>이 더 중요해져요. 취업 상담·고용지원사업이 바로 그 자리죠.'))}
+${P('④ 관리자도 직접',S('banjang','happy','','현장 관리자도 지시만 하는 게 아니라 <b>직접 해 보고 기록</b>하는 사람이 신뢰를 얻어요.',{rev:true}),{fx:'GO'})}
+</div>
+<div class="box"><h3>🧭 수직에서 수평으로</h3>
+<p style="margin:0">오늘 함께 일한 신입이 몇 년 뒤 <b>고객사 담당자</b>로, 다른 회사의 <b>대표</b>로 다시 만나는 일이 흔해졌습니다. 직급으로 누르던 관계는 그때 기회가 되어 돌아오지 않습니다. <mark>친절과 존중이 가장 오래 가는 경력 관리</mark>입니다.</p>
+<p class="tagline">※ 위 내용은 ㈜제니엘이노베이션의 현장 경험을 바탕으로 정리한 의견입니다.</p></div>`);
+
+/* 체크리스트 */
+H+=EP('CHECK','나의 수고 점검표','구성원·관리자용 (작성자 제안)',
+`${S('hr','calm','','저부터 점검해 볼래요!')}
+${S('nomusa','calm','','“얼마나 오래 했나”가 아니라 <b>“무엇을 남겼나”</b>로 체크해 보세요.',{rev:true})}
+<ul class="chk">
+<li>이번 달 내가 <b>끝낸 일</b>을 결과와 숫자로 세 줄 이상 쓸 수 있는가</li>
+<li>AI·자동화로 아낀 시간을 <b>어디에 쓰는지</b> 스스로 정하고 있는가</li>
+<li>새 업무를 더하기 전에 <b>뺄 수 있는 업무</b>를 먼저 찾아보았는가</li>
+<li>내 업무 기록(일지·제안·발표 자료)을 <b>포트폴리오</b>로 모아 두고 있는가</li>
+<li>올해 <b>새로 배운 것</b>이 하나 이상 있는가</li>
+<li>관리자라면, 지시한 일의 <b>진행 상황을 직접</b> 설명할 수 있는가</li>
+<li>근무시간 외 자발적 조기출근·잔업도 <b>근로시간 관리</b> 대상임을 알고 있는가</li>
+<li>후배·협력사 직원을 <b>내일의 동료이자 고객</b>으로 대하고 있는가</li>
+</ul>
+<p class="tagline">※ 위 점검표는 ㈜제니엘이노베이션이 정리한 실무 제안입니다. 근로시간 인정 여부 등 구체적 사안은 노무 전문가 검토를 받으세요.</p>`);
+
+/* 흐름 정리 */
+H+=EP('SUMMARY','흐름 정리','보이는 수고 → 남는 수고',
+`<div class="g4">
+${P('⏰ 방향',`<ul style="margin:0;padding-left:18px"><li>시간보다 <b>결과</b></li><li>눈치 출근은 모두의 부담</li></ul>`)}
+${P('🤖 AI 시대',`<ul style="margin:0;padding-left:18px"><li>아낀 시간은 새 일로</li><li>더하기 전에 <b>빼기</b></li></ul>`)}
+${P('🧾 경력',`<ul style="margin:0;padding-left:18px"><li>직장보다 <b>직무</b></li><li>기록하고 내놓고 이름 걸기</li></ul>`)}
+${P('🤝 관계',`<ul style="margin:0;padding-left:18px"><li>수직보다 <b>수평</b></li><li>친절이 최고의 평판</li></ul>`)}
+</div>`);
+
+/* 에필로그 */
+H+=EP('EPILOGUE','수고했어요, 그리고 잘했어요','헛수고가 아닌 수고를 위하여',
+`${S('bot','calm','','오늘 퇴근 인사는 “수고하셨습니다” 대신 이렇게 해 볼까요?')}
+${S('hr','happy','','“오늘 이 일, 덕분에 잘 끝났어요!” 무엇을 했는지 말해 주는 인사네요.',{rev:true})}
+${S('nomusa','calm','','수고 자체가 나쁜 건 아니에요. <b>방향이 맞는 수고</b>는 반드시 경력으로 남습니다.')}
+${S('banjang','happy','','현장은 내일도 돌아갑니다. 오늘 한 일, 기록부터 남기고 퇴근하죠!',{rev:true})}
+<p class="quote">“천 리 길도 한 걸음부터 — 방향이 맞는 한 걸음이 쌓여 업(業)이 된다”</p>
+<p style="text-align:center;margin:0">끝까지 읽어 주셔서 감사합니다 🙏</p>
+<div class="src">작성 · ㈜제니엘이노베이션<br>
+<b>참고</b> · 유튜브 ‘책과삶’ 송길영 작가 인터뷰 1부(2026.10.22) — <a href="${SRC_URL}" target="_blank" rel="noopener">${SRC_URL}</a>, 송길영 『시대예보 – 수고인류의 시간』. 이 회차는 영상을 요약·재구성한 것이 아니라, 영상을 계기로 ㈜제니엘이노베이션이 새로 쓴 오리지널 이야기입니다. 영상과 책의 저작권은 각 권리자에게 있습니다.<br>
+※ 등장인물은 모두 가상의 캐릭터입니다. 체크리스트와 현장 관점은 작성자의 실무 제안이며 법률 자문이 아닙니다.</div>`);
+
+
+
+document.getElementById('app').innerHTML=H;
+
+function toggleTheme(){
+  const r=document.documentElement;
+  const dark = r.dataset.theme ? r.dataset.theme==='dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  r.dataset.theme = dark?'light':'dark';
+}
+</script>
+<script src="../zt-nav.js"></script>
+<script src="../firebase-config.js"></script>
+<script type="module" src="../zt-fire.js"></script>
+<script>
+const ZT_ID='008';
+async function ztPaint(){const F=window.ZT_FIRE;if(!F||!F.enabled)return;document.getElementById('ztLike').hidden=false;
+ const d=(await F.getStats([ZT_ID]))[ZT_ID]||{};document.getElementById('ztLikeN').textContent=d.likes||0;
+ document.getElementById('ztViews').textContent='👁 조회 '+(d.views||0);
+ if(F.liked(ZT_ID))document.querySelector('#ztLike button').classList.add('on');}
+async function ztLike(){const F=window.ZT_FIRE;if(await F.addLike(ZT_ID)){document.querySelector('#ztLike button').classList.add('on');ztPaint()}}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{})}
+window.addEventListener('zt-fire-ready',async()=>{if(window.ZT_FIRE.enabled){await window.ZT_FIRE.addView(ZT_ID);ztPaint()}});
+</script>
+</body>
+</html>

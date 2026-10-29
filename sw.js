@@ -1,5 +1,5 @@
 /* 제니툰 서비스워커 — 발행 시 V(캐시 버전)를 올릴 것 */
-const V = 'zenitoon-v13';
+const V = 'zenitoon-v14';
 const SHELL = [
   '/', '/index.html', '/data.js', '/firebase-config.js', '/zt-fire.js', '/zt-nav.js',
   '/manifest.webmanifest', '/offline.html',
