@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>기간제 2년, 법원은 이렇게 센다 | 제니툰</title>
+<meta property="og:title" content="제니툰 · 기간제 2년, 법원은 이렇게 센다">
+<meta property="og:image" content="../thumbs/009.png">
+<link rel="icon" href="../favicon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#ffd23f">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="제니툰">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fbf6ea; --paper2:#fffdf7; --ink:#161616; --sub:#4a4a4a;
+  --red:#e2403a; --blue:#2f6fd6; --yellow:#ffd23f; --green:#2e9e6a; --soft:#f1e7cf;
+  --shadow:#161616;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#1d1b17; --paper2:#262420; --ink:#f2ede1; --sub:#c9c2b2;
+    --soft:#34302a; --shadow:#000;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#1d1b17; --paper2:#262420; --ink:#f2ede1; --sub:#c9c2b2;
+  --soft:#34302a; --shadow:#000;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Gowun Dodum',sans-serif;line-height:1.6;font-size:15px}
+.wrap{max-width:760px;margin:0 auto;padding:18px 16px 40px}
+h1,h2,h3{font-family:'Black Han Sans',sans-serif;font-weight:400;margin:0;letter-spacing:.5px;line-height:1.25}
+.ep{background:var(--paper2);border:3px solid var(--ink);box-shadow:6px 6px 0 var(--shadow);margin:0 6px 30px 0;padding:20px 18px 22px;border-radius:6px}
+.eptag{display:inline-block;background:var(--ink);color:var(--paper2);font-family:'Black Han Sans';padding:3px 12px;border-radius:3px;font-size:14px;letter-spacing:1px}
+.ep h2{font-size:26px;margin:8px 0 2px}
+.ep .subt{color:var(--sub);margin:0 0 14px;font-size:14px}
+/* cover */
+.cover{background:var(--yellow);color:#161616;text-align:center;position:relative;overflow:hidden}
+.cover .burst{position:absolute;inset:0;background:repeating-conic-gradient(from 0deg at 0% 50%,rgba(255,255,255,.42) 0 2.5deg,transparent 2.5deg 8deg) left/50% 100% no-repeat,repeating-conic-gradient(from 0deg at 100% 50%,rgba(255,255,255,.42) 0 2.5deg,transparent 2.5deg 8deg) right/50% 100% no-repeat;-webkit-mask-image:linear-gradient(90deg,#000,transparent 42%,transparent 58%,#000);mask-image:linear-gradient(90deg,#000,transparent 42%,transparent 58%,#000);z-index:0}
+.cover>*{position:relative;z-index:1}
+.cover h1{font-size:38px;margin:10px 0 6px;text-shadow:3px 3px 0 #fff}
+.cover .kick{font-family:'Jua';font-size:17px}
+.cover .by{font-size:13px;margin-top:10px}
+.cover .cast{display:flex;justify-content:center;gap:6px;margin:14px 0 6px;flex-wrap:wrap}
+.cover .cast svg{width:78px;height:78px;background:#fff;border:3px solid #161616;border-radius:50%}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.num{background:#fff;border:2.5px solid #161616;border-radius:6px;padding:8px 4px}
+.num b{display:block;font-family:'Black Han Sans';font-size:26px;color:var(--red);line-height:1.1}
+.num span{font-size:12px}
+/* panels */
+.g4{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.panel{border:2.5px solid var(--ink);background:var(--paper);border-radius:4px;padding:10px;position:relative;min-width:0}
+.panel.wide{grid-column:1/-1}
+.panel .cap{font-family:'Black Han Sans';font-size:13px;background:var(--yellow);color:#161616;display:inline-block;padding:1px 8px;border:2px solid var(--ink);margin-bottom:6px}
+.panel .fx{position:absolute;right:8px;top:4px;font-family:'Black Han Sans';color:var(--red);font-size:20px;transform:rotate(8deg)}
+/* scene */
+.scene{display:flex;align-items:flex-start;gap:8px;margin:8px 0}
+.scene.rev{flex-direction:row-reverse}
+.who{flex:0 0 64px;text-align:center;font-size:11px;color:var(--sub)}
+.who svg{width:62px;height:62px;border:2.5px solid var(--ink);border-radius:50%;background:#fff;display:block;margin:0 auto 2px}
+.bub{position:relative;background:#fff;color:#161616;border:2.5px solid var(--ink);border-radius:16px;padding:8px 12px;font-family:'Jua';font-size:15px;line-height:1.45;flex:1;min-width:0}
+.bub:before{content:"";position:absolute;left:-11px;top:16px;border:9px solid transparent;border-right-color:var(--ink);border-left:0}
+.bub:after{content:"";position:absolute;left:-7px;top:18px;border:7px solid transparent;border-right-color:#fff;border-left:0}
+.rev .bub:before{left:auto;right:-11px;border-right-color:transparent;border-left:9px solid var(--ink);border-right:0}
+.rev .bub:after{left:auto;right:-7px;border-right-color:transparent;border-left:7px solid #fff;border-right:0}
+.bub.shout{border-radius:4px;background:var(--yellow);font-size:16px}
+.bub.shout:after{border-right-color:var(--yellow)}
+.rev .bub.shout:after{border-left-color:var(--yellow)}
+.bub small{display:block;color:#666;font-family:'Gowun Dodum';font-size:11px;margin-top:2px}
+/* boxes */
+.box{border:2.5px dashed var(--ink);border-radius:6px;padding:10px 14px;margin:12px 0;background:var(--paper)}
+.box h3{font-size:17px;margin-bottom:6px}
+.box ul,.box ol{margin:0;padding-left:20px}
+.box li{margin:3px 0}
+.box.red{border-style:solid;border-color:var(--red)}
+.box.blue{border-style:solid;border-color:var(--blue)}
+.law{background:var(--soft);border-left:6px solid var(--blue);padding:10px 14px;font-size:14px;margin:12px 0;border-radius:0 6px 6px 0}
+.law b{color:var(--blue)}
+mark{background:var(--yellow);color:#161616;padding:0 3px}
+/* bars */
+.bars{margin:6px 0 4px}
+.bar{display:grid;grid-template-columns:110px 1fr 54px;align-items:center;gap:8px;margin:7px 0;font-size:14px}
+.bar .tr{height:20px;border:2px solid var(--ink);border-radius:3px;background:var(--paper)}
+.bar .fl{height:100%;background:var(--blue)}
+.bar .fl.r{background:var(--red)}.bar .fl.y{background:var(--yellow)}.bar .fl.g{background:var(--green)}
+.bar b{font-family:'Black Han Sans';font-weight:400;text-align:right}
+/* timeline */
+.tl{list-style:none;margin:6px 0;padding:0 0 0 22px;border-left:4px solid var(--ink)}
+.tl li{position:relative;margin:0 0 12px;padding-left:6px}
+.tl li:before{content:"";position:absolute;left:-33px;top:4px;width:16px;height:16px;background:var(--yellow);border:3px solid var(--ink);border-radius:50%}
+.tl li.now:before{background:var(--red)}
+.tl .d{font-family:'Black Han Sans';font-size:14px;color:var(--red)}
+/* flow */
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;align-items:stretch;margin:8px 0}
+.flow div{border:2.5px solid var(--ink);border-radius:5px;padding:8px 4px;text-align:center;font-size:13px;background:var(--paper);font-family:'Jua';display:flex;align-items:center;justify-content:center;min-width:0}
+.flow div.k{background:var(--yellow);color:#161616}
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.chip{border:2px solid var(--ink);border-radius:20px;padding:2px 10px;font-size:13px;background:var(--paper)}
+.chip.hl{background:var(--red);color:#fff;border-color:var(--red)}
+/* number cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.card{border:2.5px solid var(--ink);border-radius:6px;padding:10px;text-align:center;background:var(--paper)}
+.card b{font-family:'Black Han Sans';font-size:30px;font-weight:400;display:block;color:var(--blue);line-height:1.1}
+.card span{font-size:13px}
+/* checklist */
+.chk{list-style:none;padding:0;margin:6px 0}
+.chk li{border:2px solid var(--ink);border-radius:5px;padding:8px 10px 8px 40px;margin:7px 0;position:relative;background:var(--paper);font-size:14px}
+.chk li:before{content:"";position:absolute;left:10px;top:9px;width:18px;height:18px;border:2.5px solid var(--ink);border-radius:3px;background:#fff}
+.chk li b{color:var(--red)}
+.tagline{font-size:12px;color:var(--sub)}
+.quote{text-align:center;font-family:'Jua';font-size:19px;margin:14px 0 4px}
+.src{font-size:12px;color:var(--sub);border-top:2px dashed var(--ink);margin-top:14px;padding-top:8px}
+.theme-btn{position:fixed;right:12px;bottom:12px;z-index:9;border:2.5px solid var(--ink);background:var(--paper2);color:var(--ink);font-family:'Jua';border-radius:20px;padding:4px 12px;cursor:pointer}
+@media (max-width:540px){
+  .g4{grid-template-columns:1fr}
+  .cover h1{font-size:30px}
+  .ep h2{font-size:22px}
+  .nums,.cards{grid-template-columns:repeat(2,1fr)}
+  .flow{grid-template-columns:1fr}
+  .flow div{padding:6px}
+  .bar{grid-template-columns:86px 1fr 46px;font-size:13px}
+  .cover .cast svg{width:60px;height:60px}
+}
+@media (min-width:1024px){.wrap{max-width:960px}body{font-size:17px}.bub{font-size:17px}.ep h2{font-size:30px}.who{flex-basis:80px}.who svg{width:76px;height:76px}.cover h1{font-size:46px}.num b{font-size:30px}}
+@media (min-width:1440px){.wrap{max-width:1280px}body{font-size:18px}.bub{font-size:18.5px;padding:10px 16px}.ep{padding:26px 28px 28px}.ep h2{font-size:34px}.ep .subt{font-size:16px}.who{flex-basis:92px;font-size:12.5px}.who svg{width:88px;height:88px}.cover h1{font-size:54px}.cover .kick{font-size:20px}.cover .cast svg{width:96px;height:96px}.num b{font-size:34px}.num span{font-size:14px}.g4{gap:16px}.panel{padding:14px}.panel .cap{font-size:15px}.box h3{font-size:20px}.law,.src{font-size:15px}.bar{grid-template-columns:200px 1fr 70px;font-size:16px}.bar .tr{height:24px}.card b{font-size:36px}.card span{font-size:15px}.chk li{font-size:16px}.zt-nav{font-size:16px}}
+@media print{.theme-btn{display:none}}
+</style>
+<style>
+.zt-nav{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:10px;justify-content:space-between;background:var(--paper2);border-bottom:3px solid var(--ink);padding:8px 14px;font-family:'Jua',sans-serif;font-size:14px}
+.zt-nav a{color:var(--ink);text-decoration:none;border:2px solid var(--ink);border-radius:16px;padding:1px 10px;background:var(--paper)}
+.zt-nav span{flex:1;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.zt-end{padding-top:0}
+.zt-cta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;background:#ffd23f;color:#161616;border:3px solid var(--ink);border-radius:6px;padding:14px 16px;box-shadow:5px 5px 0 var(--shadow);margin-right:6px}
+.zt-cta b{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:19px}
+.zt-cta span{font-size:13.5px}
+.zt-btn{background:#161616;color:#fff;text-decoration:none;font-family:'Jua',sans-serif;border-radius:5px;padding:7px 14px}
+.zt-links{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 50px}
+.zt-links a{color:var(--ink);text-decoration:none;border:2px solid var(--ink);border-radius:5px;padding:4px 12px;font-family:'Jua',sans-serif;background:var(--paper2)}
+.zt-like{display:flex;align-items:center;gap:12px;margin:18px 0 0;flex-wrap:wrap}
+.zt-like button{border:2.5px solid var(--ink);background:var(--paper2);color:var(--ink);border-radius:22px;padding:6px 16px;font-family:'Jua',sans-serif;font-size:16px;cursor:pointer}
+.zt-like button.on{background:#ffd23f;color:#161616}
+.zt-like span{font-size:13px;color:var(--sub)}
+@media print{.zt-nav,.zt-end{display:none}}
+</style>
+</head>
+<body>
+<div style="background:#161616;color:#fffdf7;font-size:12.5px;text-align:center;padding:6px 10px;font-family:'Gowun Dodum',sans-serif">제공 <a href="https://www.zenielinnovation.co.kr" target="_blank" rel="noopener" style="color:#ffd23f;font-weight:700;text-decoration:none">㈜제니엘이노베이션</a></div>
+<nav class="zt-nav"><a href="../index.html" data-zt-back>← 제니툰</a><span>⚖️ 특별편 · 009화</span><a href="009.pdf" class="zt-pdf">PDF</a></nav>
+<button class="theme-btn" onclick="toggleTheme()">☀︎ / ☾</button>
+<div class="wrap" id="app"></div>
+<div class="wrap zt-end"><div class="zt-cta"><div><b>계약직 재계약·차별시정, 미리 점검하세요</b><br><span>기간제 운영 진단 · 인재파견 · 아웃소싱 · 채용대행 상담</span></div>
+<a class="zt-btn" href="../index.html?consult=1&from=009%ED%99%94">💬 상담 문의하기</a></div>
+<div class="zt-like" id="ztLike" hidden><button type="button" onclick="ztLike()">👍 도움됐어요 <b id="ztLikeN"></b></button><span id="ztViews"></span></div>
+<div class="zt-links"><a href="../index.html">🏠 제니툰 목록</a><a href="009.pdf">📄 PDF 저장</a><a href="../index.html#case">⚖️ 노동판례툰 더보기</a></div></div>
+
+
+<script>
+/* ---------- 오리지널 캐릭터 SVG (가상 인물) ---------- */
+const CH={
+  nomusa:{name:'도 노무사',skin:'#efc8a4',hair:'#9a9a9a',style:'side',acc:'glasses',shirt:'#4b5563'},
+  hr:{name:'한결 대리',skin:'#f6d3b3',hair:'#40261a',style:'long',acc:'none',shirt:'#8b5cf6'},
+  banjang:{name:'현장 반장',skin:'#e9bf98',hair:'#2a2a2a',style:'short',acc:'badge',shirt:'#f08c00'},
+  bot:{name:'안내로봇 체키',bot:true}
+};
+function face(k,mood='calm'){
+  const c=CH[k];
+  if(c.bot){
+    const eye= mood==='shock'?'<circle cx="30" cy="40" r="6" fill="#161616"/><circle cx="50" cy="40" r="6" fill="#161616"/>'
+      :'<rect x="24" y="36" width="12" height="8" rx="3" fill="#161616"/><rect x="44" y="36" width="12" height="8" rx="3" fill="#161616"/>';
+    const m= mood==='shock'?'<ellipse cx="40" cy="56" rx="5" ry="6" fill="#161616"/>':'<path d="M30 54 Q40 62 50 54" stroke="#161616" stroke-width="3" fill="none"/>';
+    return `<svg viewBox="0 0 80 80"><line x1="40" y1="8" x2="40" y2="18" stroke="#161616" stroke-width="3"/><circle cx="40" cy="7" r="4" fill="#e2403a" stroke="#161616" stroke-width="2"/><rect x="14" y="18" width="52" height="48" rx="12" fill="#ffd23f" stroke="#161616" stroke-width="3"/><rect x="20" y="28" width="40" height="34" rx="8" fill="#fff" stroke="#161616" stroke-width="2"/>${eye}${m}<rect x="8" y="34" width="6" height="14" rx="2" fill="#2f6fd6" stroke="#161616" stroke-width="2"/><rect x="66" y="34" width="6" height="14" rx="2" fill="#2f6fd6" stroke="#161616" stroke-width="2"/></svg>`;
+  }
+  const S='#161616';
+  let hair='';
+  switch(c.style){
+    case 'short': hair=`<path d="M18 38 Q18 14 40 14 Q62 14 62 38 Q58 24 40 24 Q26 24 18 38Z" fill="${c.hair}"/>`;break;
+    case 'side': hair=`<path d="M18 38 Q16 16 40 15 Q64 16 62 36 Q52 22 30 26 Q22 28 18 38Z" fill="${c.hair}"/>`;break;
+    case 'bob': hair=`<path d="M15 50 Q12 14 40 13 Q68 14 65 50 L58 50 Q60 26 40 24 Q20 26 22 50Z" fill="${c.hair}"/>`;break;
+    case 'bald': hair=`<path d="M19 36 Q20 30 24 30 L24 40 Z M61 36 Q60 30 56 30 L56 40Z" fill="${c.hair}"/>`;break;
+    case 'long': hair=`<path d="M14 66 Q10 14 40 13 Q70 14 66 66 L58 66 Q62 28 40 24 Q18 28 22 66Z" fill="${c.hair}"/>`;break;
+    case 'neat': hair=`<path d="M18 36 Q18 14 40 14 Q62 14 62 36 Q60 22 46 21 L44 26 Q30 22 18 36Z" fill="${c.hair}"/>`;break;
+  }
+  let brows='',eyes='',mouth='',extra='';
+  const ey=40;
+  if(mood==='angry'){brows=`<path d="M26 31 L36 35 M54 31 L44 35" stroke="${S}" stroke-width="3"/>`;}
+  else if(mood==='sad'){brows=`<path d="M26 34 L35 31 M54 34 L45 31" stroke="${S}" stroke-width="2.5"/>`;}
+  else if(mood==='shock'){brows=`<path d="M26 29 Q31 26 36 29 M44 29 Q49 26 54 29" stroke="${S}" stroke-width="2.5" fill="none"/>`;}
+  else {brows=`<path d="M27 32 Q31 30 35 32 M45 32 Q49 30 53 32" stroke="${S}" stroke-width="2.5" fill="none"/>`;}
+  if(mood==='shock'){eyes=`<circle cx="31" cy="${ey}" r="4.5" fill="#fff" stroke="${S}" stroke-width="2"/><circle cx="31" cy="${ey}" r="2" fill="${S}"/><circle cx="49" cy="${ey}" r="4.5" fill="#fff" stroke="${S}" stroke-width="2"/><circle cx="49" cy="${ey}" r="2" fill="${S}"/>`;mouth=`<ellipse cx="40" cy="56" rx="5" ry="6" fill="${S}"/>`;}
+  else if(mood==='happy'){eyes=`<path d="M27 41 Q31 36 35 41 M45 41 Q49 36 53 41" stroke="${S}" stroke-width="3" fill="none"/>`;mouth=`<path d="M30 52 Q40 63 50 52 Z" fill="${S}"/>`;}
+  else {eyes=`<circle cx="31" cy="${ey}" r="3" fill="${S}"/><circle cx="49" cy="${ey}" r="3" fill="${S}"/>`;
+    mouth= mood==='sad'?`<path d="M32 57 Q40 51 48 57" stroke="${S}" stroke-width="3" fill="none"/>`: mood==='angry'?`<path d="M32 56 L48 56" stroke="${S}" stroke-width="3"/>`:`<path d="M32 53 Q40 60 48 53" stroke="${S}" stroke-width="3" fill="none"/>`;}
+  if(c.acc==='glasses') extra+=`<circle cx="31" cy="${ey}" r="7" fill="none" stroke="${S}" stroke-width="2.2"/><circle cx="49" cy="${ey}" r="7" fill="none" stroke="${S}" stroke-width="2.2"/><path d="M38 ${ey} L42 ${ey}" stroke="${S}" stroke-width="2"/><path d="M33 49 Q40 46 47 49" stroke="#9a9a9a" stroke-width="3" fill="none"/>`;
+  let body=`<path d="M10 80 Q12 64 40 64 Q68 64 70 80Z" fill="${c.shirt}" stroke="${S}" stroke-width="2.5"/>`;
+  if(c.acc==='badge') body+=`<path d="M52 69 l5 0 l2 4 l-4.5 3 l-4.5 -3Z" fill="#ffd23f" stroke="${S}" stroke-width="1.5"/>`;
+  if(c.acc==='lanyard') body+=`<path d="M30 64 L40 76 L50 64" stroke="#ffd23f" stroke-width="3" fill="none"/><rect x="36" y="74" width="8" height="6" fill="#fff" stroke="${S}" stroke-width="1.5"/>`;
+  if(c.acc==='apron') body+=`<rect x="28" y="68" width="24" height="12" fill="#fff" stroke="${S}" stroke-width="2"/>`;
+  if(c.acc==='tie') body+=`<path d="M37 64 L43 64 L41.5 69 L44 78 L40 80 L36 78 L38.5 69Z" fill="#e2403a" stroke="${S}" stroke-width="1.5"/>`;
+  return `<svg viewBox="0 0 80 80">${body}<ellipse cx="40" cy="42" rx="22" ry="24" fill="${c.skin}" stroke="${S}" stroke-width="2.5"/>${hair}<circle cx="24" cy="50" r="3.5" fill="#f59e9e" opacity=".6"/><circle cx="56" cy="50" r="3.5" fill="#f59e9e" opacity=".6"/>${brows}${eyes}${mouth}${extra}</svg>`;
+}
+/* ---------- 컴포넌트 ---------- */
+function S(k,mood,name,text,o={}){
+  return `<div class="scene ${o.rev?'rev':''}"><div class="who">${face(k,mood)}${name||CH[k].name}</div><div class="bub ${o.shout?'shout':''}">${text}${o.note?`<small>${o.note}</small>`:''}</div></div>`;
+}
+function P(cap,body,o={}){return `<div class="panel ${o.wide?'wide':''}">${cap?`<div class="cap">${cap}</div>`:''}${o.fx?`<div class="fx">${o.fx}</div>`:''}${body}</div>`;}
+function WHO(list){return `<div class="chips">${list.map(([n,h])=>`<span class="chip ${h?'hl':''}">${n}</span>`).join('')}</div>`;}
+function bars(rows,max){return `<div class="bars">${rows.map(([l,v,u,c])=>`<div class="bar"><span>${l}</span><div class="tr"><div class="fl ${c||''}" style="width:${Math.max(4,v/max*100)}%"></div></div><b>${v}${u}</b></div>`).join('')}</div>`;}
+function EP(tag,title,sub,body,cls=''){return `<section class="ep ${cls}"><span class="eptag">${tag}</span><h2>${title}</h2>${sub?`<p class="subt">${sub}</p>`:''}${body}</section>`;}
+
+
+/* ---------- 본문 ---------- */
+let H='';
+const SRC_URL='https://youtu.be/E-nbFtfalzY';
+const LAW_URL='https://www.law.go.kr/법령/기간제및단시간근로자보호등에관한법률';
+/* 판례 출처 (번호 = 영상 내용 지도 항목) */
+const CASES={"1": "대법원 2018. 6. 15. 선고 2016두62795", "2": "대법원 2017. 2. 3. 선고 2016다255910", "3": "대법원 2014. 11. 27. 선고 2013다2672", "4": "대법원 2018. 6. 19. 선고 2013다85523", "5": "대법원 2018. 6. 19. 선고 2017두54975", "6": "대법원 2019. 10. 17. 선고 2016두63705", "7": "대법원 2020. 8. 20. 선고 2017두52153", "8": "대법원 2012. 10. 25. 선고 2011두7045", "9": "대법원 2014. 11. 27. 선고 2011두5391", "10": "대법원 2019. 9. 26. 선고 2016두47857", "10b": "대법원 2023. 11. 30. 선고 2019두53952", "11": "대법원 2023. 6. 29. 선고 2019두55262", "12": "대법원 2019. 9. 26. 선고 2016두47857", "13": "대법원 2024. 2. 29. 선고 2020두49355", "14": "대법원 2024. 2. 29. 선고 2020두49355", "15": "대법원 2016. 12. 1. 선고 2014두43288", "16": "대법원 2019. 12. 24. 선고 2015다254873", "17": "대법원 2006. 2. 24. 선고 2005두5673", "18": "대법원 2011. 4. 14. 선고 2007두1729", "19": "대법원 2016. 11. 10. 선고 2014두45765", "20": "대법원 2017. 2. 3. 선고 2016두50563", "21": "대법원 2017. 10. 12. 선고 2015두44493", "22": "대법원 2017. 10. 12. 선고 2015두44493", "23": "대법원 2020. 2. 20. 선고 2019두52386 전원합의체 (취지)", "24": "대법원 2016. 11. 10. 선고 2014두45765", "25": "대법원 2021. 10. 28. 선고 2021두45114"};
+const C=(...n)=>n.map(i=>CASES[i]).filter(Boolean).join(' · ')||'판례 (요지)';
+
+/* 표지 */
+H+=`<section class="ep cover"><div class="burst"></div>
+<div class="kick">제니툰 특별편 · 노동판례툰</div>
+<h1>기간제 2년,<br>법원은 이렇게 센다</h1>
+<div class="kick">기간제법 판례 한 번에 읽기 — 사용기간 · 차별시정 · 갱신기대권</div>
+<div class="cast">${face('bot','calm')}${face('hr','shock')}${face('nomusa','calm')}${face('banjang','calm')}</div>
+<div class="nums">
+ <div class="num"><b>2년</b><span>기간제 사용기간 상한</span></div>
+ <div class="num"><b>강행규정</b><span>배제 합의는 무효</span></div>
+ <div class="num"><b>공백</b><span>있어도 합산될 수 있다</span></div>
+ <div class="num"><b>범주별</b><span>임금 차별 비교 방법</span></div>
+ <div class="num"><b>6개월</b><span>계속 차별은 종료일부터</span></div>
+ <div class="num"><b>기대권</b><span>갱신·전환 거절도 다툰다</span></div>
+</div>
+<div class="by">작성 · ㈜제니엘이노베이션 &nbsp;|&nbsp; 2026.10.30</div>
+</section>`;
+
+/* 원작 영상 안내 */
+H+=`<div class="box blue" style="margin:0 6px 30px 0"><h3>🎬 원작 영상 안내</h3>
+<p style="margin:0">채널 <b>‘김영호의 노동법튜브’</b> · 「판례낭독 : 기간제 및 단시간 근로자 보호 등에 관한 법률 편」 (2026.10.5 게시 · 28분 40초 · 2026.10.1 기준 업데이트)</p>
+<p style="margin:6px 0 0">영상의 12개 챕터를 빠짐없이 웹툰으로 옮기되, 판결 문장을 그대로 옮기지 않고 제니툰 캐릭터의 대사로 <b>새로 풀어 썼습니다</b>. 판례 요지는 <b>(요지)</b>로 표시했습니다.</p>
+<p style="margin:8px 0 0"><a href="${SRC_URL}" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">▶ 원작 영상 보러 가기</a> &nbsp;·&nbsp; <a href="${LAW_URL}" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">📘 기간제법 원문(국가법령정보센터)</a></p></div>`;
+
+/* EP.0 지도 */
+H+=EP('EP.0','기간제법, 세 갈래 길','오늘 읽을 판례 지도',
+`${S('hr','shock','','노무사님, 다음 달부터 계약직 재계약 업무를 제가 맡게 됐어요. 기간제법 판례가 그렇게 많다면서요?')}
+${S('nomusa','calm','','겁낼 것 없어요. 판례는 크게 <b>세 갈래</b>로 나뉩니다. 오늘은 이 지도대로 따라가 봅시다.',{rev:true})}
+<div class="flow"><div>① 사용기간<br>2년 셈법<br>(제4조)</div><div>② 차별시정<br>비교·판단·기간<br>(제8조·제9조)</div><div>③ 무기계약 간주<br>후 근로조건</div><div class="k">④ 갱신기대권·<br>전환기대권</div></div>
+<div class="law"><b>「기간제 및 단시간근로자 보호 등에 관한 법률」 핵심 조문 (요지)</b><br>
+· <b>제4조 제1항</b> — 기간제근로자는 원칙적으로 <b>2년 범위</b>에서 사용 (사업 완료 기간, 휴직 대체, 고령자, 전문직 등 예외는 단서 각 호)<br>
+· <b>제4조 제2항</b> — 예외 사유 없이 <b>2년을 넘겨 사용</b>하면 기간의 정함이 없는 근로자로 <b>간주</b><br>
+· <b>제8조 제1항</b> — 기간제라는 이유로 동종·유사 업무의 무기계약 근로자보다 <b>차별적 처우 금지</b><br>
+· <b>제9조 제1항</b> — 차별적 처우가 있은 날부터 <b>6개월 내</b> 노동위원회에 시정 신청 (계속되는 차별은 <b>종료일부터</b>)</div>
+${S('bot','calm','','영상 챕터 12개를 EP.1부터 EP.10까지 순서대로 담았어요. 출발!')}`);
+
+/* EP.1 강행규정 + 사업완료기간 */
+H+=EP('EP.1','2년 규칙은 합의로도 못 바꾼다','강행규정 · 형식적인 ‘사업 완료 기간’의 반복',
+`${S('hr','calm','','근로자가 “2년 넘어도 정규직 안 바랍니다”라고 서명하면 괜찮지 않나요?')}
+${S('nomusa','angry','','안 됩니다! 제4조 제2항은 <b>강행규정</b>이에요. 당사자끼리 적용을 빼자고 합의해도 <b>그 합의는 효력이 없어요</b>.',{rev:true,shout:true,note:'(요지) '+C(1)})}
+<div class="g4">
+${P('① 예외 — 사업 완료 기간',S('nomusa','calm','','건설 공사, 특정 프로그램 개발처럼 <b>객관적으로 끝이 정해진</b> 사업이라면, 완료 예정 시점까지 계약해 2년을 넘길 수 있어요.'))}
+${P('② 꼼수 — 이름만 프로젝트',S('banjang','angry','','“○○ 프로젝트 완료 시까지”라고 써 놓고 매년 이름만 바꿔 다시 쓰는 곳도 봤어요.',{rev:true}),{fx:'?!'})}
+${P('③ 법원 판단',S('nomusa','calm','','2년 규정을 피하려고 <b>형식적으로 완료 기간을 반복</b>했고 근로관계가 이어졌다면, 예외로 <b>인정하지 않아요</b>.',{note:'(요지) '+C(2)}))}
+${P('④ 무엇을 보나',S('bot','calm','','반복 계약의 <b>동기·경위</b>, 계약 내용, <b>업무의 동일성</b>, 공백 길이, 공백 동안 업무를 누가 했는지까지 <b>종합</b>해서 봐요.',{rev:true}))}
+</div>
+${S('bot','calm','','첫 번째 정리 — <mark>계약서 문구보다 실제 일한 모습</mark>이 기준이에요.')}`);
+
+/* EP.2 빼는 기간 넣는 기간 */
+H+=EP('EP.2','2년 셈법 ①','빼는 기간 · 넣는 기간 · 예외기간이 끼어 있을 때',
+`${S('hr','calm','','2년을 셀 때 무엇을 넣고 무엇을 빼는지 헷갈려요.')}
+${S('nomusa','calm','','영상에 나온 세 가지 경우를 차례로 볼게요.',{rev:true})}
+<div class="g4">
+${P('① 초단시간 근무 기간',S('nomusa','calm','','주 15시간 미만 <b>초단시간</b>으로 일하다 그 관계가 끝나고, 이후 일반 기간제로 새로 계약했다면 초단시간 기간은 <b>2년에 넣지 않아요</b>.',{note:'(요지) '+C(3)}))}
+${P('② 부당하게 갱신을 거절당한 기간',S('nomusa','calm','','사용자가 부당하게 갱신을 거절해 일하지 못한 기간은, <b>갱신기대권이 유지되는 범위</b>에서 2년에 <b>넣어요</b>.',{rev:true,note:'(요지) '+C(4)}),{fx:'+'})}
+${P('③ 예외기간이 사이에 낀 경우',S('nomusa','calm','','반복 계약 사이에 휴직 대체 같은 <b>예외 사유 기간</b>이 끼어 있어도, 전후로 근로관계가 끊김 없이 이어졌다면 <b>앞뒤 기간을 합산</b>해요.',{note:'(요지) '+C(5)}))}
+${P('④ 합산 판단 요소',S('bot','calm','','계약 체결 경위, 당사자 의사, 계약 사이 <b>시간 간격</b>, 업무 내용·근로조건의 <b>유사성</b>을 봐요.',{rev:true}))}
+</div>
+${S('banjang','shock','','예외 기간 한 번 끼워 넣는다고 2년이 리셋되는 게 아니군요!')}`);
+
+/* EP.3 공백 */
+H+=EP('EP.3','2년 셈법 ②','계약 사이에 공백이 있을 때 · 없을 때',
+`${S('hr','sad','','한 달 쉬었다가 재입사시키면 2년이 처음부터 다시 시작되는 거 아닌가요?')}
+${S('nomusa','calm','','그렇게 단순하지 않아요. 공백이 <b>있는 경우</b>와 <b>없는 경우</b>를 나눠 볼게요.',{rev:true})}
+<div class="g4">
+${P('① 공백이 있는 경우',S('nomusa','calm','','근로관계가 <b>계속된 것으로 볼 수 있는지</b>를 따져서, 그렇다면 공백 앞뒤 기간을 <b>합산</b>해요.',{note:'(요지) '+C(6)}))}
+${P('② 공백 판단 요소',`<ul style="margin:0;padding-left:18px"><li>공백 <b>길이</b>, 전체 기간 대비 <b>비율</b></li><li>공백이 생긴 <b>경위</b></li><li>공백 전후 업무·근로조건 <b>유사성</b></li><li>공백 중 업무 <b>대체 방식</b>·근로자 처우</li><li>공백에 대한 당사자 <b>의사·인식</b></li><li>다른 기간제근로자의 <b>반복 갱신 관행</b></li></ul>`)}
+${P('③ 공백 없이 반복한 경우',S('nomusa','calm','','쉼 없이 반복 갱신했다면, 특별한 사정이 없는 한 <b>최초 계약부터 마지막 계약까지 전부</b> 계속근로기간이에요.',{rev:true,note:'(요지) '+C(7)}))}
+${P('④ 단절로 보는 예외',S('bot','calm','','다만 업무 성격, 갱신 의사, 업무·장소·조건의 차이, 종료·재계약 절차를 보아 단순 반복이 아니라 <b>새로운 근로관계</b>가 맺어졌다면 그 시점에 끊겨요.'),{fx:'✂'})}
+</div>
+${S('banjang','calm','','결국 “며칠 쉬었냐”보다 <b>“같은 일을 계속했냐”</b>가 핵심이네요.',{rev:true})}`);
+
+/* EP.4 비교대상 */
+H+=EP('EP.4','차별시정 ① 누구와 비교하나','비교대상 근로자 선정의 네 가지 판례',
+`${S('hr','calm','','차별이라고 하려면 비교할 사람이 있어야 하잖아요. 아무나 고르면 되나요?')}
+${S('nomusa','calm','','<b>동종·유사 업무</b>를 하는 무기계약 근로자여야 해요. 법원은 이 부분을 네 가지로 정리했어요.',{rev:true})}
+<div class="g4">
+${P('① 실제 업무가 기준',S('nomusa','calm','','취업규칙·계약서에 적힌 직무가 아니라 <b>실제로 한 일</b>로 판단해요. 범위·권한·책임이 조금 달라도 <b>주된 업무에 본질적 차이</b>가 없으면 동종·유사예요.',{note:'(요지) '+C(8)}))}
+${P('② 공무원도 비교대상',S('nomusa','calm','','기간제법은 국가·지자체에도 적용돼요. 그래서 비교대상을 사법상 계약 근로자로 <b>한정하지 않고</b>, 공무원과도 비교할 수 있어요.',{rev:true,note:'(요지) '+C(9)}))}
+${P('③ 없는 사람은 안 돼요',S('bot','shock','','비교대상이 꼭 지금 그 사업장에 근무할 필요는 없지만, <b>그 직위에 존재하지 않는 근로자</b>를 가정해서 고를 수는 없어요.',{note:'(요지) '+C(10)}),{fx:'✕'})}
+${P('④ 노동위원회의 직권',S('nomusa','calm','','노동위원회는 현장 조사·자료 요구 등 <b>직권 조사 권한</b>이 있어요. 신청인이 주장한 비교대상과 <b>동일성이 유지되는 범위</b>에서 적절한 근로자를 직접 고를 수 있어요.',{rev:true,note:'(요지) '+C('10b')}))}
+</div>
+<p class="tagline">※ 구분 주의: 근로기준법 제6조(균등처우)가 쟁점인 무기계약직 사건에서는 공무원을 비교대상으로 보지 않은 판결(대법원 2023. 9. 21. 선고 2016다255941 전원합의체)이 있습니다. ②는 기간제법 제8조 사건입니다.</p>`);
+
+/* EP.5 불리한 처우 */
+H+=EP('EP.5','차별시정 ② 불리한 처우와 합리적 이유','항목별로 볼까, 범주별로 볼까',
+`${S('hr','calm','','비교대상을 찾았으면 이제 무엇을 따지나요?')}
+${S('nomusa','calm','','두 단계예요. <b>불리한 처우</b>가 있었는지, 그리고 그 처우에 <b>합리적 이유</b>가 없는지.',{rev:true,note:'(요지) '+C(11)})}
+<div class="g4">
+${P('① 두 개념',`<ul style="margin:0;padding-left:18px"><li><b>불리한 처우</b> — 임금 등 근로조건을 비교대상과 달리 대해 생긴 불이익</li><li><b>합리적 이유 없음</b> — 달리 대할 필요가 없거나, 필요해도 방법·정도가 적정하지 않음</li><li>판단 요소 — 불이익의 내용, 사용자의 사유, 고용형태, 업무 범위·권한·책임, 임금·근로조건 등을 종합</li></ul>`)}
+${P('② 일부만 해당돼도 차별',S('nomusa','calm','','기간제에만 있는 <b>고유한 속성</b> 때문에 불이익이 생겼다면, 기간제 <b>일부</b>에게만 적용되더라도 차별이에요.',{rev:true,note:'(요지) '+C(11)}))}
+${P('③ 임금은 원칙 항목별',S('nomusa','calm','','원칙은 문제 된 <b>임금 항목끼리</b> 비교해요. 그런데 항목 구성이 다르거나, 어떤 항목은 적고 어떤 항목은 많으면 <b>관련 항목을 범주로 묶어 총액</b>을 비교해요.',{note:'(요지) '+C(12)}),{fx:'Σ'})}
+${P('④ 합리적 이유도 범주별',S('bot','calm','','어떤 항목이 어느 범주인지는 지급 근거·대상·성격, 덜 준 경위, 지급 관행으로 정해요. <b>합리적 이유</b>도 범주별로 판단하고, 급여의 실제 목적, 업무 강도·양까지 봐요.',{rev:true,note:'(요지) '+C(12)}))}
+</div>
+${S('banjang','shock','','기본급은 같아도 수당 묶음 전체가 적으면 차별이 될 수 있다는 거군요.')}`);
+
+/* EP.6 기간·계약만료 */
+H+=EP('EP.6','차별시정 ③ 언제까지 신청하나','계속되는 차별 · 복지포인트 · 계약이 끝난 뒤',
+`${S('hr','sad','','시정 신청은 6개월 안에 해야 한다던데, 몇 년치 임금 차별이면 앞부분은 놓친 건가요?')}
+${S('nomusa','calm','','아니에요. 계속 일한 대가를 계속 덜 줬다면 그건 <b>계속되는 차별적 처우</b>예요. <b>마지막 차별이 끝난 날부터 6개월</b> 안에 신청하면 전체 기간이 기간 내로 인정돼요.',{rev:true,note:'(요지) '+C(13)+' · 같은 법리의 선례 대법원 2011. 12. 22. 선고 2010두3237(당시 신청기간 3개월)'})}
+<div class="g4">
+${P('① 복지포인트는?',S('nomusa','calm','','맞춤형 복지포인트는 배정 자체가 돈 지급이 아니라, 그해 안에 쓰고 정산받는 혜택이에요.',{note:'(요지) '+C(14)}))}
+${P('② 그래서 언제 끝나나',S('bot','calm','','포인트를 못 받은 차별은 배정일에 끝나지 않고 <b>그해 마지막 날까지 계속</b>돼요.',{rev:true}),{fx:'12/31'})}
+${P('③ 계약이 끝났다면?',S('hr','shock','','신청 도중에 계약기간이 끝나면 시정 신청도 의미가 없어지는 거죠?'))}
+${P('④ 시정 이익은 남는다',S('nomusa','calm','','아니요. 차별시정은 <b>받지 못한 불이익을 회복</b>하는 제도지 고용을 보장하는 제도가 아니에요. 그래서 계약 만료만으로 <b>시정을 구할 이익이 사라지지 않아요</b>.',{rev:true,note:'(요지) '+C(15)}))}
+</div>`);
+
+/* EP.7 무기계약 간주 */
+H+=EP('EP.7','무기계약이 된 뒤의 근로조건','간주 근로자에게 어느 취업규칙을 적용하나',
+`${S('banjang','calm','','2년이 넘어 무기계약으로 간주되면, 월급이나 수당은 그대로인가요?')}
+${S('nomusa','calm','','제8조 문언은 기간제 차별 금지지만, 법원은 취지와 <b>공평의 관념</b>을 근거로 이렇게 봤어요.',{rev:true})}
+${S('nomusa','calm','','같은 사업장에 <b>동종·유사 업무</b>를 하는 무기계약 근로자가 있으면, 특별한 사정이 없는 한 그들에게 적용되는 <b>취업규칙이 똑같이 적용</b>돼요. 근로조건이 그보다 <b>불리해서는 안 됩니다</b>.',{note:'(요지) '+C(16)})}
+${S('bot','calm','','두 번째 정리 — <mark>무기계약 간주는 ‘기간만 없앤 기간제’가 아니에요</mark>.',{rev:true})}`);
+
+/* EP.8 형식성·갱신기대권·전환기대권 */
+H+=EP('EP.8','기간이 끝나면 정말 끝일까','기간 정함의 형식성 · 갱신기대권 · 전환기대권',
+`${S('hr','calm','','기간제는 계약기간이 끝나면 당연히 퇴직하는 것 아닌가요?')}
+${S('nomusa','calm','','<b>원칙은 맞아요</b>. 기간 만료로 근로관계는 당연히 끝나요. 그런데 법원이 인정하는 <b>세 가지 예외</b>가 있어요.',{rev:true,note:'(요지) '+C(17)})}
+<div class="g4">
+${P('① 기간이 형식에 불과할 때',S('nomusa','calm','','짧은 계약을 <b>오랫동안 반복</b>했고 계약 경위·당사자 진의·갱신 횟수 등을 보아 기간이 <b>형식에 불과</b>하면, 계약서와 상관없이 <b>무기계약</b>으로 봐요. 이때 정당한 사유 없는 갱신 거절은 해고처럼 <b>무효</b>예요.',{note:'(요지) '+C(17)}))}
+${P('② 갱신기대권',S('nomusa','calm','','갱신 조항이 없어도 계약 성격, 체결 동기, <b>갱신 기준·관행</b>, 업무 성격을 보아 요건을 갖추면 갱신된다는 <b>정당한 기대</b>가 생겼다면, 부당한 갱신 거절은 <b>무효</b>이고 계약은 <b>갱신된 것</b>으로 봐요.',{rev:true,note:'(요지) '+C(18)}))}
+${P('③ 전환기대권',S('nomusa','calm','','계약서·취업규칙·단체협약에 <b>정규직 전환 요건</b>이 있거나 사정상 전환 기대가 형성됐다면, 합리적 이유 없는 전환 거절은 <b>무효</b>이고 <b>무기계약으로 전환된 것</b>으로 봐요.',{note:'(요지) '+C(19)}),{fx:'↑'})}
+${P('④ 현장의 말',S('banjang','shock','','“열심히 하면 정규직 된다”는 말을 매년 했다면… 그게 기대권의 씨앗이 될 수 있겠네요.',{rev:true}))}
+</div>`);
+
+/* EP.9 갱신기대권 심화 1 */
+H+=EP('EP.9','갱신기대권 심화 ①','법리 · 고령자 · 거절의 합리적 이유 · 대량 거절',
+`${S('hr','calm','','갱신기대권이 인정되면 사용자는 절대 갱신을 거절 못 하나요?')}
+${S('nomusa','calm','','아니요. <b>합리적 이유</b>가 있으면 거절할 수 있어요. 대신 그 판단이 꽤 엄격하죠.',{rev:true})}
+<div class="g4">
+${P('① 법리와 효과',S('nomusa','calm','','갱신 조항이 있거나, 없더라도 <b>신뢰관계</b>가 형성돼 갱신 기대가 정당하면, 합리적 근거 없는 거절은 <b>예외적으로 무효</b>예요. 만료 후 관계는 <b>갱신된 것과 같아요</b>.',{note:'(요지) '+C(18)}))}
+${P('② 정년 후 고령자도',S('nomusa','calm','','고령자라 제4조 예외에 해당한다는 이유만으로 법리 적용이 배제되지 않아요. 다만 정년 후 계약이면 <b>직무 수행 능력</b>, 연령에 따른 <b>능률 저하·위험</b>, 정년 후 재고용 제도와 <b>갱신 사례</b>도 함께 봐요.',{rev:true,note:'(요지) '+C(20)}))}
+${P('③ 거절의 합리적 이유',S('nomusa','calm','','사업 목적·성격, 근로자의 지위·업무, 갱신 요건·절차의 운영, 근로자 귀책 사유 등을 보아 거절 사유와 절차가 <b>객관적·합리적·공정</b>해야 해요. <b>증명책임은 사용자</b>에게 있어요.',{note:'(요지) '+C(21)}),{fx:'⚖'})}
+${P('④ 신규채용으로 바꿔 대량 거절',S('nomusa','angry','','갱신 대신 “신규 채용 절차로 다시 뽑겠다”며 <b>사전 협의도, 우선 선발 기준도 없이</b> 대량으로 거절하면 기대권을 통째로 배제하는 것이라 안 돼요. 경영상 필요, 근거 규정, 회피 노력, 공정한 선정 기준, 차별 여부를 따져요.',{rev:true,note:'(요지) '+C(22)}))}
+</div>`);
+
+/* EP.10 갱신기대권 심화 2 */
+H+=EP('EP.10','갱신기대권 심화 ②','기간이 끝난 뒤에도 다툴 수 있나 · 2년 넘는 기대권 · 서면통지',
+`${S('hr','shock','','계약기간이 이미 끝났는데도 갱신 거절이 무효라고 다툴 수 있어요?')}
+${S('nomusa','calm','','네. 정당한 기대가 인정되면 부당한 갱신 거절은 부당해고처럼 효력이 없으니, 기간이 끝난 뒤에도 <b>다툴 법률상 이익</b>이 있어요.',{rev:true,note:'(요지) '+C(23)})}
+<div class="g4">
+${P('① “2년 지났으니 끝”?',S('banjang','calm','','2년 넘으면 어차피 끝나는 계약이니, 그 뒤 기대권은 없다고 보면 되지 않나요?'))}
+${P('② 2년 넘는 기대권도 인정',S('nomusa','calm','','제4조는 남용을 막아 <b>지위를 보장</b>하려는 규정이지, 기대권 형성을 막는 규정이 아니에요. 그래서 총 사용기간 <b>2년을 넘는 갱신기대권도 인정</b>될 수 있고, 2년이 지났다는 이유만으로 다툴 자격을 부정할 수 없어요.',{rev:true,note:'(요지) '+C(24)}),{fx:'2년+'})}
+${P('③ 갱신 거절 통지와 서면통지',S('hr','calm','','그럼 갱신 거절도 해고처럼 근로기준법 제27조 <b>서면통지</b>를 지켜야 하나요?'))}
+${P('④ 법원의 답',S('nomusa','calm','','기간 만료로 끝난 뒤 하는 갱신 거절 통지에는 <b>제27조가 적용되지 않아요</b>. 해고와 달리 계약이 기간 만료로 당연히 끝나기 때문이에요.',{rev:true,note:'(요지) '+C(25)}))}
+</div>
+<div class="box red"><h3>⚠️ 오해 주의</h3><p style="margin:0">서면통지 의무가 없다는 것이지 <b>갱신 거절이 자유롭다는 뜻은 아닙니다</b>. 갱신기대권이 있으면 거절에 합리적 이유가 필요하고, 그 증명책임은 사용자에게 있습니다. 실무에서는 사유를 <b>서면으로 남겨 두는 것</b>이 분쟁 예방에 유리합니다.</p></div>
+<p class="tagline">※ 자동 자막에는 ‘제17조’로 들리는 부분이 있으나, 판례 취지상 근로기준법 <b>제27조(해고사유 등의 서면통지)</b>로 바로잡았습니다.</p>`);
+
+/* EP.11 우리 현장 관점 */
+H+=EP('EP.11','그럼 우리 현장은?','아웃소싱·파견·채용대행 현장에서 읽는 기간제 판례 (작성자 정리)',
+`${S('banjang','calm','','저희 현장은 계약직, 파견, 도급이 섞여 있어요. 오늘 판례를 어떻게 적용하면 될까요?')}
+${S('nomusa','calm','','먼저 <b>법이 다르다</b>는 점부터요. 파견근로자는 기간제법이 아니라 <b>파견법</b>의 사용기간·직접고용 규정을 따로 봐야 해요.',{rev:true})}
+<div class="g4">
+${P('① 2년 관리 대장',S('hr','calm','','공백·예외기간까지 합산될 수 있으니, 근로자별로 <b>최초 입사일·공백·업무 변동</b>을 한 장에 기록해 둬야겠어요.'))}
+${P('② 재계약 기준 문서화',S('nomusa','calm','','갱신 기준·평가 절차를 <b>미리 정하고 알리고 그대로 운영</b>해야 해요. 기준 없이 관행으로만 갱신하면 기대권이 쌓여요.',{rev:true}))}
+${P('③ 수당·복지 점검',S('bot','calm','','고객사의 무기계약직과 <b>같은 일</b>을 한다면 수당 묶음·복지포인트 차이를 범주별로 점검해 보세요.'))}
+${P('④ 말 한마디도 기록',S('banjang','happy','','“계속 같이 가자”, “정규직 시켜 줄게” 같은 말은 조심! 약속할 거면 <b>요건과 절차</b>까지 같이 정하기로.',{rev:true}),{fx:'GO'})}
+</div>
+<p class="tagline">※ 위 내용은 ㈜제니엘이노베이션의 현장 경험을 바탕으로 정리한 의견이며, 개별 사안은 노무 전문가 검토가 필요합니다.</p>`);
+
+/* NUMBERS */
+H+=EP('NUMBERS','숫자로 보는 기간제법','',
+`<div class="cards">
+<div class="card"><b>2년</b><span>기간제 사용기간 원칙 상한 (제4조)</span></div>
+<div class="card"><b>6개월</b><span>차별시정 신청 기간 (제9조)</span></div>
+<div class="card"><b>15시간</b><span>주 소정근로 미만이면 초단시간</span></div>
+<div class="card"><b>12개</b><span>원작 영상 챕터, 모두 반영</span></div>
+</div>`);
+
+/* CHECK */
+H+=EP('CHECK','기간제 재계약 점검표','인사담당자용 (작성자 제안)',
+`${S('hr','happy','','다음 달 재계약 전에 이것부터 확인할게요!')}
+<ul class="chk">
+<li>근로자별 <b>최초 계약일부터</b> 공백·예외기간을 포함해 계속근로기간을 계산했는가</li>
+<li>‘사업 완료 시까지’ 계약이 <b>객관적으로 끝나는 사업</b>인지 확인했는가</li>
+<li>2년 적용을 배제하는 <b>각서·합의</b>를 받고 있지는 않은가 (무효)</li>
+<li>동종·유사 업무 무기계약직과 <b>임금 범주·복지포인트</b> 차이를 점검했는가</li>
+<li>무기계약 간주자에게 <b>동종 무기계약직 취업규칙</b>을 적용하고 있는가</li>
+<li>갱신·전환 <b>기준과 절차</b>가 문서로 정해져 있고 실제로 그대로 운영되는가</li>
+<li>갱신 거절 시 <b>합리적 사유와 증빙</b>을 사용자가 입증할 수 있는가</li>
+<li>재계약을 <b>신규채용 절차로 바꿀 때</b> 사전 협의·우선 선발 기준을 마련했는가</li>
+<li>파견근로자는 기간제법이 아닌 <b>파견법 기준</b>으로 따로 관리하고 있는가</li>
+</ul>
+<p class="tagline">※ 위 점검표는 ㈜제니엘이노베이션이 정리한 실무 제안입니다. 구체적 사안은 노무 전문가 검토를 받으세요.</p>`);
+
+/* SUMMARY */
+H+=EP('SUMMARY','흐름 정리','2년 셈법 → 차별시정 → 무기계약 간주 → 기대권',
+`<div class="g4">
+${P('⏱ 사용기간',`<ul style="margin:0;padding-left:18px"><li>제4조 제2항은 <b>강행규정</b></li><li>공백·예외기간도 <b>합산</b> 가능</li><li>형식적 완료 기간 반복은 예외 불인정</li></ul>`)}
+${P('⚖ 차별시정',`<ul style="margin:0;padding-left:18px"><li><b>실제 업무</b>로 비교대상 선정</li><li>임금은 <b>범주별</b> 비교 가능</li><li>계속 차별은 <b>종료일부터 6개월</b></li></ul>`)}
+${P('📄 무기계약 간주',`<ul style="margin:0;padding-left:18px"><li>동종 무기계약직 <b>취업규칙 적용</b></li><li>근로조건이 더 불리하면 안 됨</li></ul>`)}
+${P('🔁 기대권',`<ul style="margin:0;padding-left:18px"><li>형식성·<b>갱신</b>·<b>전환</b> 기대권</li><li>거절 이유 증명은 <b>사용자</b></li><li>2년 넘는 기대권도 인정</li></ul>`)}
+</div>`);
+
+/* EPILOGUE */
+H+=EP('EPILOGUE','계약서보다 오래 남는 것','',
+`${S('hr','happy','','오늘 판례를 보니, 결국 법원은 <b>계약서 문구보다 실제 모습</b>을 보네요.')}
+${S('nomusa','calm','','맞아요. 기준을 미리 정하고, 약속은 지키고, 기록은 남기는 것. 그게 가장 좋은 분쟁 예방이에요.',{rev:true})}
+${S('bot','happy','','다음 노동판례툰에서 또 만나요!')}
+<p class="quote">“법은 최소한의 도덕이다” — 게오르크 옐리네크</p>
+<p style="text-align:center;margin:0">끝까지 읽어 주셔서 감사합니다 🙏</p>
+<div class="src">작성 · ㈜제니엘이노베이션<br>
+<b>원작</b> · 유튜브 ‘김영호의 노동법튜브’ 「판례낭독 : 기간제 및 단시간 근로자 보호 등에 관한 법률 편」(2026.10.5 게시, 2026.10.1 기준) — <a href="${SRC_URL}" target="_blank" rel="noopener">${SRC_URL}</a><br>
+영상의 문장을 그대로 옮기지 않았으며, 원작의 저작권은 해당 채널에 있습니다.<br>
+<b>원자료</b> · 「기간제 및 단시간근로자 보호 등에 관한 법률」 제4조·제8조·제9조, 근로기준법 제27조 (<a href="${LAW_URL}" target="_blank" rel="noopener">국가법령정보센터</a>)<br>
+<b>판례</b> · 대법원 2018. 6. 15. 선고 2016두62795 · 대법원 2017. 2. 3. 선고 2016다255910 · 대법원 2014. 11. 27. 선고 2013다2672 · 대법원 2018. 6. 19. 선고 2013다85523 · 대법원 2018. 6. 19. 선고 2017두54975 · 대법원 2019. 10. 17. 선고 2016두63705 · 대법원 2020. 8. 20. 선고 2017두52153 · 대법원 2012. 10. 25. 선고 2011두7045 · 대법원 2014. 11. 27. 선고 2011두5391 · 대법원 2019. 9. 26. 선고 2016두47857 · 대법원 2023. 11. 30. 선고 2019두53952 · 대법원 2023. 6. 29. 선고 2019두55262 · 대법원 2024. 2. 29. 선고 2020두49355 · 대법원 2016. 12. 1. 선고 2014두43288 · 대법원 2019. 12. 24. 선고 2015다254873 · 대법원 2006. 2. 24. 선고 2005두5673 · 대법원 2011. 4. 14. 선고 2007두1729 · 대법원 2016. 11. 10. 선고 2014두45765 · 대법원 2017. 2. 3. 선고 2016두50563 · 대법원 2017. 10. 12. 선고 2015두44493 · 대법원 2020. 2. 20. 선고 2019두52386 전원합의체 (취지) · 대법원 2021. 10. 28. 선고 2021두45114<br>
+※ 등장인물은 모두 가상의 캐릭터입니다. 판례 요지는 작성자가 풀어 쓴 것이며 법률 자문이 아닙니다.</div>`);
+
+
+
+
+document.getElementById('app').innerHTML=H;
+
+function toggleTheme(){
+  const r=document.documentElement;
+  const dark = r.dataset.theme ? r.dataset.theme==='dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  r.dataset.theme = dark?'light':'dark';
+}
+</script>
+<script src="../zt-nav.js"></script>
+<script src="../firebase-config.js"></script>
+<script type="module" src="../zt-fire.js"></script>
+<script>
+const ZT_ID='009';
+async function ztPaint(){const F=window.ZT_FIRE;if(!F||!F.enabled)return;document.getElementById('ztLike').hidden=false;
+ const d=(await F.getStats([ZT_ID]))[ZT_ID]||{};document.getElementById('ztLikeN').textContent=d.likes||0;
+ document.getElementById('ztViews').textContent='👁 조회 '+(d.views||0);
+ if(F.liked(ZT_ID))document.querySelector('#ztLike button').classList.add('on');}
+async function ztLike(){const F=window.ZT_FIRE;if(await F.addLike(ZT_ID)){document.querySelector('#ztLike button').classList.add('on');ztPaint()}}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{})}
+window.addEventListener('zt-fire-ready',async()=>{if(window.ZT_FIRE.enabled){await window.ZT_FIRE.addView(ZT_ID);ztPaint()}});
+</script>
+</body>
+</html>
