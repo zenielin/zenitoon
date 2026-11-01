@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>무신사의 정체 | 제니툰</title>
+<meta property="og:title" content="제니툰 · 몸값 10조? 무신사의 정체">
+<meta property="og:image" content="../thumbs/014.png">
+<link rel="icon" href="../favicon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#ffd23f">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="제니툰">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fbf6ea; --paper2:#fffdf7; --ink:#161616; --sub:#4a4a4a;
+  --red:#e2403a; --blue:#2f6fd6; --yellow:#ffd23f; --green:#2e9e6a; --soft:#f1e7cf;
+  --shadow:#161616;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#1d1b17; --paper2:#262420; --ink:#f2ede1; --sub:#c9c2b2;
+    --soft:#34302a; --shadow:#000;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#1d1b17; --paper2:#262420; --ink:#f2ede1; --sub:#c9c2b2;
+  --soft:#34302a; --shadow:#000;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Gowun Dodum',sans-serif;line-height:1.6;font-size:15px}
+.wrap{max-width:760px;margin:0 auto;padding:18px 16px 40px}
+h1,h2,h3{font-family:'Black Han Sans',sans-serif;font-weight:400;margin:0;letter-spacing:.5px;line-height:1.25}
+.ep{background:var(--paper2);border:3px solid var(--ink);box-shadow:6px 6px 0 var(--shadow);margin:0 6px 30px 0;padding:20px 18px 22px;border-radius:6px}
+.eptag{display:inline-block;background:var(--ink);color:var(--paper2);font-family:'Black Han Sans';padding:3px 12px;border-radius:3px;font-size:14px;letter-spacing:1px}
+.ep h2{font-size:26px;margin:8px 0 2px}
+.ep .subt{color:var(--sub);margin:0 0 14px;font-size:14px}
+/* cover */
+.cover{background:var(--yellow);color:#161616;text-align:center;position:relative;overflow:hidden}
+.cover .burst{position:absolute;inset:0;background:repeating-conic-gradient(from 0deg at 0% 50%,rgba(255,255,255,.42) 0 2.5deg,transparent 2.5deg 8deg) left/50% 100% no-repeat,repeating-conic-gradient(from 0deg at 100% 50%,rgba(255,255,255,.42) 0 2.5deg,transparent 2.5deg 8deg) right/50% 100% no-repeat;-webkit-mask-image:linear-gradient(90deg,#000,transparent 42%,transparent 58%,#000);mask-image:linear-gradient(90deg,#000,transparent 42%,transparent 58%,#000);z-index:0}
+.cover>*{position:relative;z-index:1}
+.cover h1{font-size:38px;margin:10px 0 6px;text-shadow:3px 3px 0 #fff}
+.cover .kick{font-family:'Jua';font-size:17px}
+.cover .by{font-size:13px;margin-top:10px}
+.cover .cast{display:flex;justify-content:center;gap:6px;margin:14px 0 6px;flex-wrap:wrap}
+.cover .cast svg{width:78px;height:78px;background:#fff;border:3px solid #161616;border-radius:50%}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.num{background:#fff;border:2.5px solid #161616;border-radius:6px;padding:8px 4px}
+.num b{display:block;font-family:'Black Han Sans';font-size:26px;color:var(--red);line-height:1.1}
+.num span{font-size:12px}
+/* panels */
+.g4{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.panel{border:2.5px solid var(--ink);background:var(--paper);border-radius:4px;padding:10px;position:relative;min-width:0}
+.panel.wide{grid-column:1/-1}
+.panel .cap{font-family:'Black Han Sans';font-size:13px;background:var(--yellow);color:#161616;display:inline-block;padding:1px 8px;border:2px solid var(--ink);margin-bottom:6px}
+.panel .fx{position:absolute;right:8px;top:4px;font-family:'Black Han Sans';color:var(--red);font-size:20px;transform:rotate(8deg)}
+/* scene */
+.scene{display:flex;align-items:flex-start;gap:8px;margin:8px 0}
+.scene.rev{flex-direction:row-reverse}
+.who{flex:0 0 64px;text-align:center;font-size:11px;color:var(--sub)}
+.who svg{width:62px;height:62px;border:2.5px solid var(--ink);border-radius:50%;background:#fff;display:block;margin:0 auto 2px}
+.bub{position:relative;background:#fff;color:#161616;border:2.5px solid var(--ink);border-radius:16px;padding:8px 12px;font-family:'Jua';font-size:15px;line-height:1.45;flex:1;min-width:0}
+.bub:before{content:"";position:absolute;left:-11px;top:16px;border:9px solid transparent;border-right-color:var(--ink);border-left:0}
+.bub:after{content:"";position:absolute;left:-7px;top:18px;border:7px solid transparent;border-right-color:#fff;border-left:0}
+.rev .bub:before{left:auto;right:-11px;border-right-color:transparent;border-left:9px solid var(--ink);border-right:0}
+.rev .bub:after{left:auto;right:-7px;border-right-color:transparent;border-left:7px solid #fff;border-right:0}
+.bub.shout{border-radius:4px;background:var(--yellow);font-size:16px}
+.bub.shout:after{border-right-color:var(--yellow)}
+.rev .bub.shout:after{border-left-color:var(--yellow)}
+.bub small{display:block;color:#666;font-family:'Gowun Dodum';font-size:11px;margin-top:2px}
+/* boxes */
+.box{border:2.5px dashed var(--ink);border-radius:6px;padding:10px 14px;margin:12px 0;background:var(--paper)}
+.box h3{font-size:17px;margin-bottom:6px}
+.box ul,.box ol{margin:0;padding-left:20px}
+.box li{margin:3px 0}
+.box.red{border-style:solid;border-color:var(--red)}
+.box.blue{border-style:solid;border-color:var(--blue)}
+.law{background:var(--soft);border-left:6px solid var(--blue);padding:10px 14px;font-size:14px;margin:12px 0;border-radius:0 6px 6px 0}
+.law b{color:var(--blue)}
+mark{background:var(--yellow);color:#161616;padding:0 3px}
+/* bars */
+.bars{margin:6px 0 4px}
+.bar{display:grid;grid-template-columns:110px 1fr 54px;align-items:center;gap:8px;margin:7px 0;font-size:14px}
+.bar .tr{height:20px;border:2px solid var(--ink);border-radius:3px;background:var(--paper)}
+.bar .fl{height:100%;background:var(--blue)}
+.bar .fl.r{background:var(--red)}.bar .fl.y{background:var(--yellow)}.bar .fl.g{background:var(--green)}
+.bar b{font-family:'Black Han Sans';font-weight:400;text-align:right}
+/* timeline */
+.tl{list-style:none;margin:6px 0;padding:0 0 0 22px;border-left:4px solid var(--ink)}
+.tl li{position:relative;margin:0 0 12px;padding-left:6px}
+.tl li:before{content:"";position:absolute;left:-33px;top:4px;width:16px;height:16px;background:var(--yellow);border:3px solid var(--ink);border-radius:50%}
+.tl li.now:before{background:var(--red)}
+.tl .d{font-family:'Black Han Sans';font-size:14px;color:var(--red)}
+/* flow */
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;align-items:stretch;margin:8px 0}
+.flow div{border:2.5px solid var(--ink);border-radius:5px;padding:8px 4px;text-align:center;font-size:13px;background:var(--paper);font-family:'Jua';display:flex;align-items:center;justify-content:center;min-width:0}
+.flow div.k{background:var(--yellow);color:#161616}
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.chip{border:2px solid var(--ink);border-radius:20px;padding:2px 10px;font-size:13px;background:var(--paper)}
+.chip.hl{background:var(--red);color:#fff;border-color:var(--red)}
+/* number cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.card{border:2.5px solid var(--ink);border-radius:6px;padding:10px;text-align:center;background:var(--paper)}
+.card b{font-family:'Black Han Sans';font-size:30px;font-weight:400;display:block;color:var(--blue);line-height:1.1}
+.card span{font-size:13px}
+/* checklist */
+.chk{list-style:none;padding:0;margin:6px 0}
+.chk li{border:2px solid var(--ink);border-radius:5px;padding:8px 10px 8px 40px;margin:7px 0;position:relative;background:var(--paper);font-size:14px}
+.chk li:before{content:"";position:absolute;left:10px;top:9px;width:18px;height:18px;border:2.5px solid var(--ink);border-radius:3px;background:#fff}
+.chk li b{color:var(--red)}
+.tagline{font-size:12px;color:var(--sub)}
+.quote{text-align:center;font-family:'Jua';font-size:19px;margin:14px 0 4px}
+.src{font-size:12px;color:var(--sub);border-top:2px dashed var(--ink);margin-top:14px;padding-top:8px}
+.theme-btn{position:fixed;right:12px;bottom:12px;z-index:9;border:2.5px solid var(--ink);background:var(--paper2);color:var(--ink);font-family:'Jua';border-radius:20px;padding:4px 12px;cursor:pointer}
+@media (max-width:540px){
+  .g4{grid-template-columns:1fr}
+  .cover h1{font-size:30px}
+  .ep h2{font-size:22px}
+  .nums,.cards{grid-template-columns:repeat(2,1fr)}
+  .flow{grid-template-columns:1fr}
+  .flow div{padding:6px}
+  .bar{grid-template-columns:86px 1fr 46px;font-size:13px}
+  .cover .cast svg{width:60px;height:60px}
+}
+@media (min-width:1024px){.wrap{max-width:960px}body{font-size:17px}.bub{font-size:17px}.ep h2{font-size:30px}.who{flex-basis:80px}.who svg{width:76px;height:76px}.cover h1{font-size:46px}.num b{font-size:30px}}
+@media (min-width:1440px){.wrap{max-width:1280px}body{font-size:18px}.bub{font-size:18.5px;padding:10px 16px}.ep{padding:26px 28px 28px}.ep h2{font-size:34px}.ep .subt{font-size:16px}.who{flex-basis:92px;font-size:12.5px}.who svg{width:88px;height:88px}.cover h1{font-size:54px}.cover .kick{font-size:20px}.cover .cast svg{width:96px;height:96px}.num b{font-size:34px}.num span{font-size:14px}.g4{gap:16px}.panel{padding:14px}.panel .cap{font-size:15px}.box h3{font-size:20px}.law,.src{font-size:15px}.bar{grid-template-columns:200px 1fr 70px;font-size:16px}.bar .tr{height:24px}.card b{font-size:36px}.card span{font-size:15px}.chk li{font-size:16px}.zt-nav{font-size:16px}}
+@media print{.theme-btn{display:none}}
+</style>
+<style>
+.zt-nav{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:10px;justify-content:space-between;background:var(--paper2);border-bottom:3px solid var(--ink);padding:8px 14px;font-family:'Jua',sans-serif;font-size:14px}
+.zt-nav a{color:var(--ink);text-decoration:none;border:2px solid var(--ink);border-radius:16px;padding:1px 10px;background:var(--paper)}
+.zt-nav span{flex:1;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.zt-end{padding-top:0}
+.zt-cta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;background:#ffd23f;color:#161616;border:3px solid var(--ink);border-radius:6px;padding:14px 16px;box-shadow:5px 5px 0 var(--shadow);margin-right:6px}
+.zt-cta b{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:19px}
+.zt-cta span{font-size:13.5px}
+.zt-btn{background:#161616;color:#fff;text-decoration:none;font-family:'Jua',sans-serif;border-radius:5px;padding:7px 14px}
+.zt-links{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 50px}
+.zt-links a{color:var(--ink);text-decoration:none;border:2px solid var(--ink);border-radius:5px;padding:4px 12px;font-family:'Jua',sans-serif;background:var(--paper2)}
+.zt-like{display:flex;align-items:center;gap:12px;margin:18px 0 0;flex-wrap:wrap}
+.zt-like button{border:2.5px solid var(--ink);background:var(--paper2);color:var(--ink);border-radius:22px;padding:6px 16px;font-family:'Jua',sans-serif;font-size:16px;cursor:pointer}
+.zt-like button.on{background:#ffd23f;color:#161616}
+.zt-like span{font-size:13px;color:var(--sub)}
+@media print{.zt-nav,.zt-end{display:none}}
+</style>
+</head>
+<body>
+<div style="background:#161616;color:#fffdf7;font-size:12.5px;text-align:center;padding:6px 10px;font-family:'Gowun Dodum',sans-serif">제공 <a href="https://www.zenielinnovation.co.kr" target="_blank" rel="noopener" style="color:#ffd23f;font-weight:700;text-decoration:none">㈜제니엘이노베이션</a></div>
+<nav class="zt-nav"><a href="../index.html" data-zt-back>← 제니툰</a><span>🏢 특별편 · 014화</span><a href="014.pdf" class="zt-pdf">PDF</a></nav>
+<button class="theme-btn" onclick="toggleTheme()">☀︎ / ☾</button>
+<div class="wrap" id="app"></div>
+<div class="wrap zt-end"><div class="zt-cta"><div><b>매장·물류·고객센터 운영 인력, 함께 설계합니다</b><br><span>유통판매·물류센터·컨택센터 아웃소싱 · 신규 출점 대량 채용 · 다국어 인력 상담</span></div>
+<a class="zt-btn" href="../index.html?consult=1&from=014%ED%99%94">💬 상담 문의하기</a></div>
+<div class="zt-like" id="ztLike" hidden><button type="button" onclick="ztLike()">👍 도움됐어요 <b id="ztLikeN"></b></button><span id="ztViews"></span></div>
+<div class="zt-links"><a href="../index.html">🏠 제니툰 목록</a><a href="014.pdf">📄 PDF 저장</a><a href="../index.html#biz">🏢 기업뉴스툰 더보기</a></div></div>
+
+
+<script>
+/* ---------- 오리지널 캐릭터 SVG (가상 인물) ---------- */
+const CH={
+  nomusa:{name:'도 노무사',skin:'#efc8a4',hair:'#9a9a9a',style:'side',acc:'glasses',shirt:'#4b5563'},
+  hr:{name:'한결 대리',skin:'#f6d3b3',hair:'#40261a',style:'long',acc:'none',shirt:'#8b5cf6'},
+  banjang:{name:'현장 반장',skin:'#e9bf98',hair:'#2a2a2a',style:'short',acc:'badge',shirt:'#f08c00'},
+  bot:{name:'안내로봇 체키',bot:true}
+};
+function face(k,mood='calm'){
+  const c=CH[k];
+  if(c.bot){
+    const eye= mood==='shock'?'<circle cx="30" cy="40" r="6" fill="#161616"/><circle cx="50" cy="40" r="6" fill="#161616"/>'
+      :'<rect x="24" y="36" width="12" height="8" rx="3" fill="#161616"/><rect x="44" y="36" width="12" height="8" rx="3" fill="#161616"/>';
+    const m= mood==='shock'?'<ellipse cx="40" cy="56" rx="5" ry="6" fill="#161616"/>':'<path d="M30 54 Q40 62 50 54" stroke="#161616" stroke-width="3" fill="none"/>';
+    return `<svg viewBox="0 0 80 80"><line x1="40" y1="8" x2="40" y2="18" stroke="#161616" stroke-width="3"/><circle cx="40" cy="7" r="4" fill="#e2403a" stroke="#161616" stroke-width="2"/><rect x="14" y="18" width="52" height="48" rx="12" fill="#ffd23f" stroke="#161616" stroke-width="3"/><rect x="20" y="28" width="40" height="34" rx="8" fill="#fff" stroke="#161616" stroke-width="2"/>${eye}${m}<rect x="8" y="34" width="6" height="14" rx="2" fill="#2f6fd6" stroke="#161616" stroke-width="2"/><rect x="66" y="34" width="6" height="14" rx="2" fill="#2f6fd6" stroke="#161616" stroke-width="2"/></svg>`;
+  }
+  const S='#161616';
+  let hair='';
+  switch(c.style){
+    case 'short': hair=`<path d="M18 38 Q18 14 40 14 Q62 14 62 38 Q58 24 40 24 Q26 24 18 38Z" fill="${c.hair}"/>`;break;
+    case 'side': hair=`<path d="M18 38 Q16 16 40 15 Q64 16 62 36 Q52 22 30 26 Q22 28 18 38Z" fill="${c.hair}"/>`;break;
+    case 'bob': hair=`<path d="M15 50 Q12 14 40 13 Q68 14 65 50 L58 50 Q60 26 40 24 Q20 26 22 50Z" fill="${c.hair}"/>`;break;
+    case 'bald': hair=`<path d="M19 36 Q20 30 24 30 L24 40 Z M61 36 Q60 30 56 30 L56 40Z" fill="${c.hair}"/>`;break;
+    case 'long': hair=`<path d="M14 66 Q10 14 40 13 Q70 14 66 66 L58 66 Q62 28 40 24 Q18 28 22 66Z" fill="${c.hair}"/>`;break;
+    case 'neat': hair=`<path d="M18 36 Q18 14 40 14 Q62 14 62 36 Q60 22 46 21 L44 26 Q30 22 18 36Z" fill="${c.hair}"/>`;break;
+  }
+  let brows='',eyes='',mouth='',extra='';
+  const ey=40;
+  if(mood==='angry'){brows=`<path d="M26 31 L36 35 M54 31 L44 35" stroke="${S}" stroke-width="3"/>`;}
+  else if(mood==='sad'){brows=`<path d="M26 34 L35 31 M54 34 L45 31" stroke="${S}" stroke-width="2.5"/>`;}
+  else if(mood==='shock'){brows=`<path d="M26 29 Q31 26 36 29 M44 29 Q49 26 54 29" stroke="${S}" stroke-width="2.5" fill="none"/>`;}
+  else {brows=`<path d="M27 32 Q31 30 35 32 M45 32 Q49 30 53 32" stroke="${S}" stroke-width="2.5" fill="none"/>`;}
+  if(mood==='shock'){eyes=`<circle cx="31" cy="${ey}" r="4.5" fill="#fff" stroke="${S}" stroke-width="2"/><circle cx="31" cy="${ey}" r="2" fill="${S}"/><circle cx="49" cy="${ey}" r="4.5" fill="#fff" stroke="${S}" stroke-width="2"/><circle cx="49" cy="${ey}" r="2" fill="${S}"/>`;mouth=`<ellipse cx="40" cy="56" rx="5" ry="6" fill="${S}"/>`;}
+  else if(mood==='happy'){eyes=`<path d="M27 41 Q31 36 35 41 M45 41 Q49 36 53 41" stroke="${S}" stroke-width="3" fill="none"/>`;mouth=`<path d="M30 52 Q40 63 50 52 Z" fill="${S}"/>`;}
+  else {eyes=`<circle cx="31" cy="${ey}" r="3" fill="${S}"/><circle cx="49" cy="${ey}" r="3" fill="${S}"/>`;
+    mouth= mood==='sad'?`<path d="M32 57 Q40 51 48 57" stroke="${S}" stroke-width="3" fill="none"/>`: mood==='angry'?`<path d="M32 56 L48 56" stroke="${S}" stroke-width="3"/>`:`<path d="M32 53 Q40 60 48 53" stroke="${S}" stroke-width="3" fill="none"/>`;}
+  if(c.acc==='glasses') extra+=`<circle cx="31" cy="${ey}" r="7" fill="none" stroke="${S}" stroke-width="2.2"/><circle cx="49" cy="${ey}" r="7" fill="none" stroke="${S}" stroke-width="2.2"/><path d="M38 ${ey} L42 ${ey}" stroke="${S}" stroke-width="2"/><path d="M33 49 Q40 46 47 49" stroke="#9a9a9a" stroke-width="3" fill="none"/>`;
+  let body=`<path d="M10 80 Q12 64 40 64 Q68 64 70 80Z" fill="${c.shirt}" stroke="${S}" stroke-width="2.5"/>`;
+  if(c.acc==='badge') body+=`<path d="M52 69 l5 0 l2 4 l-4.5 3 l-4.5 -3Z" fill="#ffd23f" stroke="${S}" stroke-width="1.5"/>`;
+  if(c.acc==='lanyard') body+=`<path d="M30 64 L40 76 L50 64" stroke="#ffd23f" stroke-width="3" fill="none"/><rect x="36" y="74" width="8" height="6" fill="#fff" stroke="${S}" stroke-width="1.5"/>`;
+  if(c.acc==='apron') body+=`<rect x="28" y="68" width="24" height="12" fill="#fff" stroke="${S}" stroke-width="2"/>`;
+  if(c.acc==='tie') body+=`<path d="M37 64 L43 64 L41.5 69 L44 78 L40 80 L36 78 L38.5 69Z" fill="#e2403a" stroke="${S}" stroke-width="1.5"/>`;
+  return `<svg viewBox="0 0 80 80">${body}<ellipse cx="40" cy="42" rx="22" ry="24" fill="${c.skin}" stroke="${S}" stroke-width="2.5"/>${hair}<circle cx="24" cy="50" r="3.5" fill="#f59e9e" opacity=".6"/><circle cx="56" cy="50" r="3.5" fill="#f59e9e" opacity=".6"/>${brows}${eyes}${mouth}${extra}</svg>`;
+}
+/* ---------- 컴포넌트 ---------- */
+function S(k,mood,name,text,o={}){
+  return `<div class="scene ${o.rev?'rev':''}"><div class="who">${face(k,mood)}${name||CH[k].name}</div><div class="bub ${o.shout?'shout':''}">${text}${o.note?`<small>${o.note}</small>`:''}</div></div>`;
+}
+function P(cap,body,o={}){return `<div class="panel ${o.wide?'wide':''}">${cap?`<div class="cap">${cap}</div>`:''}${o.fx?`<div class="fx">${o.fx}</div>`:''}${body}</div>`;}
+function WHO(list){return `<div class="chips">${list.map(([n,h])=>`<span class="chip ${h?'hl':''}">${n}</span>`).join('')}</div>`;}
+function bars(rows,max){return `<div class="bars">${rows.map(([l,v,u,c])=>`<div class="bar"><span>${l}</span><div class="tr"><div class="fl ${c||''}" style="width:${Math.max(4,v/max*100)}%"></div></div><b>${v}${u}</b></div>`).join('')}</div>`;}
+function EP(tag,title,sub,body,cls=''){return `<section class="ep ${cls}"><span class="eptag">${tag}</span><h2>${title}</h2>${sub?`<p class="subt">${sub}</p>`:''}${body}</section>`;}
+
+
+/* ---------- 본문 ---------- */
+let H='';
+const SRC_URL='https://youtu.be/XA7GzN7RnYo';
+const BOOK1='https://product.kyobobook.co.kr/detail/S000221698752';
+const BOOK2='https://www.yes24.com/product/goods/198929320';
+const N1='https://www.sidae.com/article/2026033114330664356';
+const N2='https://byline.network/2026/09/07_musinsa-2/';
+const N3='https://sateconomy.co.kr/news/view/1065572331864073';
+const N4='https://biz.sbs.co.kr/amp/article/20000277288';
+const N5='https://www.fnnews.com/news/202601132053378335';
+const N6='https://byline.network/2026/04/17_musinsa-2/';
+const N7='https://biz.sbs.co.kr/amp/article/20000269951';
+
+/* 표지 */
+H+=`<section class="ep cover"><div class="burst"></div>
+<div class="kick">제니툰 특별편 · 기업뉴스툰</div>
+<h1>몸값 10조?<br>무신사의 정체</h1>
+<div class="kick">신발 사진 동호회에서 상장 도전까지 — 패션·테크·플랫폼, 그리고 부동산</div>
+<div class="cast">${face('bot','shock')}${face('hr','shock')}${face('nomusa','calm')}${face('banjang','calm')}</div>
+<div class="nums">
+ <div class="num"><b>1.47조</b><span>2025년 연결 매출(공시 보도)</span></div>
+ <div class="num"><b>10조</b><span>상장 시 거론된 몸값(전언)</span></div>
+ <div class="num"><b>3.3억</b><span>성수역 역명병기 낙찰가</span></div>
+ <div class="num"><b>700명</b><span>직원 1,900명 중 IT 인력(전언)</span></div>
+ <div class="num"><b>약 15%</b><span>입점 브랜드 실질 수수료(전언)</span></div>
+ <div class="num"><b>900억</b><span>성수 부지 개발·매각 차익(보도)</span></div>
+</div>
+<div class="by">작성 · ㈜제니엘이노베이션 &nbsp;|&nbsp; 2026.11.01</div>
+</section>`;
+
+/* 원작 안내 */
+H+=`<div class="box blue" style="margin:0 6px 30px 0"><h3>🎬 원작 영상 안내</h3>
+<p style="margin:0">이 웹툰은 유튜브 <b>‘삼프로TV 3PROTV’</b> 채널의 「“몸값 10조…?” 무신사의 정체가 뭐야? [주말인터뷰]」(2026.10.25 게시, 34분 2초) 기업 취재 기자 인터뷰를 영상 흐름 그대로 요약·재구성했습니다. 출연자 발언은 직책만 표기하고 <b>(요지)</b>로 옮겼습니다.</p>
+<p style="margin:8px 0 0"><a href="${SRC_URL}" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">▶ 원작 영상 보러 가기</a> &nbsp;·&nbsp; <a href="${BOOK1}" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">📖 관련 도서 《진격의 무신사》(교보문고)</a> &nbsp;·&nbsp; <a href="${BOOK2}" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">YES24</a></p></div>`;
+
+/* EP.0 */
+H+=EP('EP.0','기자는 왜 회사 하나로 책을 썼을까','00:00~02:31 취재 기준 ① 사람',
+`${S('bot','calm','','안녕하세요, 안내로봇 <b>체키</b>예요! 오늘은 경제 유튜브에 나온 <mark>기업 취재 기자 인터뷰</mark>로 <b>무신사</b>를 해부해 볼게요.')}
+${S('hr','calm','','요즘 젊은 남성들은 옷을 거의 다 무신사에서 산다면서요? 그런데 회사 가치가 <b>10조</b>까지 거론된다니, 진짜예요?',{rev:true})}
+${S('nomusa','calm','','출연 기자는 대기업을 주로 취재해 왔대요. 처음엔 “무신사가 <b>책 한 권 거리가 될까?</b>” 싶었는데, 기사 소재를 고르는 기준에 하나씩 맞더래요(요지).')}
+<div class="g4">
+${P('기준 ① 사람의 이야기',S('nomusa','calm','','창업자가 <b>1983년생</b>이에요. 아주 젊을 때 <b>신발 사진을 모아 둔 동호회</b>를 만들어 지금까지 키웠죠.'),{fx:'스토리'})}
+${P('지금의 덩치',S('banjang','shock','','연 매출이 <b>약 1조 5천억</b>, 3년쯤 전부터 <b>1조를 넘었고</b>, 대형 패션 기업들을 위협하고 백화점이 오히려 <b>입점을 바랄 정도</b>래요(요지).',{rev:true}),{fx:'1조+'})}
+</div>
+<p class="tagline">확인 · 무신사 2025년 연결 매출 <b>1조 4,679억 원</b>(+18.1%), 영업이익 1,405억 원(+36.7%), 2022년 매출 7,084억 원 — 2026.3.31 실적 보도.</p>`);
+
+/* EP.1 */
+H+=EP('EP.1','“이번 역은 성수, 무신사역입니다”','02:31~06:34 취재 기준 ② 현장',
+`${S('nomusa','calm','','두 번째 기준은 <b>현장</b>이에요. 눈으로 보고 와닿는 게 있어야 하는데, 그게 <b>성수동</b>이었대요.')}
+${S('hr','shock','','지하철 안내 방송에서 <b>“성수, 무신사역”</b>이라고 나온다고요?',{rev:true})}
+<div class="g4">
+${P('역 이름을 산 회사',S('banjang','calm','','공공성이 있는 지하철역에 <b>사기업 이름</b>이라니 신기하죠. 마을버스 정류장이나 대학교 이름은 봤어도요.'),{fx:'역명!'})}
+${P('간판만 10여 개',S('nomusa','calm','','역에서 내리니 <b>외국인 관광객</b>이 정말 많고, 걷는 길에 무신사 간판을 <b>열 개 넘게</b> 봤대요. “온라인 쇼핑몰인 줄만 알았는데” 싶었다고요(요지).',{rev:true}),{fx:'성수'})}
+</div>
+<div class="law"><b>확인</b> · 무신사는 서울교통공사 공개 입찰에서 2호선 성수역 역명병기를 <b>3억 2,929만 원</b>에 낙찰받아 <b>2025.12.10</b>부터 표기 중입니다(계약 3년, 1회 3년 연장 가능 — 보도). 영상은 ‘약 3억 원’으로 언급.</div>
+${S('bot','shock','','외국인 손님을 따라 매장에 들어가 봤더니, 옷·신발은 물론 <b>화장품, 헤어드라이어, 과자</b>까지 팔더래요!')}
+<div class="g4">
+${P('한 줄 비유',S('hr','happy','','기자의 표현으로는 <b>‘유니클로 + 무인양품 + 올리브영’</b>을 섞은 느낌. 1층부터 4층까지 돌면 <b>발끝부터 머리까지</b> 꾸밀 수 있게 해 놨대요.'),{fx:'믹스'})}
+${P('가격은 ‘중간’',S('nomusa','calm','','아주 싸지도, 비싸지도 않은 <b>중간 가격대</b>. “저가 아니면 고가로 양극화된다”는 말이 많던 때라 더 독특했대요. 뷰티는 1위 경쟁사보다 <b>조금 더 싸게</b>, 할인·프로모션으로 손님을 데려오는 전략이고요(요지).',{rev:true}),{fx:'중가'})}
+</div>`);
+
+/* EP.2 */
+H+=EP('EP.2','무지하게 신발 사진이 많은 곳','06:34~09:40 창업 스토리',
+`${S('hr','calm','','무신사가 <b>“무진장 신발 사진이 많은 곳”</b>의 줄임말이라는 얘기, 들어 봤어요.')}
+${S('nomusa','calm','','그게 널리 알려진 풀이인데, 창업 당시엔 <b>“무지하게 신발 사진이 많이 저장된 곳”</b>이었다고 하더래요(요지). 처음엔 <mark>쇼핑몰이 아니라 동호회</mark>였어요.',{rev:true})}
+<ul class="tl">
+<li><span class="d">2000년대 초</span><br>신발을 좋아하는 사람들이 모여 품평하는 <b>온라인 커뮤니티</b>. 영상에선 2003년경 사이트 화면과 회원 정기모임 배너를 보여 줬어요(맨 오른쪽 모자 쓴 사람이 창업자라는 설명).</li>
+<li><span class="d">대학생 시절</span><br>사이트 신발 사진 자리를 <b>월 10만 원씩</b> 받고 소박하게 팔기 시작 — 월 매출이 <b>800만 원</b>쯤이었대요(전언).</li>
+<li><span class="d">2009년경</span><br>“이걸 진짜 사업으로 하자” — 사이트에서 <b>패션 상품 판매</b> 시작.</li>
+<li class="now"><span class="d">2013년경</span><br>입점 브랜드가 꽤 늘고 <b>‘무신사 스타일’</b>이라는 말이 나올 만큼 인지도 상승. 카테고리별로 들어가는 구조는 지금도 기본 틀이 같대요.</li>
+</ul>
+${S('banjang','calm','','신발을 팔다 보면 어울리는 바지도 같이 찍게 되고… “이것도 팔아 볼까?”가 이어진 거군요!')}
+${S('nomusa','calm','','창업자는 <b>“밥은 하루 세 끼면 끝이지만, 옷과 신발은 여유만 되면 여러 개 산다”</b> — 그래서 팔 수 있는 게 <mark>무한하다</mark>고 봤대요(요지).',{rev:true})}`);
+
+/* EP.3 */
+H+=EP('EP.3','수만 개 쇼핑몰 중 왜 살아남았나','09:40~13:04 성장 비결',
+`${S('hr','calm','','그 시절 온라인 쇼핑몰은 수만 개였잖아요. 검색만 해도 수십 곳이 나오던 때였는데요.')}
+${S('nomusa','calm','','기자는 “엄청 특별한 걸 했다기보다 <b>기회를 잘 잡았다</b>”고 봐요(요지). 핵심은 <mark>무신사에서만 살 수 있는 브랜드를 키운 것</mark>.',{rev:true})}
+<div class="flow"><div>동대문 보세<br>(싸지만 금방 해짐)</div><div class="k">빈 틈<br>인디 브랜드 부재</div><div>대기업 브랜드<br>(비싸고 무난)</div><div class="k">일본 하라주쿠<br>인디 브랜드 영감</div><div>입점·지원<br>플랫폼 전략</div></div>
+<div class="g4">
+${P('양분된 시장의 틈',S('banjang','calm','','2000년대엔 <b>동대문 보세 옷</b>과 <b>대기업 브랜드</b>로 시장이 갈렸고, 그 사이 <b>인디 브랜드</b>가 거의 없었대요.'),{fx:'틈새'})}
+${P('일본에서 본 미래',S('nomusa','calm','','창업자가 2000년대 중후반 <b>일본을 자주 오가며</b> 인디 브랜드가 많은 걸 보고 “우리도 곧 된다”고 판단했대요. 그래서 브랜드를 <b>입점시키고, 부족하면 지원</b>했죠.',{rev:true}),{fx:'영감'})}
+${P('품질 관리',S('hr','calm','','떼다 파는 쇼핑몰은 두어 번 빨면 버릴 옷도 많았지만, 무신사 입점 브랜드는 <b>값은 좀 높아도 그 정도는 아니었다</b>는 평가예요.'),{fx:'QC'})}
+${P('잡지 같은 쇼핑몰',S('bot','calm','','사진·가격 중심이 아니라 <b>“어떻게 입어야 잘 입는지”</b> 알려 주는 화보·콘텐츠! <b>전속 사진가</b>가 거리의 멋쟁이를 전신으로 찍어 올리는 기능은 <mark>지금도 유지</mark>된대요.',{rev:true}),{fx:'스냅'})}
+</div>`);
+
+/* EP.4 */
+H+=EP('EP.4','패션 회사? 테크 회사? 플랫폼?','13:04~16:35 정체와 락인',
+`${S('hr','calm','','그럼 무신사를 한마디로 뭐라고 불러야 해요?')}
+${S('nomusa','calm','','기자의 답은 <mark>“셋 다”</mark>예요. 본업은 패션, 온라인에서 팔았으니 테크, 브랜드를 모아 파니 플랫폼(요지).',{rev:true})}
+<div class="cards">
+<div class="card"><b>1,900명</b><span>무신사 직원 수<br>(영상 발언, 전언)</span></div>
+<div class="card"><b>약 700명</b><span>그중 IT 인력<br>(영상 발언, 전언)</span></div>
+<div class="card"><b>자체 POS</b><span>매장 결제기를<br>직접 개발</span></div>
+</div>
+<div class="g4">
+${P('회원부터 찍는 계산대',S('banjang','shock','','보통 매장은 <b>상품부터</b> 찍잖아요. 무신사는 <b>회원 조회가 먼저</b>래요. 사람마다 쿠폰이 달라서, 그다음 상품을 찍으면 <b>그 사람에게 맞는 최대 할인</b>이 자동 적용!'),{fx:'POS'})}
+${P('데이터가 쌓이면',S('nomusa','calm','','구매 이력이 쌓일수록 <b>취향 추천 + 맞춤 쿠폰</b>이 가능해지죠. 진행자는 “좋게 말하면 선순환, 나쁘게 말하면 빠져나갈 수 없는 구조”라고 농담했어요(요지).',{rev:true}),{fx:'락인'})}
+</div>
+${S('bot','shock','','출연자의 말로는 <b>남성 의류 온라인 쇼핑몰은 무신사 말고 사실상 남은 곳이 없다</b>고 해요(전언). 여성복 쪽은 몇 곳 경쟁이 있고요.')}
+${S('hr','calm','','그러면 남성복 중심 브랜드는 <b>무신사에 들어갈 수밖에</b> 없겠네요. 따로 쇼핑몰을 만들어도 상대가 안 될 테니까요.',{rev:true})}`);
+
+/* EP.5 */
+H+=EP('EP.5','입점 브랜드와의 관계 — 수수료의 진실','16:35~18:27 MD·독점·쿠폰',
+`${S('nomusa','calm','','무신사는 <b>마케팅을 세게</b> 해요. 기자가 들은 사례가 있어요 — 연 매출 <b>100억 원 안팎</b>의 작은 브랜드 이야기예요(전언).')}
+<div class="flow"><div>입점</div><div class="k">MD(상품기획자)<br>연락 10여 차례</div><div>“메인 배너에<br>걸어 줄게”</div><div class="k">대신 이 상품은<br>우리만 독점 공급</div><div>잘 팔리면<br>더 밀어 줌</div></div>
+${S('hr','shock','','수수료는 얼마나 떼요?',{rev:true})}
+${P('표면 수수료 vs 실질 수수료(영상 발언, 전언)',bars([['표면 수수료',28,'%','r'],['실질 수수료',15,'%','g']],32),{wide:true})}
+<p class="tagline">※ 영상은 표면 수수료를 ‘27~29%’로 언급(막대는 중간값 28% 표시). 10만 원짜리 상품이면 약 3만 원 수준.</p>
+<div class="g4">
+${P('쿠폰은 누가 내나',S('banjang','calm','','대부분 쇼핑몰은 쿠폰 비용을 <b>입점 브랜드가 부담</b>하게 하는데, 무신사는 <b>자기가 부담</b>한대요. 그래서 실질은 <b>15% 정도</b>라고요(전언).'),{fx:'쿠폰'})}
+${P('진행자의 평가',S('nomusa','calm','','입점 업체와 <b>함께 크는 모델</b>일 수 있고, 아직 큰 <b>갑질 논란</b>은 못 들었다 — 소비자 입장에서도 나쁠 게 없어 보인다는 평이었어요(요지).',{rev:true}),{fx:'상생?'})}
+</div>`);
+
+/* EP.6 */
+H+=EP('EP.6','국내는 좁다 — 중국과 일본','18:27~20:47 해외 진출',
+`${S('hr','calm','','국내 시장만으로는 성장이 거의 끝난 것 아닌가요? 해외는요?')}
+${S('nomusa','calm','','<b>올해부터</b> 해외에 매장을 내기 시작했대요. 크게는 아시아권이에요.',{rev:true})}
+<div class="g4">
+${P('🇨🇳 중국 · 속도전',S('banjang','calm','','<b>7개 매장</b>(상하이·선전·항저우 등, 영상 발언). 자체 브랜드 <b>무신사 스탠다드</b> 매장과 여러 브랜드를 모은 <b>무신사 스토어</b>를 <b>같이</b> 낸대요.'),{fx:'×7'})}
+${P('합작으로 뚫은 벽',S('nomusa','calm','','백화점들이 “한국 브랜드가 왜?” 하며 입점을 잘 안 받아 줬대요. 그래서 현지 스포츠 기업 <b>안타스포츠와 합작</b>했더니 일과 <b>행정 절차</b>가 풀렸다고요(요지).',{rev:true}),{fx:'JV'})}
+${P('🇯🇵 일본 · 신중',S('hr','calm','','창업자가 <b>영감을 받은 곳</b>이라 매우 중시한대요. 내년 <b>도쿄·나고야 2곳</b> 얘기가 있지만 <b>확정은 아니래요</b>.'),{fx:'2곳?'})}
+${P('팝업으로 간 보기',S('bot','calm','','한번 크게 실패하면 <b>다시 들어가기 어려운 시장</b>이라, <b>팝업 스토어</b>로 수요를 보고 있대요. 체형에 맞춰 <b>더 작은 사이즈</b>, 가방도 더 예쁘게!',{rev:true}),{fx:'팝업'})}
+</div>
+<p class="tagline">확인 · 무신사는 안타스포츠와 현지 합작법인 ‘무신사 차이나’를 세웠고, 2026년 중국 내 10여 개 신규 출점을 목표로 한다고 보도됨(2026.4). 매장 수 7개는 영상 발언 기준.</p>`);
+
+/* EP.7 */
+H+=EP('EP.7','29cm — 가장 떨리는 거리','20:47~25:00 여성 플랫폼과 인수 전략',
+`${S('nomusa','calm','','여성복은 <b>29CM</b>라는 별도 플랫폼이 맡아요. 무신사가 <b>인수</b>한 회사예요.')}
+${S('hr','happy','','이름 뜻이 <b>남녀가 가까이 있을 때 가장 설레는 거리</b>래요! 그만큼 <mark>감각적으로</mark> 접근하는 플랫폼이라는 거죠.',{rev:true})}
+<div class="g4">
+${P('브랜드를 웹진처럼',S('nomusa','calm','','29CM엔 <b>‘PT’</b>라는 게 있어요. 브랜드 스토리를 누르면 그림이 움직이며 <b>스크롤로 읽는 웹진</b>처럼 펼쳐져요. 영상에선 한 장화·신발 브랜드 사례를 보여 줬어요.'),{fx:'PT'})}
+${P('왜 중요한가',S('banjang','calm','','싸게 사는 건 한계가 있고, 특히 <b>30대 이상 여성</b>은 기능뿐 아니라 “이걸 입으면 내 가치가 올라간다”는 <b>무형의 가치</b>를 중시하니까, 그걸 <b>감각적으로 설명</b>해 줘야 한대요(요지).',{rev:true}),{fx:'가치'})}
+${P('옷만이 아니다',S('hr','calm','','몇 년 전엔 <b>생수 브랜드</b>나 <b>방송사</b>도 29CM에 PT를 의뢰했대요. 여성 고객에게 브랜드 이미지를 세련되게 알리려고요.'),{fx:'광고'})}
+${P('겉은 29CM, 속은 무신사',S('nomusa','calm','','지금도 <b>별도 사이트</b>라 자회사인 줄 모르는 사람도 많대요. 하지만 <b>배송·상품 분류·기술</b>은 무신사 것을 이식해 <b>비용을 줄였죠</b>.',{rev:true}),{fx:'이식'})}
+</div>
+${S('bot','shock','','거래액도 인수 전 <b>2천억 원 미만</b>에서 지금 <b>1조 5천억~2조 원대</b>로 뛰었다는 게 영상 발언이에요(전언). 이렇게 <b>사들여서 무신사화</b>하는 게 창업자의 강점이라는 평가예요(요지).')}
+<p class="tagline">확인 · 29CM는 2021년 무신사에 인수됐고, 2025.10.29 연간 거래액 1조 원을 2년 연속 돌파, 인수 당시 대비 3배 이상 성장했다고 보도됨.</p>`);
+
+/* EP.8 */
+H+=EP('EP.8','상장, 그리고 ‘10조’라는 숫자','25:00~26:52 IPO 일정과 기업가치',
+`${S('hr','calm','','결국 상장(IPO·기업공개)을 한다는 거죠? 언제예요?')}
+<ul class="tl">
+<li><span class="d">2019년</span><br>첫 외부 투자 유치 — 글로벌 벤처캐피털 <b>세쿼이아캐피털</b>. 이때 이미 <b>기업가치 약 2조 원</b>, 지분 약 10%(영상 발언, 전언)</li>
+<li><span class="d">이후</span><br>추가 투자 라운드에 세쿼이아·<b>IMM</b> 등 참여(영상 발언)</li>
+<li><span class="d">2025년 12월</span><br>주관사들이 경영진 앞 발표 — 이때 <b>‘10조 원’</b>이 거론됐다고(전언)</li>
+<li class="now"><span class="d">2026.9.7</span><br>한국거래소 <b>코스피 상장 예비심사 청구</b> → 승인되면 <b>2027년 상반기 상장</b> 예상</li>
+</ul>
+<div class="g4">
+${P('10조 가능할까?',S('nomusa','calm','','기자도 “10조가 된다고 <b>확신할 순 없다</b>”고 했어요. 다만 지금까지 밟아 온 과정을 보면 <b>점점 성장하고 있다</b>는 건 인정한다는 거죠(요지).'),{fx:'?'})}
+${P('시장의 눈높이',S('banjang','shock','','보도로는 회사 희망이 <b>최대 10조</b>, 시장에선 <b>8조 원 안팎</b>을 관측해요. 최근 <b>세무조사</b>도 심사 변수로 거론되고요.',{rev:true}),{fx:'8~10조'})}
+</div>
+<p class="tagline">※ 기업가치 수치는 보도·발언에 나온 기대치이며 예측이 아닙니다. 특정 기업 평가나 투자 권유가 아닙니다.</p>`);
+
+/* EP.9 */
+H+=EP('EP.9','“다 먹고 싶어 한다”','26:52~29:48 창업자의 꿈',
+`${S('hr','calm','','창업자는 어떤 회사를 만들고 싶대요?')}
+${S('nomusa','calm','','무신사 사람들에게 전해 들은 얘기래요. <b>2007년</b>, 동호회 시절 무신사가 한국에 막 들어온 <b>유니클로의 블로그 운영</b>을 대행했대요. 그때 “나도 해 볼 수 있겠다”는 꿈을 키웠다고요(전언).',{rev:true})}
+<div class="g4">
+${P('시부야의 다짐',S('banjang','calm','','최근 경영진과 <b>도쿄 시부야</b>에 갔는데, 10여 층짜리 대형 매장에 옷 말고도 온갖 물건이 있더래요. 그걸 올려다보며 “여기에 <b>무신사 스탠다드, 가구, 과자</b>도 넣어 보고 싶다”고 했대요(전언).'),{fx:'꿈'})}
+${P('전직 임원의 한마디',S('nomusa','shock','','한 전직 임원은 창업자를 <b>“다 먹고 싶어 하는 사람”</b>이라고 표현했대요. 패션을 넘어 <b>식료품, 집 안의 모든 것, 가구</b>까지(요지).',{rev:true}),{fx:'확장'})}
+</div>
+${S('bot','calm','','진행자의 생각(요지): 이케아도 가구로 시작해 생활용품·의류를 팔고, 대형 쇼핑몰과 생활용품점도 점점 넓혀 왔죠. <mark>무엇으로 시작했느냐보다 지금 거기서 무엇을 얼마나 좋게 살 수 있느냐</mark>가 핵심이고, 치열한 글로벌 경쟁에서 살아남는 건 <b>배를 끄는 선장의 몫</b>이라고요.')}`);
+
+/* EP.10 */
+H+=EP('EP.10','옷 파는 회사의 부동산 이야기','29:48~33:52 부동산 투자와 엇갈린 시선',
+`${S('hr','calm','','기자님은 무신사의 미래를 <b>밝게</b> 본대요. 그런데 상장에서 중요한 포인트가 하나 더 있다고요?')}
+${S('nomusa','shock','','바로 <mark>부동산 투자</mark>예요. 지난해 말까지 약 <b>1,300억 원</b>을 투자했대요(전언).',{rev:true})}
+${P('성수 부지 한 곳의 계산(보도 확인)',bars([['매입가(2019)',220,'억','y'],['개발 후 매각가',1115,'억','r'],['차익',895,'억','g']],1200),{wide:true})}
+<p class="tagline">※ 영상은 ‘약 200억에 사서 1,000억대에 팔아 900억 차익’으로 언급. 보도 기준 동부자동차서비스 부지 220억 원 매입 → 사옥(무신사 캠퍼스 E1) 개발 후 1,115억 원 매각, 약 900억 원 차익. 막대의 ‘차익’은 작성자 계산.</p>
+<div class="g4">
+${P('따로 꾸린 조직',S('banjang','calm','','최근 <b>부동산 투자 회사 한 곳을 인수</b>했고, 자체 <b>부동산 개발팀</b>도 있대요. 공시상 유형자산이 <b>2020년 약 1천억 → 지금 3,400억</b> 원대(영상 발언, 전언).'),{fx:'개발팀'})}
+${P('왜 부동산을?',S('nomusa','calm','','패션은 <b>유행이 돈다</b>. 지금 20대가 40대가 돼도 무신사를 입는다는 보장이 없고, 강력한 경쟁 브랜드가 들어올 수도 있으니 <b>부동산 가치로 위험을 막는다</b>는 해석이에요(요지).',{rev:true}),{fx:'헤지'})}
+${P('팔고 다시 빌린다',S('hr','calm','','성수역 주변 <b>10여 곳</b>이 거점이고, 대부분 <b>세일앤리스백</b>(건물을 판 뒤 다시 빌려 쓰는 방식)이래요.'),{fx:'S&LB'})}
+${P('상권을 키운 뒤 판다',S('bot','calm','','<b>메가스토어 성수</b>는 역에서 걸어서 10분, 상권이 생기기 전 약 <b>460억</b>에 산 땅에 크게 지었대요. 주변에 해외 브랜드 매장이 들어오며 상권이 커지면 <b>팔 것</b>이라는 관측(요지).',{rev:true}),{fx:'성수'})}
+</div>
+<div class="box red"><h3>⚖️ 엇갈린 시선 (요지)</h3><ul>
+<li><b>진행자</b> — 재무를 튼튼하게 하는 건 맞지만, 테크·패션·플랫폼을 표방하는 회사에 부동산이 이렇게 많은 건 <b>개인적으로 매력적이지 않다</b>. 대형 IT 기업이 부동산을 대거 산다면 오히려 걱정될 것.</li>
+<li><b>기자</b> — <b>미래 지향적으로 보기 어렵다</b>, 성장에 집중하지 않는다는 인상을 줄 수 있다는 시각도 있을 수 있다.</li>
+<li><b>진행자 정리</b> — 회사 나름의 전략이 숨어 있겠지만, <b>많은 자원이 부동산에 들어간 건 아닌지</b> 생각해 보게 된다.</li>
+</ul></div>
+${S('nomusa','calm','','영상은 공저자 두 기자의 책 소개와 함께 마무리돼요. 진행자는 책 디자인이 <b>예전 일본 단행본</b> 같아 재밌다고 했고요.')}`);
+
+/* EP.11 현장 관점 */
+H+=EP('EP.11','그럼 우리 현장은?','아웃소싱·파견·채용대행·고용서비스 관점의 시사점 (작성자 정리)',
+`${S('banjang','calm','','온라인에서 시작한 회사가 <b>오프라인 매장, 해외, 부동산</b>까지 넓히면, 우리 같은 인력 서비스 현장엔 뭐가 달라질까요?')}
+${S('nomusa','calm','','플랫폼 기업이 <b>오프라인으로 나올수록 사람이 필요한 자리</b>가 늘어나요. 운영 인력을 함께 설계해 줄 파트너가 중요해지죠.',{rev:true})}
+<div class="g4">
+${P('① 매장 운영 인력',S('hr','calm','','층마다 의류·뷰티·잡화를 섞은 <b>복합 매장</b>은 판매·상품 진열(VMD)·재고 인력이 다양해져요. 신규 출점 때 <b>단기간 대량 채용</b>과 교육이 관건이에요.'),{fx:'유통'})}
+${P('② 외국인 손님 응대',S('banjang','calm','','성수처럼 <b>관광객이 많은 상권</b>은 외국어 응대·면세·결제 안내 인력이 필요해요. 다국어 인력 풀을 미리 갖춰 두면 경쟁력이 돼요.',{rev:true}),{fx:'다국어'})}
+${P('③ 물류와 고객센터',S('nomusa','calm','','쿠폰·할인이 잦은 플랫폼은 <b>행사 때 주문·문의가 몰려요</b>. 물류센터 피크 인력과 컨택센터 증원 계획을 <b>시즌별로</b> 세워야 해요.'),{fx:'피크'})}
+${P('④ 협력사와 함께 크기',S('bot','shock','','영상의 쿠폰 부담 사례처럼, 비용 부담을 누가 지느냐가 <b>파트너 관계</b>를 좌우해요. 도급·파견 계약에서도 <b>역할과 비용 분담을 명확히</b> 하는 게 신뢰의 출발점이에요.',{rev:true}),{fx:'상생'})}
+</div>
+<p class="tagline">※ 이 EP는 영상 내용이 아니라 ㈜제니엘이노베이션의 실무 관점 정리입니다.</p>`);
+
+/* 숫자 */
+H+=EP('NUMBERS','한눈에 보는 숫자','이야기 속 핵심 포인트 6',
+`<div class="cards">
+<div class="card"><b>1.47조</b><span>2025년 연결 매출<br>(영업이익 1,405억, 보도)</span></div>
+<div class="card"><b>3.3억</b><span>성수역 역명병기 낙찰가<br>(3년 계약, 보도)</span></div>
+<div class="card"><b>27~29%</b><span>표면 수수료<br>(실질 약 15%, 전언)</span></div>
+<div class="card"><b>700명</b><span>IT 인력<br>(직원 1,900명 중, 전언)</span></div>
+<div class="card"><b>2027</b><span>상반기 코스피 상장 예상<br>(2026.9.7 예심 청구)</span></div>
+<div class="card"><b>8~10조</b><span>시장 관측 ~ 회사 희망<br>(기대치, 예측 아님)</span></div>
+</div>`);
+
+/* 체크리스트 */
+H+=EP('CHECK','유통·플랫폼 고객사 인력 운영 점검표','고객사 인사·운영 담당자용 (작성자 제안)',
+`${S('hr','calm','','우리 고객사가 무신사처럼 매장을 늘린다면, 뭘 먼저 점검해야 할까요?')}
+${S('nomusa','calm','','출점 일정표와 <b>인력 계획표를 한 장에</b> 놓고 보는 것부터요.',{rev:true})}
+<ul class="chk">
+<li>신규 출점·팝업 일정에 맞춘 <b>채용 시작 시점</b>(최소 4~6주 전)이 잡혀 있는가</li>
+<li>판매·VMD·재고·계산 등 매장 직무별 <b>필요 인원과 숙련도</b>가 정리돼 있는가</li>
+<li>관광 상권 매장에 <b>외국어 응대 가능 인력</b> 기준이 있는가</li>
+<li>할인 행사·시즌 피크 때 <b>물류·고객센터 증원</b> 계획이 있는가</li>
+<li>도급 운영이면 업무 지시·근태 관리 주체가 <b>수급인</b>으로 분명한가(파견과의 경계)</li>
+<li>자체 POS·앱 등 <b>새 시스템 교육</b>을 입사 첫 주 일정에 넣었는가</li>
+<li>협력사와의 <b>비용 분담·성과 기준</b>(판촉비, 인센티브 등)을 계약서에 적었는가</li>
+</ul>
+<p class="tagline">※ 위 점검표는 ㈜제니엘이노베이션이 정리한 실무 제안입니다.</p>`);
+
+/* 흐름 정리 */
+H+=EP('SUMMARY','흐름 정리','동호회 → 플랫폼 → 오프라인·해외 → 상장',
+`<div class="g4">
+${P('👟 시작',`<ul style="margin:0;padding-left:18px"><li>신발 사진 <b>동호회</b></li><li>광고 자리 판매로 첫 매출</li><li>2009년경 본격 판매</li></ul>`)}
+${P('🚀 성장 비결',`<ul style="margin:0;padding-left:18px"><li><b>인디 브랜드</b> 육성·독점</li><li>화보·스냅 <b>콘텐츠</b></li><li>IT 700명·<b>자체 POS</b>·쿠폰</li></ul>`)}
+${P('🌏 확장',`<ul style="margin:0;padding-left:18px"><li>성수 <b>오프라인</b> 복합 매장</li><li>중국 합작·일본 신중</li><li>29CM 인수 후 <b>무신사화</b></li></ul>`)}
+${P('📈 상장과 숙제',`<ul style="margin:0;padding-left:18px"><li>2027 상반기 상장 예상</li><li>몸값 8~10조 <b>기대치</b></li><li><b>부동산 비중</b>엔 엇갈린 시선</li></ul>`)}
+</div>`);
+
+/* 에필로그 */
+H+=EP('EPILOGUE','작은 동호회의 큰 꿈','천 리 길도 한 걸음부터',
+`${S('bot','calm','','오늘 이야기를 한 줄로 줄이면요? <b>“좋아하는 것을 모으던 작은 공간이, 브랜드·기술·매장·땅까지 품은 회사가 됐다.”</b>')}
+${S('hr','calm','','저는 회원부터 찍는 계산대가 제일 인상 깊었어요. 고객을 먼저 아는 게 결국 경쟁력이네요.',{rev:true})}
+${S('nomusa','calm','','다만 10조라는 숫자는 아직 <b>기대치</b>예요. 부동산 비중처럼 시장이 물을 질문도 남아 있고요.')}
+${S('banjang','happy','','플랫폼이 매장으로 나올수록 현장 사람이 중요해지니, 우리도 함께 준비해야겠네요!',{rev:true})}
+<p class="quote">“천 리 길도 한 걸음부터 — 우리 속담”</p>
+<p style="text-align:center;margin:0">끝까지 읽어 주셔서 감사합니다 🙏</p>
+<div class="src">작성 · ㈜제니엘이노베이션<br>
+<b>원작</b> · 유튜브 ‘삼프로TV 3PROTV’ 「“몸값 10조...?” 무신사의 정체가 뭐야?ㅣ김효성 중앙일보 기자 [주말인터뷰]」(2026.10.25) — <a href="${SRC_URL}" target="_blank" rel="noopener">${SRC_URL}</a> 의 내용을 영상 흐름대로 요약·재구성했습니다. 영상의 문장을 그대로 옮기지 않았으며, 원작의 저작권은 해당 채널에 있습니다.<br>
+<b>관련 도서</b> · 《진격의 무신사》 — <a href="${BOOK1}" target="_blank" rel="noopener">교보문고</a>, <a href="${BOOK2}" target="_blank" rel="noopener">YES24</a>(영상 설명란)<br>
+<b>수치 확인</b> · 2025년 실적: sidae.com(2026.3.31) <a href="${N1}" target="_blank" rel="noopener">기사</a> · 상장 예심 청구: 바이라인네트워크(2026.9) <a href="${N2}" target="_blank" rel="noopener">기사</a> · 몸값 관측: sateconomy.co.kr(2026.9.8) <a href="${N3}" target="_blank" rel="noopener">기사</a> · 성수역 역명병기: SBS Biz <a href="${N4}" target="_blank" rel="noopener">기사</a> · 성수 부동산: 파이낸셜뉴스(2026.1.14) <a href="${N5}" target="_blank" rel="noopener">기사</a> · 중국 합작: 바이라인네트워크(2026.4.17) <a href="${N6}" target="_blank" rel="noopener">기사</a> · 29CM 거래액: SBS Biz <a href="${N7}" target="_blank" rel="noopener">기사</a><br>
+※ 등장인물은 가상의 캐릭터이며, 출연자 발언은 직책만 표기해 (요지)로 요약했습니다. 원자료로 확인하지 못한 수치(직원·IT 인력 수, 수수료, 중국 매장 수, 부동산 투자액·유형자산, 초기 투자 가치 등)는 (전언)으로 표시했습니다. 특정 기업 평가나 투자 권유가 아닙니다.</div>`);
+
+
+document.getElementById('app').innerHTML=H;
+
+function toggleTheme(){
+  const r=document.documentElement;
+  const dark = r.dataset.theme ? r.dataset.theme==='dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  r.dataset.theme = dark?'light':'dark';
+}
+</script>
+<script src="../zt-nav.js"></script>
+<script src="../firebase-config.js"></script>
+<script type="module" src="../zt-fire.js"></script>
+<script>
+const ZT_ID='014';
+async function ztPaint(){const F=window.ZT_FIRE;if(!F||!F.enabled)return;document.getElementById('ztLike').hidden=false;
+ const d=(await F.getStats([ZT_ID]))[ZT_ID]||{};document.getElementById('ztLikeN').textContent=d.likes||0;
+ document.getElementById('ztViews').textContent='👁 조회 '+(d.views||0);
+ if(F.liked(ZT_ID))document.querySelector('#ztLike button').classList.add('on');}
+async function ztLike(){const F=window.ZT_FIRE;if(await F.addLike(ZT_ID)){document.querySelector('#ztLike button').classList.add('on');ztPaint()}}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{})}
+window.addEventListener('zt-fire-ready',async()=>{if(window.ZT_FIRE.enabled){await window.ZT_FIRE.addView(ZT_ID);ztPaint()}});
+</script>
+</body>
+</html>
