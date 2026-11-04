@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>95년 로펌의 붕괴 | 제니툰</title>
+<meta property="og:title" content="제니툰 · 95년 로펌이 한 달 만에 무너졌다">
+<meta property="og:image" content="../thumbs/016.png">
+<link rel="icon" href="../favicon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#ffd23f">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="제니툰">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fbf6ea; --paper2:#fffdf7; --ink:#161616; --sub:#4a4a4a;
+  --red:#e2403a; --blue:#2f6fd6; --yellow:#ffd23f; --green:#2e9e6a; --soft:#f1e7cf;
+  --shadow:#161616;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#1d1b17; --paper2:#262420; --ink:#f2ede1; --sub:#c9c2b2;
+    --soft:#34302a; --shadow:#000;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#1d1b17; --paper2:#262420; --ink:#f2ede1; --sub:#c9c2b2;
+  --soft:#34302a; --shadow:#000;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Gowun Dodum',sans-serif;line-height:1.65;font-size:16px}
+.wrap{max-width:760px;margin:0 auto;padding:18px 16px 40px}
+h1,h2,h3{font-family:'Black Han Sans',sans-serif;font-weight:400;margin:0;letter-spacing:.5px;line-height:1.25}
+.ep{background:var(--paper2);border:3px solid var(--ink);box-shadow:6px 6px 0 var(--shadow);margin:0 6px 30px 0;padding:20px 18px 22px;border-radius:6px}
+.eptag{display:inline-block;background:var(--ink);color:var(--paper2);font-family:'Black Han Sans';padding:3px 12px;border-radius:3px;font-size:14px;letter-spacing:1px}
+.ep h2{font-size:26px;margin:8px 0 2px}
+.ep .subt{color:var(--sub);margin:0 0 14px;font-size:14px}
+/* cover */
+.cover{background:var(--yellow);color:#161616;text-align:center;position:relative;overflow:hidden}
+.cover .burst{position:absolute;inset:0;background:repeating-conic-gradient(from 0deg at 0% 50%,rgba(255,255,255,.42) 0 2.5deg,transparent 2.5deg 8deg) left/50% 100% no-repeat,repeating-conic-gradient(from 0deg at 100% 50%,rgba(255,255,255,.42) 0 2.5deg,transparent 2.5deg 8deg) right/50% 100% no-repeat;-webkit-mask-image:linear-gradient(90deg,#000,transparent 42%,transparent 58%,#000);mask-image:linear-gradient(90deg,#000,transparent 42%,transparent 58%,#000);z-index:0}
+.cover>*{position:relative;z-index:1}
+.cover h1{font-size:38px;margin:10px 0 6px;text-shadow:3px 3px 0 #fff}
+.cover .kick{font-family:'Jua';font-size:17px}
+.cover .by{font-size:13px;margin-top:10px}
+.cover .cast{display:flex;justify-content:center;gap:6px;margin:14px 0 6px;flex-wrap:wrap}
+.cover .cast svg{width:78px;height:78px;background:#fff;border:3px solid #161616;border-radius:50%}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.num{background:#fff;border:2.5px solid #161616;border-radius:6px;padding:8px 4px}
+.num b{display:block;font-family:'Black Han Sans';font-size:26px;color:var(--red);line-height:1.1}
+.num span{font-size:12px}
+/* panels */
+.g4{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.panel{border:2.5px solid var(--ink);background:var(--paper);border-radius:4px;padding:10px;position:relative;min-width:0}
+.panel.wide{grid-column:1/-1}
+.panel .cap{font-family:'Black Han Sans';font-size:13px;background:var(--yellow);color:#161616;display:inline-block;padding:1px 8px;border:2px solid var(--ink);margin-bottom:6px}
+.panel .fx{position:absolute;right:8px;top:4px;font-family:'Black Han Sans';color:var(--red);font-size:20px;transform:rotate(8deg)}
+/* scene */
+.scene{display:flex;align-items:flex-start;gap:8px;margin:8px 0}
+.scene.rev{flex-direction:row-reverse}
+.who{flex:0 0 64px;text-align:center;font-size:12px;color:var(--sub)}
+.who svg{width:62px;height:62px;border:2.5px solid var(--ink);border-radius:50%;background:#fff;display:block;margin:0 auto 2px}
+.bub{position:relative;background:#fff;color:#161616;border:2.5px solid var(--ink);border-radius:16px;padding:8px 12px;font-family:'Jua';font-size:17px;line-height:1.5;flex:1;min-width:0}
+.bub:before{content:"";position:absolute;left:-11px;top:16px;border:9px solid transparent;border-right-color:var(--ink);border-left:0}
+.bub:after{content:"";position:absolute;left:-7px;top:18px;border:7px solid transparent;border-right-color:#fff;border-left:0}
+.rev .bub:before{left:auto;right:-11px;border-right-color:transparent;border-left:9px solid var(--ink);border-right:0}
+.rev .bub:after{left:auto;right:-7px;border-right-color:transparent;border-left:7px solid #fff;border-right:0}
+.bub.shout{border-radius:4px;background:var(--yellow);font-size:18px}
+.bub.shout:after{border-right-color:var(--yellow)}
+.rev .bub.shout:after{border-left-color:var(--yellow)}
+.bub small{display:block;color:#666;font-family:'Gowun Dodum';font-size:12.5px;margin-top:2px}
+/* boxes */
+.box{border:2.5px dashed var(--ink);border-radius:6px;padding:10px 14px;margin:12px 0;background:var(--paper)}
+.box h3{font-size:17px;margin-bottom:6px}
+.box ul,.box ol{margin:0;padding-left:20px}
+.box li{margin:3px 0}
+.box.red{border-style:solid;border-color:var(--red)}
+.box.blue{border-style:solid;border-color:var(--blue)}
+.law{background:var(--soft);border-left:6px solid var(--blue);padding:10px 14px;font-size:14px;margin:12px 0;border-radius:0 6px 6px 0}
+.law b{color:var(--blue)}
+mark{background:var(--yellow);color:#161616;padding:0 3px}
+/* bars */
+.bars{margin:6px 0 4px}
+.bar{display:grid;grid-template-columns:110px 1fr 54px;align-items:center;gap:8px;margin:7px 0;font-size:14px}
+.bar .tr{height:20px;border:2px solid var(--ink);border-radius:3px;background:var(--paper)}
+.bar .fl{height:100%;background:var(--blue)}
+.bar .fl.r{background:var(--red)}.bar .fl.y{background:var(--yellow)}.bar .fl.g{background:var(--green)}
+.bar b{font-family:'Black Han Sans';font-weight:400;text-align:right}
+/* timeline */
+.tl{list-style:none;margin:6px 0;padding:0 0 0 22px;border-left:4px solid var(--ink)}
+.tl li{position:relative;margin:0 0 12px;padding-left:6px}
+.tl li:before{content:"";position:absolute;left:-33px;top:4px;width:16px;height:16px;background:var(--yellow);border:3px solid var(--ink);border-radius:50%}
+.tl li.now:before{background:var(--red)}
+.tl .d{font-family:'Black Han Sans';font-size:14px;color:var(--red)}
+/* flow */
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;align-items:stretch;margin:8px 0}
+.flow div{border:2.5px solid var(--ink);border-radius:5px;padding:8px 4px;text-align:center;font-size:13px;background:var(--paper);font-family:'Jua';display:flex;align-items:center;justify-content:center;min-width:0}
+.flow div.k{background:var(--yellow);color:#161616}
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.chip{border:2px solid var(--ink);border-radius:20px;padding:2px 10px;font-size:13px;background:var(--paper)}
+.chip.hl{background:var(--red);color:#fff;border-color:var(--red)}
+/* number cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.card{border:2.5px solid var(--ink);border-radius:6px;padding:10px;text-align:center;background:var(--paper)}
+.card b{font-family:'Black Han Sans';font-size:30px;font-weight:400;display:block;color:var(--blue);line-height:1.1}
+.card span{font-size:13px}
+/* checklist */
+.chk{list-style:none;padding:0;margin:6px 0}
+.chk li{border:2px solid var(--ink);border-radius:5px;padding:8px 10px 8px 40px;margin:7px 0;position:relative;background:var(--paper);font-size:14px}
+.chk li:before{content:"";position:absolute;left:10px;top:9px;width:18px;height:18px;border:2.5px solid var(--ink);border-radius:3px;background:#fff}
+.chk li b{color:var(--red)}
+.tagline{font-size:13px;color:var(--sub)}
+.quote{text-align:center;font-family:'Jua';font-size:19px;margin:14px 0 4px}
+.src{font-size:12px;color:var(--sub);border-top:2px dashed var(--ink);margin-top:14px;padding-top:8px}
+.theme-btn{position:fixed;right:12px;bottom:12px;z-index:9;border:2.5px solid var(--ink);background:var(--paper2);color:var(--ink);font-family:'Jua';border-radius:20px;padding:4px 12px;cursor:pointer}
+@media (max-width:540px){
+  .g4{grid-template-columns:1fr}
+  .cover h1{font-size:30px}
+  .ep h2{font-size:22px}
+  .nums,.cards{grid-template-columns:repeat(2,1fr)}
+  .flow{grid-template-columns:1fr}
+  .flow div{padding:6px}
+  .bar{grid-template-columns:86px 1fr 46px;font-size:13px}
+  .cover .cast svg{width:60px;height:60px}
+}
+@media (min-width:1024px){.wrap{max-width:960px}body{font-size:18px}.bub{font-size:19px}.ep h2{font-size:30px}.who{flex-basis:80px}.who svg{width:76px;height:76px}.cover h1{font-size:46px}.num b{font-size:30px}}
+@media (min-width:1440px){.wrap{max-width:1280px}body{font-size:19px}.bub{font-size:20.5px;padding:10px 16px}.ep{padding:26px 28px 28px}.ep h2{font-size:34px}.ep .subt{font-size:16px}.who{flex-basis:92px;font-size:12.5px}.who svg{width:88px;height:88px}.cover h1{font-size:54px}.cover .kick{font-size:20px}.cover .cast svg{width:96px;height:96px}.num b{font-size:34px}.num span{font-size:14px}.g4{gap:16px}.panel{padding:14px}.panel .cap{font-size:15px}.box h3{font-size:20px}.law,.src{font-size:15px}.bar{grid-template-columns:200px 1fr 70px;font-size:16px}.bar .tr{height:24px}.card b{font-size:36px}.card span{font-size:15px}.chk li{font-size:16px}.zt-nav{font-size:16px}}
+@media print{.theme-btn{display:none}}
+</style>
+<style>
+.zt-nav{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:10px;justify-content:space-between;background:var(--paper2);border-bottom:3px solid var(--ink);padding:8px 14px;font-family:'Jua',sans-serif;font-size:14px}
+.zt-nav a{color:var(--ink);text-decoration:none;border:2px solid var(--ink);border-radius:16px;padding:1px 10px;background:var(--paper)}
+.zt-nav span{flex:1;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.zt-end{padding-top:0}
+.zt-cta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;background:#ffd23f;color:#161616;border:3px solid var(--ink);border-radius:6px;padding:14px 16px;box-shadow:5px 5px 0 var(--shadow);margin-right:6px}
+.zt-cta b{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:19px}
+.zt-cta span{font-size:13.5px}
+.zt-btn{background:#161616;color:#fff;text-decoration:none;font-family:'Jua',sans-serif;border-radius:5px;padding:7px 14px}
+.zt-links{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 50px}
+.zt-links a{color:var(--ink);text-decoration:none;border:2px solid var(--ink);border-radius:5px;padding:4px 12px;font-family:'Jua',sans-serif;background:var(--paper2)}
+.zt-like{display:flex;align-items:center;gap:12px;margin:18px 0 0;flex-wrap:wrap}
+.zt-like button{border:2.5px solid var(--ink);background:var(--paper2);color:var(--ink);border-radius:22px;padding:6px 16px;font-family:'Jua',sans-serif;font-size:16px;cursor:pointer}
+.zt-like button.on{background:#ffd23f;color:#161616}
+.zt-like span{font-size:13px;color:var(--sub)}
+@media print{.zt-nav,.zt-end{display:none}}
+</style>
+</head>
+<body>
+<div style="background:#161616;color:#fffdf7;font-size:12.5px;text-align:center;padding:6px 10px;font-family:'Gowun Dodum',sans-serif">제공 <a href="https://www.zenielinnovation.co.kr" target="_blank" rel="noopener" style="color:#ffd23f;font-weight:700;text-decoration:none">㈜제니엘이노베이션</a></div>
+<nav class="zt-nav"><a href="../index.html" data-zt-back>← 제니툰</a><span>🏢 특별편 · 016화</span><a href="016.pdf" class="zt-pdf">PDF</a></nav>
+<button class="theme-btn" onclick="toggleTheme()">☀︎ / ☾</button>
+<div class="wrap" id="app"></div>
+<div class="wrap zt-end"><div class="zt-cta"><div><b>핵심 인재 확보부터 신입 육성까지, 함께 설계합니다</b><br><span>헤드헌팅·채용대행 · 경력직 채용 · 청년 일 경험·고용서비스 상담</span></div>
+<a class="zt-btn" href="../index.html?consult=1&from=016%ED%99%94">💬 상담 문의하기</a></div>
+<div class="zt-like" id="ztLike" hidden><button type="button" onclick="ztLike()">👍 도움됐어요 <b id="ztLikeN"></b></button><span id="ztViews"></span></div>
+<div class="zt-links"><a href="../index.html">🏠 제니툰 목록</a><a href="016.pdf">📄 PDF 저장</a><a href="../index.html#biz">🏢 기업뉴스툰 더보기</a></div></div>
+
+
+<script>
+/* ---------- 오리지널 캐릭터 SVG (가상 인물) ---------- */
+const CH={
+  nomusa:{name:'도 노무사',skin:'#efc8a4',hair:'#9a9a9a',style:'side',acc:'glasses',shirt:'#4b5563'},
+  hr:{name:'한결 대리',skin:'#f6d3b3',hair:'#40261a',style:'long',acc:'none',shirt:'#8b5cf6'},
+  banjang:{name:'현장 반장',skin:'#e9bf98',hair:'#2a2a2a',style:'short',acc:'badge',shirt:'#f08c00'},
+  bot:{name:'안내로봇 체키',bot:true}
+};
+function face(k,mood='calm'){
+  const c=CH[k];
+  if(c.bot){
+    const eye= mood==='shock'?'<circle cx="30" cy="40" r="6" fill="#161616"/><circle cx="50" cy="40" r="6" fill="#161616"/>'
+      :'<rect x="24" y="36" width="12" height="8" rx="3" fill="#161616"/><rect x="44" y="36" width="12" height="8" rx="3" fill="#161616"/>';
+    const m= mood==='shock'?'<ellipse cx="40" cy="56" rx="5" ry="6" fill="#161616"/>':'<path d="M30 54 Q40 62 50 54" stroke="#161616" stroke-width="3" fill="none"/>';
+    return `<svg viewBox="0 0 80 80"><line x1="40" y1="8" x2="40" y2="18" stroke="#161616" stroke-width="3"/><circle cx="40" cy="7" r="4" fill="#e2403a" stroke="#161616" stroke-width="2"/><rect x="14" y="18" width="52" height="48" rx="12" fill="#ffd23f" stroke="#161616" stroke-width="3"/><rect x="20" y="28" width="40" height="34" rx="8" fill="#fff" stroke="#161616" stroke-width="2"/>${eye}${m}<rect x="8" y="34" width="6" height="14" rx="2" fill="#2f6fd6" stroke="#161616" stroke-width="2"/><rect x="66" y="34" width="6" height="14" rx="2" fill="#2f6fd6" stroke="#161616" stroke-width="2"/></svg>`;
+  }
+  const S='#161616';
+  let hair='';
+  switch(c.style){
+    case 'short': hair=`<path d="M18 38 Q18 14 40 14 Q62 14 62 38 Q58 24 40 24 Q26 24 18 38Z" fill="${c.hair}"/>`;break;
+    case 'side': hair=`<path d="M18 38 Q16 16 40 15 Q64 16 62 36 Q52 22 30 26 Q22 28 18 38Z" fill="${c.hair}"/>`;break;
+    case 'bob': hair=`<path d="M15 50 Q12 14 40 13 Q68 14 65 50 L58 50 Q60 26 40 24 Q20 26 22 50Z" fill="${c.hair}"/>`;break;
+    case 'bald': hair=`<path d="M19 36 Q20 30 24 30 L24 40 Z M61 36 Q60 30 56 30 L56 40Z" fill="${c.hair}"/>`;break;
+    case 'long': hair=`<path d="M14 66 Q10 14 40 13 Q70 14 66 66 L58 66 Q62 28 40 24 Q18 28 22 66Z" fill="${c.hair}"/>`;break;
+    case 'neat': hair=`<path d="M18 36 Q18 14 40 14 Q62 14 62 36 Q60 22 46 21 L44 26 Q30 22 18 36Z" fill="${c.hair}"/>`;break;
+  }
+  let brows='',eyes='',mouth='',extra='';
+  const ey=40;
+  if(mood==='angry'){brows=`<path d="M26 31 L36 35 M54 31 L44 35" stroke="${S}" stroke-width="3"/>`;}
+  else if(mood==='sad'){brows=`<path d="M26 34 L35 31 M54 34 L45 31" stroke="${S}" stroke-width="2.5"/>`;}
+  else if(mood==='shock'){brows=`<path d="M26 29 Q31 26 36 29 M44 29 Q49 26 54 29" stroke="${S}" stroke-width="2.5" fill="none"/>`;}
+  else {brows=`<path d="M27 32 Q31 30 35 32 M45 32 Q49 30 53 32" stroke="${S}" stroke-width="2.5" fill="none"/>`;}
+  if(mood==='shock'){eyes=`<circle cx="31" cy="${ey}" r="4.5" fill="#fff" stroke="${S}" stroke-width="2"/><circle cx="31" cy="${ey}" r="2" fill="${S}"/><circle cx="49" cy="${ey}" r="4.5" fill="#fff" stroke="${S}" stroke-width="2"/><circle cx="49" cy="${ey}" r="2" fill="${S}"/>`;mouth=`<ellipse cx="40" cy="56" rx="5" ry="6" fill="${S}"/>`;}
+  else if(mood==='happy'){eyes=`<path d="M27 41 Q31 36 35 41 M45 41 Q49 36 53 41" stroke="${S}" stroke-width="3" fill="none"/>`;mouth=`<path d="M30 52 Q40 63 50 52 Z" fill="${S}"/>`;}
+  else {eyes=`<circle cx="31" cy="${ey}" r="3" fill="${S}"/><circle cx="49" cy="${ey}" r="3" fill="${S}"/>`;
+    mouth= mood==='sad'?`<path d="M32 57 Q40 51 48 57" stroke="${S}" stroke-width="3" fill="none"/>`: mood==='angry'?`<path d="M32 56 L48 56" stroke="${S}" stroke-width="3"/>`:`<path d="M32 53 Q40 60 48 53" stroke="${S}" stroke-width="3" fill="none"/>`;}
+  if(c.acc==='glasses') extra+=`<circle cx="31" cy="${ey}" r="7" fill="none" stroke="${S}" stroke-width="2.2"/><circle cx="49" cy="${ey}" r="7" fill="none" stroke="${S}" stroke-width="2.2"/><path d="M38 ${ey} L42 ${ey}" stroke="${S}" stroke-width="2"/><path d="M33 49 Q40 46 47 49" stroke="#9a9a9a" stroke-width="3" fill="none"/>`;
+  let body=`<path d="M10 80 Q12 64 40 64 Q68 64 70 80Z" fill="${c.shirt}" stroke="${S}" stroke-width="2.5"/>`;
+  if(c.acc==='badge') body+=`<path d="M52 69 l5 0 l2 4 l-4.5 3 l-4.5 -3Z" fill="#ffd23f" stroke="${S}" stroke-width="1.5"/>`;
+  if(c.acc==='lanyard') body+=`<path d="M30 64 L40 76 L50 64" stroke="#ffd23f" stroke-width="3" fill="none"/><rect x="36" y="74" width="8" height="6" fill="#fff" stroke="${S}" stroke-width="1.5"/>`;
+  if(c.acc==='apron') body+=`<rect x="28" y="68" width="24" height="12" fill="#fff" stroke="${S}" stroke-width="2"/>`;
+  if(c.acc==='tie') body+=`<path d="M37 64 L43 64 L41.5 69 L44 78 L40 80 L36 78 L38.5 69Z" fill="#e2403a" stroke="${S}" stroke-width="1.5"/>`;
+  return `<svg viewBox="0 0 80 80">${body}<ellipse cx="40" cy="42" rx="22" ry="24" fill="${c.skin}" stroke="${S}" stroke-width="2.5"/>${hair}<circle cx="24" cy="50" r="3.5" fill="#f59e9e" opacity=".6"/><circle cx="56" cy="50" r="3.5" fill="#f59e9e" opacity=".6"/>${brows}${eyes}${mouth}${extra}</svg>`;
+}
+/* ---------- 컴포넌트 ---------- */
+function S(k,mood,name,text,o={}){
+  return `<div class="scene ${o.rev?'rev':''}"><div class="who">${face(k,mood)}${name||CH[k].name}</div><div class="bub ${o.shout?'shout':''}">${text}${o.note?`<small>${o.note}</small>`:''}</div></div>`;
+}
+function P(cap,body,o={}){return `<div class="panel ${o.wide?'wide':''}">${cap?`<div class="cap">${cap}</div>`:''}${o.fx?`<div class="fx">${o.fx}</div>`:''}${body}</div>`;}
+function WHO(list){return `<div class="chips">${list.map(([n,h])=>`<span class="chip ${h?'hl':''}">${n}</span>`).join('')}</div>`;}
+function bars(rows,max){return `<div class="bars">${rows.map(([l,v,u,c])=>`<div class="bar"><span>${l}</span><div class="tr"><div class="fl ${c||''}" style="width:${Math.max(4,v/max*100)}%"></div></div><b>${v}${u}</b></div>`).join('')}</div>`;}
+function EP(tag,title,sub,body,cls=''){return `<section class="ep ${cls}"><span class="eptag">${tag}</span><h2>${title}</h2>${sub?`<p class="subt">${sub}</p>`:''}${body}</section>`;}
+
+
+/* ---------- 본문 ---------- */
+let H='';
+const SRC_URL='https://youtu.be/WodfILBHcrY';
+const N1='https://www.usnews.com/news/top-news/articles/2026-10-29/explainer-whats-next-for-law-firm-weil-gotshal-as-it-plans-dissolution';
+const N2='https://davidlat.substack.com/p/weil-gotshal-manges-biglaw-firm-failure-collapse-dissolution';
+const N3='https://news.bloomberglaw.com/litigation-finance/weil-gotshal-eyes-merger-options-after-rainmakers-exit-law-firm';
+const N4='https://www.leadersleague.com/de/news/weil-s-planned-wind-down-puts-germany-s-private-equity-market-at-a-crossroads';
+const N5='https://www.cityam.com/weil-gotshal-collapse-exposes-the-fragility-of-law-firm-partnerships/';
+const N6='https://www.aichatdaily.com/ai-business/ai-law-firm-crosby-bids-weil-gotshal-brand';
+const N7='https://www.lawtimes.co.kr/news/220329';
+
+/* 표지 */
+H+=`<section class="ep cover"><div class="burst"></div>
+<div class="kick">제니툰 특별편 · 기업뉴스툰</div>
+<h1>95년 로펌이<br>한 달 만에 무너졌다</h1>
+<div class="kick">돈은 잘 벌었는데 왜? — 사람이 떠난 회사, AI가 바꾸는 지식산업</div>
+<div class="cast">${face('bot','shock')}${face('hr','shock')}${face('nomusa','calm')}${face('banjang','calm')}</div>
+<div class="nums">
+ <div class="num"><b>95년</b><span>1931년 뉴욕 설립</span></div>
+ <div class="num"><b>1,200명</b><span>소속 변호사(보도)</span></div>
+ <div class="num"><b>$21억</b><span>2025년 매출(보도)</span></div>
+ <div class="num"><b>+5명</b><span>스타 변호사와 함께 떠난 파트너</span></div>
+ <div class="num"><b>90일</b><span>남은 직원에게 약속된 급여</span></div>
+ <div class="num"><b>-10.9%</b><span>국내 10대 로펌 신입 채용(2026)</span></div>
+</div>
+<div class="by">작성 · ㈜제니엘이노베이션 &nbsp;|&nbsp; 2026.11.05</div>
+</section>`;
+
+/* 원작 안내 */
+H+=`<div class="box blue" style="margin:0 6px 30px 0"><h3>🎬 원작 영상 안내</h3>
+<p style="margin:0">이 웹툰은 유튜브 <b>‘손에잡히는경제’</b> 채널의 「[업되는기업] 미국 로펌부터 무너지고 있다」(2026.11.4 게시, 20분 53초) 경제 전문 기자 대담을 영상 흐름 그대로 요약·재구성했습니다. 출연자 발언은 직책만 표기하고 <b>(요지)</b>로 옮겼습니다.</p>
+<p style="margin:8px 0 0"><a href="${SRC_URL}" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">▶ 원작 영상 보러 가기</a> &nbsp;·&nbsp; <a href="${N1}" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">📰 해산 계획 보도(로이터 전재)</a> &nbsp;·&nbsp; <a href="${N7}" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">📰 국내 로펌 채용 현황(법률신문)</a></p></div>`;
+
+/* EP.0 */
+H+=EP('EP.0','월가의 거인, 15분 만의 해산 통보','00:00~03:25 와일은 어떤 로펌이었나',
+`${S('bot','calm','','안녕하세요, 안내로봇 <b>체키</b>예요! 오늘은 미국 뉴욕의 대형 로펌 <mark>‘와일(Weil, Gotshal & Manges)’</mark>이 왜 갑자기 문을 닫게 됐는지 살펴볼게요.')}
+${S('hr','shock','','로펌이 망했다고요? 변호사 회사는 망하지 않을 줄 알았어요!',{rev:true})}
+${S('nomusa','calm','','이 로펌은 <b>1931년</b>, 당시 주류 로펌에서 차별받던 <b>유대계 변호사 세 사람</b>이 세웠대요. 이름도 세 창업자의 성을 딴 거고요(요지).')}
+<ul class="tl">
+<li><span class="d">2001~2002년</span><br><b>엔론 파산 청산</b>, <b>월드컴 파산</b> 사건 대리(영상 발언)</li>
+<li><span class="d">2008년</span><br><b>리먼브러더스 파산</b> 대리 — 부채가 우리 돈 약 <b>818조 원</b> 규모였다는 설명(영상 발언, 전언)</li>
+<li><span class="d">2009년</span><br><b>GM(제너럴모터스)</b> 회생 — 약 <b>40일 만에</b> 회생 절차를 마쳤다는 설명(영상 발언)</li>
+<li><span class="d">2015년 · 2022년</span><br>다우케미칼·듀폰 합병(약 173조 원), MS의 액티비전 블리자드 인수(약 92조 원) 자문(영상 발언, 전언)</li>
+</ul>
+<div class="g4">
+${P('덩치',S('banjang','shock','','변호사 <b>1,200명</b>, 지원 인력 약 <b>1,000명</b>, 세계 <b>16개</b> 사무소! 구조조정·파산 분야 <b>미국 1위</b>로 불렸대요.'),{fx:'거인'})}
+${P('그날 오후',S('nomusa','calm','','10월 28일 수요일 오후, 16년간 회사를 이끈 대표가 <b>화상회의</b>를 열고 약 <b>15분 만에</b> 해산 방침을 알렸대요. 일주일 전 입사한 신입도 몰랐다고요(요지).',{rev:true}),{fx:'Zoom'})}
+</div>
+<div class="law"><b>확인</b> · 와일 경영위원회는 <b>2026.10.28</b> 파트너들에게 질서 있는 해산(wind-down)을 권고했고, 대표가 여러 차례 화상회의로 이를 알렸습니다. 파트너 투표로 최종 결정합니다. 2025년 매출 약 <b>21억 달러</b>, 변호사 약 1,200명(보도). 영상은 매출을 ‘약 20억 달러(약 2조 7천억 원)’로 언급.</div>`);
+
+/* EP.1 */
+H+=EP('EP.1','실적이 나빠서가 아니었다 — ‘파트너 런’','03:25~07:29 무너진 진짜 이유',
+`${S('hr','calm','','장사가 안돼서 망한 거죠? 빚이 많았다든가…')}
+${S('nomusa','calm','','정반대예요. <b>빚은 거의 없었고</b>, 받을 돈과 진행 중인 일감만 약 <b>10억 달러(약 1조 3천억 원)</b>였대요. 지분 파트너 한 사람의 작년 평균 배당은 약 <b>75억 원</b> 수준이었고요(영상 발언).',{rev:true})}
+<div class="cards">
+<div class="card"><b>거의 0</b><span>금융 부채<br>(보도)</span></div>
+<div class="card"><b>$10억</b><span>미수금·수주 잔액<br>(영상 발언, 전언)</span></div>
+<div class="card"><b>약 75억</b><span>지분 파트너 1인 배당<br>(약 560만 달러, 보도)</span></div>
+</div>
+${S('bot','shock','','그런데도 무너진 이유가 바로 <mark>‘파트너 런(Partner Run)’</mark>이에요!')}
+<div class="flow"><div>핵심 파트너<br>이직</div><div class="k">고객·매출<br>함께 이동</div><div>남은 파트너<br>고정비 부담 ↑</div><div class="k">“나도 떠나야겠다”</div><div>연쇄 이탈<br>→ 해산</div></div>
+<div class="g4">
+${P('뱅크런과 같은 원리',S('nomusa','calm','','은행에 예금 인출이 몰리면 멀쩡한 은행도 쓰러지죠. 로펌은 <b>파트너가 떠날 때 출자금을 돌려받고</b>, 남은 사람에게 <b>임대료·인건비</b> 같은 고정비가 몰려요(요지).'),{fx:'RUN'})}
+${P('마지막 한 방',S('banjang','calm','','9월에 스타 파트너가 동료들과 떠나며 흔들렸고, 10월 말 <b>다른 로펌과의 합병 협상이 깨지고</b> 차기 대표로 정해졌던 파트너마저 <b>승계를 고사</b>하자 한 달 만에 무너졌대요(요지).',{rev:true}),{fx:'붕괴'})}
+</div>
+<p class="tagline">확인 · 합병 상대는 윌키 파 앤 갤러거(Willkie Farr & Gallagher)였고, 협상은 10월 말 결렬(보도). 영상 분석 자료의 ‘2024년 9월’ 표기는 원자료 기준 <b>2026년 9월</b>로 바로잡았습니다.</p>`);
+
+/* EP.2 */
+H+=EP('EP.2','스타 변호사 한 명이 떠나자','07:29~09:58 레인메이커와 인재 유출',
+`${S('hr','calm','','도대체 누가 떠났길래 그렇게 큰 회사가 흔들려요?')}
+${S('nomusa','calm','','기업 부문 약 <b>600명</b>을 총괄하던 <b>기업부문 대표 파트너</b>예요. 수십조 원대 합병을 이끈, 이른바 <mark>‘레인메이커’</mark>(일감과 매출을 끌어오는 핵심 인재)죠.',{rev:true})}
+<div class="g4">
+${P('몸값',S('banjang','shock','','배당을 빼고 <b>기본 보수만 연 2,000만 달러</b>(약 260억 원 이상)였다는 설명이에요(영상 발언, 전언).'),{fx:'$2천만'})}
+${P('어디로 갔나',S('nomusa','calm','','회사 운영 방향을 둘러싼 내부 갈등 끝에 <b>동료 파트너 5명</b>, 그리고 <b>핵심 고객</b>과 함께 경쟁 로펌 <b>크래바스(Cravath)</b>로 옮겼대요(요지).',{rev:true}),{fx:'이적'})}
+</div>
+<div class="law"><b>확인</b> · 2026년 9월 기업부문 대표 파트너가 M&A 공동 책임자 등 파트너 5명과 함께 Cravath, Swaine & Moore로 이적. 이후 런던 M&A 파트너 2명은 Sullivan & Cromwell, 사모펀드 파트너는 Paul, Weiss로 옮겼고, 봄 이후 수십 명의 파트너가 떠났습니다(보도).</div>
+${S('bot','calm','','지식서비스 회사의 <b>핵심 자산은 건물도 기계도 아닌 ‘사람’</b>이에요. 사람이 떠나면 매출이 같이 빠지고, 남은 사람도 연쇄적으로 떠나는 <b>엑소더스</b>가 벌어지죠(요지).')}
+${S('hr','sad','','회사의 역사가 95년이어도, 사람이 떠나면 소용없군요…',{rev:true})}`);
+
+/* EP.3 */
+H+=EP('EP.3','AI가 신입의 일을 가져가다','09:58~13:50 신입·베테랑 양극화',
+`${S('hr','calm','','남은 직원들은 어떻게 되나요?')}
+${S('nomusa','sad','','남은 하위 직급 변호사 약 <b>600명</b>과 지원 인력 약 <b>1,000명</b>은 <b>90일 치 급여</b>를 받고 일자리를 잃게 됐대요. 특히 입사 한 달도 안 된 <b>신입 약 100명</b>은 재취업 시기가 맞지 않아 더 막막하고요(영상 발언).',{rev:true})}
+<p class="tagline">확인 · 어소시에이트(하위 직급 변호사)와 직원에게 90일간 급여를 지급하고 2026년 말 상여도 주기로 했다고 보도됨. 인원 수는 영상 발언 기준.</p>
+${S('bot','calm','','그런데 이 사건 뒤에는 더 큰 흐름이 있어요. <mark>로펌의 인력 구조</mark>가 바뀌고 있다는 거예요.')}
+<div class="g4">
+${P('예전 · 피라미드',`<div style="text-align:center;font-family:Jua,sans-serif;line-height:1.5"><div>▲ 파트너 (소수)</div><div>▲▲ 중간 경력</div><div>▲▲▲▲ 신입 (다수)</div></div>`+S('banjang','calm','','신입이 <b>판례 검색·서류 검토</b>를 맡고 소수 파트너가 큰돈을 버는 구조였죠.'),{fx:'△'})}
+${P('지금 · 다이아몬드',`<div style="text-align:center;font-family:Jua,sans-serif;line-height:1.5"><div>◆ 파트너</div><div>◆◆◆ 중간 경력</div><div>◆ 신입 (감소)</div></div>`+S('nomusa','calm','','AI가 단순 문서 작업을 <b>빠르고 싸게</b> 해 주니 신입 수요가 줄고 <b>중간 경력직 중심</b>으로 바뀐대요(요지).',{rev:true}),{fx:'◇'})}
+</div>
+<div class="g4">
+${P('신입 채용 감소',S('hr','shock','','미국 법조 직업 단체 집계로 대형 로펌(변호사 500명 초과) 신입 채용이 <b>7.5% 줄어</b> <b>11년 만에 첫 감소</b>였대요(영상 발언, 전언). 2027년까지 <b>경력직을 우선</b>하겠다는 곳도 있고요.'),{fx:'-7.5%'})}
+${P('스타는 더 비싸게',S('banjang','calm','','반대로 초대형 M&A와 <b>고도의 판단</b>을 할 수 있는 소수 베테랑에겐 <b>연봉 수백억 원대</b> 영입 경쟁이 붙는대요. 이게 <mark>양극화</mark>예요(요지).',{rev:true}),{fx:'양극화'})}
+</div>`);
+
+/* EP.4 */
+H+=EP('EP.4','망한 로펌을 사겠다는 AI 로펌','13:50~16:08 인수 시도와 법률 데이터의 가치',
+`${S('hr','shock','','해산하는 로펌을 누가 사요?')}
+${S('nomusa','calm','','설립 <b>2년 차 AI 로펌 ‘크로스비(Crosby)’</b>가 나섰어요. 영상에선 2018년 세워진 영국계 AI 로펌 <b>‘시세로(Cicero)’</b>도 인수 의사를 보였다고 소개했고요(영상 발언, 전언).',{rev:true})}
+<div class="g4">
+${P('크로스비는 어떤 곳',S('banjang','calm','','<b>전직 변호사</b>와 <b>빅테크 출신 엔지니어</b>가 함께 창업. AI가 계약서 초안을 빠르게 검토·수정하고 <b>사람 변호사가 최종 확인</b>하는 저비용·고효율 모델이래요.'),{fx:'AI 로펌'})}
+${P('무엇을 사려 하나',S('nomusa','calm','','회사 통째가 아니라 <b>상표·브랜드·내부 데이터</b>예요. 95년간 쌓인 <b>계약서·협상 기록</b>은 AI를 고도화할 <mark>최고급 학습 자료</mark>라는 거죠(요지).',{rev:true}),{fx:'데이터'})}
+</div>
+<div class="law"><b>확인</b> · 크로스비는 <b>2026.10.29</b> 와일의 상표·브랜드와 일부 내부 데이터 인수 의향서를 냈고, 소속 변호사 일부 채용도 추진 중입니다. 투자 유치액 약 8,500만 달러, 조건은 비공개이며 성사 여부는 미정(보도). 업계에선 <b>AI가 와일 붕괴의 직접 원인이라는 근거는 없다</b>는 지적도 있습니다(보도).</div>
+${S('bot','shock','','AI 도구를 로펌에 <b>파는</b> 회사와 달리, 크로스비는 <b>스스로 로펌</b>이라는 점이 달라요. 데이터와 인재를 직접 사서 경쟁하겠다는 거죠!')}`);
+
+/* EP.5 */
+H+=EP('EP.5','컨설팅도 예외가 아니다','16:08~18:40 맥킨지와 팔란티어',
+`${S('hr','calm','','로펌만의 이야기인가요? 컨설팅 회사는요?')}
+${S('nomusa','calm','','영상은 세계 최대 컨설팅사 <b>맥킨지</b>를 예로 들었어요. 최근 2년 새 인력을 약 <b>4만 5천 명 → 4만 명</b>으로 줄이고, 사내 <b>AI 에이전트를 2만 개</b> 도입했대요(영상 발언, 전언).',{rev:true})}
+${P('맥킨지 인력 vs AI 에이전트(영상 발언, 전언)',bars([['2년 전 인력',45000,'명','y'],['현재 인력',40000,'명','r'],['AI 에이전트',20000,'개','g']],48000),{wide:true})}
+<div class="g4">
+${P('CEO의 경고',S('banjang','shock','','최고경영자(CEO)가 “지금은 사람 대 AI가 <b>2:1</b>이지만 연말엔 <b>1:1</b>이 될 것”, 기업은 <b>‘변하거나 죽거나’</b>라고 했대요(요지).'),{fx:'1:1'})}
+${P('팔란티어의 방식',S('nomusa','calm','','전통 컨설팅은 많은 인력이 몇 달간 보고서를 만들죠. <b>팔란티어</b>는 ‘부트캠프’로 고객 데이터를 바로 연결해 <b>며칠 만에</b> 현업에 쓰는 AI 도구를 내놓는다며 시장을 잠식 중이래요(요지).',{rev:true}),{fx:'며칠'})}
+</div>`);
+
+/* EP.6 */
+H+=EP('EP.6','우리나라 로펌·회계법인은?','18:40~20:53 채용 축소와 인재 육성 위기',
+`${S('hr','calm','','한국은 아직 괜찮지 않아요?')}
+${S('nomusa','calm','','국내에서도 <b>신입 채용이 줄고</b> 있대요. 2026년 국내 <b>10대 로펌</b> 신입 변호사 채용이 전년보다 약 <b>11% 감소</b>했고, 대형 로펌 대다수가 줄였어요.',{rev:true})}
+${P('국내 주요 로펌 신입 변호사 채용(2025 → 2026, 법률신문)',bars([['10대 로펌 합계 2025',274,'명','y'],['10대 로펌 합계 2026',244,'명','r'],['김·장 2025',55,'명','y'],['김·장 2026',47,'명','r'],['태평양 2025',35,'명','y'],['태평양 2026',26,'명','r']],290),{wide:true})}
+<p class="tagline">확인 · 법률신문 조사: 10대 로펌 신입 274명→244명(-10.9%), 6곳 감소·3곳 증가(율촌·지평·광장). 로펌 매출은 10% 이상 늘었는데도 채용은 줄어 이례적이라는 분석.</p>
+<div class="g4">
+${P('회계사도',S('banjang','shock','','영상에선 공인회계사 합격자 약 <b>1,200명</b> 중 10월 말까지 <b>수습 기관에 등록한 인원이 약 20%</b>에 그쳤다고 했어요(영상 발언, 전언).'),{fx:'20%'})}
+${P('사다리가 사라진다',S('nomusa','sad','','신입 시절 <b>서류 검토·자료 조사</b>로 실력을 쌓았는데, 그 일을 AI가 하면 <mark>성장 사다리</mark>가 없어져요(요지).',{rev:true}),{fx:'사다리'})}
+</div>
+${S('bot','shock','','지금 비용을 아끼려 신입을 덜 뽑으면, 나중엔 <b>AI의 엉뚱한 답(환각)을 걸러 내고</b> 큰 결정을 내릴 <b>전문가 자체가 부족</b>해질 수 있대요. 사회 전체의 손실이라는 거죠(요지).')}`);
+
+/* EP.7 현장 관점 */
+H+=EP('EP.7','그럼 우리 현장은?','아웃소싱·파견·채용대행·고용서비스 관점의 시사점 (작성자 정리)',
+`${S('banjang','calm','','로펌·컨설팅 이야기지만, 우리 같은 인력 서비스 회사도 <b>사람이 핵심 자산</b>이잖아요. 남의 일이 아니네요.')}
+${S('nomusa','calm','','맞아요. 네 가지로 정리해 볼게요.',{rev:true})}
+<div class="g4">
+${P('① 핵심 인재 이탈 대비',S('hr','calm','','고객사 관계가 <b>담당자 한 사람</b>에게 묶여 있으면, 그 사람이 떠날 때 고객도 흔들려요. <b>복수 담당·인수인계 기록</b>이 보험이에요.'),{fx:'리스크'})}
+${P('② 경력직 쏠림 = 채용 기회',S('banjang','calm','','신입보다 <b>즉시 투입할 경력직</b>을 찾는 회사가 늘면 <b>헤드헌팅·채용대행</b> 수요가 커져요. 검증된 인재 풀이 경쟁력이죠.',{rev:true}),{fx:'헤드헌팅'})}
+${P('③ 신입 육성의 공백 메우기',S('nomusa','calm','','기업이 신입 교육을 줄이면 <b>청년 일 경험·직무 훈련</b> 같은 <b>고용서비스</b>의 역할이 더 중요해져요. 사다리를 다시 놓는 일이에요.'),{fx:'고용서비스'})}
+${P('④ AI는 도구, 판단은 사람',S('bot','shock','','서류 심사·일정 관리는 AI로 빠르게, <b>면접·현장 판단·고객 소통</b>은 사람이. 이 분업을 잘 설계한 회사가 이겨요.',{rev:true}),{fx:'분업'})}
+</div>
+<p class="tagline">※ 이 EP는 영상 내용이 아니라 ㈜제니엘이노베이션의 실무 관점 정리입니다.</p>`);
+
+/* 숫자 */
+H+=EP('NUMBERS','한눈에 보는 숫자','이야기 속 핵심 포인트 6',
+`<div class="cards">
+<div class="card"><b>1931</b><span>와일 설립<br>(95년 전통)</span></div>
+<div class="card"><b>$21억</b><span>2025년 매출<br>(변호사 약 1,200명, 보도)</span></div>
+<div class="card"><b>약 75억</b><span>지분 파트너 1인 배당<br>(실적은 우량)</span></div>
+<div class="card"><b>+5명</b><span>스타 변호사와 함께<br>경쟁사로 간 파트너</span></div>
+<div class="card"><b>2만 개</b><span>맥킨지 AI 에이전트<br>(영상 발언, 전언)</span></div>
+<div class="card"><b>274→244</b><span>국내 10대 로펌<br>신입 변호사(2025→2026)</span></div>
+</div>`);
+
+/* 체크리스트 */
+H+=EP('CHECK','핵심 인재·신입 육성 점검표','고객사 인사 담당자용 (작성자 제안)',
+`${S('hr','calm','','우리 회사도 ‘파트너 런’ 같은 일이 생기지 않으려면 뭘 봐야 할까요?')}
+${S('nomusa','calm','','<b>사람 한 명에게 매출과 고객이 몰려 있는지</b>부터 확인해 보세요.',{rev:true})}
+<ul class="chk">
+<li>매출·주요 고객이 <b>특정 1~2명에게 집중</b>돼 있지 않은가</li>
+<li>핵심 인재의 <b>업무 기록·고객 이력</b>이 회사 시스템에 남아 있는가</li>
+<li>핵심 인재 <b>후임자(승계) 계획</b>이 정해져 있는가</li>
+<li>퇴사 조짐(면담 요청 감소, 고객 접촉 변화 등)을 살피는 <b>정기 면담</b>이 있는가</li>
+<li>AI로 바뀌는 직무를 정리하고 <b>신입이 배울 일</b>을 따로 설계했는가</li>
+<li>신입 채용을 줄인다면 <b>5년 뒤 중간 관리자</b>는 어디서 구할지 계획이 있는가</li>
+<li>경력직 채용·헤드헌팅 시 <b>평판 조회와 경업금지 등 계약 조건</b>을 점검했는가</li>
+</ul>
+<p class="tagline">※ 위 점검표는 ㈜제니엘이노베이션이 정리한 실무 제안입니다.</p>`);
+
+/* 흐름 정리 */
+H+=EP('SUMMARY','흐름 정리','명문 로펌 → 파트너 런 → AI 재편 → 인재 사다리 위기',
+`<div class="g4">
+${P('🏛️ 명문',`<ul style="margin:0;padding-left:18px"><li>1931년 설립, <b>파산·구조조정 1위</b></li><li>엔론·리먼·GM 사건</li><li>빚 없고 실적 우량</li></ul>`)}
+${P('🏃 파트너 런',`<ul style="margin:0;padding-left:18px"><li><b>스타 변호사</b>+5명 이적</li><li>합병 결렬·승계 고사</li><li>한 달 만에 해산 권고</li></ul>`)}
+${P('🤖 AI 재편',`<ul style="margin:0;padding-left:18px"><li>피라미드 → <b>다이아몬드</b></li><li>AI 로펌의 <b>데이터</b> 인수 시도</li><li>맥킨지·팔란티어 변화</li></ul>`)}
+${P('🪜 남은 숙제',`<ul style="margin:0;padding-left:18px"><li>국내 로펌 신입 <b>-10.9%</b></li><li>회계사 수습처 부족</li><li><b>미래 전문가</b> 육성 위기</li></ul>`)}
+</div>`);
+
+/* 에필로그 */
+H+=EP('EPILOGUE','회사의 역사보다 사람','인사가 만사',
+`${S('bot','calm','','오늘 이야기를 한 줄로 줄이면요? <b>“95년의 역사도, 사람이 떠나면 한 달을 버티지 못했다.”</b>')}
+${S('hr','calm','','저는 신입이 배울 기회가 사라진다는 게 가장 걱정돼요. 지금 덜 뽑으면 나중엔 가르칠 사람도, 배울 사람도 없겠네요.',{rev:true})}
+${S('nomusa','calm','','AI 시대엔 <b>핵심 인재와 데이터</b>가 경쟁력이에요. 그리고 그 인재를 <b>키우는 사다리</b>를 지키는 것도 회사의 몫이고요.')}
+${S('banjang','happy','','사람을 잘 뽑고, 잘 키우고, 잘 지키는 일 — 결국 우리가 하는 일이네요!',{rev:true})}
+<p class="quote">“인사가 만사(人事萬事) — 사람을 쓰는 일이 모든 일의 근본”</p>
+<p style="text-align:center;margin:0">끝까지 읽어 주셔서 감사합니다 🙏</p>
+<div class="src">작성 · ㈜제니엘이노베이션<br>
+<b>원작</b> · 유튜브 ‘손에잡히는경제’ 「[업되는기업] 미국 로펌부터 무너지고 있다 - 하수정 경제 전문 기자」(2026.11.4) — <a href="${SRC_URL}" target="_blank" rel="noopener">${SRC_URL}</a> 의 내용을 영상 흐름대로 요약·재구성했습니다. 영상의 문장을 그대로 옮기지 않았으며, 원작의 저작권은 해당 채널에 있습니다.<br>
+<b>수치 확인</b> · 해산 계획·90일 급여: 로이터 전재 US News(2026.10.29) <a href="${N1}" target="_blank" rel="noopener">기사</a> · 파트너 이탈·화상회의 통보: David Lat(2026.11) <a href="${N2}" target="_blank" rel="noopener">글</a> · 크래바스 이적: Bloomberg Law(2026.9.19) <a href="${N3}" target="_blank" rel="noopener">기사</a> · 매출·합병 결렬: Leaders League(2026.10.29) <a href="${N4}" target="_blank" rel="noopener">기사</a> · 파트너 배당: City AM <a href="${N5}" target="_blank" rel="noopener">기사</a> · 크로스비 인수 의향: AI Chat Daily(TechCrunch 인용) <a href="${N6}" target="_blank" rel="noopener">기사</a> · 국내 로펌 채용: 법률신문 <a href="${N7}" target="_blank" rel="noopener">기사</a><br>
+※ 등장인물은 가상의 캐릭터이며, 출연자·실존 인물 발언은 직책만 표기해 (요지)로 요약했습니다. 원자료로 확인하지 못한 수치(과거 사건 금액, 미수금, 보수, 미국 신입 채용 감소율, 맥킨지 인력·AI 에이전트 수, 시세로의 인수 의사, 회계사 수습 등록률 등)는 (전언)으로 표시했습니다. 특정 기업 평가가 아닙니다.</div>`);
+
+
+document.getElementById('app').innerHTML=H;
+
+function toggleTheme(){
+  const r=document.documentElement;
+  const dark = r.dataset.theme ? r.dataset.theme==='dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  r.dataset.theme = dark?'light':'dark';
+}
+</script>
+<script src="../zt-nav.js"></script>
+<script src="../firebase-config.js"></script>
+<script type="module" src="../zt-fire.js"></script>
+<script>
+const ZT_ID='016';
+async function ztPaint(){const F=window.ZT_FIRE;if(!F||!F.enabled)return;document.getElementById('ztLike').hidden=false;
+ const d=(await F.getStats([ZT_ID]))[ZT_ID]||{};document.getElementById('ztLikeN').textContent=d.likes||0;
+ document.getElementById('ztViews').textContent='👁 조회 '+(d.views||0);
+ if(F.liked(ZT_ID))document.querySelector('#ztLike button').classList.add('on');}
+async function ztLike(){const F=window.ZT_FIRE;if(await F.addLike(ZT_ID)){document.querySelector('#ztLike button').classList.add('on');ztPaint()}}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{})}
+window.addEventListener('zt-fire-ready',async()=>{if(window.ZT_FIRE.enabled){await window.ZT_FIRE.addView(ZT_ID);ztPaint()}});
+</script>
+</body>
+</html>
