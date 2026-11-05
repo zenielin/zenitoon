@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>미국 중간선거 | 제니툰</title>
+<meta property="og:title" content="제니툰 · 미국 ‘중간선거’는 왜 있을까?">
+<meta property="og:image" content="../thumbs/017.png">
+<link rel="icon" href="../favicon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#ffd23f">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="제니툰">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fbf6ea; --paper2:#fffdf7; --ink:#161616; --sub:#4a4a4a;
+  --red:#e2403a; --blue:#2f6fd6; --yellow:#ffd23f; --green:#2e9e6a; --soft:#f1e7cf;
+  --shadow:#161616;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#1d1b17; --paper2:#262420; --ink:#f2ede1; --sub:#c9c2b2;
+    --soft:#34302a; --shadow:#000;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#1d1b17; --paper2:#262420; --ink:#f2ede1; --sub:#c9c2b2;
+  --soft:#34302a; --shadow:#000;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Gowun Dodum',sans-serif;line-height:1.65;font-size:16px}
+.wrap{max-width:760px;margin:0 auto;padding:18px 16px 40px}
+h1,h2,h3{font-family:'Black Han Sans',sans-serif;font-weight:400;margin:0;letter-spacing:.5px;line-height:1.25}
+.ep{background:var(--paper2);border:3px solid var(--ink);box-shadow:6px 6px 0 var(--shadow);margin:0 6px 30px 0;padding:20px 18px 22px;border-radius:6px}
+.eptag{display:inline-block;background:var(--ink);color:var(--paper2);font-family:'Black Han Sans';padding:3px 12px;border-radius:3px;font-size:14px;letter-spacing:1px}
+.ep h2{font-size:26px;margin:8px 0 2px}
+.ep .subt{color:var(--sub);margin:0 0 14px;font-size:14px}
+/* cover */
+.cover{background:var(--yellow);color:#161616;text-align:center;position:relative;overflow:hidden}
+.cover .burst{position:absolute;inset:0;background:repeating-conic-gradient(from 0deg at 0% 50%,rgba(255,255,255,.42) 0 2.5deg,transparent 2.5deg 8deg) left/50% 100% no-repeat,repeating-conic-gradient(from 0deg at 100% 50%,rgba(255,255,255,.42) 0 2.5deg,transparent 2.5deg 8deg) right/50% 100% no-repeat;-webkit-mask-image:linear-gradient(90deg,#000,transparent 42%,transparent 58%,#000);mask-image:linear-gradient(90deg,#000,transparent 42%,transparent 58%,#000);z-index:0}
+.cover>*{position:relative;z-index:1}
+.cover h1{font-size:38px;margin:10px 0 6px;text-shadow:3px 3px 0 #fff}
+.cover .kick{font-family:'Jua';font-size:17px}
+.cover .by{font-size:13px;margin-top:10px}
+.cover .cast{display:flex;justify-content:center;gap:6px;margin:14px 0 6px;flex-wrap:wrap}
+.cover .cast svg{width:78px;height:78px;background:#fff;border:3px solid #161616;border-radius:50%}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.num{background:#fff;border:2.5px solid #161616;border-radius:6px;padding:8px 4px}
+.num b{display:block;font-family:'Black Han Sans';font-size:26px;color:var(--red);line-height:1.1}
+.num span{font-size:12px}
+/* panels */
+.g4{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.panel{border:2.5px solid var(--ink);background:var(--paper);border-radius:4px;padding:10px;position:relative;min-width:0}
+.panel.wide{grid-column:1/-1}
+.panel .cap{font-family:'Black Han Sans';font-size:13px;background:var(--yellow);color:#161616;display:inline-block;padding:1px 8px;border:2px solid var(--ink);margin-bottom:6px}
+.panel .fx{position:absolute;right:8px;top:4px;font-family:'Black Han Sans';color:var(--red);font-size:20px;transform:rotate(8deg)}
+/* scene */
+.scene{display:flex;align-items:flex-start;gap:8px;margin:8px 0}
+.scene.rev{flex-direction:row-reverse}
+.who{flex:0 0 64px;text-align:center;font-size:12px;color:var(--sub)}
+.who svg{width:62px;height:62px;border:2.5px solid var(--ink);border-radius:50%;background:#fff;display:block;margin:0 auto 2px}
+.bub{position:relative;background:#fff;color:#161616;border:2.5px solid var(--ink);border-radius:16px;padding:8px 12px;font-family:'Jua';font-size:17px;line-height:1.5;flex:1;min-width:0}
+.bub:before{content:"";position:absolute;left:-11px;top:16px;border:9px solid transparent;border-right-color:var(--ink);border-left:0}
+.bub:after{content:"";position:absolute;left:-7px;top:18px;border:7px solid transparent;border-right-color:#fff;border-left:0}
+.rev .bub:before{left:auto;right:-11px;border-right-color:transparent;border-left:9px solid var(--ink);border-right:0}
+.rev .bub:after{left:auto;right:-7px;border-right-color:transparent;border-left:7px solid #fff;border-right:0}
+.bub.shout{border-radius:4px;background:var(--yellow);font-size:18px}
+.bub.shout:after{border-right-color:var(--yellow)}
+.rev .bub.shout:after{border-left-color:var(--yellow)}
+.bub small{display:block;color:#666;font-family:'Gowun Dodum';font-size:12.5px;margin-top:2px}
+/* boxes */
+.box{border:2.5px dashed var(--ink);border-radius:6px;padding:10px 14px;margin:12px 0;background:var(--paper)}
+.box h3{font-size:17px;margin-bottom:6px}
+.box ul,.box ol{margin:0;padding-left:20px}
+.box li{margin:3px 0}
+.box.red{border-style:solid;border-color:var(--red)}
+.box.blue{border-style:solid;border-color:var(--blue)}
+.law{background:var(--soft);border-left:6px solid var(--blue);padding:10px 14px;font-size:14px;margin:12px 0;border-radius:0 6px 6px 0}
+.law b{color:var(--blue)}
+mark{background:var(--yellow);color:#161616;padding:0 3px}
+/* bars */
+.bars{margin:6px 0 4px}
+.bar{display:grid;grid-template-columns:110px 1fr 54px;align-items:center;gap:8px;margin:7px 0;font-size:14px}
+.bar .tr{height:20px;border:2px solid var(--ink);border-radius:3px;background:var(--paper)}
+.bar .fl{height:100%;background:var(--blue)}
+.bar .fl.r{background:var(--red)}.bar .fl.y{background:var(--yellow)}.bar .fl.g{background:var(--green)}
+.bar b{font-family:'Black Han Sans';font-weight:400;text-align:right}
+/* timeline */
+.tl{list-style:none;margin:6px 0;padding:0 0 0 22px;border-left:4px solid var(--ink)}
+.tl li{position:relative;margin:0 0 12px;padding-left:6px}
+.tl li:before{content:"";position:absolute;left:-33px;top:4px;width:16px;height:16px;background:var(--yellow);border:3px solid var(--ink);border-radius:50%}
+.tl li.now:before{background:var(--red)}
+.tl .d{font-family:'Black Han Sans';font-size:14px;color:var(--red)}
+/* flow */
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;align-items:stretch;margin:8px 0}
+.flow div{border:2.5px solid var(--ink);border-radius:5px;padding:8px 4px;text-align:center;font-size:13px;background:var(--paper);font-family:'Jua';display:flex;align-items:center;justify-content:center;min-width:0}
+.flow div.k{background:var(--yellow);color:#161616}
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.chip{border:2px solid var(--ink);border-radius:20px;padding:2px 10px;font-size:13px;background:var(--paper)}
+.chip.hl{background:var(--red);color:#fff;border-color:var(--red)}
+/* number cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.card{border:2.5px solid var(--ink);border-radius:6px;padding:10px;text-align:center;background:var(--paper)}
+.card b{font-family:'Black Han Sans';font-size:30px;font-weight:400;display:block;color:var(--blue);line-height:1.1}
+.card span{font-size:13px}
+/* checklist */
+.chk{list-style:none;padding:0;margin:6px 0}
+.chk li{border:2px solid var(--ink);border-radius:5px;padding:8px 10px 8px 40px;margin:7px 0;position:relative;background:var(--paper);font-size:14px}
+.chk li:before{content:"";position:absolute;left:10px;top:9px;width:18px;height:18px;border:2.5px solid var(--ink);border-radius:3px;background:#fff}
+.chk li b{color:var(--red)}
+.tagline{font-size:13px;color:var(--sub)}
+.quote{text-align:center;font-family:'Jua';font-size:19px;margin:14px 0 4px}
+.src{font-size:12px;color:var(--sub);border-top:2px dashed var(--ink);margin-top:14px;padding-top:8px}
+.theme-btn{position:fixed;right:12px;bottom:12px;z-index:9;border:2.5px solid var(--ink);background:var(--paper2);color:var(--ink);font-family:'Jua';border-radius:20px;padding:4px 12px;cursor:pointer}
+@media (max-width:540px){
+  .g4{grid-template-columns:1fr}
+  .cover h1{font-size:30px}
+  .ep h2{font-size:22px}
+  .nums,.cards{grid-template-columns:repeat(2,1fr)}
+  .flow{grid-template-columns:1fr}
+  .flow div{padding:6px}
+  .bar{grid-template-columns:86px 1fr 46px;font-size:13px}
+  .cover .cast svg{width:60px;height:60px}
+}
+@media (min-width:1024px){.wrap{max-width:960px}body{font-size:18px}.bub{font-size:19px}.ep h2{font-size:30px}.who{flex-basis:80px}.who svg{width:76px;height:76px}.cover h1{font-size:46px}.num b{font-size:30px}}
+@media (min-width:1440px){.wrap{max-width:1280px}body{font-size:19px}.bub{font-size:20.5px;padding:10px 16px}.ep{padding:26px 28px 28px}.ep h2{font-size:34px}.ep .subt{font-size:16px}.who{flex-basis:92px;font-size:12.5px}.who svg{width:88px;height:88px}.cover h1{font-size:54px}.cover .kick{font-size:20px}.cover .cast svg{width:96px;height:96px}.num b{font-size:34px}.num span{font-size:14px}.g4{gap:16px}.panel{padding:14px}.panel .cap{font-size:15px}.box h3{font-size:20px}.law,.src{font-size:15px}.bar{grid-template-columns:200px 1fr 70px;font-size:16px}.bar .tr{height:24px}.card b{font-size:36px}.card span{font-size:15px}.chk li{font-size:16px}.zt-nav{font-size:16px}}
+@media print{.theme-btn{display:none}}
+</style>
+<style>
+.zt-nav{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:10px;justify-content:space-between;background:var(--paper2);border-bottom:3px solid var(--ink);padding:8px 14px;font-family:'Jua',sans-serif;font-size:14px}
+.zt-nav a{color:var(--ink);text-decoration:none;border:2px solid var(--ink);border-radius:16px;padding:1px 10px;background:var(--paper)}
+.zt-nav span{flex:1;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.zt-end{padding-top:0}
+.zt-cta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;background:#ffd23f;color:#161616;border:3px solid var(--ink);border-radius:6px;padding:14px 16px;box-shadow:5px 5px 0 var(--shadow);margin-right:6px}
+.zt-cta b{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:19px}
+.zt-cta span{font-size:13.5px}
+.zt-btn{background:#161616;color:#fff;text-decoration:none;font-family:'Jua',sans-serif;border-radius:5px;padding:7px 14px}
+.zt-links{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 50px}
+.zt-links a{color:var(--ink);text-decoration:none;border:2px solid var(--ink);border-radius:5px;padding:4px 12px;font-family:'Jua',sans-serif;background:var(--paper2)}
+.zt-like{display:flex;align-items:center;gap:12px;margin:18px 0 0;flex-wrap:wrap}
+.zt-like button{border:2.5px solid var(--ink);background:var(--paper2);color:var(--ink);border-radius:22px;padding:6px 16px;font-family:'Jua',sans-serif;font-size:16px;cursor:pointer}
+.zt-like button.on{background:#ffd23f;color:#161616}
+.zt-like span{font-size:13px;color:var(--sub)}
+@media print{.zt-nav,.zt-end{display:none}}
+</style>
+</head>
+<body>
+<div style="background:#161616;color:#fffdf7;font-size:12.5px;text-align:center;padding:6px 10px;font-family:'Gowun Dodum',sans-serif">제공 <a href="https://www.zenielinnovation.co.kr" target="_blank" rel="noopener" style="color:#ffd23f;font-weight:700;text-decoration:none">㈜제니엘이노베이션</a></div>
+<nav class="zt-nav"><a href="../index.html" data-zt-back>← 제니툰</a><span>💡 특별편 · 017화</span><a href="017.pdf" class="zt-pdf">PDF</a></nav>
+<button class="theme-btn" onclick="toggleTheme()">☀︎ / ☾</button>
+<div class="wrap" id="app"></div>
+<div class="wrap zt-end"><div class="zt-cta"><div><b>우리 조직의 ‘중간 점검’, 함께 해 드립니다</b><br><span>도급·파견 운영 진단 · 인력 교대·교육 설계 · 인사·노무 상담</span></div>
+<a class="zt-btn" href="../index.html?consult=1&from=017%ED%99%94">💬 상담 문의하기</a></div>
+<div class="zt-like" id="ztLike" hidden><button type="button" onclick="ztLike()">👍 도움됐어요 <b id="ztLikeN"></b></button><span id="ztViews"></span></div>
+<div class="zt-links"><a href="../index.html">🏠 제니툰 목록</a><a href="017.pdf">📄 PDF 저장</a><a href="../index.html#aha">💡 그렇구나툰 더보기</a></div></div>
+
+
+<script>
+/* ---------- 오리지널 캐릭터 SVG (가상 인물) ---------- */
+const CH={
+  nomusa:{name:'도 노무사',skin:'#efc8a4',hair:'#9a9a9a',style:'side',acc:'glasses',shirt:'#4b5563'},
+  hr:{name:'한결 대리',skin:'#f6d3b3',hair:'#40261a',style:'long',acc:'none',shirt:'#8b5cf6'},
+  banjang:{name:'현장 반장',skin:'#e9bf98',hair:'#2a2a2a',style:'short',acc:'badge',shirt:'#f08c00'},
+  bot:{name:'안내로봇 체키',bot:true}
+};
+function face(k,mood='calm'){
+  const c=CH[k];
+  if(c.bot){
+    const eye= mood==='shock'?'<circle cx="30" cy="40" r="6" fill="#161616"/><circle cx="50" cy="40" r="6" fill="#161616"/>'
+      :'<rect x="24" y="36" width="12" height="8" rx="3" fill="#161616"/><rect x="44" y="36" width="12" height="8" rx="3" fill="#161616"/>';
+    const m= mood==='shock'?'<ellipse cx="40" cy="56" rx="5" ry="6" fill="#161616"/>':'<path d="M30 54 Q40 62 50 54" stroke="#161616" stroke-width="3" fill="none"/>';
+    return `<svg viewBox="0 0 80 80"><line x1="40" y1="8" x2="40" y2="18" stroke="#161616" stroke-width="3"/><circle cx="40" cy="7" r="4" fill="#e2403a" stroke="#161616" stroke-width="2"/><rect x="14" y="18" width="52" height="48" rx="12" fill="#ffd23f" stroke="#161616" stroke-width="3"/><rect x="20" y="28" width="40" height="34" rx="8" fill="#fff" stroke="#161616" stroke-width="2"/>${eye}${m}<rect x="8" y="34" width="6" height="14" rx="2" fill="#2f6fd6" stroke="#161616" stroke-width="2"/><rect x="66" y="34" width="6" height="14" rx="2" fill="#2f6fd6" stroke="#161616" stroke-width="2"/></svg>`;
+  }
+  const S='#161616';
+  let hair='';
+  switch(c.style){
+    case 'short': hair=`<path d="M18 38 Q18 14 40 14 Q62 14 62 38 Q58 24 40 24 Q26 24 18 38Z" fill="${c.hair}"/>`;break;
+    case 'side': hair=`<path d="M18 38 Q16 16 40 15 Q64 16 62 36 Q52 22 30 26 Q22 28 18 38Z" fill="${c.hair}"/>`;break;
+    case 'bob': hair=`<path d="M15 50 Q12 14 40 13 Q68 14 65 50 L58 50 Q60 26 40 24 Q20 26 22 50Z" fill="${c.hair}"/>`;break;
+    case 'bald': hair=`<path d="M19 36 Q20 30 24 30 L24 40 Z M61 36 Q60 30 56 30 L56 40Z" fill="${c.hair}"/>`;break;
+    case 'long': hair=`<path d="M14 66 Q10 14 40 13 Q70 14 66 66 L58 66 Q62 28 40 24 Q18 28 22 66Z" fill="${c.hair}"/>`;break;
+    case 'neat': hair=`<path d="M18 36 Q18 14 40 14 Q62 14 62 36 Q60 22 46 21 L44 26 Q30 22 18 36Z" fill="${c.hair}"/>`;break;
+  }
+  let brows='',eyes='',mouth='',extra='';
+  const ey=40;
+  if(mood==='angry'){brows=`<path d="M26 31 L36 35 M54 31 L44 35" stroke="${S}" stroke-width="3"/>`;}
+  else if(mood==='sad'){brows=`<path d="M26 34 L35 31 M54 34 L45 31" stroke="${S}" stroke-width="2.5"/>`;}
+  else if(mood==='shock'){brows=`<path d="M26 29 Q31 26 36 29 M44 29 Q49 26 54 29" stroke="${S}" stroke-width="2.5" fill="none"/>`;}
+  else {brows=`<path d="M27 32 Q31 30 35 32 M45 32 Q49 30 53 32" stroke="${S}" stroke-width="2.5" fill="none"/>`;}
+  if(mood==='shock'){eyes=`<circle cx="31" cy="${ey}" r="4.5" fill="#fff" stroke="${S}" stroke-width="2"/><circle cx="31" cy="${ey}" r="2" fill="${S}"/><circle cx="49" cy="${ey}" r="4.5" fill="#fff" stroke="${S}" stroke-width="2"/><circle cx="49" cy="${ey}" r="2" fill="${S}"/>`;mouth=`<ellipse cx="40" cy="56" rx="5" ry="6" fill="${S}"/>`;}
+  else if(mood==='happy'){eyes=`<path d="M27 41 Q31 36 35 41 M45 41 Q49 36 53 41" stroke="${S}" stroke-width="3" fill="none"/>`;mouth=`<path d="M30 52 Q40 63 50 52 Z" fill="${S}"/>`;}
+  else {eyes=`<circle cx="31" cy="${ey}" r="3" fill="${S}"/><circle cx="49" cy="${ey}" r="3" fill="${S}"/>`;
+    mouth= mood==='sad'?`<path d="M32 57 Q40 51 48 57" stroke="${S}" stroke-width="3" fill="none"/>`: mood==='angry'?`<path d="M32 56 L48 56" stroke="${S}" stroke-width="3"/>`:`<path d="M32 53 Q40 60 48 53" stroke="${S}" stroke-width="3" fill="none"/>`;}
+  if(c.acc==='glasses') extra+=`<circle cx="31" cy="${ey}" r="7" fill="none" stroke="${S}" stroke-width="2.2"/><circle cx="49" cy="${ey}" r="7" fill="none" stroke="${S}" stroke-width="2.2"/><path d="M38 ${ey} L42 ${ey}" stroke="${S}" stroke-width="2"/><path d="M33 49 Q40 46 47 49" stroke="#9a9a9a" stroke-width="3" fill="none"/>`;
+  let body=`<path d="M10 80 Q12 64 40 64 Q68 64 70 80Z" fill="${c.shirt}" stroke="${S}" stroke-width="2.5"/>`;
+  if(c.acc==='badge') body+=`<path d="M52 69 l5 0 l2 4 l-4.5 3 l-4.5 -3Z" fill="#ffd23f" stroke="${S}" stroke-width="1.5"/>`;
+  if(c.acc==='lanyard') body+=`<path d="M30 64 L40 76 L50 64" stroke="#ffd23f" stroke-width="3" fill="none"/><rect x="36" y="74" width="8" height="6" fill="#fff" stroke="${S}" stroke-width="1.5"/>`;
+  if(c.acc==='apron') body+=`<rect x="28" y="68" width="24" height="12" fill="#fff" stroke="${S}" stroke-width="2"/>`;
+  if(c.acc==='tie') body+=`<path d="M37 64 L43 64 L41.5 69 L44 78 L40 80 L36 78 L38.5 69Z" fill="#e2403a" stroke="${S}" stroke-width="1.5"/>`;
+  return `<svg viewBox="0 0 80 80">${body}<ellipse cx="40" cy="42" rx="22" ry="24" fill="${c.skin}" stroke="${S}" stroke-width="2.5"/>${hair}<circle cx="24" cy="50" r="3.5" fill="#f59e9e" opacity=".6"/><circle cx="56" cy="50" r="3.5" fill="#f59e9e" opacity=".6"/>${brows}${eyes}${mouth}${extra}</svg>`;
+}
+/* ---------- 컴포넌트 ---------- */
+function S(k,mood,name,text,o={}){
+  return `<div class="scene ${o.rev?'rev':''}"><div class="who">${face(k,mood)}${name||CH[k].name}</div><div class="bub ${o.shout?'shout':''}">${text}${o.note?`<small>${o.note}</small>`:''}</div></div>`;
+}
+function P(cap,body,o={}){return `<div class="panel ${o.wide?'wide':''}">${cap?`<div class="cap">${cap}</div>`:''}${o.fx?`<div class="fx">${o.fx}</div>`:''}${body}</div>`;}
+function WHO(list){return `<div class="chips">${list.map(([n,h])=>`<span class="chip ${h?'hl':''}">${n}</span>`).join('')}</div>`;}
+function bars(rows,max){return `<div class="bars">${rows.map(([l,v,u,c])=>`<div class="bar"><span>${l}</span><div class="tr"><div class="fl ${c||''}" style="width:${Math.max(4,v/max*100)}%"></div></div><b>${v}${u}</b></div>`).join('')}</div>`;}
+function EP(tag,title,sub,body,cls=''){return `<section class="ep ${cls}"><span class="eptag">${tag}</span><h2>${title}</h2>${sub?`<p class="subt">${sub}</p>`:''}${body}</section>`;}
+
+
+/* ---------- 본문 ---------- */
+let H='';
+const SRC_URL='https://youtu.be/ape5OGze420';
+const R1='https://www.pbs.org/newshour/politics/democrats-take-control-of-the-senate-after-winning-key-midterm-races';
+const R2='https://www.forbes.com/sites/saradorn/2026/11/04/midterm-election-results-live-updates-democrats-sweep-house-and-senate-some-races-still-too-close-to-call/';
+
+/* 표지 */
+H+=`<section class="ep cover"><div class="burst"></div>
+<div class="kick">제니툰 특별편 · 그렇구나툰</div>
+<h1>미국 ‘중간선거’는<br>왜 있을까?</h1>
+<div class="kick">상원과 하원, 2·4·6년 임기의 비밀 — 미국 선거 아는 척하기</div>
+<div class="cast">${face('bot','shock')}${face('hr','shock')}${face('nomusa','calm')}${face('banjang','calm')}</div>
+<div class="nums">
+ <div class="num"><b>435석</b><span>하원 전원 다시 뽑음</span></div>
+ <div class="num"><b>35석</b><span>2026년 상원 선거 대상</span></div>
+ <div class="num"><b>2·4·6</b><span>하원·대통령·상원 임기(년)</span></div>
+ <div class="num"><b>18/20</b><span>여당이 하원 의석 잃은 횟수</span></div>
+ <div class="num"><b>218석</b><span>하원 과반 기준</span></div>
+ <div class="num"><b>1787</b><span>이 구조를 설계한 헌법 제정</span></div>
+</div>
+<div class="by">작성 · ㈜제니엘이노베이션 &nbsp;|&nbsp; 2026.11.05</div>
+</section>`;
+
+/* 원작 안내 */
+H+=`<div class="box blue" style="margin:0 6px 30px 0"><h3>🎬 원작 영상 안내</h3>
+<p style="margin:0">이 웹툰은 유튜브 <b>‘두선생의 역사공장’</b> 채널의 「미국 ‘중간선거’는 왜 있을까? 미국의 상원과 하원, 미국 선거 아는 척하기」(2026.10.31 게시, 33분 12초)를 영상 흐름 그대로 요약·재구성했습니다. <b>영상 중간 광고 구간(약 7:20~9:29)은 제외</b>했습니다. 영상은 선거 전(2026.10.27)에 촬영됐으며, 선거 결과는 맨 끝 확인 상자에 따로 적었습니다.</p>
+<p style="margin:8px 0 0"><a href="${SRC_URL}" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">▶ 원작 영상 보러 가기</a></p></div>`;
+
+/* EP.0 */
+H+=EP('EP.0','중간선거, 총선이야 지방선거야?','00:00~06:16 기본 개념',
+`${S('bot','calm','','안녕하세요, 안내로봇 <b>체키</b>예요! 미국은 현지 시간 <b>2026년 11월 3일</b>에 <mark>중간선거</mark>를 치렀어요. 그런데 중간선거가 정확히 뭘까요?')}
+${S('hr','calm','','이름만 들으면 정권 임기 <b>중간에</b> 하는 선거 같은데요?',{rev:true})}
+${S('nomusa','calm','','맞아요. 그런 뜻이면 어느 나라에나 있어요. 우리도 현 정부 임기 중 치른 <b>2026년 6월 지방선거</b>, <b>2028년 4월 총선</b>이 일종의 중간선거죠. 하지만 미국 중간선거는 <b>총선도, 지방선거도 아니에요</b>(요지).')}
+${P('미국 선거의 임기표',bars([['하원의원',2,'년','g'],['대통령',4,'년','y'],['상원의원',6,'년','r']],6),{wide:true})}
+<div class="g4">
+${P('딱딱 떨어지는 짝수년',S('banjang','calm','','세 임기가 모두 <b>짝수</b>라 선거도 늘 <b>짝수 해</b>에 열려요. 우리는 대통령 5년·국회의원 4년이 엇갈리는데 미국은 맞물리죠.'),{fx:'짝수'})}
+${P('그래서 ‘중간’',S('nomusa','calm','','대통령 선거(2024·2028년…) 때 하원도 함께 뽑고, 하원 임기가 2년이니 <b>대통령 임기 한가운데</b>에 하원 선거가 한 번 더 있어요. 이게 <mark>중간선거</mark>예요.',{rev:true}),{fx:'중간'})}
+</div>
+${S('hr','shock','','그런데 상원은 6년마다 뽑는 거 아니에요? 중간선거에 상원도 들어간다면서요?')}
+${S('nomusa','calm','','상원은 임기 6년이 맞는데, <b>2년마다 3분의 1씩</b> 나눠 뽑아요. 100석을 3으로 나누면 안 떨어지니 <b>33·33·34석</b>씩이죠.',{rev:true})}
+<ul class="tl">
+<li><span class="d">1그룹</span><br>2024년에 선출 → 다음은 2030년</li>
+<li class="now"><span class="d">2그룹</span><br><b>2026년</b> 선출 — 원래 33석, 플로리다·오하이오 <b>보궐선거</b>가 더해져 <b>35석</b></li>
+<li><span class="d">3그룹</span><br>2028년 선출(34석)</li>
+</ul>
+<div class="box red"><h3>📌 2026년 중간선거에서 뽑는 것 (영상 기준)</h3><ul>
+<li><b>하원 435석 전부</b></li>
+<li><b>상원 100석 중 35석</b></li>
+<li><b>주지사 50명 중 36명</b> + 일부 지방선거</li>
+</ul></div>
+${S('banjang','calm','','미국 지방선거는 <b>주마다 제각각</b>이래요. 주지사 선거를 중간선거에 맞추는 주가 많지만, 대선 해나 그 사이에 하는 주도 있고, <b>뉴햄프셔·버몬트</b>는 주지사 임기가 <b>2년</b>이라 하원처럼 매번 뽑는대요.')}`);
+
+/* EP.1 */
+H+=EP('EP.1','왜 이런 선거를 만들었을까','06:16~07:20 대통령 권력의 중간 점검',
+`${S('hr','calm','','그럼 미국은 왜 굳이 이렇게 복잡하게 만들었어요?')}
+${S('nomusa','calm','','헌법을 만든 사람들의 고민이 담겨 있어요. 핵심은 하나예요.',{rev:true})}
+<div class="flow"><div>대통령에게<br>4년 임기 보장</div><div class="k">하지만<br>국민 목소리는?</div><div>2년마다<br>유권자 개입 통로</div><div class="k">= 중간 점검<br>장치</div></div>
+${S('bot','shock','','중간선거는 <mark>대통령 권력에 대한 중간 점검 장치</mark>! 이걸 제대로 이해하려면 미국 의회가 왜 <b>두 개로 나뉘는지</b>부터 봐야 해요.')}`);
+
+/* EP.2 */
+H+=EP('EP.2','상원은 주를, 하원은 사람을 대표한다','09:29~14:51 양원제와 각자의 권한',
+`${S('nomusa','calm','','의회를 둘로 나누는 걸 <b>양원제</b>라고 해요. 영국·일본도 그렇고, 우리나라도 한때 채택했었죠.')}
+<div class="g4">
+${P('원래 양원제는',S('banjang','calm','','<b>신분제</b>에서 왔어요. 귀족·성직자 같은 지배층을 대변하는 <b>상원</b>(로마의 원로원, 귀족원)과 평민·시민을 대변하는 <b>하원</b>이죠.'),{fx:'신분'})}
+${P('미국은 다르다',S('nomusa','calm','','미국은 독립성이 강한 <b>주(State)들이 모인 연방 국가</b>예요. 인구가 적은 주의 발언권도 지켜야 했고, 큰 주는 “인구대로 하자”고 맞섰죠(요지).',{rev:true}),{fx:'연방'})}
+</div>
+<div class="cards">
+<div class="card"><b>상원 100석</b><span>주를 대표<br>모든 주 2석씩</span></div>
+<div class="card"><b>하원 435석</b><span>인구를 대표<br>인구 비례 배분</span></div>
+<div class="card"><b>1787</b><span>헌법 제정 때<br>두 안을 모두 채택</span></div>
+</div>
+${P('같은 주, 다른 의석(영상 발언)',bars([['캘리포니아 상원',2,'석','y'],['와이오밍 상원',2,'석','y'],['캘리포니아 하원',52,'석','r'],['와이오밍 하원',1,'석','g']],55),{wide:true})}
+<p class="tagline">※ 영상은 캘리포니아 인구 약 4천만 명·하원 ‘50석 넘음’, 와이오밍 인구 약 60만 명·하원 1석으로 설명(막대의 52석은 현행 배분 기준 표기).</p>
+<div class="g4">
+${P('하원 — 돈줄과 속도',S('hr','calm','','<b>세입(세금) 법안</b>을 먼저 다루고, <b>탄핵 소추</b>를 발의해요. 대선에서 과반 후보가 없으면 <b>하원이 대통령을 뽑고요</b>. 매년 예산을 다루니 <b>기동성</b>이 중요해서 2년마다 <b>싹 교체</b>!'),{fx:'2년'})}
+${P('상원 — 길게 보는 자리',S('nomusa','calm','','<b>대법관·장관 인준</b>, <b>조약 비준</b>, 하원이 올린 <b>탄핵 심판</b>. 대법관은 종신직, 조약은 수십 년 가니 정파보다 <b>국익</b>을 길게 봐야 해서 임기 <b>6년</b>이래요(요지).',{rev:true}),{fx:'6년'})}
+</div>
+${S('banjang','calm','','2년마다 선거를 치르면 늘 다음 표를 신경 쓰니, 인기는 없어도 꼭 필요한 결정을 내리기 어렵죠. 6년이면 그 부담이 덜하고요.')}`);
+
+/* EP.3 */
+H+=EP('EP.3','뜨거운 차를 식히는 접시','14:51~17:39 3분의 1씩 교체와 현역 프리미엄',
+`${S('hr','calm','','상원을 3분의 1씩만 바꾸면 뭐가 좋아요?')}
+${S('nomusa','calm','','선거를 치러도 <b>3분의 2는 그대로</b> 남아요. 의회의 <mark>연속성</mark>이 생기고, 초선이 들어와도 <b>베테랑 선배</b>가 노하우를 전수할 시간이 있죠. 여론이 뜨거워도 의회가 <b>급격히 뒤집히지 않고요</b>(요지).',{rev:true})}
+<div class="g4">
+${P('찻잔과 접시',S('bot','calm','','초대 대통령 <b>조지 워싱턴</b>이 “뜨거운 차를 식히려고 <b>접시에 따른다</b>”고 비유했대요. 뜨거운 차는 하원의 그때그때 여론, 접시는 상원!'),{fx:'☕'})}
+${P('출처는 논쟁 중',S('nomusa','calm','','다만 워싱턴이 <b>실제로 그 말을 했는지는 출처가 분명치 않아</b> 지금도 논쟁이 있대요. 비유가 딱 맞아서 소개한 거고요(요지).',{rev:true}),{fx:'?'})}
+</div>
+${S('banjang','calm','','상원 의석은 하나하나가 <b>귀해요</b>. 435석 대 100석, 임기 6년, 선거구가 <b>주 전체</b>. 정말 못하지 않으면 바꾸기 어렵죠.')}
+<div class="g4">
+${P('현역 프리미엄',S('hr','shock','','이걸 <b>현역 프리미엄</b>이라고 해요. 메인주의 한 상원의원은 <b>1997년부터</b> 30년 가까이, 켄터키주의 한 상원의원은 <b>1985년부터</b> 40년 넘게 자리를 지켜 왔대요(영상 발언).'),{fx:'30년+'})}
+${P('뒤집어 보면',S('nomusa','calm','','한 번 <b>빼앗긴 상원 의석</b>은 되찾으려면 <b>6년, 혹은 그 이상</b> 기다려야 한다는 뜻이기도 해요.',{rev:true}),{fx:'6년'})}
+</div>`);
+
+/* EP.4 */
+H+=EP('EP.4','“중간선거는 여당의 무덤”','17:39~22:08 왜 여당이 질까, 그리고 결과의 의미',
+`${S('bot','shock','','미국 정치엔 거의 법칙처럼 굳은 말이 있어요. <mark>중간선거는 여당의 무덤!</mark>')}
+<div class="cards">
+<div class="card"><b>18/20</b><span>최근 80년 중간선거 중<br>여당이 하원 의석 잃은 횟수</span></div>
+<div class="card"><b>평균 31석</b><span>최근 5번 중간선거<br>여당 하원 의석 감소</span></div>
+<div class="card"><b>60석 가까이</b><span>2010년 대통령 소속<br>민주당이 잃은 하원 의석</span></div>
+</div>
+<p class="tagline">※ 수치는 영상 발언 기준(전언).</p>
+<div class="g4">
+${P('왜 질까 ① 중간평가',S('hr','calm','','임기 중간이니 <b>대통령 중간평가</b>, 곧 <b>심판 선거</b>가 되기 쉬워요.'),{fx:'심판'})}
+${P('왜 질까 ② 투표율',S('banjang','calm','','대선보다 투표율이 낮은데, 정권에 <b>불만 있는 사람이 더 부지런히</b> 투표하러 가니까요(요지).',{rev:true}),{fx:'투표율'})}
+</div>
+${S('nomusa','calm','','하지만 진다고 <b>무조건 대통령 잘못</b>은 아니래요. 대선 때 이긴 쪽이 하원도 크게 가져가니, 중간선거는 시스템이 일부러 심어 둔 <mark>브레이크</mark>예요. 다수당은 유지해도 <b>일부 의석을 내주며 “독주하지 마라”</b>는 견제구가 되는 거죠(요지).')}
+<div class="box red"><h3>🔎 중간선거 결과가 갖는 세 가지 의미</h3><ul>
+<li><b>① 입법권의 향방</b> — 야당이 의회 과반을 가져가면 대통령은 법안·예산·주요 정책 추진력이 크게 떨어져요.</li>
+<li><b>② 조사권·감독권</b> — 미국은 다수당이 <b>상임위원장을 모두</b> 가져가요. 청문회·자료 요구·증인 소환장 권한이 넘어가면 행정부는 2년 내내 시달릴 수 있죠.</li>
+<li><b>③ 다음 대선의 풍향계</b> — 어느 주 표심이 어떻게 움직였는지, 어떤 이슈가 먹혔는지 드러나 양당이 2년 뒤 대선 전략을 짜는 자료가 돼요.</li>
+</ul></div>`);
+
+/* EP.5 */
+H+=EP('EP.5','2026년 판세 — 흔들린 지도','22:08~27:49 선거 전(10.27 촬영) 분석',
+`${S('bot','calm','','여기부터는 영상이 <b>2026년 10월 27일, 선거 전에</b> 촬영됐다는 점을 기억해 주세요!')}
+${S('nomusa','calm','','선거 전 상원은 <b>공화당 53석</b>으로 과반이었어요. 민주당이 뒤집으려면 <b>4석</b>을 가져와야 했죠. 올해 초까지는 <b>거의 불가능</b>하다는 평가였대요(요지).',{rev:true})}
+<div class="g4">
+${P('230년 전 뽑기',S('banjang','calm','','상원 세 그룹에 어느 주가 들어갈지는 <b>1789년 추첨</b>으로 정해져 그대로 이어져 왔대요. 정치적 균형을 따져 짠 게 아니고요.'),{fx:'추첨'})}
+${P('하필 2그룹은',S('hr','calm','','그런데 2그룹엔 캘리포니아·뉴욕·워싱턴 같은 <b>민주당 강세 주가 없고</b>, 텍사스·알래스카·와이오밍 같은 <b>공화당 강세 주가 많아요</b>. 구조적으로 공화당에 유리한 지도였죠.',{rev:true}),{fx:'지도'})}
+</div>
+${S('nomusa','shock','','그런데 그 지도가 흔들렸대요. 영상이 든 이유는 <b>대통령 지지율 하락</b>, <b>이란 전쟁</b>, 그로 인한 <b>유가·물가·금리 상승</b>이에요(요지).')}
+<div class="flow"><div>이란 전쟁</div><div class="k">유가 ↑</div><div>물가 ↑</div><div class="k">금리 ↑</div><div>강세 지역까지<br>접전 보도</div></div>
+<div class="g4">
+${P('충격의 텍사스',S('banjang','shock','','<b>1994년 이후</b> 민주당이 주 단위 선거에서 한 번도 못 이긴 곳, 2024년 대선에선 공화당이 <b>14%p 가까이</b> 이긴 곳인데, 여론조사에서 민주당 후보가 <b>최대 6%p 우세</b>로 나왔대요(영상 발언).'),{fx:'텍사스'})}
+${P('지키는 데 쓰는 돈',S('nomusa','calm','','공화당 외곽 단체가 텍사스 상원 의석을 지키려 약 <b>3억 달러</b>(약 4천억 원)를 쓰고 있다는 설명이에요(영상 발언, 전언).',{rev:true}),{fx:'$3억'})}
+${P('경합주는 손 놓고',S('hr','calm','','공화당에 유리했다가 경합주가 된 <b>노스캐롤라이나</b>는 공화당이 사실상 선거를 포기한 분위기라는 보도가 나왔대요. 강세 지역부터 지켜야 하니 여력이 없다는 거죠(요지).'),{fx:'NC'})}
+${P('공격수까지 수비로',S('bot','calm','','원래 계획은 유리한 2026년에 <b>미시간·미네소타·노스캐롤라이나</b> 같은 경합주에 돈을 써 격차를 벌리고, 불리한 2028·2030년에 대비하는 것. 그런데 그 돈이 <b>텃밭 방어</b>로 가니, <mark>공격수까지 수비하는 축구팀</mark> 같다는 비유예요(요지).',{rev:true}),{fx:'수비'})}
+</div>
+${S('nomusa','calm','','하원은 과반이 <b>218석</b>인데, 선거 전 전문가·언론 분석으로 민주당이 이미 <b>220석 가량</b>을 확보했다는 평가가 나왔다고 해요(영상 발언).')}`);
+
+/* EP.6 */
+H+=EP('EP.6','지면 2년, 아니 6년이 걸린다','27:49~33:12 시나리오와 정리',
+`${S('hr','calm','','여당이 지면 어떻게 되는데요?')}
+${S('nomusa','calm','','영상의 시나리오는 이래요. 민주당이 <b>하원·상원 모두</b> 과반을 얻으면 대통령은 남은 2년 동안 <b>의회 양원을 다 잃어요</b>. 사실상 <mark>레임덕</mark>이죠(요지).',{rev:true})}
+<ul class="chk">
+<li>입법이 어렵고, <b>예산 협상</b>마다 충돌</li>
+<li>장관 등 <b>인사 인준</b>과 <b>연방 대법관 인준</b>이 상원에 막힘</li>
+<li>상임위 <b>조사권</b>이 모두 상대 당으로</li>
+</ul>
+<div class="g4">
+${P('6년의 그림자',S('banjang','shock','','상원은 6년짜리라, 올해 잃은 의석을 되찾으려면 <b>2032년</b>까지 기다려야 해요.'),{fx:'2032'})}
+${P('다음 판도 불리',S('nomusa','calm','','2026년이 공화당에 유리한 지도였다는 건, <b>2028·2030년은 상대적으로 불리</b>하다는 뜻. 2028년엔 대선도 있고, 2030년은 뉴욕·매사추세츠·캘리포니아 같은 민주당 강세 주가 많아 <b>2026년의 거꾸로 버전</b>이래요(요지).',{rev:true}),{fx:'역버전'})}
+</div>
+${S('bot','calm','','반대 시나리오도 있어요. 공화당이 하원을 내주더라도 <b>상원만 지키면</b> 그림이 완전히 달라진대요.')}
+<div class="g4">
+${P('상원을 지키면',S('hr','calm','','<b>인사 인준·조약 비준</b>, 종신직인 <b>대법관 임명</b>, 그리고 <b>탄핵 심판</b>이 상원 몫이니, 하원이 탄핵을 발의해도 상원이 부결할 수 있죠. 관세·외교 노선도 큰 제동 없이 이어질 가능성이 크고요(요지).'),{fx:'수성'})}
+${P('그래도 고분고분하진 않다',S('banjang','calm','','상원은 다수당이어도 대통령에게 <b>늘 순종하진 않아요</b>. 이번에도 일부 지역 여당 후보들이 대통령과 거리를 두며 “전쟁을 끝내야 한다, 주민이 연료비·식료품비를 더 내선 안 된다”고 주장했대요(요지). 6년 임기가 주는 <b>독립성</b>이죠.',{rev:true}),{fx:'독립'})}
+</div>
+${S('nomusa','happy','','헌법을 만든 건국의 아버지들의 설계도가 <mark>230년이 지난 지금도 그대로 작동</mark>하고 있다는 게 영상의 결론이에요.')}
+<div class="box blue"><h3>📝 영상의 정리</h3><ul>
+<li>중간선거 = <b>대통령 임기 한가운데</b>의 선거 → ① 대통령 중간평가 ② <b>하원 전체</b> 교체 ③ <b>상원 3분의 1</b> 선출</li>
+<li>2026년 관전 포인트 → ① 민주당의 <b>하원 승리</b> 여부 ② 원래 공화당에 유리했던 <b>상원까지</b> 민주당이 가져갈지</li>
+<li>다음 편 예고 → 국민이 대통령을 직접 뽑지 않는 <b>미국 선거인단 제도</b></li>
+</ul></div>`);
+
+/* EP.7 현장 관점 */
+H+=EP('EP.7','그럼 우리 현장은?','조직 운영 관점의 시사점 (작성자 정리)',
+`${S('banjang','calm','','선거 이야기지만, 회사나 현장 운영에도 써먹을 생각이 있어요!')}
+${S('nomusa','calm','','미국 의회 설계에서 배울 점 네 가지를 골라 봤어요.',{rev:true})}
+<div class="g4">
+${P('① 계약 중간 점검',S('hr','calm','','도급·파견 계약은 보통 1년 단위죠. <b>계약 중간에 한 번</b> 고객사와 성과·만족도를 점검하는 자리를 두면, 만료 직전에 놀라는 일이 줄어요.'),{fx:'중간점검'})}
+${P('② 3분의 1씩 교체',S('banjang','calm','','현장 인력을 한꺼번에 바꾸면 품질이 흔들려요. 조장·숙련자를 <b>나눠서 교대</b>하고 <b>선배가 신입을 가르치는 기간</b>을 두면 연속성이 지켜져요.',{rev:true}),{fx:'연속성'})}
+${P('③ 빠른 일, 긴 일 나누기',S('nomusa','calm','','하원처럼 <b>매일 바뀌는 현장 요청</b>은 빠르게, 상원처럼 <b>안전·노무 기준</b>은 길게 보고 신중하게. 의사결정 단위를 나누면 흔들리지 않아요.'),{fx:'분업'})}
+${P('④ 견제와 균형',S('bot','shock','','관리자 한 사람에게 모든 권한이 몰리면 위험해요. 근태·평가·징계처럼 중요한 결정은 <b>복수 확인</b> 절차를 두는 게 좋아요.',{rev:true}),{fx:'균형'})}
+</div>
+<p class="tagline">※ 이 EP는 영상 내용이 아니라 ㈜제니엘이노베이션의 실무 관점 정리입니다.</p>`);
+
+/* 숫자 */
+H+=EP('NUMBERS','한눈에 보는 숫자','이야기 속 핵심 포인트 6',
+`<div class="cards">
+<div class="card"><b>2·4·6</b><span>하원·대통령·상원<br>임기(년)</span></div>
+<div class="card"><b>435석</b><span>하원 — 중간선거 때<br>전원 다시 선출</span></div>
+<div class="card"><b>100석</b><span>상원 — 주마다 2석<br>2년마다 3분의 1</span></div>
+<div class="card"><b>35석</b><span>2026년 상원 선거<br>(보궐 2석 포함)</span></div>
+<div class="card"><b>18/20</b><span>최근 80년 중간선거<br>여당 하원 의석 감소(전언)</span></div>
+<div class="card"><b>218석</b><span>하원 과반 기준</span></div>
+</div>`);
+
+/* 체크리스트 */
+H+=EP('CHECK','우리 조직 ‘중간 점검’ 체크리스트','고객사 인사·운영 담당자용 (작성자 제안)',
+`${S('hr','calm','','우리 회사에도 ‘중간선거’ 같은 점검 장치가 있을까요?')}
+${S('nomusa','calm','','연 단위 계획이라면 <b>반기마다 한 번</b>은 멈춰서 점검해 보세요.',{rev:true})}
+<ul class="chk">
+<li>도급·파견 계약 기간 <b>중간 시점</b>에 고객사 만족도 점검 일정이 잡혀 있는가</li>
+<li>현장 인력 교체 시 <b>숙련자와 신입을 나눠 배치</b>하는 원칙이 있는가</li>
+<li>신입에게 <b>선배 동행 교육 기간</b>을 정해 두었는가</li>
+<li>근태·평가·징계 등 중요한 결정에 <b>복수 확인 절차</b>가 있는가</li>
+<li>현장 의견을 2~3개월마다 모으는 <b>정기 소통 창구</b>가 있는가</li>
+<li>중간 점검 결과를 <b>다음 계약·채용 계획</b>에 반영하고 있는가</li>
+</ul>
+<p class="tagline">※ 위 점검표는 ㈜제니엘이노베이션이 정리한 실무 제안입니다.</p>`);
+
+/* 흐름 정리 */
+H+=EP('SUMMARY','흐름 정리','개념 → 설계 이유 → 양원제 → 2026년',
+`<div class="g4">
+${P('🗳️ 개념',`<ul style="margin:0;padding-left:18px"><li>대통령 임기 <b>한가운데</b></li><li>하원 435석 전부</li><li>상원 <b>3분의 1</b></li></ul>`)}
+${P('🏛️ 설계 이유',`<ul style="margin:0;padding-left:18px"><li>대통령 권력 <b>중간 점검</b></li><li>상원 = 주, 하원 = 인구</li><li>1787년 헌법의 타협</li></ul>`)}
+${P('☕ 견제 장치',`<ul style="margin:0;padding-left:18px"><li>하원은 빠르게, 상원은 길게</li><li><b>여당의 무덤</b>이라는 법칙</li><li>입법·조사권·대선 풍향계</li></ul>`)}
+${P('📅 2026년',`<ul style="margin:0;padding-left:18px"><li>공화당 유리했던 <b>상원 지도</b></li><li>지지율·물가가 흔든 판세</li><li>6년이 걸리는 만회</li></ul>`)}
+</div>`);
+
+/* 에필로그 */
+H+=EP('EPILOGUE','뜨거운 차는 접시에서 식는다','권력이 권력을 멈추게 하라',
+`${S('bot','calm','','오늘 이야기를 한 줄로 줄이면요? <b>“2년마다 국민이 한 번씩 브레이크를 밟을 수 있게 만든 설계.”</b>')}
+${S('hr','calm','','임기가 2·4·6년으로 다른 데에 다 이유가 있었네요. 빠른 여론과 긴 안목을 둘 다 담으려는 거였어요.',{rev:true})}
+${S('nomusa','calm','','어느 쪽이 이기든, 한쪽으로 쏠리지 않게 하는 <b>견제와 균형</b>이 핵심이에요.')}
+${S('banjang','happy','','우리 현장도 중간 점검, 꼭 챙겨야겠네요!',{rev:true})}
+<div class="law"><b>확인 · 선거 후 결과(보도)</b> · 미국 AP 통신은 선거 당일 밤 <b>상원</b>, 다음 날 새벽 <b>하원</b>을 각각 민주당 다수 확보로 판정했다고 보도됐습니다. 영상이 주목한 <b>텍사스 상원</b> 선거도 민주당 후보가 이겼다고 보도됐습니다. 일부 지역은 개표가 이어지고 있어 최종 의석수는 바뀔 수 있습니다(2026.11.5 기준).</div>
+<p class="quote">“권력을 가진 자는 그것을 남용하기 쉽다. 그러니 권력이 권력을 멈추게 해야 한다 — 몽테스키외(요지)”</p>
+<p style="text-align:center;margin:0">끝까지 읽어 주셔서 감사합니다 🙏</p>
+<div class="src">작성 · ㈜제니엘이노베이션<br>
+<b>원작</b> · 유튜브 ‘두선생의 역사공장’ 「미국 '중간선거'는 왜 있을까? 미국의 상원과 하원, 미국 선거 아는 척하기」(2026.10.31) — <a href="${SRC_URL}" target="_blank" rel="noopener">${SRC_URL}</a> 의 내용을 영상 흐름대로 요약·재구성했습니다(영상 중 광고 구간 제외). 영상의 문장을 그대로 옮기지 않았으며, 원작의 저작권은 해당 채널에 있습니다.<br>
+<b>선거 결과 확인</b> · PBS NewsHour(AP) <a href="${R1}" target="_blank" rel="noopener">기사</a> · Forbes(2026.11.4) <a href="${R2}" target="_blank" rel="noopener">기사</a><br>
+※ 등장인물은 가상의 캐릭터이며, 실존 정치인은 직책·지역만 표기하고 발언은 (요지)로 요약했습니다. 역대 중간선거 통계·선거자금·여론조사 수치는 영상 발언 기준(전언)입니다. 특정 정당·후보에 대한 지지나 평가가 아닙니다.</div>`);
+
+
+document.getElementById('app').innerHTML=H;
+
+function toggleTheme(){
+  const r=document.documentElement;
+  const dark = r.dataset.theme ? r.dataset.theme==='dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  r.dataset.theme = dark?'light':'dark';
+}
+</script>
+<script src="../zt-nav.js"></script>
+<script src="../firebase-config.js"></script>
+<script type="module" src="../zt-fire.js"></script>
+<script>
+const ZT_ID='017';
+async function ztPaint(){const F=window.ZT_FIRE;if(!F||!F.enabled)return;document.getElementById('ztLike').hidden=false;
+ const d=(await F.getStats([ZT_ID]))[ZT_ID]||{};document.getElementById('ztLikeN').textContent=d.likes||0;
+ document.getElementById('ztViews').textContent='👁 조회 '+(d.views||0);
+ if(F.liked(ZT_ID))document.querySelector('#ztLike button').classList.add('on');}
+async function ztLike(){const F=window.ZT_FIRE;if(await F.addLike(ZT_ID)){document.querySelector('#ztLike button').classList.add('on');ztPaint()}}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{})}
+window.addEventListener('zt-fire-ready',async()=>{if(window.ZT_FIRE.enabled){await window.ZT_FIRE.addView(ZT_ID);ztPaint()}});
+</script>
+</body>
+</html>
