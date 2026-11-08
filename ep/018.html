@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>당연퇴직과 해고 | 제니툰</title>
+<meta property="og:title" content="제니툰 · ‘당연퇴직’이면 해고가 아닐까?">
+<meta property="og:image" content="../thumbs/018.png">
+<link rel="icon" href="../favicon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#ffd23f">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="제니툰">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fbf6ea; --paper2:#fffdf7; --ink:#161616; --sub:#4a4a4a;
+  --red:#e2403a; --blue:#2f6fd6; --yellow:#ffd23f; --green:#2e9e6a; --soft:#f1e7cf;
+  --shadow:#161616;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#1d1b17; --paper2:#262420; --ink:#f2ede1; --sub:#c9c2b2;
+    --soft:#34302a; --shadow:#000;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#1d1b17; --paper2:#262420; --ink:#f2ede1; --sub:#c9c2b2;
+  --soft:#34302a; --shadow:#000;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Gowun Dodum',sans-serif;line-height:1.65;font-size:16px}
+.wrap{max-width:760px;margin:0 auto;padding:18px 16px 40px}
+h1,h2,h3{font-family:'Black Han Sans',sans-serif;font-weight:400;margin:0;letter-spacing:.5px;line-height:1.25}
+.ep{background:var(--paper2);border:3px solid var(--ink);box-shadow:6px 6px 0 var(--shadow);margin:0 6px 30px 0;padding:20px 18px 22px;border-radius:6px}
+.eptag{display:inline-block;background:var(--ink);color:var(--paper2);font-family:'Black Han Sans';padding:3px 12px;border-radius:3px;font-size:14px;letter-spacing:1px}
+.ep h2{font-size:26px;margin:8px 0 2px}
+.ep .subt{color:var(--sub);margin:0 0 14px;font-size:14px}
+/* cover */
+.cover{background:var(--yellow);color:#161616;text-align:center;position:relative;overflow:hidden}
+.cover .burst{position:absolute;inset:0;background:repeating-conic-gradient(from 0deg at 0% 50%,rgba(255,255,255,.42) 0 2.5deg,transparent 2.5deg 8deg) left/50% 100% no-repeat,repeating-conic-gradient(from 0deg at 100% 50%,rgba(255,255,255,.42) 0 2.5deg,transparent 2.5deg 8deg) right/50% 100% no-repeat;-webkit-mask-image:linear-gradient(90deg,#000,transparent 42%,transparent 58%,#000);mask-image:linear-gradient(90deg,#000,transparent 42%,transparent 58%,#000);z-index:0}
+.cover>*{position:relative;z-index:1}
+.cover h1{font-size:38px;margin:10px 0 6px;text-shadow:3px 3px 0 #fff}
+.cover .kick{font-family:'Jua';font-size:17px}
+.cover .by{font-size:13px;margin-top:10px}
+.cover .cast{display:flex;justify-content:center;gap:6px;margin:14px 0 6px;flex-wrap:wrap}
+.cover .cast svg{width:78px;height:78px;background:#fff;border:3px solid #161616;border-radius:50%}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.num{background:#fff;border:2.5px solid #161616;border-radius:6px;padding:8px 4px}
+.num b{display:block;font-family:'Black Han Sans';font-size:26px;color:var(--red);line-height:1.1}
+.num span{font-size:12px}
+/* panels */
+.g4{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.panel{border:2.5px solid var(--ink);background:var(--paper);border-radius:4px;padding:10px;position:relative;min-width:0}
+.panel.wide{grid-column:1/-1}
+.panel .cap{font-family:'Black Han Sans';font-size:13px;background:var(--yellow);color:#161616;display:inline-block;padding:1px 8px;border:2px solid var(--ink);margin-bottom:6px}
+.panel .fx{position:absolute;right:8px;top:4px;font-family:'Black Han Sans';color:var(--red);font-size:20px;transform:rotate(8deg)}
+/* scene */
+.scene{display:flex;align-items:flex-start;gap:8px;margin:8px 0}
+.scene.rev{flex-direction:row-reverse}
+.who{flex:0 0 64px;text-align:center;font-size:12px;color:var(--sub)}
+.who svg{width:62px;height:62px;border:2.5px solid var(--ink);border-radius:50%;background:#fff;display:block;margin:0 auto 2px}
+.bub{position:relative;background:#fff;color:#161616;border:2.5px solid var(--ink);border-radius:16px;padding:8px 12px;font-family:'Jua';font-size:17px;line-height:1.5;flex:1;min-width:0}
+.bub:before{content:"";position:absolute;left:-11px;top:16px;border:9px solid transparent;border-right-color:var(--ink);border-left:0}
+.bub:after{content:"";position:absolute;left:-7px;top:18px;border:7px solid transparent;border-right-color:#fff;border-left:0}
+.rev .bub:before{left:auto;right:-11px;border-right-color:transparent;border-left:9px solid var(--ink);border-right:0}
+.rev .bub:after{left:auto;right:-7px;border-right-color:transparent;border-left:7px solid #fff;border-right:0}
+.bub.shout{border-radius:4px;background:var(--yellow);font-size:18px}
+.bub.shout:after{border-right-color:var(--yellow)}
+.rev .bub.shout:after{border-left-color:var(--yellow)}
+.bub small{display:block;color:#666;font-family:'Gowun Dodum';font-size:12.5px;margin-top:2px}
+/* boxes */
+.box{border:2.5px dashed var(--ink);border-radius:6px;padding:10px 14px;margin:12px 0;background:var(--paper)}
+.box h3{font-size:17px;margin-bottom:6px}
+.box ul,.box ol{margin:0;padding-left:20px}
+.box li{margin:3px 0}
+.box.red{border-style:solid;border-color:var(--red)}
+.box.blue{border-style:solid;border-color:var(--blue)}
+.law{background:var(--soft);border-left:6px solid var(--blue);padding:10px 14px;font-size:14px;margin:12px 0;border-radius:0 6px 6px 0}
+.law b{color:var(--blue)}
+mark{background:var(--yellow);color:#161616;padding:0 3px}
+/* bars */
+.bars{margin:6px 0 4px}
+.bar{display:grid;grid-template-columns:110px 1fr 54px;align-items:center;gap:8px;margin:7px 0;font-size:14px}
+.bar .tr{height:20px;border:2px solid var(--ink);border-radius:3px;background:var(--paper)}
+.bar .fl{height:100%;background:var(--blue)}
+.bar .fl.r{background:var(--red)}.bar .fl.y{background:var(--yellow)}.bar .fl.g{background:var(--green)}
+.bar b{font-family:'Black Han Sans';font-weight:400;text-align:right}
+/* timeline */
+.tl{list-style:none;margin:6px 0;padding:0 0 0 22px;border-left:4px solid var(--ink)}
+.tl li{position:relative;margin:0 0 12px;padding-left:6px}
+.tl li:before{content:"";position:absolute;left:-33px;top:4px;width:16px;height:16px;background:var(--yellow);border:3px solid var(--ink);border-radius:50%}
+.tl li.now:before{background:var(--red)}
+.tl .d{font-family:'Black Han Sans';font-size:14px;color:var(--red)}
+/* flow */
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;align-items:stretch;margin:8px 0}
+.flow div{border:2.5px solid var(--ink);border-radius:5px;padding:8px 4px;text-align:center;font-size:13px;background:var(--paper);font-family:'Jua';display:flex;align-items:center;justify-content:center;min-width:0}
+.flow div.k{background:var(--yellow);color:#161616}
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.chip{border:2px solid var(--ink);border-radius:20px;padding:2px 10px;font-size:13px;background:var(--paper)}
+.chip.hl{background:var(--red);color:#fff;border-color:var(--red)}
+/* number cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.card{border:2.5px solid var(--ink);border-radius:6px;padding:10px;text-align:center;background:var(--paper)}
+.card b{font-family:'Black Han Sans';font-size:30px;font-weight:400;display:block;color:var(--blue);line-height:1.1}
+.card span{font-size:13px}
+/* checklist */
+.chk{list-style:none;padding:0;margin:6px 0}
+.chk li{border:2px solid var(--ink);border-radius:5px;padding:8px 10px 8px 40px;margin:7px 0;position:relative;background:var(--paper);font-size:14px}
+.chk li:before{content:"";position:absolute;left:10px;top:9px;width:18px;height:18px;border:2.5px solid var(--ink);border-radius:3px;background:#fff}
+.chk li b{color:var(--red)}
+.tagline{font-size:13px;color:var(--sub)}
+.quote{text-align:center;font-family:'Jua';font-size:19px;margin:14px 0 4px}
+.src{font-size:12px;color:var(--sub);border-top:2px dashed var(--ink);margin-top:14px;padding-top:8px}
+.theme-btn{position:fixed;right:12px;bottom:12px;z-index:9;border:2.5px solid var(--ink);background:var(--paper2);color:var(--ink);font-family:'Jua';border-radius:20px;padding:4px 12px;cursor:pointer}
+@media (max-width:540px){
+  .g4{grid-template-columns:1fr}
+  .cover h1{font-size:30px}
+  .ep h2{font-size:22px}
+  .nums,.cards{grid-template-columns:repeat(2,1fr)}
+  .flow{grid-template-columns:1fr}
+  .flow div{padding:6px}
+  .bar{grid-template-columns:86px 1fr 46px;font-size:13px}
+  .cover .cast svg{width:60px;height:60px}
+}
+@media (min-width:1024px){.wrap{max-width:960px}body{font-size:18px}.bub{font-size:19px}.ep h2{font-size:30px}.who{flex-basis:80px}.who svg{width:76px;height:76px}.cover h1{font-size:46px}.num b{font-size:30px}}
+@media (min-width:1440px){.wrap{max-width:1280px}body{font-size:19px}.bub{font-size:20.5px;padding:10px 16px}.ep{padding:26px 28px 28px}.ep h2{font-size:34px}.ep .subt{font-size:16px}.who{flex-basis:92px;font-size:12.5px}.who svg{width:88px;height:88px}.cover h1{font-size:54px}.cover .kick{font-size:20px}.cover .cast svg{width:96px;height:96px}.num b{font-size:34px}.num span{font-size:14px}.g4{gap:16px}.panel{padding:14px}.panel .cap{font-size:15px}.box h3{font-size:20px}.law,.src{font-size:15px}.bar{grid-template-columns:200px 1fr 70px;font-size:16px}.bar .tr{height:24px}.card b{font-size:36px}.card span{font-size:15px}.chk li{font-size:16px}.zt-nav{font-size:16px}}
+@media print{.theme-btn{display:none}}
+</style>
+<style>
+.zt-nav{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:10px;justify-content:space-between;background:var(--paper2);border-bottom:3px solid var(--ink);padding:8px 14px;font-family:'Jua',sans-serif;font-size:14px}
+.zt-nav a{color:var(--ink);text-decoration:none;border:2px solid var(--ink);border-radius:16px;padding:1px 10px;background:var(--paper)}
+.zt-nav span{flex:1;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.zt-end{padding-top:0}
+.zt-cta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;background:#ffd23f;color:#161616;border:3px solid var(--ink);border-radius:6px;padding:14px 16px;box-shadow:5px 5px 0 var(--shadow);margin-right:6px}
+.zt-cta b{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:19px}
+.zt-cta span{font-size:13.5px}
+.zt-btn{background:#161616;color:#fff;text-decoration:none;font-family:'Jua',sans-serif;border-radius:5px;padding:7px 14px}
+.zt-links{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 50px}
+.zt-links a{color:var(--ink);text-decoration:none;border:2px solid var(--ink);border-radius:5px;padding:4px 12px;font-family:'Jua',sans-serif;background:var(--paper2)}
+.zt-like{display:flex;align-items:center;gap:12px;margin:18px 0 0;flex-wrap:wrap}
+.zt-like button{border:2.5px solid var(--ink);background:var(--paper2);color:var(--ink);border-radius:22px;padding:6px 16px;font-family:'Jua',sans-serif;font-size:16px;cursor:pointer}
+.zt-like button.on{background:#ffd23f;color:#161616}
+.zt-like span{font-size:13px;color:var(--sub)}
+@media print{.zt-nav,.zt-end{display:none}}
+</style>
+</head>
+<body>
+<div style="background:#161616;color:#fffdf7;font-size:12.5px;text-align:center;padding:6px 10px;font-family:'Gowun Dodum',sans-serif">제공 <a href="https://www.zenielinnovation.co.kr" target="_blank" rel="noopener" style="color:#ffd23f;font-weight:700;text-decoration:none">㈜제니엘이노베이션</a></div>
+<nav class="zt-nav"><a href="../index.html" data-zt-back>← 제니툰</a><span>⚖️ 특별편 · 018화</span><a href="018.pdf" class="zt-pdf">PDF</a></nav>
+<button class="theme-btn" onclick="toggleTheme()">☀︎ / ☾</button>
+<div class="wrap" id="app"></div>
+<div class="wrap zt-end"><div class="zt-cta"><div><b>퇴직·해고 규정, 분쟁 없이 정비합니다</b><br><span>취업규칙 당연퇴직·휴직 규정 점검 · 파견·도급 현장 노무관리 · 노무 리스크 상담</span></div>
+<a class="zt-btn" href="../index.html?consult=1&from=018%ED%99%94">💬 상담 문의하기</a></div>
+<div class="zt-like" id="ztLike" hidden><button type="button" onclick="ztLike()">👍 도움됐어요 <b id="ztLikeN"></b></button><span id="ztViews"></span></div>
+<div class="zt-links"><a href="../index.html">🏠 제니툰 목록</a><a href="018.pdf">📄 PDF 저장</a><a href="../index.html#case">⚖️ 노동판례툰 더보기</a></div></div>
+
+
+<script>
+/* ---------- 오리지널 캐릭터 SVG (가상 인물) ---------- */
+const CH={
+  nomusa:{name:'도 노무사',skin:'#efc8a4',hair:'#9a9a9a',style:'side',acc:'glasses',shirt:'#4b5563'},
+  hr:{name:'한결 대리',skin:'#f6d3b3',hair:'#40261a',style:'long',acc:'none',shirt:'#8b5cf6'},
+  banjang:{name:'현장 반장',skin:'#e9bf98',hair:'#2a2a2a',style:'short',acc:'badge',shirt:'#f08c00'},
+  bot:{name:'안내로봇 체키',bot:true}
+};
+function face(k,mood='calm'){
+  const c=CH[k];
+  if(c.bot){
+    const eye= mood==='shock'?'<circle cx="30" cy="40" r="6" fill="#161616"/><circle cx="50" cy="40" r="6" fill="#161616"/>'
+      :'<rect x="24" y="36" width="12" height="8" rx="3" fill="#161616"/><rect x="44" y="36" width="12" height="8" rx="3" fill="#161616"/>';
+    const m= mood==='shock'?'<ellipse cx="40" cy="56" rx="5" ry="6" fill="#161616"/>':'<path d="M30 54 Q40 62 50 54" stroke="#161616" stroke-width="3" fill="none"/>';
+    return `<svg viewBox="0 0 80 80"><line x1="40" y1="8" x2="40" y2="18" stroke="#161616" stroke-width="3"/><circle cx="40" cy="7" r="4" fill="#e2403a" stroke="#161616" stroke-width="2"/><rect x="14" y="18" width="52" height="48" rx="12" fill="#ffd23f" stroke="#161616" stroke-width="3"/><rect x="20" y="28" width="40" height="34" rx="8" fill="#fff" stroke="#161616" stroke-width="2"/>${eye}${m}<rect x="8" y="34" width="6" height="14" rx="2" fill="#2f6fd6" stroke="#161616" stroke-width="2"/><rect x="66" y="34" width="6" height="14" rx="2" fill="#2f6fd6" stroke="#161616" stroke-width="2"/></svg>`;
+  }
+  const S='#161616';
+  let hair='';
+  switch(c.style){
+    case 'short': hair=`<path d="M18 38 Q18 14 40 14 Q62 14 62 38 Q58 24 40 24 Q26 24 18 38Z" fill="${c.hair}"/>`;break;
+    case 'side': hair=`<path d="M18 38 Q16 16 40 15 Q64 16 62 36 Q52 22 30 26 Q22 28 18 38Z" fill="${c.hair}"/>`;break;
+    case 'bob': hair=`<path d="M15 50 Q12 14 40 13 Q68 14 65 50 L58 50 Q60 26 40 24 Q20 26 22 50Z" fill="${c.hair}"/>`;break;
+    case 'bald': hair=`<path d="M19 36 Q20 30 24 30 L24 40 Z M61 36 Q60 30 56 30 L56 40Z" fill="${c.hair}"/>`;break;
+    case 'long': hair=`<path d="M14 66 Q10 14 40 13 Q70 14 66 66 L58 66 Q62 28 40 24 Q18 28 22 66Z" fill="${c.hair}"/>`;break;
+    case 'neat': hair=`<path d="M18 36 Q18 14 40 14 Q62 14 62 36 Q60 22 46 21 L44 26 Q30 22 18 36Z" fill="${c.hair}"/>`;break;
+  }
+  let brows='',eyes='',mouth='',extra='';
+  const ey=40;
+  if(mood==='angry'){brows=`<path d="M26 31 L36 35 M54 31 L44 35" stroke="${S}" stroke-width="3"/>`;}
+  else if(mood==='sad'){brows=`<path d="M26 34 L35 31 M54 34 L45 31" stroke="${S}" stroke-width="2.5"/>`;}
+  else if(mood==='shock'){brows=`<path d="M26 29 Q31 26 36 29 M44 29 Q49 26 54 29" stroke="${S}" stroke-width="2.5" fill="none"/>`;}
+  else {brows=`<path d="M27 32 Q31 30 35 32 M45 32 Q49 30 53 32" stroke="${S}" stroke-width="2.5" fill="none"/>`;}
+  if(mood==='shock'){eyes=`<circle cx="31" cy="${ey}" r="4.5" fill="#fff" stroke="${S}" stroke-width="2"/><circle cx="31" cy="${ey}" r="2" fill="${S}"/><circle cx="49" cy="${ey}" r="4.5" fill="#fff" stroke="${S}" stroke-width="2"/><circle cx="49" cy="${ey}" r="2" fill="${S}"/>`;mouth=`<ellipse cx="40" cy="56" rx="5" ry="6" fill="${S}"/>`;}
+  else if(mood==='happy'){eyes=`<path d="M27 41 Q31 36 35 41 M45 41 Q49 36 53 41" stroke="${S}" stroke-width="3" fill="none"/>`;mouth=`<path d="M30 52 Q40 63 50 52 Z" fill="${S}"/>`;}
+  else {eyes=`<circle cx="31" cy="${ey}" r="3" fill="${S}"/><circle cx="49" cy="${ey}" r="3" fill="${S}"/>`;
+    mouth= mood==='sad'?`<path d="M32 57 Q40 51 48 57" stroke="${S}" stroke-width="3" fill="none"/>`: mood==='angry'?`<path d="M32 56 L48 56" stroke="${S}" stroke-width="3"/>`:`<path d="M32 53 Q40 60 48 53" stroke="${S}" stroke-width="3" fill="none"/>`;}
+  if(c.acc==='glasses') extra+=`<circle cx="31" cy="${ey}" r="7" fill="none" stroke="${S}" stroke-width="2.2"/><circle cx="49" cy="${ey}" r="7" fill="none" stroke="${S}" stroke-width="2.2"/><path d="M38 ${ey} L42 ${ey}" stroke="${S}" stroke-width="2"/><path d="M33 49 Q40 46 47 49" stroke="#9a9a9a" stroke-width="3" fill="none"/>`;
+  let body=`<path d="M10 80 Q12 64 40 64 Q68 64 70 80Z" fill="${c.shirt}" stroke="${S}" stroke-width="2.5"/>`;
+  if(c.acc==='badge') body+=`<path d="M52 69 l5 0 l2 4 l-4.5 3 l-4.5 -3Z" fill="#ffd23f" stroke="${S}" stroke-width="1.5"/>`;
+  if(c.acc==='lanyard') body+=`<path d="M30 64 L40 76 L50 64" stroke="#ffd23f" stroke-width="3" fill="none"/><rect x="36" y="74" width="8" height="6" fill="#fff" stroke="${S}" stroke-width="1.5"/>`;
+  if(c.acc==='apron') body+=`<rect x="28" y="68" width="24" height="12" fill="#fff" stroke="${S}" stroke-width="2"/>`;
+  if(c.acc==='tie') body+=`<path d="M37 64 L43 64 L41.5 69 L44 78 L40 80 L36 78 L38.5 69Z" fill="#e2403a" stroke="${S}" stroke-width="1.5"/>`;
+  return `<svg viewBox="0 0 80 80">${body}<ellipse cx="40" cy="42" rx="22" ry="24" fill="${c.skin}" stroke="${S}" stroke-width="2.5"/>${hair}<circle cx="24" cy="50" r="3.5" fill="#f59e9e" opacity=".6"/><circle cx="56" cy="50" r="3.5" fill="#f59e9e" opacity=".6"/>${brows}${eyes}${mouth}${extra}</svg>`;
+}
+/* ---------- 컴포넌트 ---------- */
+function S(k,mood,name,text,o={}){
+  return `<div class="scene ${o.rev?'rev':''}"><div class="who">${face(k,mood)}${name||CH[k].name}</div><div class="bub ${o.shout?'shout':''}">${text}${o.note?`<small>${o.note}</small>`:''}</div></div>`;
+}
+function P(cap,body,o={}){return `<div class="panel ${o.wide?'wide':''}">${cap?`<div class="cap">${cap}</div>`:''}${o.fx?`<div class="fx">${o.fx}</div>`:''}${body}</div>`;}
+function WHO(list){return `<div class="chips">${list.map(([n,h])=>`<span class="chip ${h?'hl':''}">${n}</span>`).join('')}</div>`;}
+function bars(rows,max){return `<div class="bars">${rows.map(([l,v,u,c])=>`<div class="bar"><span>${l}</span><div class="tr"><div class="fl ${c||''}" style="width:${Math.max(4,v/max*100)}%"></div></div><b>${v}${u}</b></div>`).join('')}</div>`;}
+function EP(tag,title,sub,body,cls=''){return `<section class="ep ${cls}"><span class="eptag">${tag}</span><h2>${title}</h2>${sub?`<p class="subt">${sub}</p>`:''}${body}</section>`;}
+
+
+/* ---------- 본문 ---------- */
+let H='';
+const SRC_URL='https://youtu.be/ZPeyarOPEiI';
+const PREC='https://www.law.go.kr/판례/(94다42082)';
+const PREC2='https://www.law.go.kr/판례/(94다25889)';
+const LAW='https://www.law.go.kr/법령/근로기준법/제23조';
+
+/* 표지 */
+H+=`<section class="ep cover"><div class="burst"></div>
+<div class="kick">제니툰 특별편 · 노동판례툰</div>
+<h1>‘당연퇴직’이면<br>해고가 아닐까?</h1>
+<div class="kick">형사 유죄판결과 당연퇴직 — 네 가지 쟁점을 한 번에</div>
+<div class="cast">${face('bot','calm')}${face('hr','shock')}${face('nomusa','calm')}${face('banjang','calm')}</div>
+<div class="nums">
+ <div class="num"><b>제23조</b><span>당연퇴직도 정당한 이유 필요</span></div>
+ <div class="num"><b>4쟁점</b><span>절차·의미·무죄추정·석방</span></div>
+ <div class="num"><b>실형</b><span>구속이 풀리지 않는 유죄판결</span></div>
+ <div class="num"><b>약 7개월</b><span>구속부터 석방까지(판결문)</span></div>
+ <div class="num"><b>4일</b><span>석방 → 당연퇴직 처분(판결문)</span></div>
+ <div class="num"><b>1995</b><span>대법원 94다42082 선고</span></div>
+</div>
+<div class="by">작성 · ㈜제니엘이노베이션 &nbsp;|&nbsp; 2026.11.08</div>
+</section>`;
+
+/* 원작 안내 */
+H+=`<div class="box blue" style="margin:0 6px 30px 0"><h3>🎬 원작 영상 안내</h3>
+<p style="margin:0">이 웹툰은 유튜브 <b>‘김소희 노동법’</b> 채널의 「[🎯5분판례]_해고와 당연퇴직(feat.김소희노무사)」(2026.4.8 게시, 9분 16초)이 설명한 판례의 쟁점과 결론을 영상 흐름 그대로 요약·재구성했습니다. 판결문 원문(대법원 1995.3.24. 선고 94다42082 판결)은 법제처 국가법령정보센터에서 직접 확인했습니다.</p>
+<p style="margin:8px 0 0"><a href="${SRC_URL}" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">▶ 원작 영상 보러 가기</a> &nbsp;·&nbsp; <a href="${PREC}" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">⚖️ 판결문 원문(국가법령정보센터)</a> &nbsp;·&nbsp; <a href="${LAW}" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">📜 근로기준법 제23조</a></p></div>`;
+
+/* EP.0 */
+H+=EP('EP.0','“유죄판결 받으면 당연퇴직”','00:00~01:30 사건의 시작과 근로자의 세 가지 반론',
+`${S('bot','calm','','안녕하세요, 안내로봇 <b>체키</b>예요! 오늘의 <mark>5분 판례</mark>는 시험에서도 실무에서도 자주 헷갈리는 <b>해고와 당연퇴직</b>이에요.')}
+${S('nomusa','calm','','회사가 근로자에게 <b>당연퇴직</b>을 통보했어요. 근거는 회사 규정이었죠.',{rev:true})}
+<div class="law"><b>회사 규정(요지)</b> — 노사합의서와 취업규칙 모두 <b>“형사상 범죄로 유죄판결을 받은 경우 당연퇴직(당연면직)한다”</b>고 정하고, 징계사유와는 따로 적어 두었습니다.</div>
+${S('banjang','angry','','근로자 입장에선 할 말이 많겠는데요?')}
+<div class="g4">
+${P('반론 ①',S('hr','shock','','아직 <b>판결이 확정되지도 않았는데</b> 범죄자 취급이라니, 이 규정 자체가 위법 아닌가요?'),{fx:'확정?'})}
+${P('반론 ②',S('banjang','angry','','규정이 적법하다 쳐도 결국 <b>해고</b>잖아요. 그럼 정당한지, 절차는 지켰는지 따져야죠!',{rev:true}),{fx:'해고!'})}
+${P('반론 ③',S('hr','calm','','게다가 나중에 <b>집행유예</b>를 받아 풀려났어요. 이제 출근할 수 있으니 <b>퇴직을 취소</b>해야 하지 않나요?'),{fx:'석방'})}
+${P('정리',S('nomusa','calm','','좋아요. 이 반론들을 <b>쟁점별로 하나씩</b> 뜯어볼게요.',{rev:true}))}
+</div>`);
+
+/* EP.1 */
+H+=EP('EP.1','기본 법리 ① — 당연퇴직도 해고다','01:30~02:11 이름이 아니라 실질로 본다',
+`${S('hr','calm','','‘당연퇴직’이라고 써 두면 해고 규제를 안 받는 거 아니에요?')}
+${S('nomusa','calm','','문제에서 당연퇴직이 보이면 이 판례부터 떠올리세요. <mark>사망·정년·계약기간 만료</mark>처럼 근로관계가 <b>저절로 끝나는 사유</b>가 아니라면, 규정에 “당연퇴직”, “면직”이라고 써도 그건 <b>해고</b>예요.',{rev:true})}
+<div class="cards">
+<div class="card"><b>자동소멸</b><span>사망 · 정년<br>계약기간 만료<br>→ 해고 아님</span></div>
+<div class="card"><b>그 밖의</b><span>당연퇴직 · 당연면직<br>(유죄판결 등)<br>→ 해고</span></div>
+<div class="card"><b>제23조</b><span>정당한 이유가<br>있어야 유효</span></div>
+</div>
+<div class="law"><b>근로기준법 제23조(해고 등의 제한) 제1항</b> — 사용자는 근로자에게 정당한 이유 없이 해고, 휴직, 정직, 전직, 감봉, 그 밖의 징벌(이하 "부당해고등"이라 한다)을 하지 못한다.</div>
+<p class="tagline">※ 판결 당시 조문은 구 근로기준법 제27조 제1항이며, 현행 제23조 제1항에 해당합니다(작성자 확인).</p>`);
+
+/* EP.2 */
+H+=EP('EP.2','기본 법리 ② — ‘유죄판결’의 진짜 뜻','02:11~03:15 다른 당연퇴직 사유와 나란히 놓고 읽기',
+`${S('banjang','calm','','그럼 “유죄판결을 받으면”은 무슨 뜻으로 읽어야 해요? 벌금형도 포함인가요?')}
+${S('nomusa','calm','','법원은 같은 규정에 있던 <b>다른 당연퇴직 사유</b>를 함께 봤어요.',{rev:true})}
+<div class="g4">
+${P('① 일할 뜻이 없음',`<p style="margin:0">사직원 제출, 휴직 끝나도 복직원 미제출, 무단결근 후 출근 요구 불응 등</p>`)}
+${P('② 성질상 일할 수 없음',`<p style="margin:0">사망, 한정치산·금치산·파산 선고 등</p>`)}
+${P('③ 기간이 끝남',`<p style="margin:0">정년, 근로계약기간 만료</p>`)}
+${P('④ 그래서 유죄판결은?',S('bot','shock','','모두 <b>“일을 못 하거나 안 하는 상태”</b>예요! 유죄판결도 같은 결로 읽어야 해요.'),{fx:'!'})}
+</div>
+${S('nomusa','calm','','즉, <mark>근로제공 의무를 이행할 수 없는 상태가 오래 이어져서</mark> 회사가 퇴직시켜도 근로자가 이의를 달기 어려운 상태 — <b>구속된 근로자가 풀려나지 못하는 내용의 유죄판결(예: 실형)</b>을 받은 경우를 말해요.')}
+${S('hr','happy','','아, 핵심은 ‘죄’가 아니라 <b>‘출근할 수 없는 상태’</b>군요!',{rev:true})}`);
+
+/* EP.3 */
+H+=EP('EP.3','쟁점 ① — 절차 없는 당연퇴직, 무효인가?','03:15~05:28 해고제한 회피? 징계절차 필요?',
+`${S('banjang','angry','','징계사유랑 당연퇴직사유를 나눠 놓고, 당연퇴직은 <b>절차 규정이 하나도 없어요</b>. 징계를 피하려는 꼼수 아닌가요?')}
+${S('nomusa','calm','','법원 판단은 이래요.',{rev:true})}
+<div class="flow"><div>당연퇴직도<br>해고</div><div class="k">제23조 정당성<br>심사는 받음</div><div>그러니 회피<br>규정 아님</div><div class="k">별도 절차 규정<br>없으면</div><div>징계절차<br>안 거쳐도 됨</div></div>
+<div class="g4">
+${P('무효는 아니다',S('nomusa','calm','','당연퇴직도 어차피 <b>정당한 이유 심사</b>를 받으니, 절차를 따로 안 뒀다고 <b>해고제한을 피하려는 규정</b>이라 볼 수 없어요.'))}
+${P('징계절차는 불요',S('nomusa','calm','','당연퇴직과 징계를 <b>구분해서</b> 정했고 당연퇴직 절차가 없다면, <b>징계절차를 거칠 필요는 없어요</b>. 사유가 실질적으로 징계사유처럼 보여도 마찬가지예요.',{rev:true}))}
+</div>
+<div class="box red"><h3>⚠️ 헷갈리면 안 되는 다른 판례</h3>
+<p style="margin:0"><b>징계해고 사유</b>를 들어 <b>통상해고</b>로 처리하는 경우에는, 특별한 사정이 없는 한 <b>징계절차를 거쳐야</b> 합니다(대법원 1994.10.25. 선고 94다25889 판결, 작성자 확인). 이번 사건은 그와 달리 규정상 명확히 <b>‘당연퇴직’</b>으로 정한 경우예요. 성질은 해고, 그중에서도 통상해고에 가깝지만 결론이 갈립니다.</p></div>
+<p class="tagline">※ 판결문은 다만 <b>같은 사유가 징계사유로도 규정</b>된 경우는 예외로 두었습니다(작성자 확인).</p>`);
+
+/* EP.4 */
+H+=EP('EP.4','쟁점 ② — 무죄추정 원칙 위반인가?','05:28~06:36 퇴직시키는 이유가 무엇이냐',
+`${S('hr','shock','','확정판결도 아닌데 유죄판결로 내보내면 <b>무죄추정 원칙</b>에 어긋나지 않나요?')}
+${S('nomusa','calm','','EP.2의 해석을 떠올려 보세요. 회사가 내보내는 이유는 <mark>유죄라서가 아니라, 출근을 못 해서</mark>예요.',{rev:true})}
+<div class="g4">
+${P('징계에 가까운 경우',S('banjang','angry','','“유죄판결 받은 사람과는 같이 일 못 한다” — 이러면 <b>징계 쪽</b> 논리죠.'),{fx:'✕'})}
+${P('이 사건의 논리',S('nomusa','calm','','“구속돼서 <b>근로 제공이 장기간 불가능</b>하니 퇴직” — 오히려 <b>통상해고</b>에 가까운 논리예요.',{rev:true}),{fx:'○'})}
+</div>
+${S('bot','happy','','그래서 이렇게 해석하는 한 <b>무죄추정 원칙에 반하지 않는다</b>! 두 번째 허들도 통과예요.')}
+<div class="law"><b>헌법 제27조 제4항</b> — 형사피고인은 유죄의 판결이 확정될 때까지는 무죄로 추정된다.</div>`);
+
+/* EP.5 */
+H+=EP('EP.5','쟁점 ③ — 집행유예로 풀려나면 복직?','06:36~08:20 이미 생긴 퇴직 사유는 사라지지 않는다',
+`${S('banjang','calm','','오래 구속돼 있다가 항소심에서 <b>집행유예</b>로 풀려났어요. 이제 일할 수 있으니 퇴직 처분 취소해야죠?')}
+${S('nomusa','calm','','법원은 <mark>당연퇴직 사유가 한 번 생긴 이상</mark>, 그게 취소되는 등의 사정이 없으면 나중에 <b>석방됐다고 사유가 사라지지 않는다</b>고 봤어요.',{rev:true})}
+${S('hr','calm','','왜요? 이제 일할 수 있는데요.')}
+${S('nomusa','calm','','이 규정을 둔 취지가 <b>“오랫동안 일을 못 했다”</b>는 점이잖아요. 나중에 풀려날 때마다 다 복직시켜야 한다면 규정을 둔 <b>의미가 없어져요</b>.',{rev:true})}
+<div class="box"><h3>⏱️ 판결문 속 타임라인 (작성자 확인)</h3><ul class="tl">
+<li><span class="d">1990.6.12</span><br>노사 합의 — 임금협상 관련 구속자는 <b>형 확정 때까지 인사조치 유보</b></li>
+<li><span class="d">1990.6.13</span><br>근로자 <b>구속</b></li>
+<li><span class="d">1990.9.8</span><br>1심 <b>징역 1년 실형</b> → 당연퇴직 사유 발생</li>
+<li><span class="d">1991.1.25</span><br>항소심 <b>징역 1년·집행유예 2년</b> → 석방</li>
+<li class="now"><span class="d">1991.1.29</span><br>회사, <b>당연퇴직 처분</b></li>
+</ul></div>
+<p class="tagline">※ 영상은 “6개월 이상 구속”을 예로 들어 설명합니다. 실제 사건은 구속부터 석방까지 약 7개월이었고, 1심 실형 선고 시점에 사유가 생겼다고 보았습니다(작성자 확인).</p>`);
+
+/* EP.6 */
+H+=EP('EP.6','다시 한 번 정리','08:20~09:16 영상의 마무리 요약',
+`${S('bot','calm','','오늘 판례, 세 줄로 정리해 볼게요!')}
+<div class="cards">
+<div class="card"><b>①</b><span>당연퇴직 사유와<br>징계해고 사유를<br><strong>따로 정할 수 있다</strong><br>→ 징계절차 불요</span></div>
+<div class="card"><b>②</b><span>‘유죄판결’ =<br><strong>구속이 장기간 풀리지<br>않는 유죄판결</strong><br>→ 무죄추정 위반 아님</span></div>
+<div class="card"><b>③</b><span>나중에 <strong>집행유예로<br>석방</strong>돼도<br>이미 생긴 사유는<br>소멸하지 않음</span></div>
+</div>
+${S('nomusa','calm','','그리고 전제는 언제나 하나 — <b>당연퇴직도 해고</b>이니 <mark>제23조의 정당한 이유</mark>가 필요하다는 것!',{rev:true})}
+<p class="tagline">근거 · 대법원 1995.3.24. 선고 94다42082 판결(해고무효확인, 상고기각)</p>`);
+
+/* EP.7 현장 관점 */
+H+=EP('EP.7','그럼 우리 현장은?','파견·도급·아웃소싱 운영사 관점의 시사점 (작성자 정리)',
+`${S('banjang','calm','','현장에서도 직원이 갑자기 <b>구속</b>되는 일이 가끔 있어요. 그럼 바로 퇴직 처리하면 되나요?')}
+${S('nomusa','calm','','이 판례는 ‘규정이 있으면 무조건 된다’가 아니에요. <b>규정의 문구와 해석</b>, 그리고 <b>정당한 이유</b>가 함께 갖춰져야 해요.',{rev:true})}
+<div class="g4">
+${P('① 취업규칙 점검',S('hr','calm','','당연퇴직 사유를 <b>징계사유와 구분</b>해 적었는지, “유죄판결”을 <b>실형 등 구속 상태</b>로 구체화했는지 확인해요.'))}
+${P('② 휴직 규정 먼저',S('nomusa','calm','','구속 시 <b>휴직</b> 규정(기간·종료 시점)을 두고, 그 뒤 당연퇴직으로 이어지는 흐름을 정해 두면 분쟁이 줄어요.',{rev:true}),{fx:'휴직'})}
+${P('③ 노사 합의 확인',S('banjang','calm','','이 사건처럼 <b>“형 확정까지 인사조치 유보”</b> 같은 별도 합의가 있으면 그 내용이 처분 시점을 좌우해요.'))}
+${P('④ 파견·도급 현장',S('bot','shock','','파견이면 <b>고객사 통보·대체 인력</b> 계획을, 도급이면 <b>우리 회사 규정</b>으로 판단한다는 원칙을 지켜요.',{rev:true}),{fx:'주의'})}
+</div>
+<p class="tagline">※ 벌금형·집행유예처럼 <b>출근에 지장이 없는 유죄판결</b>까지 당연퇴직으로 처리하면 이 판례의 해석과 맞지 않아 부당해고로 다퉈질 수 있습니다(작성자 정리).</p>`);
+
+/* 숫자 */
+H+=EP('NUMBERS','한눈에 보는 숫자','이야기 속 핵심 포인트 6',
+`<div class="cards">
+<div class="card"><b>제23조</b><span>당연퇴직도<br>정당한 이유 필요</span></div>
+<div class="card"><b>3갈래</b><span>해고 아닌 자동소멸<br>(사망·정년·기간만료)</span></div>
+<div class="card"><b>4쟁점</b><span>절차·의미<br>무죄추정·석방</span></div>
+<div class="card"><b>1년</b><span>1심 징역형<br>(실형)</span></div>
+<div class="card"><b>2년</b><span>항소심<br>집행유예 기간</span></div>
+<div class="card"><b>4일</b><span>석방 →<br>당연퇴직 처분</span></div>
+</div>`);
+
+/* 체크리스트 */
+H+=EP('CHECK','당연퇴직 규정 점검표','인사담당자·현장관리자 공용 (작성자 제안)',
+`${S('hr','calm','','우리 회사 규정은 뭘 점검하면 될까요?')}
+${S('nomusa','calm','','“당연퇴직”이라는 이름보다 <b>사유가 무엇을 뜻하는지</b>가 승부처예요.',{rev:true})}
+<ul class="chk">
+<li>당연퇴직 사유를 <b>징계사유와 구분</b>해 규정했는가 (같은 사유가 양쪽에 있으면 징계절차 필요 가능)</li>
+<li>“형사 유죄판결” 사유를 <b>실형 선고 등 구속 상태가 이어지는 경우</b>로 구체화했는가</li>
+<li>구속 근로자에 대한 <b>휴직 규정</b>(기간·종료 시점)이 있는가</li>
+<li>노동조합·근로자대표와 <b>인사조치 유보 합의</b>가 있는지 확인했는가</li>
+<li>당연퇴직 처분 시 <b>해고 서면통지</b>(제27조) 등 해고에 준한 관리를 하는가</li>
+<li>징계해고 사유를 통상해고로 바꿔 처리하면서 <b>징계절차를 생략</b>하지 않았는가</li>
+<li>파견 근로자라면 <b>고객사 공유 시점·대체 인력</b> 계획을 정했는가</li>
+</ul>
+<p class="tagline">※ 위 점검표는 ㈜제니엘이노베이션이 정리한 실무 제안이며 법률 자문이 아닙니다. 구체적 사안은 노무·법률 전문가 검토를 받으세요.</p>`);
+
+/* 흐름 정리 */
+H+=EP('SUMMARY','흐름 정리','성질 → 의미 → 세 가지 반론',
+`<div class="g4">
+${P('⚖️ 성질',`<ul style="margin:0;padding-left:18px"><li>자동소멸 사유 외 당연퇴직 = <b>해고</b></li><li><b>제23조</b> 정당한 이유 필요</li></ul>`)}
+${P('🔍 의미',`<ul style="margin:0;padding-left:18px"><li>유죄판결 = <b>구속이 풀리지 않는</b> 유죄판결(실형 등)</li><li>근로제공 불능의 <b>장기화</b>가 근거</li></ul>`)}
+${P('🧱 반론 정리',`<ul style="margin:0;padding-left:18px"><li>절차 없어도 <b>무효 아님</b>, 징계절차 불요</li><li><b>무죄추정 위반 아님</b></li><li>석방돼도 <b>사유 소멸 안 함</b></li></ul>`)}
+${P('🤝 현장 팁',`<ul style="margin:0;padding-left:18px"><li>사유 문구를 <b>구체적으로</b></li><li>구속 시 <b>휴직</b> 흐름 마련</li><li>해고에 준해 <b>서면 관리</b></li></ul>`)}
+</div>`);
+
+/* 에필로그 */
+H+=EP('EPILOGUE','이름보다 실질','“당연”이라는 말에 속지 말자',
+`${S('bot','calm','','오늘 5분 판례, 한 줄로 줄이면요? <b>“당연퇴직도 해고, 기준은 출근할 수 있느냐”</b>예요.')}
+${S('hr','calm','','유죄라서가 아니라 일을 못 해서라는 논리가 제일 기억에 남아요.',{rev:true})}
+${S('nomusa','calm','','그래서 규정을 만들 때도 <b>무엇 때문에 퇴직시키는지</b>가 문구에 드러나야 해요.')}
+${S('banjang','happy','','현장에서 비슷한 일 생기면 규정부터 펴 볼게요!',{rev:true})}
+<p class="quote">“이름이 실체를 바꾸지는 못한다 — 판단은 언제나 실질로”</p>
+<p style="text-align:center;margin:0">끝까지 읽어 주셔서 감사합니다 🙏</p>
+<div class="src">작성 · ㈜제니엘이노베이션<br>
+<b>원작</b> · 유튜브 ‘김소희 노동법’ 「[🎯5분판례]_해고와 당연퇴직(feat.김소희노무사)」(2026.4.8) — <a href="${SRC_URL}" target="_blank" rel="noopener">${SRC_URL}</a> 의 설명을 영상 흐름대로 요약·재구성했습니다. 영상의 문장을 그대로 옮기지 않았으며, 원작의 저작권은 해당 채널에 있습니다.<br>
+<b>판례</b> · 대법원 1995.3.24. 선고 94다42082 판결(해고무효확인) — <a href="${PREC}" target="_blank" rel="noopener">국가법령정보센터</a> 판결문 원문 확인(조회 2026.11.8). 함께 본 판례: <a href="${PREC2}" target="_blank" rel="noopener">대법원 1994.10.25. 선고 94다25889 판결</a>(징계해고 사유로 통상해고 시 징계절차)<br>
+<b>법령</b> · 근로기준법 제23조 제1항(판결 당시 구법 제27조 제1항), 제27조(해고사유 등의 서면통지), 헌법 제27조 제4항(무죄추정)<br>
+※ 등장인물은 가상의 캐릭터입니다. 영상에 사건번호가 나오지 않아, 사건번호와 ‘작성자 확인’ 표시 내용은 작성자가 판결문과 대조해 보충했습니다. 법률 자문이 아닙니다.</div>`);
+
+
+
+document.getElementById('app').innerHTML=H;
+
+function toggleTheme(){
+  const r=document.documentElement;
+  const dark = r.dataset.theme ? r.dataset.theme==='dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  r.dataset.theme = dark?'light':'dark';
+}
+</script>
+<script src="../zt-nav.js"></script>
+<script src="../firebase-config.js"></script>
+<script type="module" src="../zt-fire.js"></script>
+<script>
+const ZT_ID='018';
+async function ztPaint(){const F=window.ZT_FIRE;if(!F||!F.enabled)return;document.getElementById('ztLike').hidden=false;
+ const d=(await F.getStats([ZT_ID]))[ZT_ID]||{};document.getElementById('ztLikeN').textContent=d.likes||0;
+ document.getElementById('ztViews').textContent='👁 조회 '+(d.views||0);
+ if(F.liked(ZT_ID))document.querySelector('#ztLike button').classList.add('on');}
+async function ztLike(){const F=window.ZT_FIRE;if(await F.addLike(ZT_ID)){document.querySelector('#ztLike button').classList.add('on');ztPaint()}}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{})}
+window.addEventListener('zt-fire-ready',async()=>{if(window.ZT_FIRE.enabled){await window.ZT_FIRE.addView(ZT_ID);ztPaint()}});
+</script>
+</body>
+</html>
