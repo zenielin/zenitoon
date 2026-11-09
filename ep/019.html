@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI 특이점 | 제니툰</title>
+<meta property="og:title" content="제니툰 · AI 특이점, 정말 5년 안에 올까?">
+<meta property="og:image" content="../thumbs/019.png">
+<link rel="icon" href="../favicon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#ffd23f">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="제니툰">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fbf6ea; --paper2:#fffdf7; --ink:#161616; --sub:#4a4a4a;
+  --red:#e2403a; --blue:#2f6fd6; --yellow:#ffd23f; --green:#2e9e6a; --soft:#f1e7cf;
+  --shadow:#161616;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#1d1b17; --paper2:#262420; --ink:#f2ede1; --sub:#c9c2b2;
+    --soft:#34302a; --shadow:#000;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#1d1b17; --paper2:#262420; --ink:#f2ede1; --sub:#c9c2b2;
+  --soft:#34302a; --shadow:#000;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Gowun Dodum',sans-serif;line-height:1.65;font-size:16px}
+.wrap{max-width:760px;margin:0 auto;padding:18px 16px 40px}
+h1,h2,h3{font-family:'Black Han Sans',sans-serif;font-weight:400;margin:0;letter-spacing:.5px;line-height:1.25}
+.ep{background:var(--paper2);border:3px solid var(--ink);box-shadow:6px 6px 0 var(--shadow);margin:0 6px 30px 0;padding:20px 18px 22px;border-radius:6px}
+.eptag{display:inline-block;background:var(--ink);color:var(--paper2);font-family:'Black Han Sans';padding:3px 12px;border-radius:3px;font-size:14px;letter-spacing:1px}
+.ep h2{font-size:26px;margin:8px 0 2px}
+.ep .subt{color:var(--sub);margin:0 0 14px;font-size:14px}
+/* cover */
+.cover{background:var(--yellow);color:#161616;text-align:center;position:relative;overflow:hidden}
+.cover .burst{position:absolute;inset:0;background:repeating-conic-gradient(from 0deg at 0% 50%,rgba(255,255,255,.42) 0 2.5deg,transparent 2.5deg 8deg) left/50% 100% no-repeat,repeating-conic-gradient(from 0deg at 100% 50%,rgba(255,255,255,.42) 0 2.5deg,transparent 2.5deg 8deg) right/50% 100% no-repeat;-webkit-mask-image:linear-gradient(90deg,#000,transparent 42%,transparent 58%,#000);mask-image:linear-gradient(90deg,#000,transparent 42%,transparent 58%,#000);z-index:0}
+.cover>*{position:relative;z-index:1}
+.cover h1{font-size:38px;margin:10px 0 6px;text-shadow:3px 3px 0 #fff}
+.cover .kick{font-family:'Jua';font-size:17px}
+.cover .by{font-size:13px;margin-top:10px}
+.cover .cast{display:flex;justify-content:center;gap:6px;margin:14px 0 6px;flex-wrap:wrap}
+.cover .cast svg{width:78px;height:78px;background:#fff;border:3px solid #161616;border-radius:50%}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.num{background:#fff;border:2.5px solid #161616;border-radius:6px;padding:8px 4px}
+.num b{display:block;font-family:'Black Han Sans';font-size:26px;color:var(--red);line-height:1.1}
+.num span{font-size:12px}
+/* panels */
+.g4{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.panel{border:2.5px solid var(--ink);background:var(--paper);border-radius:4px;padding:10px;position:relative;min-width:0}
+.panel.wide{grid-column:1/-1}
+.panel .cap{font-family:'Black Han Sans';font-size:13px;background:var(--yellow);color:#161616;display:inline-block;padding:1px 8px;border:2px solid var(--ink);margin-bottom:6px}
+.panel .fx{position:absolute;right:8px;top:4px;font-family:'Black Han Sans';color:var(--red);font-size:20px;transform:rotate(8deg)}
+/* scene */
+.scene{display:flex;align-items:flex-start;gap:8px;margin:8px 0}
+.scene.rev{flex-direction:row-reverse}
+.who{flex:0 0 64px;text-align:center;font-size:12px;color:var(--sub)}
+.who svg{width:62px;height:62px;border:2.5px solid var(--ink);border-radius:50%;background:#fff;display:block;margin:0 auto 2px}
+.bub{position:relative;background:#fff;color:#161616;border:2.5px solid var(--ink);border-radius:16px;padding:8px 12px;font-family:'Jua';font-size:17px;line-height:1.5;flex:1;min-width:0}
+.bub:before{content:"";position:absolute;left:-11px;top:16px;border:9px solid transparent;border-right-color:var(--ink);border-left:0}
+.bub:after{content:"";position:absolute;left:-7px;top:18px;border:7px solid transparent;border-right-color:#fff;border-left:0}
+.rev .bub:before{left:auto;right:-11px;border-right-color:transparent;border-left:9px solid var(--ink);border-right:0}
+.rev .bub:after{left:auto;right:-7px;border-right-color:transparent;border-left:7px solid #fff;border-right:0}
+.bub.shout{border-radius:4px;background:var(--yellow);font-size:18px}
+.bub.shout:after{border-right-color:var(--yellow)}
+.rev .bub.shout:after{border-left-color:var(--yellow)}
+.bub small{display:block;color:#666;font-family:'Gowun Dodum';font-size:12.5px;margin-top:2px}
+/* boxes */
+.box{border:2.5px dashed var(--ink);border-radius:6px;padding:10px 14px;margin:12px 0;background:var(--paper)}
+.box h3{font-size:17px;margin-bottom:6px}
+.box ul,.box ol{margin:0;padding-left:20px}
+.box li{margin:3px 0}
+.box.red{border-style:solid;border-color:var(--red)}
+.box.blue{border-style:solid;border-color:var(--blue)}
+.law{background:var(--soft);border-left:6px solid var(--blue);padding:10px 14px;font-size:14px;margin:12px 0;border-radius:0 6px 6px 0}
+.law b{color:var(--blue)}
+mark{background:var(--yellow);color:#161616;padding:0 3px}
+/* bars */
+.bars{margin:6px 0 4px}
+.bar{display:grid;grid-template-columns:110px 1fr 54px;align-items:center;gap:8px;margin:7px 0;font-size:14px}
+.bar .tr{height:20px;border:2px solid var(--ink);border-radius:3px;background:var(--paper)}
+.bar .fl{height:100%;background:var(--blue)}
+.bar .fl.r{background:var(--red)}.bar .fl.y{background:var(--yellow)}.bar .fl.g{background:var(--green)}
+.bar b{font-family:'Black Han Sans';font-weight:400;text-align:right}
+/* timeline */
+.tl{list-style:none;margin:6px 0;padding:0 0 0 22px;border-left:4px solid var(--ink)}
+.tl li{position:relative;margin:0 0 12px;padding-left:6px}
+.tl li:before{content:"";position:absolute;left:-33px;top:4px;width:16px;height:16px;background:var(--yellow);border:3px solid var(--ink);border-radius:50%}
+.tl li.now:before{background:var(--red)}
+.tl .d{font-family:'Black Han Sans';font-size:14px;color:var(--red)}
+/* flow */
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;align-items:stretch;margin:8px 0}
+.flow div{border:2.5px solid var(--ink);border-radius:5px;padding:8px 4px;text-align:center;font-size:13px;background:var(--paper);font-family:'Jua';display:flex;align-items:center;justify-content:center;min-width:0}
+.flow div.k{background:var(--yellow);color:#161616}
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.chip{border:2px solid var(--ink);border-radius:20px;padding:2px 10px;font-size:13px;background:var(--paper)}
+.chip.hl{background:var(--red);color:#fff;border-color:var(--red)}
+/* number cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.card{border:2.5px solid var(--ink);border-radius:6px;padding:10px;text-align:center;background:var(--paper)}
+.card b{font-family:'Black Han Sans';font-size:30px;font-weight:400;display:block;color:var(--blue);line-height:1.1}
+.card span{font-size:13px}
+/* checklist */
+.chk{list-style:none;padding:0;margin:6px 0}
+.chk li{border:2px solid var(--ink);border-radius:5px;padding:8px 10px 8px 40px;margin:7px 0;position:relative;background:var(--paper);font-size:14px}
+.chk li:before{content:"";position:absolute;left:10px;top:9px;width:18px;height:18px;border:2.5px solid var(--ink);border-radius:3px;background:#fff}
+.chk li b{color:var(--red)}
+.tagline{font-size:13px;color:var(--sub)}
+.quote{text-align:center;font-family:'Jua';font-size:19px;margin:14px 0 4px}
+.src{font-size:12px;color:var(--sub);border-top:2px dashed var(--ink);margin-top:14px;padding-top:8px}
+.theme-btn{position:fixed;right:12px;bottom:12px;z-index:9;border:2.5px solid var(--ink);background:var(--paper2);color:var(--ink);font-family:'Jua';border-radius:20px;padding:4px 12px;cursor:pointer}
+@media (max-width:540px){
+  .g4{grid-template-columns:1fr}
+  .cover h1{font-size:30px}
+  .ep h2{font-size:22px}
+  .nums,.cards{grid-template-columns:repeat(2,1fr)}
+  .flow{grid-template-columns:1fr}
+  .flow div{padding:6px}
+  .bar{grid-template-columns:86px 1fr 46px;font-size:13px}
+  .cover .cast svg{width:60px;height:60px}
+}
+@media (min-width:1024px){.wrap{max-width:960px}body{font-size:18px}.bub{font-size:19px}.ep h2{font-size:30px}.who{flex-basis:80px}.who svg{width:76px;height:76px}.cover h1{font-size:46px}.num b{font-size:30px}}
+@media (min-width:1440px){.wrap{max-width:1280px}body{font-size:19px}.bub{font-size:20.5px;padding:10px 16px}.ep{padding:26px 28px 28px}.ep h2{font-size:34px}.ep .subt{font-size:16px}.who{flex-basis:92px;font-size:12.5px}.who svg{width:88px;height:88px}.cover h1{font-size:54px}.cover .kick{font-size:20px}.cover .cast svg{width:96px;height:96px}.num b{font-size:34px}.num span{font-size:14px}.g4{gap:16px}.panel{padding:14px}.panel .cap{font-size:15px}.box h3{font-size:20px}.law,.src{font-size:15px}.bar{grid-template-columns:200px 1fr 70px;font-size:16px}.bar .tr{height:24px}.card b{font-size:36px}.card span{font-size:15px}.chk li{font-size:16px}.zt-nav{font-size:16px}}
+@media print{.theme-btn{display:none}}
+</style>
+<style>
+.zt-nav{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:10px;justify-content:space-between;background:var(--paper2);border-bottom:3px solid var(--ink);padding:8px 14px;font-family:'Jua',sans-serif;font-size:14px}
+.zt-nav a{color:var(--ink);text-decoration:none;border:2px solid var(--ink);border-radius:16px;padding:1px 10px;background:var(--paper)}
+.zt-nav span{flex:1;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.zt-end{padding-top:0}
+.zt-cta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;background:#ffd23f;color:#161616;border:3px solid var(--ink);border-radius:6px;padding:14px 16px;box-shadow:5px 5px 0 var(--shadow);margin-right:6px}
+.zt-cta b{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:19px}
+.zt-cta span{font-size:13.5px}
+.zt-btn{background:#161616;color:#fff;text-decoration:none;font-family:'Jua',sans-serif;border-radius:5px;padding:7px 14px}
+.zt-links{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 50px}
+.zt-links a{color:var(--ink);text-decoration:none;border:2px solid var(--ink);border-radius:5px;padding:4px 12px;font-family:'Jua',sans-serif;background:var(--paper2)}
+.zt-like{display:flex;align-items:center;gap:12px;margin:18px 0 0;flex-wrap:wrap}
+.zt-like button{border:2.5px solid var(--ink);background:var(--paper2);color:var(--ink);border-radius:22px;padding:6px 16px;font-family:'Jua',sans-serif;font-size:16px;cursor:pointer}
+.zt-like button.on{background:#ffd23f;color:#161616}
+.zt-like span{font-size:13px;color:var(--sub)}
+@media print{.zt-nav,.zt-end{display:none}}
+</style>
+</head>
+<body>
+<div style="background:#161616;color:#fffdf7;font-size:12.5px;text-align:center;padding:6px 10px;font-family:'Gowun Dodum',sans-serif">제공 <a href="https://www.zenielinnovation.co.kr" target="_blank" rel="noopener" style="color:#ffd23f;font-weight:700;text-decoration:none">㈜제니엘이노베이션</a></div>
+<nav class="zt-nav"><a href="../index.html" data-zt-back>← 제니툰</a><span>💡 특별편 · 019화</span><a href="019.pdf" class="zt-pdf">PDF</a></nav>
+<button class="theme-btn" onclick="toggleTheme()">☀︎ / ☾</button>
+<div class="wrap" id="app"></div>
+<div class="wrap zt-end"><div class="zt-cta"><div><b>AI 시대 인력 운영, 함께 설계합니다</b><br><span>반복 사무 아웃소싱·자동화 진단 · 직무 전환 교육 · 채용대행·인사 상담</span></div>
+<a class="zt-btn" href="../index.html?consult=1&from=019%ED%99%94">💬 상담 문의하기</a></div>
+<div class="zt-like" id="ztLike" hidden><button type="button" onclick="ztLike()">👍 도움됐어요 <b id="ztLikeN"></b></button><span id="ztViews"></span></div>
+<div class="zt-links"><a href="../index.html">🏠 제니툰 목록</a><a href="019.pdf">📄 PDF 저장</a><a href="../index.html#aha">💡 그렇구나툰 더보기</a></div></div>
+
+
+<script>
+/* ---------- 오리지널 캐릭터 SVG (가상 인물) ---------- */
+const CH={
+  nomusa:{name:'도 노무사',skin:'#efc8a4',hair:'#9a9a9a',style:'side',acc:'glasses',shirt:'#4b5563'},
+  hr:{name:'한결 대리',skin:'#f6d3b3',hair:'#40261a',style:'long',acc:'none',shirt:'#8b5cf6'},
+  banjang:{name:'현장 반장',skin:'#e9bf98',hair:'#2a2a2a',style:'short',acc:'badge',shirt:'#f08c00'},
+  bot:{name:'안내로봇 체키',bot:true}
+};
+function face(k,mood='calm'){
+  const c=CH[k];
+  if(c.bot){
+    const eye= mood==='shock'?'<circle cx="30" cy="40" r="6" fill="#161616"/><circle cx="50" cy="40" r="6" fill="#161616"/>'
+      :'<rect x="24" y="36" width="12" height="8" rx="3" fill="#161616"/><rect x="44" y="36" width="12" height="8" rx="3" fill="#161616"/>';
+    const m= mood==='shock'?'<ellipse cx="40" cy="56" rx="5" ry="6" fill="#161616"/>':'<path d="M30 54 Q40 62 50 54" stroke="#161616" stroke-width="3" fill="none"/>';
+    return `<svg viewBox="0 0 80 80"><line x1="40" y1="8" x2="40" y2="18" stroke="#161616" stroke-width="3"/><circle cx="40" cy="7" r="4" fill="#e2403a" stroke="#161616" stroke-width="2"/><rect x="14" y="18" width="52" height="48" rx="12" fill="#ffd23f" stroke="#161616" stroke-width="3"/><rect x="20" y="28" width="40" height="34" rx="8" fill="#fff" stroke="#161616" stroke-width="2"/>${eye}${m}<rect x="8" y="34" width="6" height="14" rx="2" fill="#2f6fd6" stroke="#161616" stroke-width="2"/><rect x="66" y="34" width="6" height="14" rx="2" fill="#2f6fd6" stroke="#161616" stroke-width="2"/></svg>`;
+  }
+  const S='#161616';
+  let hair='';
+  switch(c.style){
+    case 'short': hair=`<path d="M18 38 Q18 14 40 14 Q62 14 62 38 Q58 24 40 24 Q26 24 18 38Z" fill="${c.hair}"/>`;break;
+    case 'side': hair=`<path d="M18 38 Q16 16 40 15 Q64 16 62 36 Q52 22 30 26 Q22 28 18 38Z" fill="${c.hair}"/>`;break;
+    case 'bob': hair=`<path d="M15 50 Q12 14 40 13 Q68 14 65 50 L58 50 Q60 26 40 24 Q20 26 22 50Z" fill="${c.hair}"/>`;break;
+    case 'bald': hair=`<path d="M19 36 Q20 30 24 30 L24 40 Z M61 36 Q60 30 56 30 L56 40Z" fill="${c.hair}"/>`;break;
+    case 'long': hair=`<path d="M14 66 Q10 14 40 13 Q70 14 66 66 L58 66 Q62 28 40 24 Q18 28 22 66Z" fill="${c.hair}"/>`;break;
+    case 'neat': hair=`<path d="M18 36 Q18 14 40 14 Q62 14 62 36 Q60 22 46 21 L44 26 Q30 22 18 36Z" fill="${c.hair}"/>`;break;
+  }
+  let brows='',eyes='',mouth='',extra='';
+  const ey=40;
+  if(mood==='angry'){brows=`<path d="M26 31 L36 35 M54 31 L44 35" stroke="${S}" stroke-width="3"/>`;}
+  else if(mood==='sad'){brows=`<path d="M26 34 L35 31 M54 34 L45 31" stroke="${S}" stroke-width="2.5"/>`;}
+  else if(mood==='shock'){brows=`<path d="M26 29 Q31 26 36 29 M44 29 Q49 26 54 29" stroke="${S}" stroke-width="2.5" fill="none"/>`;}
+  else {brows=`<path d="M27 32 Q31 30 35 32 M45 32 Q49 30 53 32" stroke="${S}" stroke-width="2.5" fill="none"/>`;}
+  if(mood==='shock'){eyes=`<circle cx="31" cy="${ey}" r="4.5" fill="#fff" stroke="${S}" stroke-width="2"/><circle cx="31" cy="${ey}" r="2" fill="${S}"/><circle cx="49" cy="${ey}" r="4.5" fill="#fff" stroke="${S}" stroke-width="2"/><circle cx="49" cy="${ey}" r="2" fill="${S}"/>`;mouth=`<ellipse cx="40" cy="56" rx="5" ry="6" fill="${S}"/>`;}
+  else if(mood==='happy'){eyes=`<path d="M27 41 Q31 36 35 41 M45 41 Q49 36 53 41" stroke="${S}" stroke-width="3" fill="none"/>`;mouth=`<path d="M30 52 Q40 63 50 52 Z" fill="${S}"/>`;}
+  else {eyes=`<circle cx="31" cy="${ey}" r="3" fill="${S}"/><circle cx="49" cy="${ey}" r="3" fill="${S}"/>`;
+    mouth= mood==='sad'?`<path d="M32 57 Q40 51 48 57" stroke="${S}" stroke-width="3" fill="none"/>`: mood==='angry'?`<path d="M32 56 L48 56" stroke="${S}" stroke-width="3"/>`:`<path d="M32 53 Q40 60 48 53" stroke="${S}" stroke-width="3" fill="none"/>`;}
+  if(c.acc==='glasses') extra+=`<circle cx="31" cy="${ey}" r="7" fill="none" stroke="${S}" stroke-width="2.2"/><circle cx="49" cy="${ey}" r="7" fill="none" stroke="${S}" stroke-width="2.2"/><path d="M38 ${ey} L42 ${ey}" stroke="${S}" stroke-width="2"/><path d="M33 49 Q40 46 47 49" stroke="#9a9a9a" stroke-width="3" fill="none"/>`;
+  let body=`<path d="M10 80 Q12 64 40 64 Q68 64 70 80Z" fill="${c.shirt}" stroke="${S}" stroke-width="2.5"/>`;
+  if(c.acc==='badge') body+=`<path d="M52 69 l5 0 l2 4 l-4.5 3 l-4.5 -3Z" fill="#ffd23f" stroke="${S}" stroke-width="1.5"/>`;
+  if(c.acc==='lanyard') body+=`<path d="M30 64 L40 76 L50 64" stroke="#ffd23f" stroke-width="3" fill="none"/><rect x="36" y="74" width="8" height="6" fill="#fff" stroke="${S}" stroke-width="1.5"/>`;
+  if(c.acc==='apron') body+=`<rect x="28" y="68" width="24" height="12" fill="#fff" stroke="${S}" stroke-width="2"/>`;
+  if(c.acc==='tie') body+=`<path d="M37 64 L43 64 L41.5 69 L44 78 L40 80 L36 78 L38.5 69Z" fill="#e2403a" stroke="${S}" stroke-width="1.5"/>`;
+  return `<svg viewBox="0 0 80 80">${body}<ellipse cx="40" cy="42" rx="22" ry="24" fill="${c.skin}" stroke="${S}" stroke-width="2.5"/>${hair}<circle cx="24" cy="50" r="3.5" fill="#f59e9e" opacity=".6"/><circle cx="56" cy="50" r="3.5" fill="#f59e9e" opacity=".6"/>${brows}${eyes}${mouth}${extra}</svg>`;
+}
+/* ---------- 컴포넌트 ---------- */
+function S(k,mood,name,text,o={}){
+  return `<div class="scene ${o.rev?'rev':''}"><div class="who">${face(k,mood)}${name||CH[k].name}</div><div class="bub ${o.shout?'shout':''}">${text}${o.note?`<small>${o.note}</small>`:''}</div></div>`;
+}
+function P(cap,body,o={}){return `<div class="panel ${o.wide?'wide':''}">${cap?`<div class="cap">${cap}</div>`:''}${o.fx?`<div class="fx">${o.fx}</div>`:''}${body}</div>`;}
+function WHO(list){return `<div class="chips">${list.map(([n,h])=>`<span class="chip ${h?'hl':''}">${n}</span>`).join('')}</div>`;}
+function bars(rows,max){return `<div class="bars">${rows.map(([l,v,u,c])=>`<div class="bar"><span>${l}</span><div class="tr"><div class="fl ${c||''}" style="width:${Math.max(4,v/max*100)}%"></div></div><b>${v}${u}</b></div>`).join('')}</div>`;}
+function EP(tag,title,sub,body,cls=''){return `<section class="ep ${cls}"><span class="eptag">${tag}</span><h2>${title}</h2>${sub?`<p class="subt">${sub}</p>`:''}${body}</section>`;}
+
+
+/* ---------- 본문 ---------- */
+let H='';
+const SRC_URL='https://youtu.be/Es-PVVy6P6Y';
+const R1='https://en.wikipedia.org/wiki/AlphaGo_Zero';
+const R2='https://www.axios.com/2024/07/15/openai-chatgpt-reasoning-ai-levels';
+const R3='https://www.tomshardware.com/tech-industry/artificial-intelligence/nvidia-loses-usd589-billion-in-market-cap-broad-stock-plunge-triggered-by-deepseek-ai-release';
+
+/* 표지 */
+H+=`<section class="ep cover"><div class="burst"></div>
+<div class="kick">제니툰 특별편 · 그렇구나툰</div>
+<h1>AI 특이점,<br>정말 5년 안에 올까?</h1>
+<div class="kick">에이전트·환각·휴머노이드·증폭기 — 과학자들의 AI 수다 정리</div>
+<div class="cast">${face('bot','shock')}${face('hr','shock')}${face('nomusa','calm')}${face('banjang','calm')}</div>
+<div class="nums">
+ <div class="num"><b>490만 판</b><span>알파고 제로가 3일 동안 둔 대국</span></div>
+ <div class="num"><b>5단계</b><span>챗봇에서 조직까지, AI 발전 단계</span></div>
+ <div class="num"><b>30분</b><span>사람 1~2주 걸리던 문헌 조사</span></div>
+ <div class="num"><b>약 7%</b><span>환각 비율(영상 발언·전언)</span></div>
+ <div class="num"><b>×30</b><span>슈퍼 개발자가 AI로 얻는 효율(전언)</span></div>
+ <div class="num"><b>90년</b><span>산업혁명 뒤 제도가 따라잡은 시간</span></div>
+</div>
+<div class="by">작성 · ㈜제니엘이노베이션 &nbsp;|&nbsp; 2026.11.09</div>
+</section>`;
+
+/* 원작 안내 */
+H+=`<div class="box blue" style="margin:0 6px 30px 0"><h3>🎬 원작 영상 안내</h3>
+<p style="margin:0">이 웹툰은 EBS 과학 토크쇼 <b>「취미는 과학」</b>의 AI 특이점 편(유튜브 ‘EBS 컬렉션 - 사이언스’, 24화 확장판으로 공개된 회차와 같은 내용)을 영상 흐름대로 요약·재구성했습니다. 진행자와 IT 전문가 게스트, 과학자 출연진이 AI의 현재와 미래를 이야기합니다.</p>
+<p style="margin:8px 0 0;font-size:.92em">※ 받은 스크립트에 영상 앞부분(‘특이점’이라 부르는 이유·AGI·지능의 정의, 약 0~10분)과 미방송분(애플 이야기)이 빠져 있어 이 부분은 담지 못했습니다. 원작 영상에서 확인해 주세요.</p>
+<p style="margin:8px 0 0"><a href="${SRC_URL}" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">▶ 원작 영상 보러 가기</a></p></div>`;
+
+/* EP.0 */
+H+=EP('EP.0','AI의 사흘은 사람의 천 년','인간을 압도하는 AI의 능력',
+`${S('bot','calm','','안녕하세요, 안내로봇 <b>체키</b>예요! 오늘은 과학자들이 모여 나눈 <mark>AI 이야기</mark>를 정리해 볼게요.')}
+${S('hr','calm','','AI가 사람보다 똑똑해진다는 말, 솔직히 실감이 안 나요.',{rev:true})}
+${S('nomusa','calm','','바둑 AI 이야기부터 해 볼게요. <b>알파고 제로</b>는 혼자 바둑을 두며 <b>사흘 동안 490만 판</b>을 뒀어요. 사람이 그만큼 두려면 <b>최소 천 년</b>은 걸린대요(요지).')}
+<div class="flow"><div>AI의<br>3일</div><div class="k">=</div><div>사람의<br>천 년 이상</div></div>
+${P('게스트의 진단(요지)',S('banjang','shock','','디지털 지능은 자연 지능, 곧 사람의 지능과 <b>근본적으로 다르게</b> 움직인대요. 그래서 언젠가 디지털 지능이 자연 지능을 <b>압도해도 놀랍지 않다</b>는 거예요.'),{wide:true,fx:'×천 년'})}
+${S('hr','calm','','그럼 AI를 사람과 같은 잣대로 보면 안 되겠네요?')}
+${S('nomusa','calm','','네. <b>서로 다른 영역</b>으로 봐야 하고, 어떤 일은 AI가 우리보다 <b>더 많이</b> 해낼 수 있다고 보면 된대요(요지).',{rev:true})}`);
+
+/* EP.1 */
+H+=EP('EP.1','AI가 걸어가는 5단계','오픈AI가 정한 AGI(범용 인공지능)까지의 계단',
+`${S('bot','calm','','오픈AI는 AI의 발전을 <mark>5단계</mark>로 나눴어요. 하나씩 볼까요?')}
+<ul class="tl">
+<li><span class="d">1단계</span><br><b>챗봇</b> — 사람과 대화하는 AI</li>
+<li><span class="d">2단계</span><br><b>추론가</b> — 스스로 따져 보고 문제를 푸는 AI</li>
+<li class="now"><span class="d">3단계</span><br><b>에이전트</b> — 내 일을 대신 해 주는 AI (지금 이쪽으로 가는 중)</li>
+<li><span class="d">4단계</span><br><b>혁신가</b> — 세상에 없던 것을 만들어 내는 AI</li>
+<li><span class="d">5단계</span><br><b>조직</b> — 회사 하나가 할 일을 혼자 해내는 AI</li>
+</ul>
+<div class="g4">
+${P('2단계 추론의 위력',S('hr','shock','','딥리서치를 써 본 박사들이 “<b>나는 이제 뭘 하지?</b>” 할 정도래요. 사람이 <b>1~2주</b> 걸릴 문헌 조사·비교 연구를 <b>5~30분</b>에 깔끔하게 끝낸대요(요지).'),{fx:'30분'})}
+${P('3단계 에이전트란',S('nomusa','calm','','여러 단계의 복잡한 일을 <b>스스로 척척</b> 하는 수준이에요. 예를 들면 엑셀 보고서 여러 개를 묶어 <b>월요일 아침 주간회의 자료</b>로 만들어 주는 일이요.',{rev:true}),{fx:'대행'})}
+</div>
+${S('banjang','calm','','처음엔 이 일 하는 에이전트, 저 일 하는 에이전트를 따로 두는 <b>멀티에이전트</b>로 시작해서, 나중엔 <b>하나가 다 하는</b> 데까지 간대요.')}
+<div class="g4">
+${P('5단계 조직',S('nomusa','calm','','조직이 <b>6~12개월</b> 걸려 할 일을 AI 혼자 한다는 단계예요. 게스트는 여기까지 가면 <b>적어도 일에 관해서는 사람이 필요 없어진다</b>고 봤어요(요지).'),{fx:'조직'})}
+${P('특이점은 언제?',S('hr','calm','','사람마다 다르겠지만, <b>3단계 에이전트</b>만 돼도 보통 사람들은 “이거 <b>AGI</b> 같은데?” 하고 느낄 거래요(요지).',{rev:true}),{fx:'AGI?'})}
+</div>`);
+
+/* EP.2 */
+H+=EP('EP.2','과학자들의 AI, 그리고 알파폴드','출연진이 쓰는 AI와 생물학의 혁명',
+`${S('hr','calm','','출연자들은 어떤 AI를 쓰세요?')}
+<div class="g4">
+${P('유료만 여섯 개',S('banjang','calm','','IT 전문가 게스트는 <b>유료 AI를 6개</b> 쓴대요. 흔히 쓰는 대화형 AI에, 영상 편집용 AI 도구까지요.'),{fx:'6개'})}
+${P('진행자는 반신반의',S('hr','happy','','진행자는 가끔만 쓴다며 “아직 필요한 수준이 아니다” 했다가 “<b>안 써 봐서 그렇다</b>”는 반격을 받았대요.',{rev:true}),{fx:'ㅋㅋ'})}
+${P('운세까지 물어봐요',S('bot','happy','','한 출연자는 스마트폰으로 AI에게 <b>오늘의 운세</b> 같은 시시콜콜한 것까지 묻는대요. 재밌어서요!'),{fx:'수다'})}
+${P('논문 비서',S('nomusa','calm','','과학자들은 <b>논문을 정리해 주는 AI</b>를 문서 작업 비서처럼 써요.',{rev:true}),{fx:'논문'})}
+</div>
+${S('nomusa','calm','','단백질을 연구하는 출연자는 <mark>알파폴드</mark> 이야기를 했어요. 그전까지 컴퓨터 예측은 “귀엽네, 너희끼리 놀아. 실제 연구엔 못 써” 취급이었대요(요지).')}
+<div class="flow"><div>2020년<br>알파폴드 발표</div><div class="k">2021년<br>논문</div><div>“실험 결과와<br>다를 게 없다”</div><div class="k">생물학<br>혁명</div></div>
+${S('banjang','shock','','실험해야만 얻던 단백질 구조를 이젠 <b>패턴으로 예측</b>해요. “알파폴드로 예측했습니다” 하면 <b>논문도 받아 주는</b> 세상이 됐고, 생물학계가 AI에 <b>큰 투자</b>를 하고 있대요.',{rev:true})}`);
+
+/* EP.3 */
+H+=EP('EP.3','AI, 지금 어디까지 왔나','추론과 에이전트 사이 — 그리고 스마트 안경',
+`${S('nomusa','calm','','게스트는 지금 AI가 5단계 중 <b>추론과 에이전트 사이</b>쯤이라고 봤어요. 에이전트는 <b>올해 말까지 크게 발전</b>할 거라고요(방송 당시 기준, 요지).')}
+${P('이미 나온 기능(방송 당시)',S('hr','shock','','<b>내 PC의 프로그램을 AI가 직접 써서</b> 일한대요! 엑셀 시트를 열어 계산하고, 결과를 <b>동료에게 메일로 보내기</b>까지요. 내 컴퓨터에 <b>권한을 주고 절차를 정해 주면</b> 비서처럼 움직인대요.'),{wide:true,fx:'자동'})}
+${S('banjang','calm','','영화 속 천재 발명가 옆의 <b>AI 비서</b> 같은 거네요!',{rev:true})}
+<div class="g4">
+${P('다음은 스마트 안경',S('bot','calm','','AI와 <b>맥락을 공유</b>하기 가장 좋은 기기가 안경이래요. 폰을 꺼낼 필요 없이 보이는 걸 바로 “이게 뭐야?” 하고 물으면 되니까요.'),{fx:'👓'})}
+${P('도수도 알아서',S('nomusa','calm','','CES에는 <b>눈 상태에 따라 렌즈가 알아서 바뀌는</b> 안경도 나왔대요. 이런 기기도 AI 덕분에 개발이 빨라졌다는 해석이에요(요지).',{rev:true}),{fx:'CES'})}
+</div>`);
+
+/* EP.4 */
+H+=EP('EP.4','AI의 태연한 거짓말, 할루시네이션','환각은 왜 생길까',
+`${S('hr','calm','','감기약 처방을 받으면 AI한테 성분이나 나랑 안 맞는 약이 있는지 물어봐도 될까요?')}
+${S('nomusa','shock','','그럴 땐 <b>조심</b>해야 해요. AI에는 <mark>할루시네이션(환각)</mark>, 곧 <b>멀쩡한 얼굴로 하는 거짓말</b>이 있거든요.',{rev:true})}
+<div class="g4">
+${P('“모른다”를 못 한다',S('banjang','calm','','AI는 배운 데이터로 <b>확률상 가장 그럴듯한 말</b>을 내놓도록 학습해요. 그래서 “저는 몰라요”라는 말을 잘 못 한대요.'),{fx:'?!'})}
+${P('생각보다 높다',S('bot','shock','','영상에선 GPT-4 기준 환각 비율이 <b>약 7%</b>라고 했어요(전언 — 측정 방식에 따라 수치가 크게 달라요).',{rev:true}),{fx:'7%'})}
+</div>
+<div class="box red"><h3>🤖 영상에 나온 환각 사례</h3><ul>
+<li>“<b>세종대왕 맥북 던짐 사건</b>이 뭐야?” → AI가 “훈민정음 초고를 쓰던 세종대왕이 화가 나 맥북을 던진 사건”이라며 <b>그럴듯한 역사</b>를 지어냄</li>
+<li>“어지러운데 약국에서 살 수 있는 약 추천해 줘” → 망설임 없이 약 목록을 내놓음 — 건강 문제는 반드시 <b>의사·약사 확인</b></li>
+</ul></div>
+${S('nomusa','calm','','<b>가비지 인, 가비지 아웃</b>, 쓰레기를 넣으면 쓰레기가 나와요. AI가 배우는 데이터엔 가짜 뉴스 같은 <b>쓰레기 정보</b>가 엄청 섞여 있죠.')}
+${S('hr','calm','','반대로 학습 데이터를 깨끗하게 거르면요?',{rev:true})}
+${S('banjang','happy','','<b>명의 1만 명을 모아 놓은</b> 것 같은 정확한 AI를 만들 수 있대요. 그래도 당장은 AI가 정리하면 <b>의사가 맞다·아니다 확인</b>하는 보조 역할로 시간을 크게 줄이는 거고요(요지).')}`);
+
+/* EP.5 */
+H+=EP('EP.5','환각을 줄이는 법, 그리고 “버그가 아니다”','신뢰도 표시·검색 증강·계산 도구',
+`<div class="g4">
+${P('① 스스로 점수 매기기',S('nomusa','calm','','알파폴드는 자기 예측마다 <b>“이건 90% 확신, 저건 50%”</b> 하고 스스로 평가해요. 점수가 높으면 믿을 만한 정보, 낮으면 <b>“믿지 마세요” 딱지</b>를 붙이죠(요지).'),{fx:'신뢰도'})}
+${P('② RAG(검색 증강 생성)',S('hr','calm','','Retrieval-Augmented Generation. AI에게 자료를 주고 “<b>이 안에서만 참고해서</b> 답해”라고 하거나, 검색 결과와 비교·검증하게 하면 환각이 확 줄어요.',{rev:true}),{fx:'RAG'})}
+${P('③ 계산은 코드로',S('banjang','calm','','덧셈·뺄셈을 시키면 요즘 AI는 글로 짐작하지 않고 <b>파이썬 수식을 만들어 계산</b>해서 줘요. 그러니 안 틀리죠.'),{fx:'1+1'})}
+${P('④ 그래도 0은 아니다',S('bot','calm','','지금 AI는 거의 다 <b>트랜스포머</b>라는 구조를 써요. 이걸 쓰는 한 환각은 <b>없앨 순 없고 낮출 수만</b> 있대요.',{rev:true}),{fx:'≠0'})}
+</div>
+${S('nomusa','calm','','한 세계적인 AI 연구자는 “<mark>환각은 버그가 아니라 특성(피처)</mark>”이라고 했대요(요지).')}
+${S('hr','shock','','진행자도 자기 이름을 검색했더니 잘 나가다가 <b>키우지도 않는 반려견</b> 이야기가 나와서 깜짝 놀랐대요!',{rev:true})}
+${P('왜 특성일까',S('banjang','calm','','사람도 창의적으로 생각하려면 <b>상상하고 몽상</b>해야 하잖아요. AI에서 상상력을 다 빼 버리면 <b>검색 엔진</b>이 될 거래요. 환각은 창의적인 답을 내는 <b>동작의 뒷면</b>이라는 거죠(요지).'),{wide:true,fx:'뒷면'})}`);
+
+/* EP.6 */
+H+=EP('EP.6','AI도 창의적일 수 있을까','알파고의 새 수 vs 인상파와 지동설',
+`${S('hr','calm','','4단계가 ‘혁신가’라는데, 혁신이나 창의성은 뭘로 정의해요?')}
+${S('nomusa','calm','','그게 아슬아슬한 부분이에요. 상상력·창의성의 정의부터 <b>아직 모르거든요</b>. 그런데 알파고는 <b>몇백 년 기보에 없던 수</b>를 둬서 프로 기사들을 놀라게 했죠.',{rev:true})}
+${S('banjang','calm','','시간이 남아도니 <b>온갖 경우의 수</b>를 다 둬 보는 거래요. 처음 보는 수를 뒀으니 이걸 창의성으로 볼 거냐는 질문이 생기고요.')}
+<div class="g4">
+${P('찬성 — AI가 더 쉽다',S('nomusa','calm','','창의성은 <b>무관해 보이던 것들의 숨은 관계</b>를 찾는 능력이고, 사람도 결국 <b>추론과 탐색</b>으로 해요. 훨씬 많이 알고 훨씬 오래 ‘사는’ AI가 오히려 더 잘할 수 있다는 의견이에요(요지).'),{fx:'찬'})}
+${P('반론 — 인상파와 지동설',S('hr','calm','','<b>인상파 이전 그림만</b> 배운 AI는 아무리 그려도 인상파를 못 그릴 거래요. 천동설이 당연하던 시절의 AI가 <b>지동설</b>을 만들 수 있었을까요?(요지)',{rev:true}),{fx:'반'})}
+</div>
+${S('bot','calm','','재반론도 있었어요. 고전 미술 → 바로크 → 인상파 → 아방가르드도 <b>기존 합의를 깨고 새로 만드는 패턴</b>이 있으니, <mark>새것이 만들어지는 방식 자체</mark>를 배우면 없던 것도 만들 수 있다는 거죠(요지).')}
+${S('banjang','happy','','과학 커뮤니케이션 팀이 낸 과학 노래 앨범(‘사랑은 핵융합처럼’ 같은 곡)도 가사·노래가 훌륭했다는 이야기가 나왔어요. AI는 데이터 속 <b>숨은 패턴</b>을 찾아내는 존재니까요.',{rev:true})}`);
+
+/* EP.7 */
+H+=EP('EP.7','AI에게 왜 몸이 필요할까','임바디드 AI와 휴머노이드 경쟁',
+`${S('nomusa','calm','','한 과학자 출연진은 진짜 무서운 지점이 <b>실험실 대학원생</b>이래요. 언제 대학원생 대신 AI를 연구실에 들일까? 그 기준은 창의성보다 <mark>몸</mark>이라는 거예요(요지).')}
+${S('hr','calm','','왜 몸이에요?',{rev:true})}
+${S('nomusa','calm','','우리 지능의 상당 부분이 <b>몸을 쓰는 능력</b>이거든요. AI는 아직 <b>피펫</b>(실험용 스포이트)을 못 잡아요.')}
+${P('같은 주장을 하는 AI 석학(요지)',S('banjang','calm','','지금 AI는 남이 쓰고·보고·찍고·들은 것으로 <b>간접 학습</b>만 한대요. 물을 쏟으면, 걷다 부딪히면, 뛰다 떨어지면 어떻게 되는지 아는 <b>월드 모델</b>이 상식의 바탕인데, 몸이 없으면 그걸 못 갖는다는 거죠. 그래서 <mark>임바디드 AI(몸을 가진 AI)</mark>가 필요하다는 주장이에요.'),{wide:true,fx:'몸'})}
+${S('bot','shock','','그래서 최근 몇 년 <b>휴머노이드 투자</b>가 어마어마하고, 구글·테슬라·피규어 AI·보스턴 다이내믹스 같은 회사들이 뛰어들었대요.')}
+<div class="g4">
+${P('이유 ① 호기심',S('hr','calm','','어릴 때 본 만화 속 거대 로봇, <b>화성까지 데려다줄 무언가</b>. 이 끝에 뭐가 있는지 알고 싶은 마음이요.'),{fx:'꿈'})}
+${P('이유 ② 돈',S('nomusa','calm','','인터넷 초창기(검색), 스마트폰 초창기(SNS·영상 앱)에 뛰어든 기업들이 <b>돈방석</b>에 앉았죠. AI도 <b>먼저 자리 잡으면</b> 그렇게 될 거란 생각에 <b>조 단위 베팅</b>이 들어간대요(요지).',{rev:true}),{fx:'조 단위'})}
+</div>`);
+
+/* EP.8 */
+H+=EP('EP.8','AI판 매트릭스, 코스모스 플랫폼','시청자 질문 — 엔비디아의 물리 AI 플랫폼',
+`${S('hr','calm','','시청자가 엔비디아의 <b>코스모스</b> 플랫폼을 쉽게 설명해 달래요.')}
+${S('nomusa','calm','','세상을 디지털 안으로 옮긴 <b>시뮬레이션</b>이에요. 던지면 깨지는 것까지 <b>물리 법칙을 다 적용</b>한 가상 현실, AI에게는 일종의 <mark>매트릭스</mark>죠.',{rev:true})}
+<div class="flow"><div>진짜 공장<br>(밤에만 학습)</div><div class="k">→</div><div>가상 공장<br>1만 개 복제</div><div class="k">→</div><div>휴머노이드<br>100만 대 투입</div></div>
+${P('하루 만에 천만 시간',S('banjang','shock','','AI 입장에선 가상에서 일했는지 진짜로 일했는지 <b>구별이 안 돼요</b>. 하루 지났을 뿐인데 “<b>천만 시간</b> 공부했더니 이제 기계 좀 쓰겠는데?” 하는 거죠(요지).'),{wide:true,fx:'천만h'})}
+${S('bot','calm','','엔비디아 CEO의 전략은 휴머노이드·자율주행차를 학습시키는 <b>시간과 돈</b>을 자기가 맡아 주겠다는 거래요. 영상은 이 플랫폼이 <b>실제 세계와 같다는 물리 법칙 인증</b>까지 받았다고 소개했어요(전언).')}`);
+
+/* EP.9 */
+H+=EP('EP.9','딥시크 쇼크, 그리고 조용한 한국','중국의 추격과 우리 AI 생태계',
+`${S('nomusa','calm','','잘 알려지지 않았지만 중국의 알리바바·바이두도 <b>GPT-4 수준까지 거의 따라왔다</b>는 평가예요(요지).')}
+${S('banjang','shock','','그러다 <mark>딥시크</mark>가 튀어나오자 “어떻게 저렇게 <b>싸게</b> 만들었지?” 하며 엔비디아 주가가 쿵 떨어졌죠. 2025년 1월 27일 하루에 <b>약 17%</b> 빠졌어요.',{rev:true})}
+<div class="g4">
+${P('규제 칩으로 해냈다',S('hr','calm','','미국이 최신 GPU(H100)를 중국에 못 팔게 하자, <b>칩 사이 통신 속도를 낮춘 수출용 칩(H800)</b>이 팔렸는데 그걸로 만들어 냈대요. 영상은 “4배 느리게”라고 했는데, 공개 사양상 칩 간 연결 대역폭은 900→400GB/s 수준이에요.'),{fx:'H800'})}
+${P('비법까지 공개',S('nomusa','calm','','수학·코딩에 강한 <b>추론형 모델</b>인데, 다른 회사가 영업비밀로 감춰 온 <b>추론 과정과 레시피</b>를 오픈소스로 다 공개했대요. 며칠 만에 따라 만든 모델이 <b>몇백 개</b> 나왔다고 해요(요지).',{rev:true}),{fx:'공개'})}
+</div>
+${S('hr','sad','','그럼 인터넷 강국 한국은요?')}
+${S('nomusa','sad','','인터넷·스마트폰 초창기엔 벤처와 앱이 쏟아졌는데, AI 시대 한국은 <b>너무 조용하다</b>는 걱정이에요. 벤처캐피털 투자 소식도 잘 안 들리고요. <b>스타트업 생태계의 활력</b>을 어떻게 되찾을지가 큰 숙제래요(방송 당시, 요지).',{rev:true})}`);
+
+/* EP.10 */
+H+=EP('EP.10','특이점 이후, 세상은 어떻게 바뀔까','산업혁명의 교훈·근원적 독점·증폭기',
+`${S('nomusa','calm','','산업혁명 때 증기기관으로 생산성은 치솟았지만, 초기엔 <b>아동 노동 착취</b>와 <b>심각한 오염</b>으로 생활 수준이 크게 떨어졌대요.')}
+<div class="flow"><div>증기기관<br>생산성 ↑</div><div class="k">아동 노동<br>오염</div><div>노동조합의<br>투쟁</div><div class="k">노동법·<br>소년 노동 금지</div><div>약 90년<br>걸림</div></div>
+${S('hr','shock','','제도가 따라가는 데 <b>90년</b>이나요? AI는 훨씬 빠를 텐데…',{rev:true})}
+${S('nomusa','calm','','그래서 법과 제도를 <b>빨리 정비하지 않으면</b> 회복하기 어려울 만큼 <b>양극화</b>될 수 있다는 경고예요(요지).')}
+${P('근원적 독점(요지)',S('banjang','calm','','한 20세기 사상가는 기술이 발전하면 <b>새로운 종류의 가난</b>이 생긴다고 했대요. 예전엔 스마트폰 없이도 잘 살았지만 이젠 없으면 <b>박탈</b>을 겪잖아요. 스마트 안경·휴머노이드 같은 빅테크 서비스를 안 쓰면 삶의 질이 떨어지는 사회가 되면, <b>대기업의 통제력과 불평등</b>이 커질 수 있대요.'),{wide:true,fx:'박탈'})}
+${S('bot','shock','','AI의 숨은 무서운 면은 <mark>증폭기</mark>라는 점이에요. 그런데 <b>공평하게</b> 증폭하지 않아요.')}
+${P('개발자 효율 증폭(영상 발언·전언)',bars([['평범한 개발자 5 × 1.3',6.5,'','g'],['슈퍼 개발자 50 × 10',500,'','r']],500),{wide:true})}
+<p class="tagline">※ 평범한 개발자는 AI로 약 1.3배(30%), 원래 10배 잘하던 슈퍼 개발자는 10~30배 효율이 올랐다는 영상 속 설명을 그림으로 옮긴 것(예시 계산, 예측 아님).</p>
+${S('hr','sad','','5는 6.5가 되는데 50은 500이 되네요. 이 격차는 <b>도저히 못 좁히겠어요</b>.')}
+${S('nomusa','calm','','그대로 두면 <b>기술 귀족 계급</b>, SF 영화 같은 <b>소수 지배 사회</b>가 올 수 있다는 두려움도 나왔어요(요지).',{rev:true})}
+<div class="g4">
+${P('낙관론',S('banjang','happy','','로봇이 힘든 농사·육체노동을 맡고, 사람은 <b>문화생활과 여행</b>을 즐기며 행복하게 살 수도 있다는 시각이요.'),{fx:'☀'})}
+${P('소와 트랙터',S('hr','sad','','하지만 트랙터가 들어와 소가 노동에서 풀려났을 때, 소가 행복해진 게 아니라 <b>식용으로 전락</b>했다는 비유예요. AI가 만든 부가가치를 <b>공정하게 분배</b>하고, 일자리를 잃은 이들의 <b>생존 대책</b>을 고민해야 한대요(요지).',{rev:true}),{fx:'분배'})}
+</div>`);
+
+/* EP.11 */
+H+=EP('EP.11','남은 5년, 무엇을 준비할까','질문하는 능력과 교양의 부활',
+`${S('hr','calm','','우리에게 <b>5년 정도</b> 시간이 있다면, 뭘 준비해야 해요?')}
+${S('nomusa','calm','','AI는 기본적으로 <b>사람이 묻는 질문에 답하는</b> 구조예요. 그래서 <mark>훌륭하고 정교한 질문을 던지는 능력</mark>이 핵심 역량이 된대요.',{rev:true})}
+<div class="flow"><div>넓고 깊은<br>배경지식</div><div class="k">→</div><div>좋은<br>질문</div><div class="k">→</div><div>AI의<br>좋은 답</div></div>
+${S('bot','happy','','결국 AI 시대는 역설적으로 <mark>교양의 화려한 부활</mark>이 될 거래요. <b>아는 만큼 질문할 수 있으니까</b>요!')}`);
+
+/* EP.12 현장 관점 */
+H+=EP('EP.12','그럼 우리 현장은?','아웃소싱·파견·채용대행·고용서비스 관점 (작성자 정리)',
+`${S('banjang','calm','','과학 이야기였지만, 우리 일에도 바로 닿는 대목이 많았어요!')}
+${S('nomusa','calm','','네 가지로 정리해 볼게요.',{rev:true})}
+<div class="g4">
+${P('① 반복 사무는 에이전트에게',S('hr','calm','','근태 집계, 현장별 주간 보고 취합처럼 <b>절차가 정해진 일</b>은 에이전트가 가장 먼저 대신할 영역이에요. 사람은 <b>고객사 소통과 예외 판단</b>에 시간을 쓰면 돼요.'),{fx:'자동화'})}
+${P('② 노무 판단은 원문 확인',S('nomusa','calm','','AI가 그럴듯하게 답해도 <b>근로기준법·파견법 조문과 판례 원문</b>으로 꼭 확인해야 해요. RAG처럼 <b>근거 자료를 주고 답하게</b> 하는 것도 방법이에요.',{rev:true}),{fx:'근거'})}
+${P('③ 증폭기 격차 줄이기',S('banjang','calm','','AI를 잘 쓰는 사람과 못 쓰는 사람의 격차가 커져요. 내근 직원·현장 관리자 모두 <b>AI 활용 교육</b>을 받아야 ‘5 → 6.5’에 머물지 않아요.'),{fx:'교육'})}
+${P('④ 몸 쓰는 현장과 직무 전환',S('bot','calm','','물류·제조·청소처럼 <b>몸을 쓰는 일</b>은 아직 사람이 중심이지만 휴머노이드 투자가 빨라요. 구직자·근로자의 <b>직무 전환 훈련</b>과 <b>디지털 격차</b> 지원이 고용서비스의 새 숙제예요.',{rev:true}),{fx:'전환'})}
+</div>
+<p class="tagline">※ 이 EP는 영상 내용이 아니라 ㈜제니엘이노베이션의 실무 관점 정리입니다.</p>`);
+
+/* 숫자 */
+H+=EP('NUMBERS','한눈에 보는 숫자','이야기 속 핵심 포인트 6',
+`<div class="cards">
+<div class="card"><b>490만 판</b><span>알파고 제로가<br>3일 동안 둔 대국</span></div>
+<div class="card"><b>5단계</b><span>챗봇·추론가·에이전트<br>·혁신가·조직</span></div>
+<div class="card"><b>5~30분</b><span>사람 1~2주 걸리던<br>문헌 조사(요지)</span></div>
+<div class="card"><b>약 7%</b><span>GPT-4 환각 비율<br>(영상 발언·전언)</span></div>
+<div class="card"><b>약 17%</b><span>딥시크 쇼크 날<br>엔비디아 주가 하락</span></div>
+<div class="card"><b>90년</b><span>산업혁명 뒤 제도가<br>따라잡은 시간(요지)</span></div>
+</div>`);
+
+/* 체크리스트 */
+H+=EP('CHECK','우리 회사 AI 활용 점검표','인사·운영 담당자용 (작성자 제안)',
+`${S('hr','calm','','우리 회사는 AI를 얼마나 준비했을까요?')}
+${S('nomusa','calm','','아래 항목부터 하나씩 확인해 보세요.',{rev:true})}
+<ul class="chk">
+<li>근태 집계·보고서 취합 등 <b>반복 업무 목록</b>을 만들어 자동화 대상을 골랐는가</li>
+<li>AI가 낸 노무·법률 답변을 <b>법령·판례 원문</b>으로 확인하는 절차가 있는가</li>
+<li>개인정보·고객사 자료를 AI에 넣을 때의 <b>보안 기준</b>을 정했는가</li>
+<li>내근 직원과 현장 관리자에게 <b>AI 활용 교육</b>을 하고 있는가</li>
+<li>AI에게 일을 맡길 때 <b>결과를 사람이 검토</b>하는 단계를 두었는가</li>
+<li>기술 변화로 바뀔 직무에 대한 <b>전환 교육·재배치 계획</b>이 있는가</li>
+</ul>
+<p class="tagline">※ 위 점검표는 ㈜제니엘이노베이션이 정리한 실무 제안입니다.</p>`);
+
+/* 흐름 정리 */
+H+=EP('SUMMARY','흐름 정리','현재 → 한계 → 다음 단계 → 사회',
+`<div class="g4">
+${P('🚀 지금',`<ul style="margin:0;padding-left:18px"><li>AI의 3일 = 사람의 천 년</li><li>5단계 중 <b>추론~에이전트</b></li><li>알파폴드의 생물학 혁명</li></ul>`)}
+${P('⚠️ 한계',`<ul style="margin:0;padding-left:18px"><li><b>환각</b>은 줄일 뿐 0은 아님</li><li>RAG·신뢰도·코드 계산</li><li>창의성 논쟁은 진행 중</li></ul>`)}
+${P('🤖 다음',`<ul style="margin:0;padding-left:18px"><li><b>몸</b>을 가진 AI</li><li>가상 공장 학습(코스모스)</li><li>딥시크·중국의 추격</li></ul>`)}
+${P('🌏 사회',`<ul style="margin:0;padding-left:18px"><li>제도 정비가 관건</li><li><b>불공평한 증폭기</b></li><li>질문 능력·교양</li></ul>`)}
+</div>`);
+
+/* 에필로그 */
+H+=EP('EPILOGUE','답은 AI가, 질문은 사람이','아는 만큼 물을 수 있다',
+`${S('bot','calm','','오늘 이야기를 한 줄로 줄이면요? <b>“AI는 빨라지고, 질문의 질이 사람의 몫이 된다.”</b>')}
+${S('hr','calm','','환각이 있으니 확인하는 눈도 필요하고, 좋은 질문을 하려면 공부도 계속해야겠네요.',{rev:true})}
+${S('nomusa','calm','','그리고 기술의 이익을 <b>함께 나누는 제도</b>를 빨리 갖추는 게 산업혁명이 남긴 교훈이에요.')}
+${S('banjang','happy','','우리 현장도 AI를 무서워만 하지 말고, 잘 쓰는 법부터 배워야겠어요!',{rev:true})}
+<p class="quote">“배우고 생각하지 않으면 얻는 것이 없고, 생각하고 배우지 않으면 위태롭다 — 『논어』”</p>
+<p style="text-align:center;margin:0">끝까지 읽어 주셔서 감사합니다 🙏</p>
+<div class="src">작성 · ㈜제니엘이노베이션<br>
+<b>원작</b> · EBS 「취미는 과학」 AI 특이점 편(유튜브 ‘EBS 컬렉션 - 사이언스’ 24화 확장판과 같은 내용) — <a href="${SRC_URL}" target="_blank" rel="noopener">${SRC_URL}</a> 의 내용을 영상 흐름대로 요약·재구성했습니다. 받은 스크립트에 없는 앞부분(약 0~10분)과 미방송분(애플 이야기)은 담지 못했습니다. 영상의 문장을 그대로 옮기지 않았으며, 원작의 저작권은 EBS에 있습니다.<br>
+<b>원자료 확인</b> · 알파고 제로 490만 판·3일(<a href="${R1}" target="_blank" rel="noopener">위키백과·Nature 2017 인용</a>) · 오픈AI 5단계(<a href="${R2}" target="_blank" rel="noopener">Axios, 2024.7.15, 블룸버그 보도 인용</a>) · 딥시크 쇼크·H800(<a href="${R3}" target="_blank" rel="noopener">Tom's Hardware, 2025.1</a>)<br>
+※ 등장인물은 가상의 캐릭터이며, 출연진과 영상 속 실존 인물은 직책만 표기하고 발언은 (요지)로 요약했습니다. 환각 비율·개발자 효율·플랫폼 인증 등은 영상 발언 기준(전언)이며, ‘올해 말’ 등 시점 표현은 방송 당시(2025년 초) 기준입니다. 특정 기업에 대한 평가나 투자 권유가 아닙니다.</div>`);
+
+
+document.getElementById('app').innerHTML=H;
+
+function toggleTheme(){
+  const r=document.documentElement;
+  const dark = r.dataset.theme ? r.dataset.theme==='dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  r.dataset.theme = dark?'light':'dark';
+}
+</script>
+<script src="../zt-nav.js"></script>
+<script src="../firebase-config.js"></script>
+<script type="module" src="../zt-fire.js"></script>
+<script>
+const ZT_ID='019';
+async function ztPaint(){const F=window.ZT_FIRE;if(!F||!F.enabled)return;document.getElementById('ztLike').hidden=false;
+ const d=(await F.getStats([ZT_ID]))[ZT_ID]||{};document.getElementById('ztLikeN').textContent=d.likes||0;
+ document.getElementById('ztViews').textContent='👁 조회 '+(d.views||0);
+ if(F.liked(ZT_ID))document.querySelector('#ztLike button').classList.add('on');}
+async function ztLike(){const F=window.ZT_FIRE;if(await F.addLike(ZT_ID)){document.querySelector('#ztLike button').classList.add('on');ztPaint()}}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{})}
+window.addEventListener('zt-fire-ready',async()=>{if(window.ZT_FIRE.enabled){await window.ZT_FIRE.addView(ZT_ID);ztPaint()}});
+</script>
+</body>
+</html>
