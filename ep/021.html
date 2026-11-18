@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI가 그린 10년 뒤 우리 하루 | 제니툰</title>
+<meta property="og:title" content="제니툰 · AI에게 물었다, 10년 뒤 우리 하루는?">
+<meta property="og:image" content="../thumbs/021.png">
+<link rel="icon" href="../favicon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#ffd23f">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="제니툰">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fbf6ea; --paper2:#fffdf7; --ink:#161616; --sub:#4a4a4a;
+  --red:#e2403a; --blue:#2f6fd6; --yellow:#ffd23f; --green:#2e9e6a; --soft:#f1e7cf;
+  --shadow:#161616;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#1d1b17; --paper2:#262420; --ink:#f2ede1; --sub:#c9c2b2;
+    --soft:#34302a; --shadow:#000;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#1d1b17; --paper2:#262420; --ink:#f2ede1; --sub:#c9c2b2;
+  --soft:#34302a; --shadow:#000;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Gowun Dodum',sans-serif;line-height:1.65;font-size:16px}
+.wrap{max-width:760px;margin:0 auto;padding:18px 16px 40px}
+h1,h2,h3{font-family:'Black Han Sans',sans-serif;font-weight:400;margin:0;letter-spacing:.5px;line-height:1.25}
+.ep{background:var(--paper2);border:3px solid var(--ink);box-shadow:6px 6px 0 var(--shadow);margin:0 6px 30px 0;padding:20px 18px 22px;border-radius:6px}
+.eptag{display:inline-block;background:var(--ink);color:var(--paper2);font-family:'Black Han Sans';padding:3px 12px;border-radius:3px;font-size:14px;letter-spacing:1px}
+.ep h2{font-size:26px;margin:8px 0 2px}
+.ep .subt{color:var(--sub);margin:0 0 14px;font-size:14px}
+/* cover */
+.cover{background:var(--yellow);color:#161616;text-align:center;position:relative;overflow:hidden}
+.cover .burst{position:absolute;inset:0;background:repeating-conic-gradient(from 0deg at 0% 50%,rgba(255,255,255,.42) 0 2.5deg,transparent 2.5deg 8deg) left/50% 100% no-repeat,repeating-conic-gradient(from 0deg at 100% 50%,rgba(255,255,255,.42) 0 2.5deg,transparent 2.5deg 8deg) right/50% 100% no-repeat;-webkit-mask-image:linear-gradient(90deg,#000,transparent 42%,transparent 58%,#000);mask-image:linear-gradient(90deg,#000,transparent 42%,transparent 58%,#000);z-index:0}
+.cover>*{position:relative;z-index:1}
+.cover h1{font-size:38px;margin:10px 0 6px;text-shadow:3px 3px 0 #fff}
+.cover .kick{font-family:'Jua';font-size:17px}
+.cover .by{font-size:13px;margin-top:10px}
+.cover .cast{display:flex;justify-content:center;gap:6px;margin:14px 0 6px;flex-wrap:wrap}
+.cover .cast svg{width:78px;height:78px;background:#fff;border:3px solid #161616;border-radius:50%}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.num{background:#fff;border:2.5px solid #161616;border-radius:6px;padding:8px 4px}
+.num b{display:block;font-family:'Black Han Sans';font-size:26px;color:var(--red);line-height:1.1}
+.num span{font-size:12px}
+/* panels */
+.g4{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.panel{border:2.5px solid var(--ink);background:var(--paper);border-radius:4px;padding:10px;position:relative;min-width:0}
+.panel.wide{grid-column:1/-1}
+.panel .cap{font-family:'Black Han Sans';font-size:13px;background:var(--yellow);color:#161616;display:inline-block;padding:1px 8px;border:2px solid var(--ink);margin-bottom:6px}
+.panel .fx{position:absolute;right:8px;top:4px;font-family:'Black Han Sans';color:var(--red);font-size:20px;transform:rotate(8deg)}
+/* scene */
+.scene{display:flex;align-items:flex-start;gap:8px;margin:8px 0}
+.scene.rev{flex-direction:row-reverse}
+.who{flex:0 0 64px;text-align:center;font-size:12px;color:var(--sub)}
+.who svg{width:62px;height:62px;border:2.5px solid var(--ink);border-radius:50%;background:#fff;display:block;margin:0 auto 2px}
+.bub{position:relative;background:#fff;color:#161616;border:2.5px solid var(--ink);border-radius:16px;padding:8px 12px;font-family:'Jua';font-size:17px;line-height:1.5;flex:1;min-width:0}
+.bub:before{content:"";position:absolute;left:-11px;top:16px;border:9px solid transparent;border-right-color:var(--ink);border-left:0}
+.bub:after{content:"";position:absolute;left:-7px;top:18px;border:7px solid transparent;border-right-color:#fff;border-left:0}
+.rev .bub:before{left:auto;right:-11px;border-right-color:transparent;border-left:9px solid var(--ink);border-right:0}
+.rev .bub:after{left:auto;right:-7px;border-right-color:transparent;border-left:7px solid #fff;border-right:0}
+.bub.shout{border-radius:4px;background:var(--yellow);font-size:18px}
+.bub.shout:after{border-right-color:var(--yellow)}
+.rev .bub.shout:after{border-left-color:var(--yellow)}
+.bub small{display:block;color:#666;font-family:'Gowun Dodum';font-size:12.5px;margin-top:2px}
+/* boxes */
+.box{border:2.5px dashed var(--ink);border-radius:6px;padding:10px 14px;margin:12px 0;background:var(--paper)}
+.box h3{font-size:17px;margin-bottom:6px}
+.box ul,.box ol{margin:0;padding-left:20px}
+.box li{margin:3px 0}
+.box.red{border-style:solid;border-color:var(--red)}
+.box.blue{border-style:solid;border-color:var(--blue)}
+.law{background:var(--soft);border-left:6px solid var(--blue);padding:10px 14px;font-size:14px;margin:12px 0;border-radius:0 6px 6px 0}
+.law b{color:var(--blue)}
+mark{background:var(--yellow);color:#161616;padding:0 3px}
+/* bars */
+.bars{margin:6px 0 4px}
+.bar{display:grid;grid-template-columns:110px 1fr 54px;align-items:center;gap:8px;margin:7px 0;font-size:14px}
+.bar .tr{height:20px;border:2px solid var(--ink);border-radius:3px;background:var(--paper)}
+.bar .fl{height:100%;background:var(--blue)}
+.bar .fl.r{background:var(--red)}.bar .fl.y{background:var(--yellow)}.bar .fl.g{background:var(--green)}
+.bar b{font-family:'Black Han Sans';font-weight:400;text-align:right}
+/* timeline */
+.tl{list-style:none;margin:6px 0;padding:0 0 0 22px;border-left:4px solid var(--ink)}
+.tl li{position:relative;margin:0 0 12px;padding-left:6px}
+.tl li:before{content:"";position:absolute;left:-33px;top:4px;width:16px;height:16px;background:var(--yellow);border:3px solid var(--ink);border-radius:50%}
+.tl li.now:before{background:var(--red)}
+.tl .d{font-family:'Black Han Sans';font-size:14px;color:var(--red)}
+/* flow */
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;align-items:stretch;margin:8px 0}
+.flow div{border:2.5px solid var(--ink);border-radius:5px;padding:8px 4px;text-align:center;font-size:13px;background:var(--paper);font-family:'Jua';display:flex;align-items:center;justify-content:center;min-width:0}
+.flow div.k{background:var(--yellow);color:#161616}
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.chip{border:2px solid var(--ink);border-radius:20px;padding:2px 10px;font-size:13px;background:var(--paper)}
+.chip.hl{background:var(--red);color:#fff;border-color:var(--red)}
+/* number cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.card{border:2.5px solid var(--ink);border-radius:6px;padding:10px;text-align:center;background:var(--paper)}
+.card b{font-family:'Black Han Sans';font-size:30px;font-weight:400;display:block;color:var(--blue);line-height:1.1}
+.card span{font-size:13px}
+/* checklist */
+.chk{list-style:none;padding:0;margin:6px 0}
+.chk li{border:2px solid var(--ink);border-radius:5px;padding:8px 10px 8px 40px;margin:7px 0;position:relative;background:var(--paper);font-size:14px}
+.chk li:before{content:"";position:absolute;left:10px;top:9px;width:18px;height:18px;border:2.5px solid var(--ink);border-radius:3px;background:#fff}
+.chk li b{color:var(--red)}
+.tagline{font-size:13px;color:var(--sub)}
+.quote{text-align:center;font-family:'Jua';font-size:19px;margin:14px 0 4px}
+.src{font-size:12px;color:var(--sub);border-top:2px dashed var(--ink);margin-top:14px;padding-top:8px}
+.theme-btn{position:fixed;right:12px;bottom:12px;z-index:9;border:2.5px solid var(--ink);background:var(--paper2);color:var(--ink);font-family:'Jua';border-radius:20px;padding:4px 12px;cursor:pointer}
+@media (max-width:540px){
+  .g4{grid-template-columns:1fr}
+  .cover h1{font-size:30px}
+  .ep h2{font-size:22px}
+  .nums,.cards{grid-template-columns:repeat(2,1fr)}
+  .flow{grid-template-columns:1fr}
+  .flow div{padding:6px}
+  .bar{grid-template-columns:86px 1fr 46px;font-size:13px}
+  .cover .cast svg{width:60px;height:60px}
+}
+@media (min-width:1024px){.wrap{max-width:960px}body{font-size:18px}.bub{font-size:19px}.ep h2{font-size:30px}.who{flex-basis:80px}.who svg{width:76px;height:76px}.cover h1{font-size:46px}.num b{font-size:30px}}
+@media (min-width:1440px){.wrap{max-width:1280px}body{font-size:19px}.bub{font-size:20.5px;padding:10px 16px}.ep{padding:26px 28px 28px}.ep h2{font-size:34px}.ep .subt{font-size:16px}.who{flex-basis:92px;font-size:12.5px}.who svg{width:88px;height:88px}.cover h1{font-size:54px}.cover .kick{font-size:20px}.cover .cast svg{width:96px;height:96px}.num b{font-size:34px}.num span{font-size:14px}.g4{gap:16px}.panel{padding:14px}.panel .cap{font-size:15px}.box h3{font-size:20px}.law,.src{font-size:15px}.bar{grid-template-columns:200px 1fr 70px;font-size:16px}.bar .tr{height:24px}.card b{font-size:36px}.card span{font-size:15px}.chk li{font-size:16px}.zt-nav{font-size:16px}}
+@media print{.theme-btn{display:none}}
+</style>
+<style>
+.zt-nav{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:10px;justify-content:space-between;background:var(--paper2);border-bottom:3px solid var(--ink);padding:8px 14px;font-family:'Jua',sans-serif;font-size:14px}
+.zt-nav a{color:var(--ink);text-decoration:none;border:2px solid var(--ink);border-radius:16px;padding:1px 10px;background:var(--paper)}
+.zt-nav span{flex:1;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.zt-end{padding-top:0}
+.zt-cta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;background:#ffd23f;color:#161616;border:3px solid var(--ink);border-radius:6px;padding:14px 16px;box-shadow:5px 5px 0 var(--shadow);margin-right:6px}
+.zt-cta b{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:19px}
+.zt-cta span{font-size:13.5px}
+.zt-btn{background:#161616;color:#fff;text-decoration:none;font-family:'Jua',sans-serif;border-radius:5px;padding:7px 14px}
+.zt-links{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 50px}
+.zt-links a{color:var(--ink);text-decoration:none;border:2px solid var(--ink);border-radius:5px;padding:4px 12px;font-family:'Jua',sans-serif;background:var(--paper2)}
+.zt-like{display:flex;align-items:center;gap:12px;margin:18px 0 0;flex-wrap:wrap}
+.zt-like button{border:2.5px solid var(--ink);background:var(--paper2);color:var(--ink);border-radius:22px;padding:6px 16px;font-family:'Jua',sans-serif;font-size:16px;cursor:pointer}
+.zt-like button.on{background:#ffd23f;color:#161616}
+.zt-like span{font-size:13px;color:var(--sub)}
+@media print{.zt-nav,.zt-end{display:none}}
+</style>
+</head>
+<body>
+<div style="background:#161616;color:#fffdf7;font-size:12.5px;text-align:center;padding:6px 10px;font-family:'Gowun Dodum',sans-serif">제공 <a href="https://www.zenielinnovation.co.kr" target="_blank" rel="noopener" style="color:#ffd23f;font-weight:700;text-decoration:none">㈜제니엘이노베이션</a></div>
+<nav class="zt-nav"><a href="../index.html" data-zt-back>← 제니툰</a><span>💡 특별편 · 021화</span><a href="021.pdf" class="zt-pdf">PDF</a></nav>
+<button class="theme-btn" onclick="toggleTheme()">☀︎ / ☾</button>
+<div class="wrap" id="app"></div>
+<div class="wrap zt-end"><div class="zt-cta"><div><b>바뀌는 일터, 사람과 기술의 역할부터</b><br><span>직무 재설계에 맞춘 도급·파견 운영 · 채용대행 · 중장년·외국인 인력 운영 상담</span></div>
+<a class="zt-btn" href="../index.html?consult=1&from=021%ED%99%94">💬 상담 문의하기</a></div>
+<div class="zt-like" id="ztLike" hidden><button type="button" onclick="ztLike()">👍 도움됐어요 <b id="ztLikeN"></b></button><span id="ztViews"></span></div>
+<div class="zt-links"><a href="../index.html">🏠 제니툰 목록</a><a href="021.pdf">📄 PDF 저장</a><a href="../index.html#aha">💡 그렇구나툰 더보기</a></div></div>
+
+
+<script>
+/* ---------- 오리지널 캐릭터 SVG (가상 인물) ---------- */
+const CH={
+  nomusa:{name:'도 노무사',skin:'#efc8a4',hair:'#9a9a9a',style:'side',acc:'glasses',shirt:'#4b5563'},
+  hr:{name:'한결 대리',skin:'#f6d3b3',hair:'#40261a',style:'long',acc:'none',shirt:'#8b5cf6'},
+  banjang:{name:'현장 반장',skin:'#e9bf98',hair:'#2a2a2a',style:'short',acc:'badge',shirt:'#f08c00'},
+  bot:{name:'안내로봇 체키',bot:true}
+};
+function face(k,mood='calm'){
+  const c=CH[k];
+  if(c.bot){
+    const eye= mood==='shock'?'<circle cx="30" cy="40" r="6" fill="#161616"/><circle cx="50" cy="40" r="6" fill="#161616"/>'
+      :'<rect x="24" y="36" width="12" height="8" rx="3" fill="#161616"/><rect x="44" y="36" width="12" height="8" rx="3" fill="#161616"/>';
+    const m= mood==='shock'?'<ellipse cx="40" cy="56" rx="5" ry="6" fill="#161616"/>':'<path d="M30 54 Q40 62 50 54" stroke="#161616" stroke-width="3" fill="none"/>';
+    return `<svg viewBox="0 0 80 80"><line x1="40" y1="8" x2="40" y2="18" stroke="#161616" stroke-width="3"/><circle cx="40" cy="7" r="4" fill="#e2403a" stroke="#161616" stroke-width="2"/><rect x="14" y="18" width="52" height="48" rx="12" fill="#ffd23f" stroke="#161616" stroke-width="3"/><rect x="20" y="28" width="40" height="34" rx="8" fill="#fff" stroke="#161616" stroke-width="2"/>${eye}${m}<rect x="8" y="34" width="6" height="14" rx="2" fill="#2f6fd6" stroke="#161616" stroke-width="2"/><rect x="66" y="34" width="6" height="14" rx="2" fill="#2f6fd6" stroke="#161616" stroke-width="2"/></svg>`;
+  }
+  const S='#161616';
+  let hair='';
+  switch(c.style){
+    case 'short': hair=`<path d="M18 38 Q18 14 40 14 Q62 14 62 38 Q58 24 40 24 Q26 24 18 38Z" fill="${c.hair}"/>`;break;
+    case 'side': hair=`<path d="M18 38 Q16 16 40 15 Q64 16 62 36 Q52 22 30 26 Q22 28 18 38Z" fill="${c.hair}"/>`;break;
+    case 'bob': hair=`<path d="M15 50 Q12 14 40 13 Q68 14 65 50 L58 50 Q60 26 40 24 Q20 26 22 50Z" fill="${c.hair}"/>`;break;
+    case 'bald': hair=`<path d="M19 36 Q20 30 24 30 L24 40 Z M61 36 Q60 30 56 30 L56 40Z" fill="${c.hair}"/>`;break;
+    case 'long': hair=`<path d="M14 66 Q10 14 40 13 Q70 14 66 66 L58 66 Q62 28 40 24 Q18 28 22 66Z" fill="${c.hair}"/>`;break;
+    case 'neat': hair=`<path d="M18 36 Q18 14 40 14 Q62 14 62 36 Q60 22 46 21 L44 26 Q30 22 18 36Z" fill="${c.hair}"/>`;break;
+  }
+  let brows='',eyes='',mouth='',extra='';
+  const ey=40;
+  if(mood==='angry'){brows=`<path d="M26 31 L36 35 M54 31 L44 35" stroke="${S}" stroke-width="3"/>`;}
+  else if(mood==='sad'){brows=`<path d="M26 34 L35 31 M54 34 L45 31" stroke="${S}" stroke-width="2.5"/>`;}
+  else if(mood==='shock'){brows=`<path d="M26 29 Q31 26 36 29 M44 29 Q49 26 54 29" stroke="${S}" stroke-width="2.5" fill="none"/>`;}
+  else {brows=`<path d="M27 32 Q31 30 35 32 M45 32 Q49 30 53 32" stroke="${S}" stroke-width="2.5" fill="none"/>`;}
+  if(mood==='shock'){eyes=`<circle cx="31" cy="${ey}" r="4.5" fill="#fff" stroke="${S}" stroke-width="2"/><circle cx="31" cy="${ey}" r="2" fill="${S}"/><circle cx="49" cy="${ey}" r="4.5" fill="#fff" stroke="${S}" stroke-width="2"/><circle cx="49" cy="${ey}" r="2" fill="${S}"/>`;mouth=`<ellipse cx="40" cy="56" rx="5" ry="6" fill="${S}"/>`;}
+  else if(mood==='happy'){eyes=`<path d="M27 41 Q31 36 35 41 M45 41 Q49 36 53 41" stroke="${S}" stroke-width="3" fill="none"/>`;mouth=`<path d="M30 52 Q40 63 50 52 Z" fill="${S}"/>`;}
+  else {eyes=`<circle cx="31" cy="${ey}" r="3" fill="${S}"/><circle cx="49" cy="${ey}" r="3" fill="${S}"/>`;
+    mouth= mood==='sad'?`<path d="M32 57 Q40 51 48 57" stroke="${S}" stroke-width="3" fill="none"/>`: mood==='angry'?`<path d="M32 56 L48 56" stroke="${S}" stroke-width="3"/>`:`<path d="M32 53 Q40 60 48 53" stroke="${S}" stroke-width="3" fill="none"/>`;}
+  if(c.acc==='glasses') extra+=`<circle cx="31" cy="${ey}" r="7" fill="none" stroke="${S}" stroke-width="2.2"/><circle cx="49" cy="${ey}" r="7" fill="none" stroke="${S}" stroke-width="2.2"/><path d="M38 ${ey} L42 ${ey}" stroke="${S}" stroke-width="2"/><path d="M33 49 Q40 46 47 49" stroke="#9a9a9a" stroke-width="3" fill="none"/>`;
+  let body=`<path d="M10 80 Q12 64 40 64 Q68 64 70 80Z" fill="${c.shirt}" stroke="${S}" stroke-width="2.5"/>`;
+  if(c.acc==='badge') body+=`<path d="M52 69 l5 0 l2 4 l-4.5 3 l-4.5 -3Z" fill="#ffd23f" stroke="${S}" stroke-width="1.5"/>`;
+  if(c.acc==='lanyard') body+=`<path d="M30 64 L40 76 L50 64" stroke="#ffd23f" stroke-width="3" fill="none"/><rect x="36" y="74" width="8" height="6" fill="#fff" stroke="${S}" stroke-width="1.5"/>`;
+  if(c.acc==='apron') body+=`<rect x="28" y="68" width="24" height="12" fill="#fff" stroke="${S}" stroke-width="2"/>`;
+  if(c.acc==='tie') body+=`<path d="M37 64 L43 64 L41.5 69 L44 78 L40 80 L36 78 L38.5 69Z" fill="#e2403a" stroke="${S}" stroke-width="1.5"/>`;
+  return `<svg viewBox="0 0 80 80">${body}<ellipse cx="40" cy="42" rx="22" ry="24" fill="${c.skin}" stroke="${S}" stroke-width="2.5"/>${hair}<circle cx="24" cy="50" r="3.5" fill="#f59e9e" opacity=".6"/><circle cx="56" cy="50" r="3.5" fill="#f59e9e" opacity=".6"/>${brows}${eyes}${mouth}${extra}</svg>`;
+}
+/* ---------- 컴포넌트 ---------- */
+function S(k,mood,name,text,o={}){
+  return `<div class="scene ${o.rev?'rev':''}"><div class="who">${face(k,mood)}${name||CH[k].name}</div><div class="bub ${o.shout?'shout':''}">${text}${o.note?`<small>${o.note}</small>`:''}</div></div>`;
+}
+function P(cap,body,o={}){return `<div class="panel ${o.wide?'wide':''}">${cap?`<div class="cap">${cap}</div>`:''}${o.fx?`<div class="fx">${o.fx}</div>`:''}${body}</div>`;}
+function WHO(list){return `<div class="chips">${list.map(([n,h])=>`<span class="chip ${h?'hl':''}">${n}</span>`).join('')}</div>`;}
+function bars(rows,max){return `<div class="bars">${rows.map(([l,v,u,c])=>`<div class="bar"><span>${l}</span><div class="tr"><div class="fl ${c||''}" style="width:${Math.max(4,v/max*100)}%"></div></div><b>${v}${u}</b></div>`).join('')}</div>`;}
+function EP(tag,title,sub,body,cls=''){return `<section class="ep ${cls}"><span class="eptag">${tag}</span><h2>${title}</h2>${sub?`<p class="subt">${sub}</p>`:''}${body}</section>`;}
+
+
+/* ---------- 본문 ---------- */
+let H='';
+const SRC_URL='https://youtu.be/9cukn6qP7Cw';
+const R_PILL='https://abc30.com/amp/post/fda-grants-speedy-approval-eli-lillys-weight-loss-glp-1-pill-foundayo-obesity/18823509/';
+const R_HAIR='https://www.dermatologytimes.com/view/cosmo-pharmaceuticals-reports-positive-12-month-safety-data-for-clascoterone-5-in-male-aga';
+const R_EYE='https://www.reviewofoptometry.com/news/article/new-eye-drop-approved-for-presbyopia';
+const R_TAXI='https://axios.com/2026/06/17/robotaxi-rankings-waymo-china';
+const R_TOOTH='https://dentistry.co.uk/2026/08/18/tooth-regrowth-in-adults-what-we-know-so-far/';
+const R_VAC='https://www.manufacturingchemist.com/merck-and-moderna-announce-5-year-data-for';
+const R_ROBOT='https://www.rethinkx.com/faq-and-mythbusting/how-much-will-robots-cost-in-the-future';
+const A=(u,t)=>`<a href="${u}" target="_blank" rel="noopener" style="color:var(--blue);font-weight:700">${t}</a>`;
+
+/* 표지 */
+H+=`<section class="ep cover"><div class="burst"></div>
+<div class="kick">제니툰 특별편 · 그렇구나툰</div>
+<h1>AI에게 물었다,<br>10년 뒤 우리 하루는?</h1>
+<div class="kick">통역 이어폰부터 집안일 로봇까지 — 2027~2036 예상 시간표</div>
+<div class="cast">${face('bot','happy')}${face('hr','shock')}${face('nomusa','calm')}${face('banjang','calm')}</div>
+<div class="nums">
+ <div class="num"><b>10년</b><span>2027~2036 예상 시간표</span></div>
+ <div class="num"><b>1,465명</b><span>바르는 탈모 신약 3상 참여 남성</span></div>
+ <div class="num"><b>49%</b><span>암 백신 병용 시 재발·사망 위험↓</span></div>
+ <div class="num"><b>2030</b><span>치아 재생 치료제 실용화 목표</span></div>
+ <div class="num"><b>50만 건</b><span>미국 무인 택시 한 곳의 주간 유료 탑승</span></div>
+ <div class="num"><b>2만 달러</b><span>가정용 로봇 목표 가격대의 시작점</span></div>
+</div>
+<div class="by">작성 · ㈜제니엘이노베이션 &nbsp;|&nbsp; 2026.11.18</div>
+</section>`;
+
+/* 원작 안내 */
+H+=`<div class="box blue" style="margin:0 6px 30px 0"><h3>🎬 원작 영상 안내</h3>
+<p style="margin:0">이 웹툰은 유튜브 <b>‘설명좋아하는아저씨’</b> 채널의 「AI에게 10년 뒤 세상을 예측해 달라고 했더니」(2026.11.15 게시, 9분 38초)가 소개한 예상 시간표를 영상 흐름 그대로 요약·재구성했습니다. 영상 속 수치와 허가·임상 현황은 해외 보도와 기업 발표로 따로 확인했고, 확인하지 못한 내용은 <b>(전언)</b>으로 표시했습니다.</p>
+<p style="margin:8px 0 0">${A(SRC_URL,'▶ 원작 영상 보러 가기')} &nbsp;·&nbsp; ${A(R_PILL,'💊 먹는 비만약 허가')} &nbsp;·&nbsp; ${A(R_HAIR,'🧴 탈모 신약 3상')} &nbsp;·&nbsp; ${A(R_TOOTH,'🦷 치아 재생 임상')} &nbsp;·&nbsp; ${A(R_VAC,'🧬 암 백신 5년 자료')}</p>
+<p class="tagline" style="margin:8px 0 0">※ 이 웹툰의 연도는 <b>예측이 아니라 영상이 그린 ‘예상 시간표’</b>입니다. 의약품 이야기는 정보 소개이며 치료 권유가 아닙니다. 특정 기업 평가·투자 권유도 아닙니다.</p></div>`;
+
+/* EP.0 */
+H+=EP('EP.0','당연했던 불편이 사라진다고?','00:00~00:48 10년 시간표를 펼치며',
+`${S('bot','happy','','안녕하세요, 안내로봇 <b>체키</b>예요! 오늘은 제 친척들 이야기예요. AI와 각국 연구 자료를 모아 그린 <mark>앞으로 10년의 예상 시간표</mark>를 같이 봐요.')}
+${S('hr','shock','','외국어 걱정, 탈모, 살 빼기, 출근길 운전, 설거지… 이게 다 줄어든다고요?',{rev:true})}
+${S('bot','calm','','영상은 여기에 <b>치아 재생 연구</b>와 <b>암 재발 걱정을 덜어 주는 기술</b>까지 넣었어요. 가까운 미래부터 차례로 갈게요.')}
+${S('nomusa','calm','','먼저 약속 하나. 오늘 나오는 연도는 <b>확정 일정이 아니에요</b>. 어디까지 확인된 사실이고 어디부터 전망인지 제가 옆에서 짚을게요.',{rev:true})}
+<div class="box"><h3>🗓️ 영상이 그린 예상 시간표</h3><ul class="tl">
+<li class="now"><span class="d">2027~2028 (1~2년 뒤)</span><br>이어폰 실시간 통역 · AI 비서의 예약·서류 대행 · 먹는 비만 치료제 확산</li>
+<li><span class="d">2028~2029 (2~3년 뒤)</span><br>새 탈모 치료제 · 노안 안약</li>
+<li><span class="d">2030 무렵 (4~5년 뒤)</span><br>무인 택시 대중화 · 치아 재생 치료제 · 혈액 암 검사와 맞춤형 암 백신</li>
+<li><span class="d">2031 무렵 (5~6년 뒤)</span><br>1대1 AI 교사</li>
+<li><span class="d">2032~2034 (6~8년 뒤)</span><br>집안일 하는 가정용 로봇</li>
+<li><span class="d">2035~2036 (10년 뒤)</span><br>치매·만성질환 치료 선택지 확대 · 더 짧아지는 근무일</li>
+</ul></div>`);
+
+/* EP.1 */
+H+=EP('EP.1','이어폰이 통역하고, 비서가 서류를 쓴다','00:48~01:52 2027~2028 ① 언어와 잡무',
+`${S('hr','calm','','번역 앱은 지금도 있잖아요. 뭐가 달라져요?')}
+${S('bot','calm','','지금은 화면을 서로 내밀고 기다려야 해서 대화가 뚝뚝 끊기죠. 영상은 1~2년 뒤면 <mark>평범한 무선 이어폰만 끼고도</mark> 상대 말이 조금 뒤에 우리말로 들리고, 내 말도 바로 상대 언어로 건너간다고 봐요.',{rev:true})}
+<div class="g4">
+${P('통역',S('banjang','happy','','해외 식당 메뉴판 앞에서 식은땀 흘릴 일도, 단어장 붙들고 살 일도 줄겠네요.'),{fx:'술술'})}
+${P('잡무',S('bot','calm','','항공권·숙소 비교, <b>연말정산·보험금 청구</b> 서류의 빈칸 채우기도 AI 비서 몫이 돼요.',{rev:true}),{fx:'척척'})}
+</div>
+${S('hr','happy','','창 수십 개 띄우고 반나절 날리던 일이네요. 그럼 사람은요?')}
+${S('nomusa','calm','','마지막에 <b>확인하고 승인</b>하는 역할이 남아요. 버튼 하나지만, 그 책임은 여전히 사람 거예요.',{rev:true})}
+<p class="tagline">※ 통역·AI 비서의 보급 시점은 영상의 전망입니다(전언). 설명란은 AI 통역 기술이 이미 상용화 단계라고 소개합니다.</p>`);
+
+/* EP.2 */
+H+=EP('EP.2','주사 대신 알약 — 비만 치료제','01:52~02:26 2027~2028 ② 살 빼기의 풍경',
+`${S('hr','calm','','비만 치료제는 매주 배에 주사를 놓는다고 들었어요. 그래서 망설이는 분이 많다고요.')}
+${S('bot','calm','','그 장벽이 낮아지고 있어요. 미국에서 <mark>먹는 비만 치료제가 정식 허가</mark>를 받았거든요.',{rev:true})}
+<div class="box"><h3>📌 허가 현황 (작성자 확인)</h3><ul>
+<li><b>2025년 12월</b> — 미국 식품의약국(FDA)이 하루 한 번 먹는 비만 치료제를 처음 허가</li>
+<li><b>2026년 4월 1일</b> — 두 번째 먹는 비만 치료제 허가. 3,000명 넘는 성인 대상 임상에서 최고 용량군의 체중이 16개월여 동안 평균 11.2% 줄었고, 가짜 약 그룹은 2.1%</li>
+</ul></div>
+${S('banjang','happy','','밤마다 치킨 냄새랑 의지력으로 싸웠는데, 선택지가 하나 더 생기는 거군요.')}
+${S('bot','calm','','영상은 2027~2028년으로 갈수록 이 알약이 여러 나라로 퍼질 거라고 내다봐요(전언).',{rev:true})}
+${S('nomusa','calm','','다만 <b>의사 처방이 필요한 전문의약품</b>이에요. 국내 허가·출시 여부와 내 몸에 맞는지는 반드시 진료로 확인해야 해요.')}`);
+
+/* EP.3 */
+H+=EP('EP.3','거울 앞의 한숨 — 탈모와 노안','02:26~04:03 2028~2029',
+`${S('banjang','sad','','저는 이쪽이 더 급합니다. 약은 부작용이 걱정돼서 모자만 눌러 쓰고 다녀요.')}
+${S('bot','calm','','기존 약은 온몸에 작용하는 걸 매일 먹어야 했죠. 지금 미국·유럽에서는 <mark>30여 년 만의 새 방식</mark>이라는 탈모 치료제들이 마지막 단계를 지나고 있어요.',{rev:true})}
+<div class="cards">
+<div class="card"><b>바르는 약</b><span>두피에만 바르는 방식<br><strong>남성 1,465명</strong> 3상 완료<br>(작성자 확인)</span></div>
+<div class="card"><b>먹는 약</b><span>혈압 부담을<br>낮췄다는 새 제형<br>시험 중(전언)</span></div>
+<div class="card"><b>깨우는 약</b><span>잠든 모낭 세포를<br>다시 깨우는 방식<br>시험 중(전언)</span></div>
+</div>
+${S('nomusa','calm','','‘30여 년 만의 새 작용 방식’은 개발사의 설명이에요. 아직 <b>허가 전</b>이고, 영상도 “심사가 순조롭다면”이라는 조건을 달았어요.')}
+${S('hr','calm','','노안은요? 팀장님이 요즘 메뉴판을 팔 끝까지 뻗어서 보세요.',{rev:true})}
+${S('bot','calm','','미국에서는 <mark>눈에 넣는 노안 안약</mark>이 잇따라 허가됐어요. 동공을 작게 만들어 가까운 글씨를 또렷하게 하는 원리예요.')}
+<div class="box"><h3>📌 노안 안약 (작성자 확인)</h3><ul>
+<li>미국 허가 — <b>2021년</b> 첫 제품, <b>2023년</b> 두 번째, <b>2025년 7월 31일</b> 새 성분 제품</li>
+<li>2025년 허가 제품은 임상에서 넣은 지 30분쯤부터 효과가 나타나 최대 10시간 이어짐</li>
+<li>효과는 <b>일시적</b> — 노안 자체를 되돌리는 약은 아님</li>
+</ul></div>
+${S('banjang','calm','','그래도 돋보기 없이 지내는 시간이 늘어나면 체감이 크겠습니다.',{rev:true})}`);
+
+/* EP.4 */
+H+=EP('EP.4','운전석이 빈 택시','04:03~04:54 2030 무렵 ① 도로의 풍경',
+`${S('bot','calm','','4~5년 뒤, 영상은 <b>도로</b>가 전환점을 맞는다고 봐요. 미국과 중국 일부 도시에서는 이미 운전석이 빈 택시가 밤낮으로 손님을 태워요.')}
+<div class="box"><h3>📌 지금 어디까지 왔나 (작성자 확인)</h3><ul>
+<li>미국 대표 무인 택시 — <b>주간 유료 탑승 50만 건 이상</b>, 11개 도시, 차량 3,500대(2026년 6월 보도)</li>
+<li>중국 대표 서비스 — <b>누적 탑승 2,000만 건 이상</b>, 20여 개 도시</li>
+</ul></div>
+<div class="g4">
+${P('출근길',S('hr','happy','','막히는 길에서 브레이크 밟는 대신 뒷좌석에서 커피 마시며 영화를 본다니!'),{fx:'여유'})}
+${P('주차',S('banjang','happy','','내리면 차가 알아서 빈자리를 찾아간다… 주차 전쟁도 끝이네요.',{rev:true}),{fx:'알아서'})}
+</div>
+${S('nomusa','calm','','2030년 전후에 기술이 성숙하고 <b>요금도 내려간다</b>는 건 전문가 전망이에요(전언). 나라마다 제도와 안전 검증 속도가 달라요.')}`);
+
+/* EP.5 */
+H+=EP('EP.5','새 치아, 그리고 암과의 싸움','04:54~06:15 2030 무렵 ② 병원의 풍경',
+`${S('hr','shock','','이가 다시 난다고요? 그건 진짜 영화 같은데요.')}
+${S('bot','calm','','일본의 한 병원 연구소와 바이오 기업이 개발 중이에요. 치아 성장을 <b>억누르는 단백질을 막으면</b> 새 치아가 자랄 수 있는지 보는 연구예요.',{rev:true})}
+<div class="flow"><div>동물 실험에서<br>새 치아 확인</div><div class="k">2024.10<br>사람 대상 1상 시작</div><div>건강한 성인 30명<br>안전성 확인</div><div class="k">다음 단계<br>선천적으로 치아가<br>부족한 어린이</div><div>2030년<br>실용화 목표</div></div>
+${S('nomusa','calm','','지금 목표는 <mark>태어날 때부터 치아가 부족한 아이들</mark>이에요. 사람에게서 치아가 실제로 자랐다는 결과는 아직 공개되지 않았어요(작성자 확인).')}
+${S('banjang','calm','','임플란트 드릴 소리가 사라지는 건 그 다음 이야기군요.',{rev:true})}
+${S('bot','calm','','맞아요. 영상도 “적용 범위가 넓어진다면, 언젠가”라고 했어요.')}
+<div class="g4">
+${P('혈액 검사',S('bot','calm','','피 조금으로 여러 암의 신호를 일찍 찾는 검사가 정교해지고 있어요(전언).'),{fx:'조기'})}
+${P('맞춤형 암 백신',S('nomusa','calm','','수술로 떼어 낸 <b>내 암세포의 특징</b>을 분석해, 면역 체계가 남은 암세포를 알아보게 돕는 방식이에요.',{rev:true}),{fx:'1대1'})}
+</div>
+<div class="box red"><h3>⚠️ 숫자는 정확하게 (작성자 확인)</h3>
+<p style="margin:0">고위험 흑색종 수술 환자 157명 대상 2상 시험의 5년 추적에서, 맞춤형 백신을 면역항암제와 함께 쓴 그룹은 면역항암제만 쓴 그룹보다 <b>재발 또는 사망 위험이 49% 낮았습니다</b>. 아직 시험 중인 치료법이고, <b>모든 암을 예방하거나 재발을 완전히 막는다는 뜻은 아닙니다</b>(영상 설명란도 같은 단서를 달았습니다).</p></div>`);
+
+/* EP.6 */
+H+=EP('EP.6','내 방의 과외 선생님, 거실의 로봇','06:15~07:36 2031~2034',
+`${S('hr','calm','','좋은 선생님 만나려면 학원비에 밤늦은 학원가 왕복이 기본이었잖아요.')}
+${S('bot','calm','','영상은 5~6년 뒤, 학생의 표정과 푸는 속도를 보고 <b>어디서 막혔는지 알아채는 AI 교사</b>가 곁에 있을 거라고 봐요. 이해할 때까지 몇 번이고 눈높이에 맞춰 다시 설명해 주고요(전언).',{rev:true})}
+${S('banjang','calm','','그럼 말만 하던 AI가 몸을 얻어 집에 들어오는 건 언제쯤입니까?')}
+${S('bot','happy','','많은 기업이 보는 시점은 <mark>6~8년 뒤, 2032~2034년</mark>이에요. 퇴근해 보니 설거지는 끝나 있고, 빨래는 반듯하게 개어 있고, 바닥 청소까지 되어 있는 거죠.',{rev:true})}
+<div class="g4">
+${P('지금',S('nomusa','calm','','한 대 만드는 데 큰돈이 들어서(영상은 수억 원이라고 전함) <b>공장 같은 산업 현장에 먼저</b> 들어가고 있어요.'),{fx:'현장 먼저'})}
+${P('목표',S('bot','calm','','대량 생산이 자리 잡으면 <b>소형차 값, 2천만~3천만 원대</b>로 낮추겠다는 게 기업들 목표예요.',{rev:true}),{fx:'목표가'})}
+</div>
+<div class="box"><h3>📌 가격 목표 (작성자 확인)</h3><ul>
+<li>미국 전기차 기업의 휴머노이드 — 대량 생산 시 <b>2만~3만 달러</b> 목표(확정 가격 아님)</li>
+<li>가정용으로 예약 판매 중인 한 제품 — <b>2만 달러</b> 또는 월 499달러 구독</li>
+</ul></div>
+${S('hr','happy','','세탁기·식기세척기 들이듯 로봇을 들이고, 주말엔 집안일로 다투는 대신 나들이 가는 날이 올 수도 있겠네요.')}`);
+
+/* EP.7 */
+H+=EP('EP.7','10년 뒤 — 치매 치료와 더 짧은 일주일','07:36~08:56 2035~2036',
+`${S('bot','calm','','딱 10년 뒤, 의학계가 크게 기대하는 건 <b>치매와 만성질환</b>이에요.')}
+${S('nomusa','calm','','신약 하나에 10년 넘는 시간과 수많은 실패가 필요했어요. 이제는 AI가 <mark>엄청난 수의 후보 물질을 먼저 걸러</mark> 가능성 높은 것부터 고르죠.',{rev:true})}
+${S('hr','calm','','그럼 치매가 정복되는 건가요?')}
+${S('nomusa','calm','','영상의 표현은 조심스러워요. 임상 검증이 쌓인다면 <b>더 일찍 발견하고 진행을 늦추는 선택지</b>가 넓어질 수 있다는 정도예요.',{rev:true})}
+<div class="g4">
+${P('일하는 방식',S('bot','calm','','서류 정리와 코딩은 AI 비서가, 고된 작업과 집안일은 로봇이 나눠 맡는 환경이 넓어져요.'),{fx:'분담'})}
+${P('일주일의 달력',S('hr','shock','','닷새 내내 책상에 앉지 않아도 결과가 더 나온다면… <b>주 4일</b>, 그보다 더 짧게도요?',{rev:true}),{fx:'주 4일?'})}
+</div>
+${S('banjang','calm','','10년 전을 생각하면 아주 허황한 얘기도 아닙니다. <b>2016년</b>엔 줄 없는 이어폰 낀 사람을 신기하게 쳐다봤잖아요.')}
+${S('bot','calm','','AI에게 말을 걸어 그림과 영상을 만드는 것도 그땐 영화 속 이야기였죠. 전문가들은 다가올 10년이 지난 10년보다 <b>몇 곱절 빠를 것</b>이라고 말해요(전언).',{rev:true})}
+<p class="tagline">※ 2030년대 중반 주 4일보다 짧은 근무가 자연스러워진다는 것은 미래학자들의 전망입니다(전언). 제도 변화를 뜻하지 않습니다.</p>`);
+
+/* EP.8 */
+H+=EP('EP.8','그래도 시간표는 시간표일 뿐','08:56~09:38 영상의 단서와 질문',
+`${S('nomusa','calm','','영상이 끝에 강조한 말이 있어요. <mark>연구실에서 되는 것과, 누구나 싸게 쓰는 것은 전혀 다른 문제</mark>라는 거예요.')}
+<div class="flow"><div>연구실에서<br>기술 개발</div><div class="k">임상시험<br>실패할 수 있음</div><div>안전성 검증<br>길어질 수 있음</div><div class="k">비용<br>가격이 내려가야 보급</div><div>일상에<br>도착</div></div>
+${S('hr','calm','','그러니까 어떤 건 늦게 오고, 어떤 건 아예 안 올 수도 있는 거네요.',{rev:true})}
+${S('bot','calm','','네. 그래도 오늘 우리를 한숨짓게 한 불편들이 지금도 어느 실험실에서 하나씩 지워지고 있다는 건 분명해요.')}
+${S('bot','happy','','영상의 마지막 질문을 그대로 드릴게요. <b>이 가운데 가장 먼저 만나고 싶은 변화는 무엇인가요?</b>',{shout:true})}`);
+
+/* EP.9 현장 관점 */
+H+=EP('EP.9','그럼 우리 일터는?','파견·도급·채용대행·고용서비스 운영사 관점의 시사점 (작성자 정리)',
+`${S('banjang','calm','','듣다 보니 집보다 <b>현장</b>이 먼저 바뀌겠습니다. 로봇도 공장부터 들어간다면서요.')}
+${S('nomusa','calm','','맞아요. 그래서 “10년 뒤”가 아니라 <b>“이번 계약 기간 안에 뭐가 바뀌나”</b>로 읽어야 해요.',{rev:true})}
+<div class="g4">
+${P('① 통역 → 다국적 현장',S('banjang','calm','','외국인 근로자와의 작업 지시·안전 교육이 쉬워져요. 단, 안전 수칙은 통역만 믿지 말고 <b>이해했는지 확인</b>해야 해요.'),{fx:'소통'})}
+${P('② AI 비서 → 서류 업무',S('hr','calm','','채용 서류, 근태·급여 자료 정리가 빨라져요. 개인정보를 넣어도 되는 도구인지, <b>최종 확인자는 누구인지</b>부터 정해요.',{rev:true}),{fx:'확인'})}
+${P('③ 로봇·자율주행 → 직무 변화',S('nomusa','calm','','물류·청소·시설관리·운전 직무는 없어지기보다 <b>사람과 기계가 나눠 맡는 형태</b>로 바뀔 가능성이 커요. 직무 내용이 바뀌면 계약과 교육도 손봐야 해요.'),{fx:'재설계'})}
+${P('④ 건강 기술 → 오래 일하는 사람',S('bot','calm','','눈과 몸의 불편이 줄면 경험 많은 인력이 더 오래 일할 수 있어요. 중장년 직무 설계가 중요해져요.',{rev:true}),{fx:'경험'})}
+</div>
+${S('hr','calm','','근무일이 짧아진다는 전망은요?')}
+${S('nomusa','calm','','지금 법정 근로시간은 <b>1주 40시간</b>(근로기준법 제50조) 그대로예요. 전망만 보고 제도를 앞서 가정하지 말고, 교대제와 인력 운영을 <b>시간이 아닌 성과와 안전 기준</b>으로 점검해 두는 게 준비예요.',{rev:true})}
+<p class="tagline">※ 이 EP는 영상에 없는 내용으로, ㈜제니엘이노베이션이 영상의 전망을 일터에 비춰 정리한 의견입니다(작성자 정리).</p>`);
+
+/* 숫자 */
+H+=EP('NUMBERS','한눈에 보는 숫자','이야기 속 핵심 숫자 6 (모두 작성자 확인)',
+`<div class="cards">
+<div class="card"><b>11.2%</b><span>먹는 비만 치료제<br>최고 용량군 체중 감소<br>(가짜 약 2.1%)</span></div>
+<div class="card"><b>1,465명</b><span>바르는 탈모 신약<br>3상 참여 남성<br>(미국·유럽 51곳)</span></div>
+<div class="card"><b>10시간</b><span>새 노안 안약<br>효과 지속 최대치<br>(일시적 효과)</span></div>
+<div class="card"><b>50만 건</b><span>미국 무인 택시<br>주간 유료 탑승<br>(2026년)</span></div>
+<div class="card"><b>49%</b><span>맞춤형 암 백신 병용<br>재발·사망 위험 감소<br>(흑색종 2상, 157명)</span></div>
+<div class="card"><b>2만 달러</b><span>가정용 로봇<br>목표·예약 가격대<br>시작점</span></div>
+</div>
+<p class="tagline">※ 임상 수치는 특정 환자군·특정 시험의 결과이며, 일반적인 효과를 보장하는 숫자가 아닙니다.</p>`);
+
+/* 체크리스트 */
+H+=EP('CHECK','미래 기술 뉴스 읽는 법','직장인·인사담당자 공용 점검표 (작성자 제안)',
+`${S('hr','calm','','이런 뉴스가 매일 쏟아지는데, 어떻게 걸러 읽어요?')}
+${S('nomusa','calm','','<b>“어느 단계의 이야기인가”</b>만 물어도 절반은 걸러져요.',{rev:true})}
+<ul class="chk">
+<li>연구·동물 실험·임상·<b>허가</b>·보급 가운데 <b>어느 단계</b>의 소식인지 확인했는가</li>
+<li>허가라면 <b>어느 나라</b>의 허가인지, 국내에서도 쓸 수 있는지 확인했는가</li>
+<li>숫자가 <b>누구를 대상으로 한 어떤 시험</b>의 결과인지(대상·인원·비교 대상) 읽었는가</li>
+<li>가격과 시점이 <b>확정</b>인지, 기업의 <b>목표</b>인지 구분했는가</li>
+<li>의약품·치료 정보는 광고·영상이 아니라 <b>의사·약사 상담</b>으로 결정하는가</li>
+<li>우리 직무에서 AI·로봇이 <b>대신할 일</b>과 <b>사람이 확인할 일</b>을 나눠 적어 봤는가</li>
+<li>업무에 AI 도구를 쓸 때 <b>개인정보·고객사 자료</b> 입력 기준을 정했는가</li>
+</ul>
+<p class="tagline">※ 위 점검표는 ㈜제니엘이노베이션이 정리한 제안이며 의료·법률 자문이 아닙니다.</p>`);
+
+/* 흐름 정리 */
+H+=EP('SUMMARY','흐름 정리','가까운 미래 → 2030 → 10년 뒤 → 단서',
+`<div class="g4">
+${P('🎧 2027~2029',`<ul style="margin:0;padding-left:18px"><li>이어폰 <b>실시간 통역</b>, AI 비서</li><li><b>먹는 비만약</b> 확산</li><li>새 <b>탈모약</b>, <b>노안 안약</b></li></ul>`)}
+${P('🚕 2030~2031',`<ul style="margin:0;padding-left:18px"><li><b>무인 택시</b> 대중화</li><li><b>치아 재생</b> 실용화 목표</li><li>혈액 암 검사, <b>맞춤형 암 백신</b></li><li>1대1 <b>AI 교사</b></li></ul>`)}
+${P('🤖 2032~2036',`<ul style="margin:0;padding-left:18px"><li><b>가정용 로봇</b> 2천만~3천만 원대 목표</li><li>AI 신약 → <b>치매·만성질환</b></li><li><b>더 짧은 근무일</b> 전망</li></ul>`)}
+${P('⚠️ 단서',`<ul style="margin:0;padding-left:18px"><li>개발 ≠ <b>보급</b></li><li>임상 실패·검증 지연 가능</li><li>연도는 <b>예상</b>일 뿐</li></ul>`)}
+</div>`);
+
+/* 에필로그 */
+H+=EP('EPILOGUE','미래는 오는 것이 아니라 준비하는 것','불편이 지워지는 속도만큼, 배우는 속도도',
+`${S('bot','happy','','오늘 이야기, 한 줄로 줄이면요? <b>“불편은 줄어들고, 확인하는 사람의 몫은 남는다”</b>예요.')}
+${S('hr','calm','','저는 통역 이어폰이요. 그리고 뉴스 볼 때 ‘어느 단계냐’부터 물어볼래요.',{rev:true})}
+${S('banjang','happy','','저는 설거지 로봇… 아니, 그 전에 현장에 들어올 로봇과 같이 일하는 법부터 배우겠습니다!')}
+${S('nomusa','calm','','기술이 시간을 벌어 주면, 그 시간에 무엇을 할지는 우리가 정해야죠.',{rev:true})}
+<p class="quote">“미래를 예측하는 가장 좋은 방법은 미래를 만드는 것이다”</p>
+<p style="text-align:center;margin:0">끝까지 읽어 주셔서 감사합니다 🙏</p>
+<div class="src">작성 · ㈜제니엘이노베이션<br>
+<b>원작</b> · 유튜브 ‘설명좋아하는아저씨’ 「AI에게 10년 뒤 세상을 예측해 달라고 했더니」(2026.11.15) — <a href="${SRC_URL}" target="_blank" rel="noopener">${SRC_URL}</a> 의 설명을 영상 흐름대로 요약·재구성했습니다. 영상의 문장을 그대로 옮기지 않았으며, 원작의 저작권은 해당 채널에 있습니다.<br>
+<b>원자료(조회 2026.11.18)</b> · <a href="${R_PILL}" target="_blank" rel="noopener">먹는 비만 치료제 미국 허가 보도(AP, 2026.4.1)</a> · <a href="${R_HAIR}" target="_blank" rel="noopener">바르는 탈모 신약 3상 12개월 자료(Dermatology Times)</a> · <a href="${R_EYE}" target="_blank" rel="noopener">노안 안약 허가(Review of Optometry)</a> · <a href="${R_TAXI}" target="_blank" rel="noopener">무인 택시 운행 규모(Axios, 2026.6.17)</a> · <a href="${R_TOOTH}" target="_blank" rel="noopener">치아 재생 치료제 임상 현황(Dentistry, 2026.8)</a> · <a href="${R_VAC}" target="_blank" rel="noopener">맞춤형 암 백신 5년 추적 자료(기업 발표 보도, 2026.1)</a> · <a href="${R_ROBOT}" target="_blank" rel="noopener">휴머노이드 가격 목표</a><br>
+<b>법령</b> · 근로기준법 제50조(근로시간)<br>
+※ 등장인물은 가상의 캐릭터입니다. ‘작성자 확인’은 영상에 없는 수치·현황을 위 자료와 대조해 보충한 부분, ‘(전언)’은 영상이 전한 내용 가운데 따로 확인하지 못한 부분입니다. 연도는 예측이 아닌 예상 시간표이며, 의약품 정보는 치료 권유가 아니고 국내 허가 여부는 따로 확인이 필요합니다. 특정 기업 평가·투자 권유가 아닙니다.</div>`);
+
+
+
+document.getElementById('app').innerHTML=H;
+
+function toggleTheme(){
+  const r=document.documentElement;
+  const dark = r.dataset.theme ? r.dataset.theme==='dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  r.dataset.theme = dark?'light':'dark';
+}
+</script>
+<script src="../zt-nav.js"></script>
+<script src="../firebase-config.js"></script>
+<script type="module" src="../zt-fire.js"></script>
+<script>
+const ZT_ID='021';
+async function ztPaint(){const F=window.ZT_FIRE;if(!F||!F.enabled)return;document.getElementById('ztLike').hidden=false;
+ const d=(await F.getStats([ZT_ID]))[ZT_ID]||{};document.getElementById('ztLikeN').textContent=d.likes||0;
+ document.getElementById('ztViews').textContent='👁 조회 '+(d.views||0);
+ if(F.liked(ZT_ID))document.querySelector('#ztLike button').classList.add('on');}
+async function ztLike(){const F=window.ZT_FIRE;if(await F.addLike(ZT_ID)){document.querySelector('#ztLike button').classList.add('on');ztPaint()}}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{})}
+window.addEventListener('zt-fire-ready',async()=>{if(window.ZT_FIRE.enabled){await window.ZT_FIRE.addView(ZT_ID);ztPaint()}});
+</script>
+</body>
+</html>
