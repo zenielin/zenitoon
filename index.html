@@ -244,7 +244,7 @@ function renderHome(){
   ${cur.saying?`<div class="saying">💡 이번 주 한마디 — <b>${cur.saying.text}</b> · ${cur.saying.note}</div>`:''}
   <div class="grid">${cur.episodes.map(e=>card({...e,issue:cur})).join('')}</div>
   ${cur.next?`<div class="next">📅 <b>다음 호 예고</b> — ${cur.next}</div>`:''}</section>`;
-  h+=`<section><div class="sec-h"><h2>코너 소개</h2><span class="d">7개 코너가 번갈아 연재됩니다</span></div><div class="corners">
+  h+=`<section><div class="sec-h"><h2>코너 소개</h2><span class="d">8개 코너가 번갈아 연재됩니다</span></div><div class="corners">
    ${Object.entries(C).map(([k,c])=>{const n=allEps.filter(e=>e.corner===k).length;return `<button class="corner" onclick="go('${k}')" style="border-left:8px solid ${c.color}"><b>${c.icon} ${c.name}</b><span>${desc[k]} · ${n}편</span></button>`}).join('')}</div></section>`;
   h+=`<section id="past"><div class="sec-h"><h2>지난 호 보기</h2></div><ul class="past">
    ${T.issues.map(i=>`<li><span class="pd">${label(i)}</span><span class="pt">${i.title}<br><small style="color:var(--sub)">${fmt(i.date)} · ${i.episodes.length}편</small></span><a class="btn ghost" href="${i.episodes[0].page}">보기</a></li>`).join('')}
@@ -254,7 +254,7 @@ function renderHome(){
    <a href="https://zeniel-laborletter.netlify.app" target="_blank" rel="noopener"><b>⚖️ 노동법 레터</b><span>주제별 판례 · 행정해석 · 예규 정리</span></a></div></section>`;
   return h;
 }
-const desc={news:'노동 뉴스·노동관계법 변화를 쉽게',case:'법원 판례를 만화로',outsourcing:'도급·파견·채용대행 등 아웃소싱 이야기',safety:'산업안전보건·중대재해 예방',biz:'기업 이야기와 경영 이슈',check:'채용·노무·지도점검 실무 점검표',aha:'상식·연예·스포츠·리더십 이야기'};
+const desc={news:'노동 뉴스·노동관계법 변화를 쉽게',case:'법원 판례를 만화로',outsourcing:'도급·파견·채용대행 등 아웃소싱 이야기',safety:'산업안전보건·중대재해 예방',biz:'기업 이야기와 경영 이슈',check:'채용·노무·지도점검 실무 점검표',aha:'상식·연예·스포츠·리더십 이야기',ai:'일에 바로 쓰는 AI 활용 노하우'};
 const LEGACY={qa:'outsourcing',support:'news',stats:'news'};
 const keyOf=h=>{h=(h||'').replace('#','');h=LEGACY[h]||h;return h in C?h:'home'};
 function renderCorner(k){
