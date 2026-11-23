@@ -13,8 +13,9 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="제니툰">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
 <style>
+@font-face{font-family:'GmarketSans';src:url('../fonts/GmarketSansBold.woff2') format('woff2');font-weight:100 900;font-display:swap}
 :root{
   --paper:#fbf6ea; --paper2:#fffdf7; --ink:#161616; --sub:#4a4a4a;
   --red:#e2403a; --blue:#2f6fd6; --yellow:#ffd23f; --green:#2e9e6a; --soft:#f1e7cf;
@@ -34,9 +35,9 @@
 html,body{margin:0;padding:0}
 body{background:var(--paper);color:var(--ink);font-family:'Gowun Dodum',sans-serif;line-height:1.65;font-size:16px}
 .wrap{max-width:760px;margin:0 auto;padding:18px 16px 40px}
-h1,h2,h3{font-family:'Black Han Sans',sans-serif;font-weight:400;margin:0;letter-spacing:.5px;line-height:1.25}
+h1,h2,h3{font-family:'GmarketSans',sans-serif;font-weight:400;margin:0;letter-spacing:.5px;line-height:1.25}
 .ep{background:var(--paper2);border:3px solid var(--ink);box-shadow:6px 6px 0 var(--shadow);margin:0 6px 30px 0;padding:20px 18px 22px;border-radius:6px}
-.eptag{display:inline-block;background:var(--ink);color:var(--paper2);font-family:'Black Han Sans';padding:3px 12px;border-radius:3px;font-size:14px;letter-spacing:1px}
+.eptag{display:inline-block;background:var(--ink);color:var(--paper2);font-family:'GmarketSans';padding:3px 12px;border-radius:3px;font-size:14px;letter-spacing:1px}
 .ep h2{font-size:26px;margin:8px 0 2px}
 .ep .subt{color:var(--sub);margin:0 0 14px;font-size:14px}
 /* cover */
@@ -50,14 +51,14 @@ h1,h2,h3{font-family:'Black Han Sans',sans-serif;font-weight:400;margin:0;letter
 .cover .cast svg{width:78px;height:78px;background:#fff;border:3px solid #161616;border-radius:50%}
 .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
 .num{background:#fff;border:2.5px solid #161616;border-radius:6px;padding:8px 4px}
-.num b{display:block;font-family:'Black Han Sans';font-size:26px;color:var(--red);line-height:1.1}
+.num b{display:block;font-family:'GmarketSans';font-size:26px;color:var(--red);line-height:1.1}
 .num span{font-size:12px}
 /* panels */
 .g4{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .panel{border:2.5px solid var(--ink);background:var(--paper);border-radius:4px;padding:10px;position:relative;min-width:0}
 .panel.wide{grid-column:1/-1}
-.panel .cap{font-family:'Black Han Sans';font-size:13px;background:var(--yellow);color:#161616;display:inline-block;padding:1px 8px;border:2px solid var(--ink);margin-bottom:6px}
-.panel .fx{position:absolute;right:8px;top:4px;font-family:'Black Han Sans';color:var(--red);font-size:20px;transform:rotate(8deg)}
+.panel .cap{font-family:'GmarketSans';font-size:13px;background:var(--yellow);color:#161616;display:inline-block;padding:1px 8px;border:2px solid var(--ink);margin-bottom:6px}
+.panel .fx{position:absolute;right:8px;top:4px;font-family:'GmarketSans';color:var(--red);font-size:20px;transform:rotate(8deg)}
 /* scene */
 .scene{display:flex;align-items:flex-start;gap:8px;margin:8px 0}
 .scene.rev{flex-direction:row-reverse}
@@ -88,13 +89,13 @@ mark{background:var(--yellow);color:#161616;padding:0 3px}
 .bar .tr{height:20px;border:2px solid var(--ink);border-radius:3px;background:var(--paper)}
 .bar .fl{height:100%;background:var(--blue)}
 .bar .fl.r{background:var(--red)}.bar .fl.y{background:var(--yellow)}.bar .fl.g{background:var(--green)}
-.bar b{font-family:'Black Han Sans';font-weight:400;text-align:right}
+.bar b{font-family:'GmarketSans';font-weight:400;text-align:right}
 /* timeline */
 .tl{list-style:none;margin:6px 0;padding:0 0 0 22px;border-left:4px solid var(--ink)}
 .tl li{position:relative;margin:0 0 12px;padding-left:6px}
 .tl li:before{content:"";position:absolute;left:-33px;top:4px;width:16px;height:16px;background:var(--yellow);border:3px solid var(--ink);border-radius:50%}
 .tl li.now:before{background:var(--red)}
-.tl .d{font-family:'Black Han Sans';font-size:14px;color:var(--red)}
+.tl .d{font-family:'GmarketSans';font-size:14px;color:var(--red)}
 /* flow */
 .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;align-items:stretch;margin:8px 0}
 .flow div{border:2.5px solid var(--ink);border-radius:5px;padding:8px 4px;text-align:center;font-size:13px;background:var(--paper);font-family:'Jua';display:flex;align-items:center;justify-content:center;min-width:0}
@@ -106,7 +107,7 @@ mark{background:var(--yellow);color:#161616;padding:0 3px}
 /* number cards */
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .card{border:2.5px solid var(--ink);border-radius:6px;padding:10px;text-align:center;background:var(--paper)}
-.card b{font-family:'Black Han Sans';font-size:30px;font-weight:400;display:block;color:var(--blue);line-height:1.1}
+.card b{font-family:'GmarketSans';font-size:30px;font-weight:400;display:block;color:var(--blue);line-height:1.1}
 .card span{font-size:13px}
 /* checklist */
 .chk{list-style:none;padding:0;margin:6px 0}
@@ -137,7 +138,7 @@ mark{background:var(--yellow);color:#161616;padding:0 3px}
 .zt-nav span{flex:1;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
 .zt-end{padding-top:0}
 .zt-cta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;background:#ffd23f;color:#161616;border:3px solid var(--ink);border-radius:6px;padding:14px 16px;box-shadow:5px 5px 0 var(--shadow);margin-right:6px}
-.zt-cta b{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:19px}
+.zt-cta b{font-family:'GmarketSans',sans-serif;font-weight:400;font-size:19px}
 .zt-cta span{font-size:13.5px}
 .zt-btn{background:#161616;color:#fff;text-decoration:none;font-family:'Jua',sans-serif;border-radius:5px;padding:7px 14px}
 .zt-links{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 50px}
